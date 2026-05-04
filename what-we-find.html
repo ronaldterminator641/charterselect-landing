@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>8 Coverage Gaps We Find In Almost Every Policy Review — CharterSelect</title>
+  <meta name="description" content="Eight coverage gaps we find in almost every charter school policy review — issues most brokers miss because they don't specialize in charter schools." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .cs-scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .cs-scenario { background: #fff; border: 1px solid var(--border-1); border-radius: 16px; padding: 32px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 14px; transition: box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out); }
+    .cs-scenario:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .cs-scenario__head { display: flex; align-items: flex-start; gap: 14px; }
+    .cs-scenario__icon { width: 48px; height: 48px; border-radius: 10px; background: var(--cs-teal-50); color: var(--cs-teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cs-scenario__title { font-family: var(--font-display); font-weight: 400; font-size: 21px; line-height: 1.2; color: var(--fg-1); margin: 0; }
+    .cs-scenario__sub { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cs-teal); margin-top: 2px; }
+    .cs-scenario__body { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+    .cs-scenario__finding { display: flex; align-items: flex-start; gap: 10px; background: #fef9ec; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 16px; font-size: 13.5px; line-height: 1.5; color: #78350f; }
+    .cs-scenario__finding i { color: #b45309; margin-top: 1px; flex-shrink: 0; }
+    .cs-scenario__familiar { font-size: 13px; font-weight: 600; color: var(--cs-teal); margin-top: auto; display: flex; align-items: center; gap: 6px; }
+    @media (max-width: 760px) {
+      .cs-scenario-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=3"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    const SCENARIOS = [
+      {
+        icon: 'layers',
+        sub: 'Gap 01',
+        title: 'Directors and Officers',
+        body: 'When D&O liability is written as a standalone policy, the umbrella often doesn\'t extend over it — missing millions in coverage that could otherwise be protecting your Board for the very claims that tend to be most expensive.',
+      },
+      {
+        icon: 'shield-alert',
+        sub: 'Gap 02',
+        title: 'Violent Event',
+        body: 'If your policy doesn\'t include Law Enforcement Legal Liability, your Board and staff may have zero coverage for claims arising from their response to an on-campus violent incident.',
+      },
+      {
+        icon: 'calendar-x',
+        sub: 'Gap 03',
+        title: 'Retro Dates on Critical Coverage',
+        body: 'Sexual abuse, Employment practices Liability, and Failure to Educate can all be claims-made coverages - which means retro dates are everything. When a broker switches carriers without confirming the retro date carries over, years of prior-acts protection quietly disappear. We audit every retro date on every renewal.',
+      },
+      {
+        icon: 'droplets',
+        sub: 'Gap 04',
+        title: 'Water & Sewage Backup Sublimits',
+        body: 'Property policies typically include water and sewage backup coverage — but with sublimits that are far too low to cover a serious loss. A single event can generate hundreds of thousands in damage. We benchmark sublimits against realistic claim scenarios for your specific facilities.',
+      },
+      {
+        icon: 'lock-open',
+        sub: 'Gap 05',
+        tag: 'Often overlooked',
+        title: 'Funds Transfer Risk',
+        body: 'A crime policy and a cyber policy each cover different pieces of the fraud puzzle — and schools relying on only one are exposed through the gap between them. Social engineering, fraudulent wire transfer, and ransomware all require carefully coordinated coverage to ensure there\'s no uncovered territory.',
+      },
+      {
+        icon: 'file-warning',
+        sub: 'Gap 06',
+        title: 'Misclassification',
+        body: 'Charter schools don\'t fit neatly into standard underwriting boxes, and generalist brokers sometimes force them into the closest approximation. A misclassified policy may appear complete — until a major claim is denied because the insured business type doesn\'t match the loss. We know exactly how to classify charter schools correctly from day one.',
+      },
+      {
+        icon: 'file-text',
+        sub: 'Gap 07',
+        title: 'Satisfying Bond / Landlord Requirements',
+        body: 'Many charter school bonds and landlord agreements specify minimum property insurance requirements — replacement cost valuation, maximum deductibles, or specific coverage triggers. A policy that doesn\'t satisfy those requirements can put your facility agreement or financing at risk. We cross-reference your property coverage against every relevant covenant.',
+      },
+      {
+        icon: 'trending-up',
+        sub: 'Gap 08',
+        title: 'Buying Too Much Insurance?',
+        body: 'Workers Compensation rates are heavily influenced by experience modifiers and underwriter debits that don\'t always reflect actual risk. Beyond pricing, many schools are simply placed with the wrong carrier - one that doesn\'t specialize in education. You might even be buying policies for coverage you already have. The best markets for charter schools shift regularly, and know who they are takes full-time focus on this sector.',
+      },
+    ];
+
+    function WhatWeFind() {
+      return (
+        <PageShell
+          screen="What We Find"
+          eyebrow="Coverage Gaps"
+          title="What We're Looking For"
+          lead="These are the issues most brokers miss — because they don't specialize in charter schools.">
+
+          <section className="cs-section" style={{paddingTop: 48, paddingBottom: 80}}>
+            <div className="cs-prose">
+              <div className="cs-scenario-grid">
+                {SCENARIOS.map((s, i) => (
+                  <article className="cs-scenario" key={i}>
+                    <div className="cs-scenario__head">
+                      <div className="cs-scenario__icon">
+                        <Lucide name={s.icon} size={22} />
+                      </div>
+                      <div>
+                        <h2 className="cs-scenario__title">{s.title}</h2>
+                      </div>
+                    </div>
+                    <p className="cs-scenario__body">{s.body}</p>
+                    {s.finding && (
+                      <div className="cs-scenario__finding">
+                        <Lucide name="search" size={14} />
+                        <span>{s.finding}</span>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="cs-section cs-section--cream" style={{paddingTop: 56, paddingBottom: 72}}>
+            <div className="cs-prose">
+              <div className="cs-eyebrow">Why we can say this</div>
+              <h2 style={{marginTop: 8}}>We only work with charter schools. That's the entire list.</h2>
+              <p>The largest insurance brokers in the country are generalist agencies. Charter schools are one account type among thousands they serve. When they place a charter school policy, they're applying a template built for a different kind of organization.</p>
+              <p>CharterSelect has reviewed thousands of charter school policies since 2011 — exclusively. Every carrier relationship we have was built around charter-specific exposures. Every benchmark we deliver is measured against what other charter schools are actually carrying.</p>
+              <p>The gaps above aren't obscure. They appear regularly in policies placed by competent generalist brokers. They appear because generalist brokers don't know to look for them — not because they're careless, but because they've never seen enough charter policies to recognize the pattern.</p>
+              <p>We have.</p>
+            </div>
+          </section>
+
+          <section className="cs-cta-strip">
+            <div className="cs-cta-strip__inner">
+              <div>
+                <h2>Find out which of these apply to yours.</h2>
+                <p>A written benchmark review in 3 business days. No pitch — just a second set of eyes from someone who has seen this specific policy type fail in ways generalist brokers don't recognize.</p>
+              </div>
+              <a className="cs-btn cs-btn--gold" href="index.html#contact">Start a Review <Lucide name="arrow-right" size={18} /></a>
+            </div>
+          </section>
+        </PageShell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<WhatWeFind />);
+  </script>
+</body>
+</html>

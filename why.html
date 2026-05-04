@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why CharterSelect — CharterSelect</title>
+  <meta name="description" content="Charter schools operate differently than districts and differently from one another. We bring the patience to listen and the depth to act." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=3"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+    const REASONS = [
+      {
+        icon: 'school',
+        title: 'Specialists, not generalists.',
+        body: 'We only serve charter schools. That focus shows up in the products we recommend, the carriers we work with, and the questions we know to ask.',
+      },
+      {
+        icon: 'scale',
+        title: 'Independent — we represent you.',
+        body: 'CharterSelect is carrier-agnostic. We benchmark across carriers and tell you when to stay put. Your interest, not a quota, drives our advice.',
+      },
+      {
+        icon: 'eye',
+        title: 'Transparent benchmarking.',
+        body: 'You\'ll see what your current coverage actually says, what it costs, and what the market alternatives look like — in plain language.',
+      },
+      {
+        icon: 'calendar-clock',
+        title: 'A year-round partner.',
+        body: 'Renewals are a moment, not the relationship. We stay close between cycles — claims, vendor changes, growth, board questions.',
+      },
+      {
+        icon: 'heart-handshake',
+        title: 'Mission-aligned.',
+        body: 'A portion of CharterSelect profits supports the nonprofits that build stronger communities alongside the schools we serve.',
+      },
+      {
+        icon: 'phone',
+        title: 'A named advisor.',
+        body: 'You\'ll know who answers the phone, and they\'ll know your campus, your staff, and your renewal cycle by heart.',
+      },
+    ];
+
+    const TESTIMONIALS = [
+      {
+        outcome: 'Saved nearly $100K annually · Better coverage',
+        quote: 'Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to.',
+        name: 'Randal C. Shaffer',
+        role: 'CEO / Superintendent · Trinity Basin Preparatory',
+      },
+      {
+        outcome: 'Added Workers Comp · Saved money · No premium increase',
+        quote: 'He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.',
+        name: 'Anita Howe & Ana Valdovinos',
+        role: 'HR Manager · Business Manager · Newman International Academy',
+      },
+      {
+        outcome: 'New school setup · Insurance + HR guidance from day one',
+        quote: 'Aaron came in and supported us so much with our insurance, insurance selection, and guidance for these critical human resources elements. He also went above and beyond and completed work that I did not have the capacity to do.',
+        name: 'Mia Coffing, M.Ed., BCBA',
+        role: 'Executive Director · Prospect Academy',
+      },
+      {
+        outcome: 'Trusted partner · Recommended without hesitation',
+        quote: "Aaron is one of the hardest working partners I've had the good fortune to come across. I get to work with him at a mutual client and see first hand how Aaron and his team want only the best for their charter school clients. I would recommend him and the charter school team to any of my clients.",
+        name: 'Stacey Lawrence',
+        role: 'CEO & Founder · GrowthFit Partners LLC',
+      },
+    ];
+
+    function WhyPage() {
+      return (
+        <PageShell
+          screen="Why CharterSelect"
+          eyebrow="Why CharterSelect"
+          title="Solutions built for your mission."
+          lead="Charter schools operate differently than districts and differently from one another. We bring the patience to listen and the depth to act.">
+          <section className="cs-section" style={{paddingTop: 56, paddingBottom: 64}}>
+            <div className="cs-prose">
+              <div className="cs-detail-grid">
+                {REASONS.map(r => (
+                  <article className="cs-detail" key={r.title}>
+                    <div className="cs-detail__head">
+                      <div className="cs-card__icon"><Lucide name={r.icon} size={22} /></div>
+                      <h3>{r.title}</h3>
+                    </div>
+                    <p style={{marginBottom: 0}}>{r.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="cs-section cs-section--cream" style={{paddingTop: 64, paddingBottom: 80}}>
+            <div className="cs-prose">
+              <div className="cs-eyebrow">In their words</div>
+              <h2 style={{marginTop: 8}}>What charter leaders say about working with us.</h2>
+              <div className="cs-testimonials">
+                {TESTIMONIALS.map(t => (
+                  <blockquote className="cs-testimonial" key={t.name}>
+                    {t.outcome && (
+                      <div style={{display:'inline-flex', alignItems:'center', gap:6, background:'var(--cs-teal-50)', color:'var(--cs-teal)', fontSize:11, fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', padding:'3px 10px', borderRadius:999, marginBottom:10}}>
+                        {t.outcome}
+                      </div>
+                    )}
+                    <p className="cs-testimonial__quote">"{t.quote}"</p>
+                    <div className="cs-testimonial__attr">
+                      <strong>{t.name}</strong>
+                      {t.role}
+                    </div>
+                  </blockquote>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="cs-cta-strip">
+            <div className="cs-cta-strip__inner">
+              <div>
+                <h2>See the difference for yourself.</h2>
+                <p>A complimentary benchmark review is the easiest way to find out whether your current coverage holds up.</p>
+              </div>
+              <a className="cs-btn cs-btn--gold" href="index.html#contact">Start a Review <Lucide name="arrow-right" size={18} /></a>
+            </div>
+          </section>
+        </PageShell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<WhyPage />);
+  </script>
+</body>
+</html>

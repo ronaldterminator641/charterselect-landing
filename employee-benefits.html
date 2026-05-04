@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Benefits for Charter Schools — CharterSelect</title>
+  <meta name="description" content="Health insurance and employee benefits built for charter schools. See the 7 reasons your current plan is costing more than it should." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .eb-reasons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .eb-reason { background: #fff; border: 1px solid var(--border-1); border-radius: 16px; padding: 32px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 14px; transition: box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out); }
+    .eb-reason:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .eb-reason__head { display: flex; align-items: flex-start; gap: 14px; }
+    .eb-reason__icon { width: 48px; height: 48px; border-radius: 10px; background: var(--cs-teal-50); color: var(--cs-teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .eb-reason__num { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cs-teal); margin-bottom: 2px; }
+    .eb-reason__title { font-family: var(--font-display); font-weight: 400; font-size: 21px; line-height: 1.2; color: var(--fg-1); margin: 0; }
+    .eb-reason__body { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+    .eb-reason__flag { display: flex; align-items: flex-start; gap: 10px; background: #fef9ec; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 16px; font-size: 13.5px; line-height: 1.5; color: #78350f; }
+    @media (max-width: 760px) { .eb-reasons-grid { grid-template-columns: 1fr; } }
+
+    /* Benefits challenge widget (click-to-select) */
+    .eb-rank { display: flex; flex-direction: column; gap: 10px; }
+    .eb-rank__row { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: background 120ms, border-color 120ms, transform 120ms; user-select: none; }
+    .eb-rank__row:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.35); }
+    .eb-rank__row.is-selected { border-color: var(--cs-gold); background: rgba(251,191,36,0.12); }
+    .eb-rank__check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 120ms, border-color 120ms; }
+    .eb-rank__row.is-selected .eb-rank__check { background: var(--cs-gold); border-color: var(--cs-gold); }
+    .eb-rank__check i { color: var(--cs-charcoal); display: none; }
+    .eb-rank__row.is-selected .eb-rank__check i { display: block; }
+    .eb-rank__label { font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.95); flex: 1; }
+
+    /* EB peer stat colours (reuse cs-peer-stat) */
+    .eb-insight { display: flex; align-items: flex-start; gap: 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(251,191,36,0.35); border-radius: 12px; padding: 20px 24px; margin-top: 24px; }
+    .eb-insight__emoji { font-size: 28px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+    .eb-insight__head { font-family: var(--font-display); font-size: 20px; color: var(--cs-gold); margin-bottom: 6px; }
+    .eb-insight__body { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.65; margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=3"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meenoepv';
+    const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
+
+    const EB_REASONS = [
+      {
+        icon: 'trending-up',
+        num: 'Reason 01',
+        title: 'Fully-Insured Carrier Markups',
+        body: 'Fully-insured plans bundle carrier profit margins, administrative overhead, and risk reserves directly into your premium — none of which improve your staff\'s benefits. Schools with stable, predictable claims experience are often subsidizing higher-risk groups in the carrier\'s broader pool. We benchmark your actual claims utilization against your premium and show you whether self-funded or level-funded alternatives put that margin back in your budget.',
+        flag: 'We commonly find schools overpaying by 15–30% for coverage their claims history doesn\'t justify.',
+      },
+      {
+        icon: 'pill',
+        num: 'Reason 02',
+        title: 'Pharmacy Rebate Leakage',
+        body: 'Drug manufacturers pay rebates to pharmacy benefit managers (PBMs) based on formulary placement. In most fully-insured arrangements, those rebates flow to the carrier — not to your school. For a school with 80 employees, this can represent tens of thousands of dollars annually that never reaches you. Transparent PBM contracts and pass-through rebate structures redirect that value where it belongs.',
+        flag: 'Pharmacy rebates are one of the least visible cost levers in employer health plans — and one of the most impactful.',
+      },
+      {
+        icon: 'file-warning',
+        num: 'Reason 03',
+        title: 'Poor Plan Document Design',
+        body: 'Plan documents that lack clear cost-sharing structures, preventive care incentives, or centers-of-excellence provisions quietly drive up utilization. Employees defaulting to the ER for non-emergency care, using out-of-network providers without knowing it, or avoiding primary care because of confusing deductibles all show up in your claims — and then in next year\'s renewal. We redesign plan structures that guide utilization without stripping benefits.',
+      },
+      {
+        icon: 'receipt',
+        num: 'Reason 04',
+        title: 'Inflated Provider Billing',
+        body: 'Hospitals and large provider networks negotiate aggressively with carriers, and the resulting contracts often contain billing irregularities, duplicate charges, and code-bundling errors that your insurer\'s automated systems won\'t catch. Reference-based pricing, independent bill review, and direct employer contracts are tools that bring actual reimbursement in line with fair market rates rather than chargemaster fiction.',
+        flag: 'Independent bill review catches overcharges on a meaningful percentage of inpatient and outpatient claims.',
+      },
+      {
+        icon: 'percent',
+        num: 'Reason 05',
+        title: '"Network Discounts" That Aren\'t',
+        body: 'A 40% network discount on a $40,000 charge sounds like a win — but if the underlying charge is 4x a fair rate, you\'re still overpaying by a wide margin. Narrow networks that restrict employee choice, tiered networks that shift cost instead of controlling it, and opaque fee schedules all hide under the label of "in-network savings." We help schools understand what they\'re actually paying versus what they should be.',
+      },
+      {
+        icon: 'map-pin-off',
+        num: 'Reason 06',
+        title: 'Inefficient Care Navigation',
+        body: 'When employees can\'t easily find in-network providers, get second opinions, or understand their benefits, they make costly decisions by default. Advocacy and navigation services — concierge support that helps staff find the right care at the right cost — consistently reduce emergency utilization and out-of-network claims. For a charter school with limited HR capacity, this is also the service that reduces the volume of benefits questions landing on your HR coordinator\'s desk.',
+      },
+      {
+        icon: 'users',
+        num: 'Reason 07',
+        title: 'One-Size-Fits-All Plans',
+        body: 'Charter school staff skew younger, often include a significant share of educators on income-driven student loan repayment plans, and frequently value supplemental mental health and wellness benefits more than legacy carrier designs account for. A plan benchmarked against the general employer market doesn\'t reflect those demographics. We build benefit strategies around who your people actually are — and use that to improve participation, retention, and perceived value of the benefit dollar you\'re already spending.',
+      },
+    ];
+
+    const EB_CHALLENGES = [
+      { id: 0, text: 'Controlling rising costs', insight: { emoji: '📈', head: 'The most common challenge we hear.', body: 'Rising premiums affect nearly every school we work with. The fix usually starts with understanding what\'s actually driving your claims — carrier markup, pharmacy costs, or utilization patterns. A benefits review puts numbers on it.' } },
+      { id: 1, text: 'Improving staff benefits without increasing budget', insight: { emoji: '🎯', head: 'More value from the same dollar.', body: 'Restructuring plan design, adding voluntary benefits, or shifting to a level-funded model can meaningfully improve what employees receive without increasing your premium contribution. We see this regularly when schools move off fully-insured carrier contracts.' } },
+      { id: 2, text: 'Low employee participation and engagement', insight: { emoji: '🤝', head: 'A benefits problem and a communication problem.', body: 'Low participation often signals that employees don\'t understand the plan, don\'t trust it, or feel it\'s too expensive for what it delivers. One-on-one enrollment support for every employee — not a group meeting — consistently moves the needle.' } },
+      { id: 3, text: 'Benefits administration time drain', insight: { emoji: '⏱️', head: 'Your HR coordinator deserves backup.', body: 'Billing reconciliation, onboarding enrollments, and answering staff benefits questions can consume hours your team doesn\'t have. We handle those functions — your team stays focused on the school, not the carrier.' } },
+      { id: 4, text: "Not knowing if our current plan is competitive", insight: { emoji: '🔍', head: 'Benchmarking answers that question.', body: "Most schools don't know how their benefits compare until they're already losing staff to better offers. A benchmarking review shows you exactly where you stand against comparable charter schools and what it would take to close the gap." } },
+    ];
+
+    function EBRankWidget() {
+      const { useState } = React;
+      const [selected, setSelected] = useState(null);
+      const [contactName, setContactName] = useState('');
+      const [schoolName, setSchoolName] = useState('');
+      const [contactEmail, setContactEmail] = useState('');
+      const [submitting, setSubmitting] = useState(false);
+      const [submitted, setSubmitted] = useState(false);
+      const [submitError, setSubmitError] = useState(null);
+
+      const canSubmit = selected !== null && contactName.trim() && schoolName.trim() && contactEmail.trim() && !submitting;
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!canSubmit) return;
+        setSubmitting(true);
+        setSubmitError(null);
+        const challenge = EB_CHALLENGES.find(c => c.id === selected);
+        const body = new URLSearchParams();
+        body.append('_replyto', contactEmail);
+        body.append('_subject', `Benefits Challenge — ${schoolName} (${contactName})`);
+        body.append('_autoresponse', `Hi ${contactName}, thanks for sharing your benefits challenge. Aaron will be in touch shortly with relevant information for ${schoolName}. — CharterSelect`);
+        body.append('Form Type', 'Benefits Challenge Check');
+        body.append('Contact Name', contactName);
+        body.append('School Name', schoolName);
+        body.append('Email', contactEmail);
+        body.append('Top Benefits Challenge', challenge ? challenge.text : '');
+        try {
+          const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body, headers: { Accept: 'application/json' } });
+          if (res.ok) { setSubmitted(true); }
+          else {
+            const data = await res.json().catch(() => ({}));
+            setSubmitError(data.error || 'Submission failed — please try again.');
+          }
+        } catch { setSubmitError('Network error. Please check your connection.'); }
+        finally { setSubmitting(false); }
+      };
+
+      const selectedChallenge = EB_CHALLENGES.find(c => c.id === selected);
+
+      return (
+        <section className="cs-section cs-section--teal" id="contact">
+          <div className="cs-section__inner" style={{maxWidth: 820}}>
+            <div className="cs-eyebrow cs-eyebrow--on-teal">Benefits Challenge Check</div>
+            <h2 className="cs-h2-on-teal">What is your biggest health insurance challenge right now?</h2>
+            <p className="cs-lead-on-teal" style={{marginBottom: 32}}>
+              Select the one that matters most — we'll share what we typically find in that area.
+            </p>
+
+            <div className="eb-rank">
+              {EB_CHALLENGES.map(c => (
+                <div
+                  key={c.id}
+                  className={`eb-rank__row${selected === c.id ? ' is-selected' : ''}`}
+                  onClick={() => setSelected(c.id)}
+                >
+                  <div className="eb-rank__check">
+                    <Lucide name="check" size={13} />
+                  </div>
+                  <div className="eb-rank__label">{c.text}</div>
+                </div>
+              ))}
+            </div>
+
+            {selected !== null && !submitted && (
+              <div className="cs-assess__result" style={{marginTop: 28}}>
+                {selectedChallenge && (
+                  <div className="eb-insight" style={{margin: '0 0 20px'}}>
+                    <div className="eb-insight__emoji">{selectedChallenge.insight.emoji}</div>
+                    <div>
+                      <div className="eb-insight__head">{selectedChallenge.insight.head}</div>
+                      <p className="eb-insight__body">{selectedChallenge.insight.body}</p>
+                    </div>
+                  </div>
+                )}
+                <p style={{margin: '0 0 4px', color: 'rgba(255,255,255,0.75)', fontSize: 14, lineHeight: 1.6}}>
+                  Enter your info and Aaron will follow up with specifics for your school.
+                </p>
+                <form onSubmit={handleSubmit} style={{width: '100%'}}>
+                  <div className="cs-upload__fields">
+                    <div className="cs-upload__field">
+                      <label className="cs-upload__label">Your Name *</label>
+                      <input className="cs-upload__input" type="text" placeholder="Jane Smith" value={contactName} onChange={e => setContactName(e.target.value)} required />
+                    </div>
+                    <div className="cs-upload__field">
+                      <label className="cs-upload__label">School Name *</label>
+                      <input className="cs-upload__input" type="text" placeholder="Lincoln Charter Academy" value={schoolName} onChange={e => setSchoolName(e.target.value)} required />
+                    </div>
+                    <div className="cs-upload__field">
+                      <label className="cs-upload__label">Your Email *</label>
+                      <input className="cs-upload__input" type="email" placeholder="jane@yourschool.org" value={contactEmail} onChange={e => setContactEmail(e.target.value)} required />
+                    </div>
+                  </div>
+                  {submitError && <div className="cs-upload__error">{submitError}</div>}
+                  <button type="submit" className="cs-btn cs-btn--gold cs-upload__submit" disabled={!canSubmit}>
+                    {submitting
+                      ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> Submitting…</>
+                      : <><Lucide name="send" size={16} /> Get Insights for My School</>
+                    }
+                  </button>
+                  <div className="cs-upload__lock" style={{justifyContent: 'center'}}>
+                    <Lucide name="lock" size={13} />
+                    <span>Your info stays private · No sales call required · No obligation</span>
+                  </div>
+                </form>
+              </div>
+            )}
+
+            {submitted && selectedChallenge && (
+              <div className="cs-assess__result" style={{marginTop: 28}}>
+                <div className="cs-peer-stat">
+                  <div className="cs-peer-stat__emoji">{selectedChallenge.insight.emoji}</div>
+                  <div>
+                    <div className="cs-peer-stat__headline">Thanks, {contactName}.</div>
+                    <p className="cs-peer-stat__body">Aaron will review your challenge — <em>{selectedChallenge.text}</em> — and follow up with what we typically find at schools like {schoolName}. In the meantime, book a quick call to go deeper.</p>
+                  </div>
+                </div>
+                <div className="cs-rank__ctas" style={{marginTop: 16}}>
+                  <a
+                    className="cs-btn cs-btn--gold"
+                    href={CALENDAR_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{display:'inline-flex', alignItems:'center', gap:8, textDecoration:'none', flex:1, justifyContent:'center'}}
+                  >
+                    <Lucide name="calendar" size={16} />
+                    Book a 20-min Call
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      );
+    }
+
+    function EmployeeBenefits() {
+      return (
+        <PageShell
+          screen="Employee Benefits"
+          eyebrow="Employee Benefits"
+          title="7 Reasons Your Health Insurance Plan Is Costing More Than It Should"
+          lead="These are the cost drivers most brokers don't surface — because fixing them requires more work than renewing the same carrier contract.">
+
+          {/* ── 7 Reasons grid ── */}
+          <section className="cs-section" style={{paddingTop: 48, paddingBottom: 80}}>
+            <div className="cs-prose">
+              <div className="eb-reasons-grid">
+                {EB_REASONS.map((r, i) => (
+                  <article className="eb-reason" key={i}>
+                    <div className="eb-reason__head">
+                      <div className="eb-reason__icon">
+                        <Lucide name={r.icon} size={22} />
+                      </div>
+                      <div>
+                        <div className="eb-reason__num">{r.num}</div>
+                        <h2 className="eb-reason__title">{r.title}</h2>
+                      </div>
+                    </div>
+                    <p className="eb-reason__body">{r.body}</p>
+                    {r.flag && (
+                      <div className="eb-reason__flag">
+                        <Lucide name="search" size={14} color="#b45309" style={{flexShrink:0, marginTop:1}} />
+                        <span>{r.flag}</span>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── What we offer ── */}
+          <section className="cs-section cs-section--cream">
+            <div className="cs-section__inner">
+              <div className="cs-section__head">
+                <div className="cs-eyebrow">What We Do Differently</div>
+                <h2>Benefits support your HR team didn't know they could have.</h2>
+              </div>
+              <div className="cs-grid cs-grid--4" style={{marginTop: 0}}>
+                {[
+                  { icon: 'users', title: 'One-on-One Enrollment', body: 'Every employee gets a dedicated enrollment conversation — not a group meeting. We answer questions, explain trade-offs, and make sure no one defaults into the wrong plan.' },
+                  { icon: 'shield-dollar', title: 'Concierge Advocacy', body: 'When a staff member gets a surprise bill or a claim is denied, we fight it. Our concierge team handles appeals, billing disputes, and care navigation so your HR team doesn\'t have to.' },
+                  { icon: 'landmark', title: 'Funding Strategy', body: 'Fully-insured, level-funded, or self-funded — we benchmark your actual claims data against each structure and recommend the one that serves your school\'s financial position.' },
+                  { icon: 'bar-chart-2', title: 'Renewal Benchmarking', body: 'We pull peer data from comparable charter schools to show you whether your renewal offer is fair — and use that to negotiate terms your carrier didn\'t volunteer.' },
+                ].map(it => (
+                  <article className="cs-card" key={it.title}>
+                    <div className="cs-card__icon"><Lucide name={it.icon} size={22} /></div>
+                    <h4 className="cs-card__title">{it.title}</h4>
+                    <p className="cs-card__body">{it.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Testimonial ── */}
+          <section className="cs-section">
+            <div className="cs-section__inner" style={{maxWidth: 780}}>
+              <div className="cs-quote-card" style={{maxWidth: '100%'}}>
+                <div style={{display:'inline-flex', alignItems:'center', gap:6, background:'var(--cs-teal-50)', color:'var(--cs-teal)', fontSize:11, fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', padding:'4px 10px', borderRadius:999, marginBottom:12}}>
+                  <Lucide name="check-circle" size={12} />
+                  Built from scratch · Insurance + HR structured for a charter from day one
+                </div>
+                <Lucide name="quote" size={28} />
+                <p className="cs-quote">"Aaron came in and supported us so much with our insurance, insurance selection, and guidance for these critical human resources elements. He also went above and beyond and completed work that I did not have the capacity to do."</p>
+                <div className="cs-quote-attr">
+                  <strong>Mia Coffing, M.Ed., BCBA</strong><br/>
+                  <span>Executive Director · Prospect Academy</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── Interactive challenge widget ── */}
+          <EBRankWidget />
+
+        </PageShell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<EmployeeBenefits />);
+  </script>
+</body>
+</html>

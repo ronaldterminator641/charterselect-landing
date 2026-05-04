@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solutions — CharterSelect</title>
+  <meta name="description" content="Property, liability, employee benefits, and year-round risk guidance from advisors who only serve charter schools." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=3"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+    const SOLUTIONS = [
+      {
+        icon: 'shield-check',
+        title: 'Property & Liability',
+        body: 'Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits. These aren\'t edge cases - they show up in the majority of policies we review.',
+        items: [
+          'Building, contents, and equipment coverage',
+          'General and professional liability',
+          'Educators legal liability (EPLI)',
+          'Cyber liability and data breach response',
+          'Auto and abuse / molestation coverage',
+        ],
+      },
+      {
+        icon: 'graduation-cap',
+        title: 'Employee Benefits',
+        body: 'Health, dental, vision, and retirement plans designed for school staff, school budgets, and school calendars.',
+        items: [
+          'Major medical and HSA-compatible plans',
+          'Dental, vision, life, and disability',
+          '403(b) retirement and pension alternatives',
+          'Voluntary benefits and worksite products',
+          'Open-enrollment and onboarding support',
+        ],
+      },
+      {
+        icon: 'compass',
+        title: 'Risk Guidance',
+        body: 'Year-round advisory, contract review, claims advocacy, renewal benchmarking, and board level risk briefings. Not just a quote at renewal.',
+        items: [
+          'Annual coverage and exposure review',
+          'Claims advocacy when something goes wrong',
+          'Renewal strategy and market benchmarking',
+          'Vendor and contract review',
+          'Board and board-meeting risk briefings',
+        ],
+      },
+      {
+        icon: 'handshake',
+        title: 'Partnership Model',
+        body: 'Independent and carrier agnostic. We represent you, not the insurer who pays the biggest bonus. Responsiveness, Follow Through, Innovation and Expertise are core to how we operate.',
+        items: [
+          'Multi-carrier benchmarking',
+          'Transparent commission disclosure',
+          'No high-pressure annual switches',
+          'Direct line to a named advisor',
+          'Long-term renewal stewardship',
+        ],
+      },
+    ];
+
+    const STEPS = [
+      { n: '01', title: 'Send what you have', body: 'Upload current policies, plan summaries, or last year\'s renewal — whatever you can find.' },
+      { n: '02', title: 'Benchmark review', body: 'Within three business days we send back a written summary of where you stand against the market.' },
+      { n: '03', title: 'Decide', body: 'Stay where you are with confidence, or let us shop the market on your behalf. No pressure.' },
+      { n: '04', title: 'Steward', body: 'If you partner with us, we stay close all year — claims, renewals, board questions, vendor changes.' },
+    ];
+
+    function SolutionsPage() {
+      return (
+        <PageShell
+          screen="Solutions"
+          eyebrow="Solutions"
+          title="Insurance built for charter schools — not adapted to them."
+          lead="Property, liability, employee benefits, and year-round risk guidance from advisors who only serve charter schools.">
+          <section className="cs-section" style={{paddingTop: 56, paddingBottom: 56}}>
+            <div className="cs-prose">
+              <div className="cs-detail-grid">
+                {SOLUTIONS.map(s => (
+                  <article className="cs-detail" key={s.title}>
+                    <div className="cs-detail__head">
+                      <div className="cs-card__icon"><Lucide name={s.icon} size={22} /></div>
+                      <h3>{s.title}</h3>
+                    </div>
+                    <p>{s.body}</p>
+                    <ul>{s.items.map(i => <li key={i}>{i}</li>)}</ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="cs-section cs-section--cream" style={{paddingTop: 64, paddingBottom: 80}}>
+            <div className="cs-prose">
+              <div className="cs-eyebrow">How it works</div>
+              <h2 style={{marginTop: 8}}>From first call to long-term steward.</h2>
+              <p>Most schools come to us mid-renewal, frustrated by a process that feels rushed and opaque. We slow it down.</p>
+              <div className="cs-steps">
+                {STEPS.map(s => (
+                  <div className="cs-step" key={s.n}>
+                    <div className="cs-step__num">{s.n}</div>
+                    <div className="cs-step__title">{s.title}</div>
+                    <p className="cs-step__body">{s.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="cs-cta-strip">
+            <div className="cs-cta-strip__inner">
+              <div>
+                <h2>Get a complimentary benchmark review.</h2>
+                <p>Send us your current policies and we'll show you where you stand — no obligation.</p>
+              </div>
+              <a className="cs-btn cs-btn--gold" href="index.html#contact">Start a Review <Lucide name="arrow-right" size={18} /></a>
+            </div>
+          </section>
+        </PageShell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<SolutionsPage />);
+  </script>
+</body>
+</html>

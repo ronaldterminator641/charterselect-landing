@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Aaron Schwen — CharterSelect</title>
+  <meta name="description" content="A message from CharterSelect founder Aaron Schwen on why he built the only insurance agency built exclusively for charter schools." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    /* ── Founder card layout ── */
+    .founder-hero { max-width: 860px; margin: 0 auto; padding: 56px 32px 0; display: flex; align-items: flex-start; gap: 40px; }
+    .founder-photo { flex-shrink: 0; }
+    .founder-photo img { width: 180px; height: 180px; border-radius: 16px; object-fit: cover; object-position: center top; box-shadow: 0 8px 32px rgba(15,118,110,0.15); display: block; }
+    .founder-photo__placeholder { width: 180px; height: 180px; border-radius: 16px; background: var(--cs-teal-50); border: 2px dashed var(--cs-teal); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--cs-teal); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-align: center; padding: 16px; }
+    .founder-id { padding-top: 8px; }
+    .founder-name { font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1.1; color: var(--fg-1); margin: 0 0 6px; }
+    .founder-title { font-size: 15px; color: var(--cs-teal); font-weight: 600; letter-spacing: 0.04em; margin: 0 0 16px; }
+    .founder-social { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── Letter body ── */
+    .founder-letter { max-width: 860px; margin: 0 auto; padding: 40px 32px 0; }
+    .founder-letter p { font-family: var(--font-body); font-size: 17.5px; line-height: 1.8; color: var(--fg-2); margin: 0 0 26px; }
+    .founder-letter p:last-child { margin-bottom: 0; }
+    .founder-letter .founder-closing { font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--fg-1); border-left: 3px solid var(--cs-gold); padding-left: 20px; margin: 40px 0 0; line-height: 1.6; }
+
+    /* ── CTA row ── */
+    .founder-ctas { max-width: 860px; margin: 48px auto 0; padding: 0 32px 80px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .founder-ctas__divider { width: 1px; height: 32px; background: var(--border-1); margin: 0 4px; }
+
+    /* ── Signature flourish ── */
+    .founder-sig { max-width: 860px; margin: 0 auto; padding: 32px 32px 0; }
+    .founder-sig__name { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--fg-1); line-height: 1; }
+    .founder-sig__role { font-size: 13px; color: var(--fg-muted); margin-top: 6px; font-weight: 500; }
+
+    @media (max-width: 640px) {
+      .founder-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
+      .founder-social { justify-content: center; }
+      .founder-letter p { font-size: 16px; }
+      .founder-ctas { flex-direction: column; align-items: flex-start; }
+      .founder-ctas__divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=8"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
+    const LINKEDIN_URL  = 'https://www.linkedin.com/in/aaron-schwen-2a80451a/';
+
+    function AboutPage() {
+      const hasPhoto = true;
+
+      return (
+        <div data-screen-label="About">
+          <TopNav onCta={() => { window.location.href = 'index.html#contact'; }} />
+
+          {/* ── Page hero ── */}
+          <section className="cs-page-hero">
+            <div className="cs-page-hero__inner">
+              <a className="cs-back" href="index.html"><Lucide name="arrow-left" size={14} /> Back to home</a>
+              <div className="cs-eyebrow">Message from the Founder</div>
+              <h1 className="cs-page-hero__title">Why I Built CharterSelect</h1>
+            </div>
+          </section>
+
+          {/* ── Founder card ── */}
+          <section style={{background: '#fff', borderBottom: '1px solid var(--border-1)'}}>
+            <div className="founder-hero">
+              <div className="founder-photo">
+                {hasPhoto ? (
+                  <img src="assets/aaron-schwen.jpg" alt="Aaron Schwen, Founder of CharterSelect" />
+                ) : (
+                  <div className="founder-photo__placeholder">
+                    <Lucide name="user" size={36} />
+                    <span>Photo<br/>Placeholder</span>
+                  </div>
+                )}
+              </div>
+              <div className="founder-id">
+                <h2 className="founder-name">Aaron Schwen</h2>
+                <p className="founder-title">Founder, CharterSelect</p>
+                <div className="founder-social">
+                  <a
+                    className="cs-btn cs-btn--secondary cs-btn--sm"
+                    href={LINKEDIN_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{textDecoration: 'none'}}
+                  >
+                    <Lucide name="linkedin" size={15} />
+                    Connect on LinkedIn
+                  </a>
+                  <a
+                    className="cs-btn cs-btn--primary cs-btn--sm"
+                    href={CALENDAR_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{textDecoration: 'none'}}
+                  >
+                    <Lucide name="calendar" size={15} />
+                    Book a Complimentary Benchmark Review
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── Letter ── */}
+          <section style={{background: '#fff'}}>
+            <div className="founder-letter">
+              <p>
+                I started my career in insurance the same way most brokers do — working inside large firms with big client lists and corporate mandates. Early on I identified charter schools as an underserved niche and made a deliberate choice to go deep. What I found was a community I never expected to fall in love with.
+              </p>
+              <p>
+                One of my first calls from a charter school CFO came while she was driving a school bus, asking me about a workers compensation audit. That moment told me everything I needed to know about this community. Entrepreneurial, mission-driven, wearing ten hats at once, and almost always underserved by brokers who saw them as too small to matter.
+              </p>
+              <p>
+                I spent 15 years fighting that from the inside — pushing for better coverage, earlier renewals, and creative solutions for schools that couldn't afford to get it wrong. Too small to matter to the firm. Too important to me to accept that. So I stopped fighting from the inside and built something from scratch.
+              </p>
+              <p>
+                CharterSelect exists for one reason. To be the broker I always wanted to be for the schools that deserve it most. Independent, carrier-agnostic, and built entirely around your mission — not a corporation's bottom line. A portion of every policy we write goes back to the communities our schools serve, because that's what this work is actually for.
+              </p>
+              <div className="founder-closing">
+                If you've ever felt like your broker doesn't really understand your world, you're probably right. Let's fix that.
+              </div>
+            </div>
+
+            {/* ── Signature ── */}
+            <div className="founder-sig">
+              <div className="founder-sig__name">Aaron Schwen</div>
+              <div className="founder-sig__role">Founder, CharterSelect · aschwen@charterselect.com</div>
+            </div>
+
+            {/* ── CTAs ── */}
+            <div className="founder-ctas">
+              <a
+                className="cs-btn cs-btn--primary"
+                href={CALENDAR_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{textDecoration: 'none'}}
+              >
+                <Lucide name="calendar" size={16} />
+                Book a Complimentary Benchmark Review
+              </a>
+              <div className="founder-ctas__divider" />
+              <a
+                className="cs-link cs-link--lg"
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Lucide name="linkedin" size={16} />
+                Connect on LinkedIn
+              </a>
+            </div>
+          </section>
+
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<AboutPage />);
+  </script>
+</body>
+</html>
