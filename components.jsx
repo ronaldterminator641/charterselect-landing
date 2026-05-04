@@ -219,23 +219,21 @@ function WhyUs() {
   const t = TESTIMONIALS[idx];
   const timerRef = React.useRef(null);
   const touchStartX = React.useRef(null);
+  const [paused, setPaused] = React.useState(false);
 
   const prev = () => setIdx(i => (i - 1 + total) % total);
   const next = () => setIdx(i => (i + 1) % total);
 
-  // Auto-cycle every 5s, reset on manual interaction
-  const resetTimer = () => {
-    clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => setIdx(i => (i + 1) % total), 5000);
-  };
+  // Auto-cycle every 5s, stops permanently on manual interaction
   React.useEffect(() => {
-    resetTimer();
+    if (paused) return;
+    timerRef.current = setInterval(() => setIdx(i => (i + 1) % total), 5000);
     return () => clearInterval(timerRef.current);
-  }, []);
+  }, [paused]);
 
-  const handlePrev = () => { prev(); resetTimer(); };
-  const handleNext = () => { next(); resetTimer(); };
-  const handleDot = (i) => { setIdx(i); resetTimer(); };
+  const handlePrev = () => { prev(); setPaused(true); clearInterval(timerRef.current); };
+  const handleNext = () => { next(); setPaused(true); clearInterval(timerRef.current); };
+  const handleDot = (i) => { setIdx(i); setPaused(true); clearInterval(timerRef.current); };
 
   // Swipe handlers
   const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
@@ -249,7 +247,7 @@ function WhyUs() {
   const points = [
     'Specialists who only serve charter schools — not one of 500 client types.',
     'Independent and carrier-agnostic. We tell you when to stay put.',
-    'We name what your current broker hasn\'t flagged — umbrella gaps on educators legal liability, retroactive date errors, and D&O coverage that won\'t hold up when your authorizer initiates a dispute.',
+    'We name what your current broker hasn\'t flagged — umbrella gaps on educators legal liability, retroactive date errors, and D&O coverage that is leaving millions of coverage on the table.',
     'A portion of every policy we write supports the communities your school serves.',
   ];
 
@@ -576,84 +574,7 @@ function UploadCta() {
                 <Lucide name="calendar" size={16} />
                 Book a 20-min Call
               </a>
-              <button
-                className="cs-btn"
-                style={{flex: 1, background: 'transparent', border: '1.5px solid rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.8)', display: 'inline-flex', alignItems: 'center', gap: 8, justifyContent: 'center'}}
-                onClick={() => setShowUpload(v => !v)}
-              >
-                <Lucide name="upload-cloud" size={16} />
-                {showUpload ? 'Hide Upload' : 'Upload My Policies'}
-              </button>
             </div>
-          </div>
-        )}
-
-        {/* ── Policy upload form (optional, revealed after quiz success) ── */}
-        {submitted && showUpload && (
-          <div className="cs-upload__box" style={{marginTop: 20}}>
-            {uploadSubmitted ? (
-              <div className="cs-upload__success">
-                <div className="cs-upload__success-icon">
-                  <Lucide name="check" size={26} />
-                </div>
-                <div className="cs-upload__success-title">Policies Received!</div>
-                <p className="cs-upload__success-msg">
-                  We've received your policies for <strong>{schoolName}</strong> and will send your written benchmark to <strong>{contactEmail}</strong> within 3 business days.
-                </p>
-                <a
-                  className="cs-btn cs-btn--gold"
-                  href={CALENDAR_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none', marginTop: 4}}
-                >
-                  <Lucide name="calendar" size={16} />
-                  Also Book a 20-min Call
-                </a>
-              </div>
-            ) : (
-              <>
-                <Lucide name="upload-cloud" size={28} />
-                <div className="cs-upload__title">Upload your current policies</div>
-                <div className="cs-upload__sub">PDF or DOC · up to 25 MB · Policies, renewal docs, plan summaries</div>
-                <form onSubmit={handleUploadSubmit} style={{width: '100%'}}>
-                  {/* Contact already captured from quiz — just confirm who's uploading */}
-                  <p style={{fontSize: 13, color: 'rgba(255,255,255,0.7)', margin: '0 0 16px', textAlign: 'left'}}>
-                    Uploading for <strong style={{color: '#fff'}}>{contactName}</strong> at <strong style={{color: '#fff'}}>{schoolName}</strong> · {contactEmail}
-                  </p>
-                  <div style={{textAlign: 'center'}}>
-                    <label className="cs-btn cs-btn--gold" style={{cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 6}}>
-                      <Lucide name="paperclip" size={15} />
-                      {files.length > 0 ? 'Add More Files' : 'Choose Files'}
-                      <input type="file" hidden multiple accept=".pdf,.doc,.docx" onChange={handleFileChange} />
-                    </label>
-                  </div>
-                  {files.length > 0 && (
-                    <div className="cs-upload__files">
-                      {files.map((f, idx) => (
-                        <div key={idx} className="cs-upload__file-item">
-                          <Lucide name="file-text" size={14} color="var(--cs-gold)" />
-                          <span>{f.name}</span>
-                          <span style={{color: 'rgba(255,255,255,0.4)', fontSize: 12, flexShrink: 0}}>{(f.size / 1048576).toFixed(1)} MB</span>
-                          <button type="button" className="cs-upload__file-remove" onClick={() => removeFile(idx)}>×</button>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {uploadError && <div className="cs-upload__error">{uploadError}</div>}
-                  <button type="submit" className="cs-btn cs-btn--gold cs-upload__submit" disabled={!canUploadSubmit}>
-                    {uploadSubmitting
-                      ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> Sending…</>
-                      : <><Lucide name="send" size={16} /> Send Policies for Review</>
-                    }
-                  </button>
-                  <div className="cs-upload__lock" style={{justifyContent: 'center'}}>
-                    <Lucide name="lock" size={13} />
-                    <span>Written benchmark in 3 business days · No sales call required · No obligation to switch</span>
-                  </div>
-                </form>
-              </>
-            )}
           </div>
         )}
       </div>
