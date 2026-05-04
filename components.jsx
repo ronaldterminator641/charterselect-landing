@@ -155,22 +155,38 @@ function Solutions() {
 /* ---------- Featured Testimonial (standalone, appears before WhyUs) ---------- */
 function FeaturedTestimonial() {
   return (
-    <section className="cs-section cs-section--cream">
-      <div className="cs-section__inner" style={{maxWidth: 780}}>
-        <div className="cs-quote-card" style={{maxWidth: '100%'}}>
-          <div style={{display:'flex', alignItems:'flex-start', gap:8, background:'#fef9ec', border:'1px solid #fde68a', borderRadius:8, padding:'8px 12px', marginBottom:12, fontSize:12, color:'#78350f', lineHeight:1.4}}>
-            <Lucide name="search" size={13} color="#b45309" style={{flexShrink:0, marginTop:1}} />
-            <span>Savings achieved, coverage improved.</span>
-          </div>
-          <div style={{display:'inline-flex', alignItems:'center', gap:6, background:'var(--cs-teal-50)', color:'var(--cs-teal)', fontSize:11, fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', padding:'4px 10px', borderRadius:999, marginBottom:12}}>
-            <Lucide name="check-circle" size={12} />
+    <section style={{background:'var(--cs-teal)', padding:'80px 32px'}}>
+      <div style={{maxWidth:860, margin:'0 auto'}}>
+        {/* Outcome badge */}
+        <div style={{display:'flex', justifyContent:'center', marginBottom:32}}>
+          <div style={{display:'inline-flex', alignItems:'center', gap:8, background:'rgba(255,255,255,0.12)', border:'1px solid rgba(255,255,255,0.25)', borderRadius:999, padding:'7px 18px', fontSize:12, fontWeight:700, letterSpacing:'0.13em', textTransform:'uppercase', color:'var(--cs-gold)'}}>
+            <Lucide name="check-circle" size={13} color="var(--cs-gold)" />
             Saved nearly $100K annually · Same or better coverage
           </div>
-          <Lucide name="quote" size={28} />
-          <p className="cs-quote">"Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to."</p>
-          <div className="cs-quote-attr">
-            <strong>Randal C. Shaffer</strong><br/>
-            <span>CEO / Superintendent · Trinity Basin Preparatory</span>
+        </div>
+
+        {/* Giant quote mark */}
+        <div style={{textAlign:'center', marginBottom:8}}>
+          <svg width="48" height="36" viewBox="0 0 48 36" fill="none" aria-hidden="true">
+            <path d="M0 36V22.5C0 10.5 6 3 18 0l3 4.5C13.5 7.5 10.5 12 10.5 18H18V36H0ZM30 36V22.5C30 10.5 36 3 48 0l3 4.5C43.5 7.5 40.5 12 40.5 18H48V36H30Z" fill="rgba(251,191,36,0.35)"/>
+          </svg>
+        </div>
+
+        {/* Quote text */}
+        <p style={{fontFamily:'var(--font-display)', fontWeight:400, fontStyle:'italic', fontSize:'clamp(1.35rem, 2.8vw, 1.75rem)', lineHeight:1.5, color:'#fff', textAlign:'center', margin:'0 0 40px', letterSpacing:'-0.01em'}}>
+          Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to.
+        </p>
+
+        {/* Attribution with headshot */}
+        <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:20}}>
+          <img
+            src="randal.jpeg"
+            alt="Randal C. Shaffer"
+            style={{width:72, height:72, borderRadius:'50%', objectFit:'cover', objectPosition:'center top', border:'3px solid var(--cs-gold)', flexShrink:0, boxShadow:'0 4px 16px rgba(0,0,0,0.25)'}}
+          />
+          <div>
+            <div style={{fontFamily:'var(--font-body)', fontWeight:700, fontSize:16, color:'#fff', marginBottom:3}}>Randal C. Shaffer</div>
+            <div style={{fontSize:13, color:'rgba(255,255,255,0.7)', lineHeight:1.4}}>CEO / Superintendent · Trinity Basin Preparatory</div>
           </div>
         </div>
       </div>
