@@ -655,7 +655,6 @@ function Footer() {
             <h5>Coverage</h5>
             <a href="property-liability.html">Property &amp; Casualty</a>
             <a href="employee-benefits.html">Employee Benefits</a>
-            <a href="property-liability.html">What We Find</a>
           </div>
           <div>
             <h5>Company</h5>
