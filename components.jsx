@@ -22,7 +22,8 @@ function TopNav({ onCta }) {
           <img src="assets/logo-horizontal.png" alt="CharterSelect" />
         </a>
         <nav className="cs-nav__links">
-          <a href="what-we-find.html">What We Find</a>
+          <a href="property-liability.html">Property &amp; Liability</a>
+          <a href="employee-benefits.html">Employee Benefits</a>
           <a href="why.html">Why CharterSelect</a>
           <a href="commitment.html">Our Commitment</a>
           <a href="about.html">About</a>
@@ -56,7 +57,7 @@ function Hero({ onPrimary, onSecondary }) {
           <div className="cs-need-selector">
             <p className="cs-need-selector__label">What are you looking for?</p>
             <div className="cs-need-selector__btns">
-              <a className="cs-need-btn" href="what-we-find.html">
+              <a className="cs-need-btn" href="property-liability.html">
                 <Lucide name="shield" size={20} />
                 <span>Property &amp; Liability Insurance</span>
                 <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
@@ -180,26 +181,12 @@ function FeaturedTestimonial() {
 /* ---------- Why CharterSelect (split) ---------- */
 const TESTIMONIALS = [
   {
-    outcome: 'Savings achieved, coverage improved.',
-    quote: "Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to.",
-    name: "Randal C. Shaffer",
-    role: "CEO / Superintendent",
-    school: "Trinity Basin Preparatory",
-  },
-  {
     found: 'Gap found: Workers Comp missing entirely — school carrying exposure without knowing it',
     outcome: 'Workers Comp added · No premium increase · Coverage gap closed',
     quote: "He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.",
     name: "Anita Howe & Ana Valdovinos",
     role: "HR Manager · Business Manager",
     school: "Newman International Academy",
-  },
-  {
-    outcome: 'Built from scratch · Insurance + HR structured for a charter from day one',
-    quote: "Aaron came in and supported us so much with our insurance, insurance selection, and guidance for these critical human resources elements. He also went above and beyond and completed work that I did not have the capacity to do.",
-    name: "Mia Coffing, M.Ed., BCBA",
-    role: "Executive Director",
-    school: "Prospect Academy",
   },
   {
     outcome: 'Trusted partner · Recommended without hesitation',
@@ -634,21 +621,15 @@ function Footer() {
         <div className="cs-footer__cols">
           <div>
             <h5>What We Find</h5>
-            <a href="what-we-find.html">Directors and Officers</a>
-            <a href="what-we-find.html">Property Gaps</a>
-            <a href="what-we-find.html">Workers Comp Misclassification</a>
+            <a href="property-liability.html">Directors and Officers</a>
+            <a href="property-liability.html">Property Gaps</a>
+            <a href="property-liability.html">Misclassification</a>
           </div>
           <div>
             <h5>Company</h5>
             <a href="why.html">Why CharterSelect</a>
             <a href="commitment.html">Our Commitment</a>
             <a href="index.html#contact">Contact</a>
-          </div>
-          <div>
-            <h5>Resources</h5>
-            <a href="index.html#contact">Benchmark Review</a>
-            <a href="index.html#contact">Renewal Guide</a>
-            <a href="index.html#contact">Claims Help</a>
           </div>
         </div>
       </div>

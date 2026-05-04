@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Property &amp; Liability Insurance for Charter Schools — CharterSelect</title>
+  <meta name="description" content="Eight coverage gaps we find in almost every charter school property and liability policy review — issues most brokers miss because they don't specialize in charter schools." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .cs-scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .cs-scenario { background: #fff; border: 1px solid var(--border-1); border-radius: 16px; padding: 32px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 14px; transition: box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out); }
+    .cs-scenario:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .cs-scenario__head { display: flex; align-items: flex-start; gap: 14px; }
+    .cs-scenario__icon { width: 48px; height: 48px; border-radius: 10px; background: var(--cs-teal-50); color: var(--cs-teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cs-scenario__title { font-family: var(--font-display); font-weight: 400; font-size: 21px; line-height: 1.2; color: var(--fg-1); margin: 0; }
+    .cs-scenario__body { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+    .cs-scenario__finding { display: flex; align-items: flex-start; gap: 10px; background: #fef9ec; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 16px; font-size: 13.5px; line-height: 1.5; color: #78350f; }
+    .cs-scenario__finding i { color: #b45309; margin-top: 1px; flex-shrink: 0; }
+    @media (max-width: 760px) { .cs-scenario-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=8"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meenoepv';
+    const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
+
+    const SCENARIOS = [
+      {
+        icon: 'layers',
+        title: 'Directors and Officers',
+        body: 'When D&O liability is written as a standalone policy, the umbrella often doesn\'t extend over it — missing millions in coverage that could otherwise be protecting your Board for the very claims that tend to be most expensive.',
+      },
+      {
+        icon: 'shield-alert',
+        title: 'Violent Event',
+        body: 'If your policy doesn\'t include Law Enforcement Legal Liability, your Board and staff may have zero coverage for claims arising from their response to an on-campus violent incident.',
+      },
+      {
+        icon: 'calendar-x',
+        title: 'Retro Dates on Critical Coverage',
+        body: 'Sexual abuse, Employment practices Liability, and Failure to Educate can all be claims-made coverages — which means retro dates are everything. When a broker switches carriers without confirming the retro date carries over, years of prior-acts protection quietly disappear. We audit every retro date on every renewal.',
+      },
+      {
+        icon: 'droplets',
+        title: 'Water & Sewage Backup Sublimits',
+        body: 'Property policies typically include water and sewage backup coverage — but with sublimits that are far too low to cover a serious loss. A single event can generate hundreds of thousands in damage. We benchmark sublimits against realistic claim scenarios for your specific facilities.',
+      },
+      {
+        icon: 'lock-open',
+        title: 'Funds Transfer Risk',
+        body: 'A crime policy and a cyber policy each cover different pieces of the fraud puzzle — and schools relying on only one are exposed through the gap between them. Social engineering, fraudulent wire transfer, and ransomware all require carefully coordinated coverage to ensure there\'s no uncovered territory.',
+      },
+      {
+        icon: 'file-warning',
+        title: 'Misclassification',
+        body: 'Charter schools don\'t fit neatly into standard underwriting boxes, and generalist brokers sometimes force them into the closest approximation. A misclassified policy may appear complete — until a major claim is denied because the insured business type doesn\'t match the loss. We know exactly how to classify charter schools correctly from day one.',
+      },
+      {
+        icon: 'file-text',
+        title: 'Satisfying Bond / Landlord Requirements',
+        body: 'Many charter school bonds and landlord agreements specify minimum property insurance requirements — replacement cost valuation, maximum deductibles, or specific coverage triggers. A policy that doesn\'t satisfy those requirements can put your facility agreement or financing at risk. We cross-reference your property coverage against every relevant covenant.',
+      },
+      {
+        icon: 'trending-up',
+        title: 'Buying Too Much Insurance?',
+        body: 'Workers Compensation rates are heavily influenced by experience modifiers and underwriter debits that don\'t always reflect actual risk. Beyond pricing, many schools are simply placed with the wrong carrier — one that doesn\'t specialize in education. You might even be buying policies for coverage you already have.',
+      },
+    ];
+
+    // Peer comparison data — % of charter school leaders who rank each concern #1.
+    const PEER_STATS = { 0: 38, 1: 11, 2: 27, 3: 15, 4: 9 };
+    const PEER_LABELS = {
+      0: 'umbrella / educators legal liability',
+      1: 'water & sewage damage limits',
+      2: 'building valuation accuracy',
+      3: 'cyber & phishing coverage',
+      4: 'student injury medical coverage',
+    };
+
+    function getPeerStat(topId) {
+      const pct = PEER_STATS[topId];
+      const label = PEER_LABELS[topId];
+      if (pct >= 30) return { emoji: '🤝', headline: `You're in the majority.`, body: `${pct}% of charter school leaders we've surveyed also rank ${label} as their #1 concern — and it's the gap we find most often in policy reviews.` };
+      if (pct >= 18) return { emoji: '🔍', headline: `You're tracking something real.`, body: `${pct}% of leaders share your top concern about ${label}. It's not the most common answer, but it's one of the gaps that surprises schools the most when we dig in.` };
+      return { emoji: '⚡', headline: `You're ahead of the curve.`, body: `Only ${pct}% of charter school leaders flag ${label} first — most don't catch it until a claim. That instinct is exactly what a benchmark review is built to validate.` };
+    }
+
+    const RANK_ITEMS = [
+      { id: 0, text: 'Your umbrella policy sits over Educators Legal Liability, adding million(s) in coverage to D&O, EPLI, & Failure to Educate limits.' },
+      { id: 1, text: 'Coverage to repair/replace damaged property due to water damage.' },
+      { id: 2, text: 'If there was a total loss at campus, you\'d have enough coverage to rebuild your campus, and money to provide temporary space to continue educating.' },
+      { id: 3, text: 'A fraudulent invoice your school paid as a result of a phishing scam would be covered.' },
+      { id: 4, text: 'A student seriously injured with no health insurance has their medical bills covered.' },
+    ];
+
+    function PLRankWidget() {
+      const { useState } = React;
+      const [items, setItems] = useState(RANK_ITEMS);
+      const [dragging, setDragging] = useState(null);
+      const [dragOver, setDragOver] = useState(null);
+      const [hasRanked, setHasRanked] = useState(false);
+      const [contactName, setContactName] = useState('');
+      const [schoolName, setSchoolName] = useState('');
+      const [contactEmail, setContactEmail] = useState('');
+      const [submitting, setSubmitting] = useState(false);
+      const [submitted, setSubmitted] = useState(false);
+      const [submitError, setSubmitError] = useState(null);
+      const [showUpload, setShowUpload] = useState(false);
+      const [files, setFiles] = useState([]);
+      const [uploadSubmitting, setUploadSubmitting] = useState(false);
+      const [uploadSubmitted, setUploadSubmitted] = useState(false);
+      const [uploadError, setUploadError] = useState(null);
+
+      const onDragStart = (e, idx) => { setDragging(idx); e.dataTransfer.effectAllowed = 'move'; };
+      const onDragOver = (e, idx) => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; setDragOver(idx); };
+      const onDrop = (e, idx) => {
+        e.preventDefault();
+        if (dragging === null || dragging === idx) { setDragging(null); setDragOver(null); return; }
+        const next = [...items];
+        const [moved] = next.splice(dragging, 1);
+        next.splice(idx, 0, moved);
+        setItems(next);
+        setDragging(null);
+        setDragOver(null);
+        setHasRanked(true);
+      };
+      const onDragEnd = () => { setDragging(null); setDragOver(null); };
+
+      const canSubmit = contactName.trim() && schoolName.trim() && contactEmail.trim() && !submitting;
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!canSubmit) return;
+        setSubmitting(true);
+        setSubmitError(null);
+        const priorityText = items.map((item, i) => `${i + 1}. ${item.text}`).join('\n');
+        const body = new URLSearchParams();
+        body.append('_replyto', contactEmail);
+        body.append('_subject', `Coverage Check — ${schoolName} (${contactName})`);
+        body.append('_autoresponse', `Hi ${contactName}, thanks for completing the CharterSelect coverage check! Your #1 concern was: "${items[0].text}". Aaron will be in touch shortly. — CharterSelect`);
+        body.append('Form Type', 'P&L Coverage Check / Ranking');
+        body.append('Contact Name', contactName);
+        body.append('School Name', schoolName);
+        body.append('Email', contactEmail);
+        body.append('Top Concern', items[0].text);
+        body.append('Full Priority Ranking', priorityText);
+        try {
+          const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body, headers: { Accept: 'application/json' } });
+          if (res.ok) { setSubmitted(true); }
+          else {
+            const data = await res.json().catch(() => ({}));
+            setSubmitError(data.error || 'Submission failed — please try again.');
+          }
+        } catch { setSubmitError('Network error. Please check your connection.'); }
+        finally { setSubmitting(false); }
+      };
+
+      const handleFileChange = (e) => {
+        setFiles(prev => {
+          const existing = prev.map(f => f.name);
+          const added = Array.from(e.target.files || []).filter(f => !existing.includes(f.name));
+          return [...prev, ...added];
+        });
+        e.target.value = '';
+      };
+      const removeFile = (idx) => setFiles(f => f.filter((_, i) => i !== idx));
+      const canUploadSubmit = contactName.trim() && schoolName.trim() && contactEmail.trim() && files.length > 0 && !uploadSubmitting;
+
+      const handleUploadSubmit = async (e) => {
+        e.preventDefault();
+        if (!canUploadSubmit) return;
+        setUploadSubmitting(true);
+        setUploadError(null);
+        const priorityText = items.map((item, i) => `${i + 1}. ${item.text}`).join('\n');
+        const formData = new FormData();
+        formData.append('_replyto', contactEmail);
+        formData.append('_subject', `Policy Upload — ${schoolName} (${contactName})`);
+        formData.append('_autoresponse', `Hi ${contactName}, we've received your policy documents for ${schoolName}. Your written benchmark review will be in your inbox within 3 business days. — CharterSelect`);
+        formData.append('Form Type', 'Policy Upload');
+        formData.append('Contact Name', contactName);
+        formData.append('School Name', schoolName);
+        formData.append('Email', contactEmail);
+        formData.append('Coverage Priority Ranking', priorityText);
+        files.forEach(f => formData.append('attachment', f));
+        try {
+          const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
+          if (res.ok) { setUploadSubmitted(true); }
+          else {
+            const data = await res.json().catch(() => ({}));
+            setUploadError(data.error || 'Submission failed. Please try again or email aschwen@charterselect.com.');
+          }
+        } catch { setUploadError('Network error. Please check your connection and try again.'); }
+        finally { setUploadSubmitting(false); }
+      };
+
+      const peerStat = submitted ? getPeerStat(items[0].id) : null;
+
+      return (
+        <section className="cs-section cs-section--teal" id="contact">
+          <div className="cs-section__inner" style={{maxWidth: 820}}>
+            <div className="cs-eyebrow cs-eyebrow--on-teal">Charter School Coverage Check</div>
+            <h2 className="cs-h2-on-teal">Rank these coverage areas by how much they concern you.</h2>
+            <p className="cs-lead-on-teal" style={{marginBottom: 32}}>
+              Drag to reorder — most concerning at the top. We'll start your benchmark review there.
+            </p>
+
+            <div className="cs-rank">
+              {items.map((item, idx) => (
+                <div
+                  key={item.id}
+                  className={['cs-rank__row', dragging === idx ? 'is-dragging' : '', dragOver === idx && dragging !== idx ? 'is-over' : ''].join(' ')}
+                  draggable
+                  onDragStart={e => onDragStart(e, idx)}
+                  onDragOver={e => onDragOver(e, idx)}
+                  onDrop={e => onDrop(e, idx)}
+                  onDragEnd={onDragEnd}
+                >
+                  <div className="cs-rank__num">{idx + 1}</div>
+                  <div className="cs-rank__label">{item.text}</div>
+                  <div className="cs-rank__handle"><Lucide name="grip-vertical" size={18} /></div>
+                </div>
+              ))}
+            </div>
+
+            {hasRanked && !submitted && (
+              <div className="cs-assess__result" style={{marginTop: 32}}>
+                <div style={{display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8}}>
+                  <Lucide name="check-circle" size={20} color="var(--cs-gold)" style={{flexShrink: 0, marginTop: 2}} />
+                  <p style={{margin: 0, color: '#fff', fontWeight: 600, fontSize: 15, lineHeight: 1.5}}>
+                    Your #1 concern: <span style={{color: 'var(--cs-gold)'}}>{items[0].text}</span>
+                  </p>
+                </div>
+                <p style={{margin: '0 0 4px', color: 'rgba(255,255,255,0.75)', fontSize: 14, lineHeight: 1.6}}>
+                  Enter your name and email to submit your ranking and see how you compare to other charter school leaders.
+                </p>
+                <form onSubmit={handleSubmit} style={{width: '100%'}}>
+                  <div className="cs-upload__fields">
+                    <div className="cs-upload__field">
+                      <label className="cs-upload__label">Your Name *</label>
+                      <input className="cs-upload__input" type="text" placeholder="Jane Smith" value={contactName} onChange={e => setContactName(e.target.value)} required />
+                    </div>
+                    <div className="cs-upload__field">
+                      <label className="cs-upload__label">School Name *</label>
+                      <input className="cs-upload__input" type="text" placeholder="Lincoln Charter Academy" value={schoolName} onChange={e => setSchoolName(e.target.value)} required />
+                    </div>
+                    <div className="cs-upload__field">
+                      <label className="cs-upload__label">Your Email *</label>
+                      <input className="cs-upload__input" type="email" placeholder="jane@yourschool.org" value={contactEmail} onChange={e => setContactEmail(e.target.value)} required />
+                    </div>
+                  </div>
+                  {submitError && <div className="cs-upload__error">{submitError}</div>}
+                  <button type="submit" className="cs-btn cs-btn--gold cs-upload__submit" disabled={!canSubmit}>
+                    {submitting
+                      ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> Submitting…</>
+                      : <><Lucide name="bar-chart-2" size={16} /> Submit My Rankings</>
+                    }
+                  </button>
+                  <div className="cs-upload__lock" style={{justifyContent: 'center'}}>
+                    <Lucide name="lock" size={13} />
+                    <span>Your info stays private · No sales call required · No obligation</span>
+                  </div>
+                </form>
+              </div>
+            )}
+
+            {submitted && peerStat && (
+              <div className="cs-assess__result" style={{marginTop: 32}}>
+                <div className="cs-peer-stat">
+                  <div className="cs-peer-stat__emoji">{peerStat.emoji}</div>
+                  <div>
+                    <div className="cs-peer-stat__headline">{peerStat.headline}</div>
+                    <p className="cs-peer-stat__body">{peerStat.body}</p>
+                  </div>
+                </div>
+                <p style={{color: 'rgba(255,255,255,0.7)', fontSize: 13, margin: '16px 0 0', lineHeight: 1.6}}>
+                  Thanks, <strong style={{color: '#fff'}}>{contactName}</strong>. Aaron will review your full ranking for <strong style={{color: '#fff'}}>{schoolName}</strong> and follow up. Want to go deeper now?
+                </p>
+                <div className="cs-rank__ctas" style={{marginTop: 16}}>
+                  <a
+                    className="cs-btn cs-btn--gold"
+                    href={CALENDAR_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none', flex: 1, justifyContent: 'center'}}
+                  >
+                    <Lucide name="calendar" size={16} />
+                    Book a 20-min Call
+                  </a>
+                  <button
+                    className="cs-btn"
+                    style={{flex: 1, background: 'transparent', border: '1.5px solid rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.8)', display: 'inline-flex', alignItems: 'center', gap: 8, justifyContent: 'center'}}
+                    onClick={() => setShowUpload(v => !v)}
+                  >
+                    <Lucide name="upload-cloud" size={16} />
+                    {showUpload ? 'Hide Upload' : 'Upload My Policies'}
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {submitted && showUpload && (
+              <div className="cs-upload__box" style={{marginTop: 20}}>
+                {uploadSubmitted ? (
+                  <div className="cs-upload__success">
+                    <div className="cs-upload__success-icon"><Lucide name="check" size={26} /></div>
+                    <div className="cs-upload__success-title">Policies Received!</div>
+                    <p className="cs-upload__success-msg">
+                      We've received your policies for <strong>{schoolName}</strong> and will send your written benchmark to <strong>{contactEmail}</strong> within 3 business days.
+                    </p>
+                    <a className="cs-btn cs-btn--gold" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" style={{display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none', marginTop: 4}}>
+                      <Lucide name="calendar" size={16} />
+                      Also Book a 20-min Call
+                    </a>
+                  </div>
+                ) : (
+                  <>
+                    <Lucide name="upload-cloud" size={28} />
+                    <div className="cs-upload__title">Upload your current policies</div>
+                    <div className="cs-upload__sub">PDF or DOC · up to 25 MB · Policies, renewal docs, plan summaries</div>
+                    <form onSubmit={handleUploadSubmit} style={{width: '100%'}}>
+                      <p style={{fontSize: 13, color: 'rgba(255,255,255,0.7)', margin: '0 0 16px', textAlign: 'left'}}>
+                        Uploading for <strong style={{color: '#fff'}}>{contactName}</strong> at <strong style={{color: '#fff'}}>{schoolName}</strong> · {contactEmail}
+                      </p>
+                      <div style={{textAlign: 'center'}}>
+                        <label className="cs-btn cs-btn--gold" style={{cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 6}}>
+                          <Lucide name="paperclip" size={15} />
+                          {files.length > 0 ? 'Add More Files' : 'Choose Files'}
+                          <input type="file" hidden multiple accept=".pdf,.doc,.docx" onChange={handleFileChange} />
+                        </label>
+                      </div>
+                      {files.length > 0 && (
+                        <div className="cs-upload__files">
+                          {files.map((f, idx) => (
+                            <div key={idx} className="cs-upload__file-item">
+                              <Lucide name="file-text" size={14} color="var(--cs-gold)" />
+                              <span>{f.name}</span>
+                              <span style={{color: 'rgba(255,255,255,0.4)', fontSize: 12, flexShrink: 0}}>{(f.size / 1048576).toFixed(1)} MB</span>
+                              <button type="button" className="cs-upload__file-remove" onClick={() => removeFile(idx)}>×</button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {uploadError && <div className="cs-upload__error">{uploadError}</div>}
+                      <button type="submit" className="cs-btn cs-btn--gold cs-upload__submit" disabled={!canUploadSubmit}>
+                        {uploadSubmitting
+                          ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> Sending…</>
+                          : <><Lucide name="send" size={16} /> Send Policies for Review</>
+                        }
+                      </button>
+                      <div className="cs-upload__lock" style={{justifyContent: 'center'}}>
+                        <Lucide name="lock" size={13} />
+                        <span>Written benchmark in 3 business days · No sales call required · No obligation to switch</span>
+                      </div>
+                    </form>
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        </section>
+      );
+    }
+
+    function PropertyLiability() {
+      return (
+        <PageShell
+          screen="Property & Liability"
+          eyebrow="Property & Liability Insurance"
+          title="8 Coverage Gaps We Find in Almost Every Policy Review"
+          lead="These are the issues most brokers miss — because they don't specialize in charter schools.">
+
+          {/* ── 8 Gaps grid ── */}
+          <section className="cs-section" style={{paddingTop: 48, paddingBottom: 80}}>
+            <div className="cs-prose">
+              <div className="cs-scenario-grid">
+                {SCENARIOS.map((s, i) => (
+                  <article className="cs-scenario" key={i}>
+                    <div className="cs-scenario__head">
+                      <div className="cs-scenario__icon">
+                        <Lucide name={s.icon} size={22} />
+                      </div>
+                      <div>
+                        <h2 className="cs-scenario__title">{s.title}</h2>
+                      </div>
+                    </div>
+                    <p className="cs-scenario__body">{s.body}</p>
+                    {s.finding && (
+                      <div className="cs-scenario__finding">
+                        <Lucide name="search" size={14} />
+                        <span>{s.finding}</span>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Why we can say this ── */}
+          <section className="cs-section cs-section--cream" style={{paddingTop: 56, paddingBottom: 72}}>
+            <div className="cs-prose">
+              <div className="cs-eyebrow">Why we can say this</div>
+              <h2 style={{marginTop: 8}}>We only work with charter schools. That's the entire list.</h2>
+              <p>The largest insurance brokers in the country are generalist agencies. Charter schools are one account type among thousands they serve. When they place a charter school policy, they're applying a template built for a different kind of organization.</p>
+              <p>CharterSelect has reviewed thousands of charter school policies since 2011 — exclusively. Every carrier relationship we have was built around charter-specific exposures. Every benchmark we deliver is measured against what other charter schools are actually carrying.</p>
+              <p>The gaps above aren't obscure. They appear regularly in policies placed by competent generalist brokers — not because they're careless, but because they've never seen enough charter policies to recognize the pattern.</p>
+              <p>We have.</p>
+            </div>
+          </section>
+
+          {/* ── Testimonial ── */}
+          <section className="cs-section">
+            <div className="cs-section__inner" style={{maxWidth: 780}}>
+              <div className="cs-quote-card" style={{maxWidth: '100%'}}>
+                <div style={{display:'flex', alignItems:'flex-start', gap:8, background:'#fef9ec', border:'1px solid #fde68a', borderRadius:8, padding:'8px 12px', marginBottom:12, fontSize:12, color:'#78350f', lineHeight:1.4}}>
+                  <Lucide name="search" size={13} color="#b45309" style={{flexShrink:0, marginTop:1}} />
+                  <span>Savings achieved, coverage improved.</span>
+                </div>
+                <Lucide name="quote" size={28} />
+                <p className="cs-quote">"Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to."</p>
+                <div className="cs-quote-attr">
+                  <strong>Randal C. Shaffer</strong><br/>
+                  <span>CEO / Superintendent · Trinity Basin Preparatory</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── Interactive ranking widget ── */}
+          <PLRankWidget />
+
+        </PageShell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<PropertyLiability />);
+  </script>
+</body>
+</html>
