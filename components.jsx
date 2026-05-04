@@ -15,6 +15,8 @@ const Lucide = ({ name, size = 20, className = '', color }) => (
 
 /* ---------- Top Nav ---------- */
 function TopNav({ onCta }) {
+function TopNav({ onCta }) {
+  const [open, setOpen] = React.useState(false);
   return (
     <header className="cs-nav">
       <div className="cs-nav__inner">
@@ -34,7 +36,27 @@ function TopNav({ onCta }) {
             Get a Review
           </a>
         </div>
+        {/* Hamburger — mobile only */}
+        <button
+          className="cs-nav__hamburger"
+          onClick={() => setOpen(o => !o)}
+          aria-label="Toggle menu"
+        >
+          <Lucide name={open ? 'x' : 'menu'} size={24} />
+        </button>
       </div>
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="cs-nav__mobile-menu" onClick={() => setOpen(false)}>
+          <a href="property-liability.html">Property &amp; Liability</a>
+          <a href="employee-benefits.html">Employee Benefits</a>
+          <a href="why.html">Why CharterSelect</a>
+          <a href="commitment.html">Our Commitment</a>
+          <a href="about.html">About</a>
+          <a href="mailto:aschwen@charterselect.com">Contact</a>
+          <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="cs-nav__mobile-cta">Get a Review</a>
+        </div>
+      )}
     </header>
   );
 }
