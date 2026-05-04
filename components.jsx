@@ -29,7 +29,7 @@ function TopNav({ onCta }) {
           <a href="about.html">About</a>
         </nav>
         <div className="cs-nav__cta">
-          <a className="cs-link" href="#contact">Contact</a>
+          <a className="cs-link" href="mailto:aschwen@charterselect.com">Contact</a>
           <a className="cs-btn cs-btn--primary cs-btn--sm" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}>
             Get a Review
           </a>
@@ -197,19 +197,19 @@ function FeaturedTestimonial() {
 /* ---------- Why CharterSelect (split) ---------- */
 const TESTIMONIALS = [
   {
+    outcome: 'Trusted partner · Recommended without hesitation',
+    quote: "Aaron is one of the hardest working partners I've had the good fortune to come across. I get to work with him at a mutual client and see first hand how Aaron and his team want only the best for their charter school clients. I would recommend him and the charter school team to any of my clients.",
+    name: "Stacey Lawrence",
+    role: "CEO & Founder",
+    school: "GrowthFit Partners LLC",
+  },
+  {
     found: 'Gap found: Workers Comp missing entirely — school carrying exposure without knowing it',
     outcome: 'Workers Comp added · No premium increase · Coverage gap closed',
     quote: "He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.",
     name: "Anita Howe & Ana Valdovinos",
     role: "HR Manager · Business Manager",
     school: "Newman International Academy",
-  },
-  {
-    outcome: 'Trusted partner · Recommended without hesitation',
-    quote: "Aaron is one of the hardest working partners I've had the good fortune to come across. I get to work with him at a mutual client and see first hand how Aaron and his team want only the best for their charter school clients. I would recommend him and the charter school team to any of my clients.",
-    name: "Stacey Lawrence",
-    role: "CEO & Founder",
-    school: "GrowthFit Partners LLC",
   },
 ];
 
