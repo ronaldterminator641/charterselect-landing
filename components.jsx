@@ -15,18 +15,22 @@ const Lucide = ({ name, size = 20, className = '', color }) => (
 
 /* ---------- Top Nav ---------- */
 function TopNav({ onCta }) {
+  const [open, setOpen] = React.useState(false);
+  const links = [
+    { href: 'property-liability.html', label: 'Property & Liability' },
+    { href: 'employee-benefits.html', label: 'Employee Benefits' },
+    { href: 'why.html', label: 'Why CharterSelect' },
+    { href: 'commitment.html', label: 'Our Commitment' },
+    { href: 'about.html', label: 'About' },
+  ];
   return (
-    <header className="cs-nav">
+    <header className="cs-nav" style={{position:'relative', zIndex:300}}>
       <div className="cs-nav__inner">
         <a className="cs-nav__brand" href="index.html">
           <img src="assets/logo-horizontal.png" alt="CharterSelect" />
         </a>
         <nav className="cs-nav__links">
-          <a href="property-liability.html">Property &amp; Liability</a>
-          <a href="employee-benefits.html">Employee Benefits</a>
-          <a href="why.html">Why CharterSelect</a>
-          <a href="commitment.html">Our Commitment</a>
-          <a href="about.html">About</a>
+          {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
         </nav>
         <div className="cs-nav__cta">
           <a className="cs-link" href="mailto:aschwen@charterselect.com">Contact</a>
@@ -34,7 +38,21 @@ function TopNav({ onCta }) {
             Get a Review
           </a>
         </div>
+        <button className="cs-hamburger" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
+          <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} />
+          <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} />
+          <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} />
+        </button>
       </div>
+      {open && (
+        <nav className="cs-mobile-menu">
+          {links.map(l => (
+            <a key={l.href} href={l.href} className="cs-mobile-menu__link" onClick={() => setOpen(false)}>{l.label}</a>
+          ))}
+          <a href="mailto:aschwen@charterselect.com" className="cs-mobile-menu__link" onClick={() => setOpen(false)}>Contact</a>
+          <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Review</a>
+        </nav>
+      )}
     </header>
   );
 }
@@ -88,7 +106,7 @@ function Hero({ onPrimary, onSecondary }) {
           </div>
         </div>
         <div className="cs-hero__art">
-          <img src="assets/logo-icon.png" alt="CharterSelect" className="cs-hero__mark" />
+          <img src="BK-charterselect-logo.png" alt="CharterSelect" className="cs-hero__mark" style={{filter:'none'}} />
         </div>
       </div>
     </section>
@@ -202,14 +220,15 @@ const TESTIMONIALS = [
     name: "Stacey Lawrence",
     role: "CEO & Founder",
     school: "GrowthFit Partners LLC",
+    photo: "stacey.jpeg",
   },
   {
     found: 'Gap found: Workers Comp missing entirely — school carrying exposure without knowing it',
     outcome: 'Workers Comp added · No premium increase · Coverage gap closed',
     quote: "He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.",
-    name: "Anita Howe & Ana Valdovinos",
-    role: "HR Manager · Business Manager",
-    school: "Newman International Academy",
+    name: "HR Manager & Business Manager · September 2018",
+    role: "Newman International Academy",
+    school: "",
   },
 ];
 
@@ -297,9 +316,14 @@ function WhyUs() {
           )}
           <Lucide name="quote" size={28} />
           <p className="cs-quote">"{t.quote}"</p>
-          <div className="cs-quote-attr">
-            <strong>{t.name}</strong><br/>
-            <span>{t.role} · {t.school}</span>
+          <div className="cs-quote-attr" style={{display:'flex', alignItems:'center', gap:12}}>
+            {t.photo && (
+              <img src={t.photo} alt={t.name} style={{width:52, height:52, borderRadius:'50%', objectFit:'cover', objectPosition:'center top', border:'2px solid var(--cs-teal)', flexShrink:0}} />
+            )}
+            <div>
+              <strong>{t.name}</strong><br/>
+              <span>{t.role}{t.school ? ` · ${t.school}` : ''}</span>
+            </div>
           </div>
           {/* Nav row: prev · dots · next */}
           <div style={{display:'flex', alignItems:'center', gap:12, marginTop:22}}>
