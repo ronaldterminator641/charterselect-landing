@@ -629,6 +629,22 @@ function Community() {
 function Footer() {
   return (
     <footer className="cs-footer">
+      {/* Mobile-only quick nav strip */}
+      <div className="cs-footer__mobile-nav">
+        <a href="property-liability.html" className="cs-footer__mobile-btn">
+          <Lucide name="shield" size={16} />
+          Property &amp; Casualty
+        </a>
+        <a href="employee-benefits.html" className="cs-footer__mobile-btn">
+          <Lucide name="heart-pulse" size={16} />
+          Employee Benefits
+        </a>
+        <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="cs-footer__mobile-btn cs-footer__mobile-btn--gold">
+          <Lucide name="calendar" size={16} />
+          Book a Call
+        </a>
+      </div>
+
       <div className="cs-footer__inner">
         <div className="cs-footer__brand">
           <img src="assets/logo-horizontal.png" alt="CharterSelect" className="cs-footer__logo" />
@@ -636,10 +652,10 @@ function Footer() {
         </div>
         <div className="cs-footer__cols">
           <div>
-            <h5>What We Find</h5>
-            <a href="property-liability.html">Directors and Officers</a>
-            <a href="property-liability.html">Property Gaps</a>
-            <a href="property-liability.html">Misclassification</a>
+            <h5>Coverage</h5>
+            <a href="property-liability.html">Property &amp; Casualty</a>
+            <a href="employee-benefits.html">Employee Benefits</a>
+            <a href="property-liability.html">What We Find</a>
           </div>
           <div>
             <h5>Company</h5>
