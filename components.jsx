@@ -215,13 +215,52 @@ const TESTIMONIALS = [
 
 function WhyUs() {
   const [idx, setIdx] = React.useState(0);
+  const total = TESTIMONIALS.length;
   const t = TESTIMONIALS[idx];
+  const timerRef = React.useRef(null);
+  const touchStartX = React.useRef(null);
+
+  const prev = () => setIdx(i => (i - 1 + total) % total);
+  const next = () => setIdx(i => (i + 1) % total);
+
+  // Auto-cycle every 5s, reset on manual interaction
+  const resetTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => setIdx(i => (i + 1) % total), 5000);
+  };
+  React.useEffect(() => {
+    resetTimer();
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  const handlePrev = () => { prev(); resetTimer(); };
+  const handleNext = () => { next(); resetTimer(); };
+  const handleDot = (i) => { setIdx(i); resetTimer(); };
+
+  // Swipe handlers
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? handleNext() : handlePrev();
+    touchStartX.current = null;
+  };
+
   const points = [
     'Specialists who only serve charter schools — not one of 500 client types.',
     'Independent and carrier-agnostic. We tell you when to stay put.',
     'We name what your current broker hasn\'t flagged — umbrella gaps on educators legal liability, retroactive date errors, and D&O coverage that won\'t hold up when your authorizer initiates a dispute.',
     'A portion of every policy we write supports the communities your school serves.',
   ];
+
+  const btnStyle = {
+    width: 44, height: 44, borderRadius: '50%', border: '2px solid var(--cs-teal)',
+    background: '#fff', color: 'var(--cs-teal)', cursor: 'pointer',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    transition: 'background 140ms, color 140ms', flexShrink: 0,
+    boxShadow: 'var(--shadow-sm)',
+  };
+
   return (
     <section className="cs-section cs-section--cream" id="why">
       <div className="cs-section__inner cs-split">
@@ -240,7 +279,12 @@ function WhyUs() {
             ))}
           </ul>
         </div>
-        <div className="cs-quote-card">
+        <div
+          className="cs-quote-card"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          style={{userSelect:'none'}}
+        >
           {t.found && (
             <div style={{display:'flex', alignItems:'flex-start', gap:8, background:'#fef9ec', border:'1px solid #fde68a', borderRadius:8, padding:'8px 12px', marginBottom:12, fontSize:12, color:'#78350f', lineHeight:1.4}}>
               <Lucide name="search" size={13} color="#b45309" style={{flexShrink:0, marginTop:1}} />
@@ -259,15 +303,28 @@ function WhyUs() {
             <strong>{t.name}</strong><br/>
             <span>{t.role} · {t.school}</span>
           </div>
-          <div className="cs-quote-nav">
-            {TESTIMONIALS.map((_, i) => (
-              <button
-                key={i}
-                className={`cs-quote-dot ${i === idx ? 'is-active' : ''}`}
-                onClick={() => setIdx(i)}
-                aria-label={`Show testimonial ${i + 1}`}
-              />
-            ))}
+          {/* Nav row: prev · dots · next */}
+          <div style={{display:'flex', alignItems:'center', gap:12, marginTop:22}}>
+            <button style={btnStyle} onClick={handlePrev} aria-label="Previous testimonial"
+              onMouseEnter={e => { e.currentTarget.style.background='var(--cs-teal)'; e.currentTarget.style.color='#fff'; }}
+              onMouseLeave={e => { e.currentTarget.style.background='#fff'; e.currentTarget.style.color='var(--cs-teal)'; }}>
+              <Lucide name="chevron-left" size={20} />
+            </button>
+            <div style={{display:'flex', gap:8, flex:1, justifyContent:'center'}}>
+              {TESTIMONIALS.map((_, i) => (
+                <button
+                  key={i}
+                  className={`cs-quote-dot ${i === idx ? 'is-active' : ''}`}
+                  onClick={() => handleDot(i)}
+                  aria-label={`Show testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button style={btnStyle} onClick={handleNext} aria-label="Next testimonial"
+              onMouseEnter={e => { e.currentTarget.style.background='var(--cs-teal)'; e.currentTarget.style.color='#fff'; }}
+              onMouseLeave={e => { e.currentTarget.style.background='#fff'; e.currentTarget.style.color='var(--cs-teal)'; }}>
+              <Lucide name="chevron-right" size={20} />
+            </button>
           </div>
         </div>
       </div>
