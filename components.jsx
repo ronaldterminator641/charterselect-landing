@@ -216,7 +216,7 @@ function FeaturedTestimonial() {
 const TESTIMONIALS = [
   {
     outcome: 'Trusted partner · Recommended without hesitation',
-    quote: "Aaron is one of the hardest working partners I've had the good fortune to come across. I get to work with him at a mutual client and see first hand how Aaron and his team want only the best for their charter school clients. I would recommend him and the charter school team to any of my clients.",
+    quote: "Aaron is one of the hardest working partners I've had the good fortune to come across.",
     name: "Stacey Lawrence",
     role: "CEO & Founder",
     school: "GrowthFit Partners LLC",
