@@ -205,6 +205,7 @@ function FeaturedTestimonial() {
           <div>
             <div style={{fontFamily:'var(--font-body)', fontWeight:700, fontSize:16, color:'#fff', marginBottom:3}}>Randal C. Shaffer</div>
             <div style={{fontSize:13, color:'rgba(255,255,255,0.7)', lineHeight:1.4}}>CEO / Superintendent · Trinity Basin Preparatory</div>
+            <div style={{fontSize:12, color:'rgba(255,255,255,0.5)', marginTop:4, fontStyle:'italic'}}>February 2017</div>
           </div>
         </div>
       </div>

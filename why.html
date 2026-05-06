@@ -57,12 +57,13 @@
         quote: 'Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to.',
         name: 'Randal C. Shaffer',
         role: 'CEO / Superintendent · Trinity Basin Preparatory',
+        date: 'February 2017',
       },
       {
         outcome: 'Added Workers Comp · Saved money · No premium increase',
         quote: 'He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.',
-        name: 'Anita Howe & Ana Valdovinos',
-        role: 'HR Manager · Business Manager · Newman International Academy',
+        name: 'HR Manager & Business Manager · September 2018',
+        role: 'Newman International Academy',
       },
       {
         outcome: 'New school setup · Insurance + HR guidance from day one',
@@ -72,7 +73,7 @@
       },
       {
         outcome: 'Trusted partner · Recommended without hesitation',
-        quote: "Aaron is one of the hardest working partners I've had the good fortune to come across. I get to work with him at a mutual client and see first hand how Aaron and his team want only the best for their charter school clients. I would recommend him and the charter school team to any of my clients.",
+        quote: "Aaron is one of the hardest working partners I've had the good fortune to come across.",
         name: 'Stacey Lawrence',
         role: 'CEO & Founder · GrowthFit Partners LLC',
       },
@@ -117,6 +118,7 @@
                     <div className="cs-testimonial__attr">
                       <strong>{t.name}</strong>
                       {t.role}
+                      {t.date && <span style={{display:'block', fontSize:12, color:'var(--fg-3)', marginTop:4, fontStyle:'italic'}}>{t.date}</span>}
                     </div>
                   </blockquote>
                 ))}
