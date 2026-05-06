@@ -703,6 +703,7 @@ function Footer() {
             <h5>Company</h5>
             <a href="why.html">Why CharterSelect</a>
             <a href="commitment.html">Our Commitment</a>
+            <a href="about.html">About</a>
             <a href="mailto:aschwen@charterselect.com">Contact</a>
           </div>
         </div>
