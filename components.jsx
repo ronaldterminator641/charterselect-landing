@@ -394,20 +394,11 @@ function UploadCta() {
   const [dragOver, setDragOver] = React.useState(null);
   const [hasRanked, setHasRanked] = React.useState(false);
 
-  const [contactName, setContactName] = React.useState('');
-  const [schoolName, setSchoolName] = React.useState('');
-  const [contactEmail, setContactEmail] = React.useState('');
-  const [submitting, setSubmitting] = React.useState(false);
-  const [submitted, setSubmitted] = React.useState(false);
-  const [submitError, setSubmitError] = React.useState(null);
-  const [showUpload, setShowUpload] = React.useState(false);
+  // Touch sort state
+  const touchDragIdx = React.useRef(null);
+  const touchRowRefs = React.useRef([]);
 
-  // Upload form state
-  const [files, setFiles] = React.useState([]);
-  const [uploadSubmitting, setUploadSubmitting] = React.useState(false);
-  const [uploadSubmitted, setUploadSubmitted] = React.useState(false);
-  const [uploadError, setUploadError] = React.useState(null);
-
+  // ── Mouse drag handlers (desktop) ──
   const onDragStart = (e, idx) => { setDragging(idx); e.dataTransfer.effectAllowed = 'move'; };
   const onDragOver = (e, idx) => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; setDragOver(idx); };
   const onDrop = (e, idx) => {
@@ -422,6 +413,51 @@ function UploadCta() {
     setHasRanked(true);
   };
   const onDragEnd = () => { setDragging(null); setDragOver(null); };
+
+  // ── Touch handlers (mobile) ──
+  const onTouchStartRow = (e, idx) => {
+    touchDragIdx.current = idx;
+    setDragging(idx);
+  };
+  const onTouchMoveRow = (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const els = touchRowRefs.current;
+    for (let i = 0; i < els.length; i++) {
+      if (!els[i]) continue;
+      const rect = els[i].getBoundingClientRect();
+      if (touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+        setDragOver(i);
+        break;
+      }
+    }
+  };
+  const onTouchEndRow = (e) => {
+    const from = touchDragIdx.current;
+    const to = dragOver;
+    if (from !== null && to !== null && from !== to) {
+      const next = [...items];
+      const [moved] = next.splice(from, 1);
+      next.splice(to, 0, moved);
+      setItems(next);
+      setHasRanked(true);
+    }
+    touchDragIdx.current = null;
+    setDragging(null);
+    setDragOver(null);
+  };
+
+  const [contactName, setContactName] = React.useState('');
+  const [schoolName, setSchoolName] = React.useState('');
+  const [contactEmail, setContactEmail] = React.useState('');
+  const [submitting, setSubmitting] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState(null);
+  const [files, setFiles] = React.useState([]);
+  const [uploadSubmitting, setUploadSubmitting] = React.useState(false);
+  const [uploadSubmitted, setUploadSubmitted] = React.useState(false);
+  const [uploadError, setUploadError] = React.useState(null);
+  const [showUpload, setShowUpload] = React.useState(false);
 
   const canSubmit = contactName.trim() && schoolName.trim() && contactEmail.trim() && !submitting;
 
@@ -510,7 +546,7 @@ function UploadCta() {
         <div className="cs-eyebrow cs-eyebrow--on-teal">Charter School Coverage Check</div>
         <h2 className="cs-h2-on-teal">Rank these coverage areas by how much they concern you.</h2>
         <p className="cs-lead-on-teal" style={{marginBottom: 32}}>
-          Drag to reorder — most concerning at the top. We'll start your benchmark review there.
+          Tap and drag to reorder — most concerning at the top. We'll start your benchmark review there.
         </p>
 
         {/* ── Ranking rows ── */}
@@ -518,12 +554,17 @@ function UploadCta() {
           {items.map((item, idx) => (
             <div
               key={item.id}
+              ref={el => touchRowRefs.current[idx] = el}
               className={['cs-rank__row', dragging === idx ? 'is-dragging' : '', dragOver === idx && dragging !== idx ? 'is-over' : ''].join(' ')}
               draggable
               onDragStart={e => onDragStart(e, idx)}
               onDragOver={e => onDragOver(e, idx)}
               onDrop={e => onDrop(e, idx)}
               onDragEnd={onDragEnd}
+              onTouchStart={e => onTouchStartRow(e, idx)}
+              onTouchMove={onTouchMoveRow}
+              onTouchEnd={onTouchEndRow}
+              style={{touchAction: 'none'}}
             >
               <div className="cs-rank__num">{idx + 1}</div>
               <div className="cs-rank__label">{item.text}</div>
@@ -585,7 +626,7 @@ function UploadCta() {
               </div>
             </div>
             <p style={{color: 'rgba(255,255,255,0.7)', fontSize: 13, margin: '16px 0 0', lineHeight: 1.6}}>
-              Thanks, <strong style={{color: '#fff'}}>{contactName}</strong>. Aaron will review your full ranking for <strong style={{color: '#fff'}}>{schoolName}</strong> and follow up. Want to go deeper now?
+              Thanks, <strong style={{color: '#fff'}}>{contactName}</strong>. CharterSelect will follow up with specifics for <strong style={{color: '#fff'}}>{schoolName}</strong>. Want to go deeper now?
             </p>
             <div className="cs-rank__ctas" style={{marginTop: 16}}>
               <a
