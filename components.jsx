@@ -22,6 +22,7 @@ function TopNav({ onCta }) {
     { href: 'why.html', label: 'Why CharterSelect' },
     { href: 'commitment.html', label: 'Our Commitment' },
     { href: 'about.html', label: 'About' },
+    { href: 'renewal-checklist.html', label: 'Renewal Checklist' },
   ];
   return (
     <header className="cs-nav" style={{position:'relative', zIndex:300}}>
@@ -33,8 +34,8 @@ function TopNav({ onCta }) {
           {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
         </nav>
         <div className="cs-nav__cta">
-          <a className="cs-link" href="mailto:aschwen@charterselect.com">Contact</a>
-          <a className="cs-btn cs-btn--primary cs-btn--sm" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}>
+          <a className="cs-link" href="contact.html">Contact</a>
+          <a className="cs-btn cs-btn--primary cs-btn--sm" href="contact.html" style={{textDecoration:'none'}}>
             Get a Review
           </a>
         </div>
@@ -49,8 +50,9 @@ function TopNav({ onCta }) {
           {links.map(l => (
             <a key={l.href} href={l.href} className="cs-mobile-menu__link" onClick={() => setOpen(false)}>{l.label}</a>
           ))}
-          <a href="mailto:aschwen@charterselect.com" className="cs-mobile-menu__link" onClick={() => setOpen(false)}>Contact</a>
-          <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Review</a>
+          <a href="contact.html" className="cs-mobile-menu__link" onClick={() => setOpen(false)}>Contact</a>
+          <a href="renewal-checklist.html" className="cs-mobile-menu__link" onClick={() => setOpen(false)}>Renewal Checklist</a>
+          <a href="contact.html" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Review</a>
         </nav>
       )}
     </header>
@@ -705,7 +707,7 @@ function Footer() {
             <a href="why.html">Why CharterSelect</a>
             <a href="commitment.html">Our Commitment</a>
             <a href="about.html">About</a>
-            <a href="mailto:aschwen@charterselect.com">Contact</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
       </div>

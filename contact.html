@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get a Free Insurance Review — CharterSelect</title>
+  <meta name="description" content="Request a complimentary benchmark insurance review for your charter school." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .contact-wrap { max-width: 680px; margin: 0 auto; padding: 40px 32px 96px; }
+    .contact-intro { margin-bottom: 36px; }
+    .contact-intro h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; color: var(--fg-1); margin: 8px 0 14px; }
+    .contact-intro p { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--fg-2); margin: 0; }
+
+    .contact-card { background: #fff; border: 1px solid var(--border-1); border-radius: 16px; padding: 40px; box-shadow: var(--shadow-md); }
+    @media (max-width: 540px) { .contact-card { padding: 24px; } }
+
+    .contact-field { margin-bottom: 22px; }
+    .contact-label { display: block; font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--fg-1); letter-spacing: 0.03em; margin-bottom: 7px; }
+    .contact-label span { color: var(--cs-teal); margin-left: 2px; }
+    .contact-input {
+      display: block; width: 100%;
+      font-family: var(--font-body); font-size: 15px; color: var(--fg-1);
+      background: #fafaf8; border: 1.5px solid var(--border-1);
+      border-radius: 10px; padding: 11px 14px;
+      outline: none; transition: border-color 140ms, box-shadow 140ms;
+      appearance: none; -webkit-appearance: none;
+    }
+    .contact-input:focus { border-color: var(--cs-teal); box-shadow: 0 0 0 3px rgba(15,118,110,0.12); }
+    .contact-input::placeholder { color: var(--fg-muted); }
+
+    .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 540px) { .contact-row { grid-template-columns: 1fr; } }
+
+    .contact-radios { display: flex; flex-direction: column; gap: 10px; }
+    .contact-radio-label {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-family: var(--font-body); font-size: 14.5px; color: var(--fg-1);
+      cursor: pointer; padding: 11px 14px;
+      border: 1.5px solid var(--border-1); border-radius: 10px;
+      transition: border-color 140ms, background 140ms;
+    }
+    .contact-radio-label.checked { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); }
+    .contact-radio-label input { accent-color: var(--cs-teal); width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    .contact-submit {
+      width: 100%; margin-top: 28px;
+      font-family: var(--font-body); font-size: 16px; font-weight: 600;
+      background: var(--cs-teal); color: #fff;
+      border: none; border-radius: 999px; padding: 15px 24px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: var(--shadow-teal, 0 4px 14px rgba(15,118,110,0.35)); transition: background 140ms, transform 100ms;
+    }
+    .contact-submit:hover { background: var(--cs-teal-700, #0d6560); }
+    .contact-submit:active { transform: translateY(1px); }
+    .contact-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+
+    .contact-trust { display: flex; align-items: center; gap: 6px; justify-content: center; margin-top: 14px; font-size: 13px; color: var(--fg-muted); font-family: var(--font-body); }
+    .contact-error { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 10px; padding: 12px 16px; font-size: 14px; color: #b91c1c; margin-top: 16px; font-family: var(--font-body); }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden form so Netlify detects it at build time -->
+  <form name="lead-capture" data-netlify="true" action="/contact-success.html" hidden>
+    <input type="text" name="school_name" />
+    <input type="text" name="contact_name" />
+    <input type="text" name="title" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="state"><option value=""></option></select>
+    <select name="campuses"><option value=""></option></select>
+    <input type="text" name="insurance_situation" />
+    <input type="text" name="how_heard" />
+  </form>
+
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=8"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
+
+    const STATES = [
+      'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
+      'Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa',
+      'Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan',
+      'Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire',
+      'New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio',
+      'Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota',
+      'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia',
+      'Wisconsin','Wyoming','Washington D.C.'
+    ];
+
+    const CAMPUS_OPTIONS = ['1','2–3','4–6','7–10','11+'];
+
+    const INSURANCE_OPTIONS = [
+      { value: 'renewal_coming', label: 'My renewal is coming up in the next 6 months' },
+      { value: 'unhappy_broker', label: "I'm unhappy with my current broker or coverage" },
+      { value: 'benchmarking', label: "I want to benchmark what I'm paying now" },
+      { value: 'new_school', label: "We're a new or expanding school" },
+      { value: 'other', label: 'Something else' },
+    ];
+
+    const HOW_OPTIONS = [
+      'Google search','LinkedIn','Referral from a colleague',
+      'Charter network or association','Conference or event','Email outreach','Other'
+    ];
+
+    function ContactPage() {
+      const [form, setForm] = React.useState({
+        school_name: '', contact_name: '', title: '', email: '', phone: '',
+        state: '', campuses: '', insurance_situation: '', how_heard: ''
+      });
+      const [submitting, setSubmitting] = React.useState(false);
+      const [error, setError] = React.useState(null);
+
+      function setField(field) {
+        return e => setForm(prev => ({ ...prev, [field]: e.target.value }));
+      }
+
+      async function handleSubmit(e) {
+        e.preventDefault();
+        setError(null);
+        if (!form.school_name.trim() || !form.contact_name.trim() || !form.email.trim() || !form.state) {
+          setError('Please fill in all required fields (School Name, Your Name, Email, State).');
+          return;
+        }
+        setSubmitting(true);
+        try {
+          const res = await fetch('/.netlify/functions/lead-capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(form),
+          });
+          if (!res.ok) throw new Error('Server error');
+          window.location.href = 'contact-success.html';
+        } catch (err) {
+          setError('Something went wrong — please try again or email aschwen@charterselect.com directly.');
+          setSubmitting(false);
+        }
+      }
+
+      return (
+        <div data-screen-label="Contact">
+          <TopNav onCta={() => {}} />
+
+          <section style={{background:'var(--cs-cream,#fafaf8)', borderBottom:'1px solid var(--border-1)', padding:'24px 32px 0'}}>
+            <div style={{maxWidth:680, margin:'0 auto'}}>
+              <a href="index.html" style={{display:'inline-flex',alignItems:'center',gap:6,fontSize:13,color:'var(--fg-muted)',textDecoration:'none',marginBottom:16,fontFamily:'var(--font-body)'}}>
+                <Lucide name="arrow-left" size={13} /> Back to home
+              </a>
+              <div className="cs-eyebrow">Free · No Obligation</div>
+            </div>
+          </section>
+
+          <section style={{background:'var(--cs-cream,#fafaf8)'}}>
+            <div className="contact-wrap">
+              <div className="contact-intro">
+                <h1>Get Your Free Insurance Benchmark Review</h1>
+                <p>We'll compare your current coverage against what charter schools your size are actually paying — and show you exactly where you stand. Takes 10 minutes. No pitch, no obligation.</p>
+              </div>
+
+              <div className="contact-card">
+                <form onSubmit={handleSubmit} noValidate>
+
+                  <div className="contact-field">
+                    <label className="contact-label" htmlFor="school_name">School Name <span>*</span></label>
+                    <input id="school_name" className="contact-input" type="text" placeholder="Academy Charter School" value={form.school_name} onChange={setField('school_name')} />
+                  </div>
+
+                  <div className="contact-row">
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="contact_name">Your Name <span>*</span></label>
+                      <input id="contact_name" className="contact-input" type="text" placeholder="Jane Smith" value={form.contact_name} onChange={setField('contact_name')} />
+                    </div>
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="title">Title / Role</label>
+                      <input id="title" className="contact-input" type="text" placeholder="CFO, Executive Director…" value={form.title} onChange={setField('title')} />
+                    </div>
+                  </div>
+
+                  <div className="contact-row">
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="email">Email <span>*</span></label>
+                      <input id="email" className="contact-input" type="email" placeholder="jane@school.org" value={form.email} onChange={setField('email')} />
+                    </div>
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="phone">Phone</label>
+                      <input id="phone" className="contact-input" type="tel" placeholder="(555) 000-0000" value={form.phone} onChange={setField('phone')} />
+                    </div>
+                  </div>
+
+                  <div className="contact-row">
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="state">State <span>*</span></label>
+                      <select id="state" className="contact-input" value={form.state} onChange={setField('state')}>
+                        <option value="">Select state…</option>
+                        {STATES.map(s => <option key={s} value={s}>{s}</option>)}
+                      </select>
+                    </div>
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="campuses">Number of Campuses</label>
+                      <select id="campuses" className="contact-input" value={form.campuses} onChange={setField('campuses')}>
+                        <option value="">Select…</option>
+                        {CAMPUS_OPTIONS.map(c => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="contact-field">
+                    <label className="contact-label">What best describes your situation?</label>
+                    <div className="contact-radios">
+                      {INSURANCE_OPTIONS.map(opt => (
+                        <label key={opt.value} className={'contact-radio-label' + (form.insurance_situation === opt.value ? ' checked' : '')}>
+                          <input
+                            type="radio"
+                            name="insurance_situation"
+                            value={opt.value}
+                            checked={form.insurance_situation === opt.value}
+                            onChange={setField('insurance_situation')}
+                          />
+                          {opt.label}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="contact-field" style={{marginBottom:0}}>
+                    <label className="contact-label" htmlFor="how_heard">How did you hear about us?</label>
+                    <select id="how_heard" className="contact-input" value={form.how_heard} onChange={setField('how_heard')}>
+                      <option value="">Select…</option>
+                      {HOW_OPTIONS.map(h => <option key={h} value={h}>{h}</option>)}
+                    </select>
+                  </div>
+
+                  {error && <div className="contact-error">{error}</div>}
+
+                  <button type="submit" className="contact-submit" disabled={submitting}>
+                    <Lucide name="send" size={16} />
+                    {submitting ? 'Sending…' : 'Request My Free Review'}
+                  </button>
+
+                  <p className="contact-trust">
+                    <Lucide name="shield-check" size={14} />
+                    No spam. No hard sell. We'll reach out within 1 business day.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<ContactPage />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request Received — CharterSelect</title>
+  <meta name="description" content="Thanks for reaching out. We'll be in touch within 1 business day." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .success-wrap { max-width: 600px; margin: 0 auto; padding: 80px 32px 96px; text-align: center; }
+    .success-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(15,118,110,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; color: var(--cs-teal); }
+    .success-wrap h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.1; color: var(--fg-1); margin: 0 0 16px; }
+    .success-wrap p { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--fg-2); margin: 0 0 40px; }
+    .success-next { background: #fff; border: 1px solid var(--border-1); border-radius: 14px; padding: 32px; text-align: left; margin-bottom: 36px; }
+    .success-next h2 { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); margin: 0 0 20px; }
+    .success-step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+    .success-step:last-child { margin-bottom: 0; }
+    .success-step__num { width: 28px; height: 28px; border-radius: 50%; background: var(--cs-teal); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; font-family: var(--font-body); }
+    .success-step__text { font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; color: var(--fg-1); padding-top: 3px; }
+    .success-step__text strong { color: var(--fg-1); font-weight: 600; }
+    .success-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=8"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
+
+    function SuccessPage() {
+      return (
+        <div data-screen-label="Contact Success">
+          <TopNav onCta={() => { window.location.href = CALENDAR_LINK; }} />
+
+          <section style={{background:'var(--cs-cream,#fafaf8)', minHeight:'80vh', display:'flex', alignItems:'center'}}>
+            <div className="success-wrap">
+              <div className="success-icon">
+                <Lucide name="check-circle" size={36} />
+              </div>
+
+              <h1>Request received!</h1>
+              <p>We'll be in touch within 1 business day. In the meantime, here's what to expect.</p>
+
+              <div className="success-next">
+                <h2>What happens next</h2>
+                <div className="success-step">
+                  <div className="success-step__num">1</div>
+                  <div className="success-step__text"><strong>You'll hear from Aaron directly.</strong> Not a junior rep — Aaron reviews every inbound request himself.</div>
+                </div>
+                <div className="success-step">
+                  <div className="success-step__num">2</div>
+                  <div className="success-step__text"><strong>We'll gather your current policy.</strong> A quick, painless process — usually just a declaration page.</div>
+                </div>
+                <div className="success-step">
+                  <div className="success-step__num">3</div>
+                  <div className="success-step__text"><strong>You'll get a benchmark report.</strong> What you're paying vs. what comparable schools pay, with specific gaps identified.</div>
+                </div>
+                <div className="success-step">
+                  <div className="success-step__num">4</div>
+                  <div className="success-step__text"><strong>No surprise pitches.</strong> The review is genuinely free. If there's nothing to improve, we'll tell you that.</div>
+                </div>
+              </div>
+
+              <div className="success-ctas">
+                <a
+                  className="cs-btn cs-btn--primary"
+                  href={CALENDAR_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration:'none'}}
+                >
+                  <Lucide name="calendar" size={16} />
+                  Book a Call Now Instead
+                </a>
+                <a className="cs-btn cs-btn--secondary" href="index.html" style={{textDecoration:'none'}}>
+                  Back to Home
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<SuccessPage />);
+  </script>
+</body>
+</html>

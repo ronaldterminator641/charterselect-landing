@@ -1,6 +1,10 @@
 [build]
   publish = "."
-  command = ""
+  command = "npm install"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-emails"
