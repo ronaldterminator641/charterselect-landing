@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charter School Insurance Renewal Checklist | CharterSelect</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--fg-1);
+      min-height: 100vh;
+    }
+
+    /* ── GATE PAGE ── */
+    #gate {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: var(--bg-cream);
+    }
+
+    .gate-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(15,118,110,.12);
+      max-width: 480px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .gate-header {
+      background: var(--cs-teal);
+      color: white;
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .gate-header .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cs-gold);
+      margin-bottom: .5rem;
+    }
+
+    .gate-header h1 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-bottom: .5rem;
+    }
+
+    .gate-header p {
+      font-size: .85rem;
+      opacity: .85;
+      line-height: 1.5;
+    }
+
+    .gate-body {
+      padding: 1.75rem 2rem 2rem;
+    }
+
+    .gate-body p {
+      font-size: .9rem;
+      color: var(--fg-2);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .checklist-preview {
+      background: var(--cs-teal-50, #E6F2F1);
+      border-left: 3px solid var(--cs-teal);
+      border-radius: 4px;
+      padding: .75rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: .8rem;
+      color: var(--cs-teal-700);
+      line-height: 1.7;
+    }
+
+    .checklist-preview strong {
+      display: block;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cs-teal);
+      margin-bottom: .35rem;
+    }
+
+    .gate-form label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--fg-2);
+      margin-bottom: .3rem;
+      margin-top: .85rem;
+    }
+
+    .gate-form label:first-of-type { margin-top: 0; }
+
+    .gate-form input {
+      width: 100%;
+      padding: .6rem .75rem;
+      border: 1.5px solid var(--border-2);
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: .875rem;
+      color: var(--fg-1);
+      transition: border-color .15s;
+    }
+
+    .gate-form input:focus {
+      outline: none;
+      border-color: var(--cs-teal);
+    }
+
+    .gate-btn {
+      margin-top: 1.25rem;
+      width: 100%;
+      background: var(--cs-gold);
+      color: var(--cs-charcoal);
+      font-family: var(--font-body);
+      font-size: .875rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+    }
+
+    .gate-btn:hover { background: var(--cs-gold-600); transform: translateY(-1px); }
+
+    .gate-fine {
+      margin-top: .75rem;
+      font-size: .7rem;
+      color: var(--fg-muted);
+      text-align: center;
+    }
+
+    /* ── CHECKLIST PAGE ── */
+    #checklist { display: none; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── REPORT CARD HEADER ── */
+    .rc-header {
+      background: var(--cs-teal);
+      border-radius: 12px 12px 0 0;
+      color: white;
+      padding: 1.5rem 2rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .rc-logo-area {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .rc-logo-area img {
+      height: 36px;
+      filter: brightness(0) invert(1);
+    }
+
+    .rc-title-group .rc-eyebrow {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cs-gold);
+    }
+
+    .rc-title-group h1 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      line-height: 1.15;
+    }
+
+    .rc-meta {
+      text-align: right;
+      font-size: .72rem;
+      opacity: .8;
+      line-height: 1.7;
+    }
+
+    .rc-meta strong { color: var(--cs-gold); font-size: .75rem; }
+
+    /* STUDENT INFO STRIP */
+    .rc-info-strip {
+      background: var(--cs-charcoal);
+      padding: .65rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+    }
+
+    .rc-info-cell {
+      font-size: .7rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.5;
+    }
+
+    .rc-info-cell strong {
+      display: block;
+      color: var(--cs-gold);
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ── MAIN BODY ── */
+    .rc-body {
+      background: white;
+      border: 1.5px solid #d1d5db;
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 1.75rem 2rem 2rem;
+    }
+
+    /* SECTION — styled like report card subject row */
+    .subject {
+      border: 1.5px solid var(--border-2);
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    .subject-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem 1rem;
+      background: var(--cs-teal-50, #E6F2F1);
+      border-bottom: 1.5px solid var(--border-2);
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .subject-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--cs-teal);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .subject-name .icon { font-size: 1rem; }
+
+    .grade-box {
+      background: var(--cs-teal);
+      color: var(--cs-gold);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .grade-box.warn { background: #D97706; color: white; }
+    .grade-box.crit { background: #B91C1C; color: white; }
+    .grade-box.info { background: var(--cs-charcoal); color: var(--cs-gold); }
+
+    .subject-items {
+      padding: .75rem 1rem;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--cs-gray-100, #f3f4f6);
+      font-size: .84rem;
+      color: var(--fg-1);
+      line-height: 1.5;
+    }
+
+    .check-item:last-child { border-bottom: none; }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--cs-teal);
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      cursor: pointer;
+      position: relative;
+      background: white;
+      transition: background .15s;
+    }
+
+    .check-box.checked {
+      background: var(--cs-teal);
+      border-color: var(--cs-teal);
+    }
+
+    .check-box.checked::after {
+      content: '';
+      position: absolute;
+      top: 2px; left: 5px;
+      width: 5px; height: 9px;
+      border: 2px solid white;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .check-label { flex: 1; }
+    .check-label .flag {
+      display: inline-block;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .1em .4em;
+      border-radius: 3px;
+      margin-left: .3rem;
+      vertical-align: middle;
+    }
+
+    .flag-red { background: #FEE2E2; color: #B91C1C; }
+    .flag-amber { background: #FEF3C7; color: #92400E; }
+    .flag-teal { background: var(--cs-teal-50, #E6F2F1); color: var(--cs-teal); }
+
+    .check-note {
+      font-size: .73rem;
+      color: var(--fg-muted);
+      margin-top: .15rem;
+      line-height: 1.5;
+    }
+
+    /* COMMENTS / REMARKS BOX */
+    .remarks {
+      background: var(--cs-gold-50, #FEF6E0);
+      border: 1.5px dashed var(--cs-gold-600);
+      border-radius: 6px;
+      padding: .75rem 1rem;
+      margin-top: .75rem;
+    }
+
+    .remarks-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cs-gold-600);
+      margin-bottom: .3rem;
+    }
+
+    .remarks p {
+      font-size: .78rem;
+      color: var(--fg-2);
+      line-height: 1.6;
+    }
+
+    /* GRADING KEY */
+    .grade-key {
+      margin-top: 1.5rem;
+      background: var(--cs-gray-50, #f9fafb);
+      border: 1px solid var(--border-1);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+
+    .grade-key-title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: .6rem;
+    }
+
+    .grade-key-row {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .grade-key-item {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .75rem;
+      color: var(--fg-2);
+    }
+
+    /* PROGRESS BAR */
+    .progress-bar-wrap {
+      margin-top: 1.5rem;
+      margin-bottom: .5rem;
+    }
+
+    .progress-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .72rem;
+      color: var(--fg-muted);
+      margin-bottom: .35rem;
+    }
+
+    .progress-bar-label span { font-weight: 600; color: var(--cs-teal); }
+
+    .progress-track {
+      height: 8px;
+      background: var(--cs-gray-200);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--cs-teal);
+      border-radius: 99px;
+      width: 0%;
+      transition: width .5s ease;
+    }
+
+    /* FOOTER */
+    .rc-footer {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1.5px solid var(--border-1);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .rc-footer-brand {
+      font-size: .72rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+
+    .rc-footer-brand strong { color: var(--cs-teal); }
+
+    .cta-btn {
+      background: var(--cs-gold);
+      color: var(--cs-charcoal);
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      padding: .6rem 1.25rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .15s;
+    }
+
+    .cta-btn:hover { background: var(--cs-gold-600); }
+
+    /* WATERMARK STAMP */
+    .stamp {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%) rotate(-12deg);
+      width: 100px;
+      height: 100px;
+      border: 3px solid var(--cs-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cs-gold);
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    @media print {
+      #gate { display: none !important; }
+      #checklist { display: block !important; }
+      .rc-footer { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 520px) {
+      .rc-header { flex-direction: column; align-items: flex-start; }
+      .rc-meta { text-align: left; }
+      .rc-info-strip { grid-template-columns: 1fr 1fr; }
+      .rc-body { padding: 1.25rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     GATE — collect lead info before showing the checklist
+     ════════════════════════════════════════════════════════════ -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-header">
+      <div class="eyebrow">Free Resource from CharterSelect</div>
+      <h1>Charter School Insurance<br>Renewal Checklist</h1>
+      <p>Don't let your renewal sneak up on you with gaps you only discover after a claim.</p>
+    </div>
+    <div class="gate-body">
+      <p>This checklist covers the areas I review first on every charter school program — the coverage nuances, policy details, and limit structures that have the most impact when a claim happens. Not everything, but the things that matter most. Written by a specialist who works exclusively with charter schools.</p>
+
+      <div class="checklist-preview">
+        <strong>What I look for every single renewal</strong>
+        The sublimits that quietly cap your biggest claims. The coverage lines most schools are paying for wrong — and a few they're not paying for at all. The one date that, if it changes, can erase years of protection. The umbrella gaps that only show up when you need them most. And the line items your broker probably skipped because no one asked.
+      </div>
+
+      <form class="gate-form" id="gateForm" onsubmit="handleGate(event)">
+        <label for="g-name">Your Name</label>
+        <input type="text" id="g-name" name="name" placeholder="Maria Gonzalez" required>
+
+        <label for="g-title">Title</label>
+        <input type="text" id="g-title" name="title" placeholder="Head of School / CFO / Business Manager">
+
+        <label for="g-school">School Name</label>
+        <input type="text" id="g-school" name="school" placeholder="Charter Academy of…" required>
+
+        <label for="g-email">Work Email</label>
+        <input type="email" id="g-email" name="email" placeholder="you@yourschool.org" required>
+
+        <button type="submit" class="gate-btn">Download the Checklist →</button>
+        <p class="gate-fine">No spam. Just one free resource. If your renewal is coming up and something looks off, we'd be glad to take a look.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     THE CHECKLIST
+     ════════════════════════════════════════════════════════════ -->
+<div id="checklist">
+  <div class="page-wrap">
+
+    <!-- REPORT CARD HEADER -->
+    <div class="rc-header">
+      <div class="rc-logo-area">
+        <img src="BK-charterselect-logo.png" alt="CharterSelect" onerror="this.style.display='none'">
+        <div class="rc-title-group">
+          <div class="rc-eyebrow">Insurance Renewal Checklist</div>
+          <h1>Charter School Policy Review</h1>
+        </div>
+      </div>
+      <div class="rc-meta">
+        <strong>RENEWAL YEAR</strong><br>
+        Academic Year ________<br>
+        Renewal Date ________<br>
+        Prepared by CharterSelect
+      </div>
+    </div>
+
+    <!-- INFO STRIP -->
+    <div class="rc-info-strip">
+      <div class="rc-info-cell"><strong>School Name</strong><span id="cl-school">&nbsp;</span></div>
+      <div class="rc-info-cell"><strong>Contact</strong><span id="cl-name">&nbsp;</span></div>
+      <div class="rc-info-cell"><strong>Current Carrier(s)</strong>_________________</div>
+    </div>
+
+    <!-- BODY -->
+    <div class="rc-body">
+
+      <!-- BANDWIDTH BANNER -->
+      <div style="background:var(--cs-teal);border-radius:8px;padding:.9rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+        <div style="color:white;font-size:.85rem;line-height:1.5;">
+          <strong style="display:block;font-size:.95rem;margin-bottom:.15rem;">Don't have the bandwidth to go through this yourself?</strong>
+          We'll review your current policy and flag every gap — free, no obligation.
+        </div>
+        <a href="https://charterselect.com" style="background:var(--cs-gold);color:var(--cs-charcoal);font-family:var(--font-body);font-size:.8rem;font-weight:700;letter-spacing:.03em;padding:.55rem 1.1rem;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Get a Free Review →</a>
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-label">Renewal Readiness Score <span id="prog-pct">0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
+      </div>
+
+      <!-- ── 1. PROPERTY ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">🏫</span> Property Coverage</div>
+          <div class="grade-box warn">C</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Replacement Cost vs. Actual Cash Value confirmed on <em>all</em> structures
+              <span class="flag flag-red">Critical</span>
+              <div class="check-note">ACV pays depreciated value. RCV pays what it actually costs to rebuild. Know which one you have.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Blanket vs. Scheduled coverage verified — limits match current appraised values
+              <div class="check-note">Blanket pools limits across locations. Scheduled assigns a per-building cap. Underinsured buildings won't be made whole at claim time.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Water damage sublimit reviewed
+              <span class="flag flag-red">Common Gap</span>
+              <div class="check-note">Many policies cap water damage at $100K–$500K buried in the sublimit schedule — well below a real loss. Find the line and compare it to your exposure.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              All campus addresses listed and up to date on declarations page
+              <span class="flag flag-amber">Verify</span>
+              <div class="check-note">New portables, leased annexes, or off-site program locations not on the dec page = no coverage.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Bond covenants or landlord requirements reviewed for minimum coverage thresholds
+              <div class="check-note">Your lease or bond docs may require specific limits. Make sure your policy meets them — not just the state minimum.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Flood coverage evaluated — NFIP vs. private market vs. excluded
+              <span class="flag flag-amber">Location Dependent</span>
+              <div class="check-note">Standard property policies exclude flood. If you're in or near a flood zone — or even if you're not — confirm this intentionally.</div>
+            </div>
+          </div>
+        </div>
+        <div class="remarks">
+          <div class="remarks-label">Teacher Comments</div>
+          <p>Property is where schools get surprised most at claim time. The policy that looks fine at renewal doesn't look fine when you're rebuilding. Check limits against actual replacement costs — construction costs have risen significantly.</p>
+        </div>
+      </div>
+
+      <!-- ── 2. LIABILITY ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">⚖️</span> General Liability & Defense</div>
+          <div class="grade-box">A</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Defense costs: inside limits vs. outside limits confirmed
+              <span class="flag flag-red">Critical</span>
+              <div class="check-note">Defense <em>inside</em> limits means legal fees eat your coverage limit — a $1M policy could be $700K gone to lawyers before any settlement. Outside limits preserves the full amount for judgments.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Abuse &amp; Molestation coverage confirmed — sub-limit and retroactive date verified
+              <span class="flag flag-red">Critical</span>
+              <div class="check-note">This is frequently sublimited or excluded. Schools need it. Confirm retro date goes back far enough to cover any prior unreported incidents.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Educators Legal Liability (Employment Practices) in place
+              <span class="flag flag-amber">Important</span>
+              <div class="check-note">Covers wrongful termination, discrimination, and harassment claims from staff. Different from GL — confirm it's on the policy and has adequate limits.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Corporal punishment — premium charge confirmed as $0
+              <span class="flag flag-teal">Should Be Free</span>
+              <div class="check-note">Almost no schools practice corporal punishment. If you're paying a surcharge for it, that's a classification error. Get it removed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 3. UMBRELLA ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">☂️</span> Umbrella / Excess Liability</div>
+          <div class="grade-box warn">B</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Abuse coverage sits <em>under</em> the umbrella (not excluded)
+              <span class="flag flag-red">Critical</span>
+              <div class="check-note">Many umbrellas exclude abuse. If the underlying GL has abuse coverage but the umbrella excludes it, your real cap is the GL sublimit — not the umbrella limit.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Auto liability covered under umbrella
+              <div class="check-note">Confirm hired/non-owned auto is a scheduled underlying policy that the umbrella follows.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Workers' Compensation covered under umbrella (if applicable in your state)
+              <div class="check-note">Some states allow umbrella excess over WC — some don't. Confirm what's scheduled as an underlying.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              General Liability listed as scheduled underlying with matching limits
+              <div class="check-note">If there's a gap between GL limits and umbrella attachment point, you're self-insuring that gap.</div>
+            </div>
+          </div>
+        </div>
+        <div class="remarks">
+          <div class="remarks-label">Teacher Comments</div>
+          <p>An umbrella without abuse coverage is like a rain jacket with holes. The whole point is catching what falls through below — make sure the underlying policies and the umbrella speak to each other correctly.</p>
+        </div>
+      </div>
+
+      <!-- ── 4. AUTO & VEHICLE ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">🚌</span> Auto &amp; Vehicle Schedule</div>
+          <div class="grade-box warn">C</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Full vehicle schedule up to date — every bus, van, and car listed with correct VIN
+              <span class="flag flag-red">Verify Now</span>
+              <div class="check-note">A vehicle not on the schedule is not insured. Run this list quarterly.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Hired &amp; Non-Owned Auto coverage in place
+              <div class="check-note">Covers staff using personal vehicles for school business and rentals. Often missed on education policies.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Armed security guards on campus — confirmed with carrier
+              <span class="flag flag-amber">If Applicable</span>
+              <div class="check-note">Armed guards create a unique liability exposure. Many carriers want to know and may require an endorsement or separate coverage. Silence here = potential claim denial.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 5. WORKERS COMP & CLASSIFICATION ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">👷</span> Workers' Comp &amp; Classification</div>
+          <div class="grade-box warn">B</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Employee classifications reviewed — teachers coded as teachers, not higher-risk codes
+              <span class="flag flag-red">Audit This</span>
+              <div class="check-note">Misclassified employees can cost thousands in unnecessary premium. A WC audit or classification review often finds recoverable money.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              All locations and employee counts accurate on WC policy
+              <div class="check-note">New campuses, new hires, or new programs that aren't reflected mean your mod and limits may be wrong.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Experience modification factor (e-mod) reviewed and contested if incorrect
+              <div class="check-note">Errors in the NCCI or state rating bureau data can inflate your e-mod and cost you every year. Request a loss run and compare to what's on file.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 6. SPECIALTY LINES ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">🔒</span> Specialty Lines</div>
+          <div class="grade-box info">?</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Cyber Liability — standalone or endorsed — limits reviewed
+              <span class="flag flag-red">Do Not Skip</span>
+              <div class="check-note">Student PII, SIS data, and financial records make schools targets. Incident response costs alone often exceed $200K. Confirm ransomware and data breach are both covered.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Crime / Employee Dishonesty coverage in place — limit appropriate to budget size
+              <div class="check-note">Internal theft and fraud is more common than most boards want to admit. Coverage should scale with your annual budget and treasury activity.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Student Accident coverage confirmed — benefit schedule reviewed
+              <div class="check-note">District-sponsored coverage may not follow charter students. Confirm your policy covers athletics, field trips, and extra-curriculars at appropriate medical limits.</div>
+            </div>
+          </div>
+        </div>
+        <div class="remarks">
+          <div class="remarks-label">Teacher Comments</div>
+          <p>Cyber and Crime are the two lines most schools under-buy until they need them. A single ransomware event or embezzlement case can destabilize a small school's finances. These aren't optional extras — they're core coverage.</p>
+        </div>
+      </div>
+
+      <!-- ── 7. RETRO DATES ── -->
+      <div class="subject">
+        <div class="subject-header">
+          <div class="subject-name"><span class="icon">📅</span> Retroactive Dates &amp; Claims History</div>
+          <div class="grade-box crit">!</div>
+        </div>
+        <div class="subject-items">
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Retro date on claims-made policies preserved from prior year
+              <span class="flag flag-red">Never Change This</span>
+              <div class="check-note">If your retro date moves forward at renewal, you lose coverage for everything that happened before the new date. Verify this matches your prior policy every year.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Loss runs pulled — open claims reviewed with current carrier before renewal
+              <div class="check-note">Open claims affect your renewal pricing. Know what's open, what's reserved, and whether any should be closed before the renewal date runs the numbers.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-box" onclick="toggleCheck(this)"></div>
+            <div class="check-label">
+              Prior Acts / Nose coverage evaluated if switching carriers
+              <div class="check-note">If you leave a claims-made carrier, prior incidents can go uninsured unless you purchase tail (extended reporting) coverage or your new carrier grants prior acts.</div>
+            </div>
+          </div>
+        </div>
+        <div class="remarks">
+          <div class="remarks-label">Teacher Comments</div>
+          <p>Retroactive dates are the most dangerous thing most school leaders have never heard of. One wrong move at renewal can leave years of potential liability completely uninsured. This one always warrants a second set of eyes.</p>
+        </div>
+      </div>
+
+      <!-- GRADE KEY -->
+      <div class="grade-key">
+        <div class="grade-key-title">Renewal Readiness Scale</div>
+        <div class="grade-key-row">
+          <div class="grade-key-item"><div class="grade-box" style="width:28px;height:28px;font-size:.85rem;">A</div> Ready — reviewed, confirmed, documented</div>
+          <div class="grade-key-item"><div class="grade-box warn" style="width:28px;height:28px;font-size:.85rem;">B</div> Action needed before renewal</div>
+          <div class="grade-key-item"><div class="grade-box crit" style="width:28px;height:28px;font-size:.85rem;">C</div> Gap identified — address immediately</div>
+          <div class="grade-key-item"><div class="grade-box info" style="width:28px;height:28px;font-size:.85rem;">?</div> Not yet reviewed</div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="rc-footer">
+        <div class="rc-footer-brand">
+          <strong>CharterSelect Insurance</strong><br>
+          Specialty insurance for charter schools.<br>
+          <a href="https://charterselect.com" style="color:var(--cs-teal);font-size:.7rem;">charterselect.com</a>
+        </div>
+        <a href="https://charterselect.com" class="cta-btn">Get a Free Policy Review →</a>
+      </div>
+
+    </div><!-- /rc-body -->
+  </div><!-- /page-wrap -->
+</div><!-- /checklist -->
+
+<script>
+  const TOTAL_CHECKS = document.querySelectorAll('.check-box').length;
+
+  function updateProgress() {
+    const checked = document.querySelectorAll('.check-box.checked').length;
+    const pct = Math.round((checked / TOTAL_CHECKS) * 100);
+    document.getElementById('prog-pct').textContent = pct + '%';
+    document.getElementById('prog-fill').style.width = pct + '%';
+  }
+
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function handleGate(e) {
+    e.preventDefault();
+    const name   = document.getElementById('g-name').value.trim();
+    const title  = document.getElementById('g-title').value.trim();
+    const school = document.getElementById('g-school').value.trim();
+    const email  = document.getElementById('g-email').value.trim();
+
+    // Populate checklist header
+    document.getElementById('cl-school').textContent = school || ' ';
+    document.getElementById('cl-name').textContent   = (name + (title ? ', ' + title : '')) || ' ';
+
+    // Fire lead capture webhook — swap in your endpoint
+    try {
+      fetch('https://hooks.zapier.com/hooks/catch/YOUR_HOOK_ID/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, title, school, email, source: 'renewal-checklist', ts: new Date().toISOString() })
+      });
+    } catch(_) {}
+
+    // Show checklist
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('checklist').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
