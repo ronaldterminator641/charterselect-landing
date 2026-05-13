@@ -56,6 +56,25 @@
 
     .site-home-btn:hover { background: var(--cs-gold-600); }
 
+    .site-print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.12);
+      border: 1.5px solid rgba(255,255,255,.3);
+      text-decoration: none;
+      padding: .4rem .9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .site-print-btn:hover { background: rgba(255,255,255,.22); color: #fff; }
+
     .page-wrap {
       max-width: 760px;
       margin: 0 auto;
@@ -478,7 +497,143 @@
     .modal-btn--outline { background: #fff; color: var(--cs-teal); border: 1.5px solid var(--cs-teal); }
     .modal-btn--outline:hover { background: var(--cs-teal-50); }
 
+    /* ── GATE ── */
+    #gate {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: var(--bg-cream);
+    }
+
+    .gate-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(15,118,110,.12);
+      max-width: 480px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .gate-header {
+      background: var(--cs-teal);
+      color: white;
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .gate-header .eyebrow {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cs-gold);
+      margin-bottom: .5rem;
+    }
+
+    .gate-header h1 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+
+    .gate-header p {
+      font-size: .85rem;
+      opacity: .85;
+      line-height: 1.5;
+    }
+
+    .gate-body {
+      padding: 1.75rem 2rem 2rem;
+    }
+
+    .gate-body p {
+      font-size: .9rem;
+      color: var(--fg-2);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .checklist-preview {
+      background: var(--cs-teal-50, #E6F2F1);
+      border-left: 3px solid var(--cs-teal);
+      border-radius: 4px;
+      padding: .75rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: .8rem;
+      color: var(--cs-teal-700);
+      line-height: 1.7;
+    }
+
+    .checklist-preview strong {
+      display: block;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cs-teal);
+      margin-bottom: .35rem;
+    }
+
+    .gate-form label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--fg-2);
+      margin-bottom: .3rem;
+      margin-top: .85rem;
+    }
+
+    .gate-form label:first-of-type { margin-top: 0; }
+
+    .gate-form input {
+      width: 100%;
+      padding: .6rem .75rem;
+      border: 1.5px solid var(--border-2);
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: .875rem;
+      color: var(--fg-1);
+      transition: border-color .15s;
+    }
+
+    .gate-form input:focus {
+      outline: none;
+      border-color: var(--cs-teal);
+    }
+
+    .gate-btn {
+      margin-top: 1.25rem;
+      width: 100%;
+      background: var(--cs-gold);
+      color: var(--cs-charcoal);
+      font-family: var(--font-body);
+      font-size: .875rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+    }
+
+    .gate-btn:hover { background: var(--cs-gold-600); transform: translateY(-1px); }
+
+    .gate-fine {
+      margin-top: .75rem;
+      font-size: .7rem;
+      color: var(--fg-muted);
+      text-align: center;
+    }
+
+    #checklist { display: none; }
+
     @media print {
+      #gate { display: none !important; }
+      #checklist { display: block !important; }
       .site-back-bar { display: none; }
       .bandwidth-banner { display: none; }
       .rc-footer { page-break-inside: avoid; }
@@ -495,14 +650,54 @@
 </head>
 <body>
 
+<!-- ── GATE ── -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-header">
+      <div class="eyebrow">Free Resource from CharterSelect</div>
+      <h1>Charter School Insurance<br>Renewal Report Card</h1>
+      <p>Don't let your renewal sneak up on you with gaps you only discover after a claim.</p>
+    </div>
+    <div class="gate-body">
+      <p>This report card covers the areas I review first on every charter school program — the coverage nuances, policy details, and limit structures that have the most impact when a claim happens. Written by a specialist who works exclusively with charter schools.</p>
+
+      <div class="checklist-preview">
+        <strong>What I look for every single renewal</strong>
+        The sublimits that quietly cap your biggest claims. The one date that, if it changes, can erase years of protection. The umbrella gaps that only show up when you need them most. And the line items your broker probably skipped because no one asked.
+      </div>
+
+      <form class="gate-form" id="gateForm" onsubmit="handleGate(event)">
+        <label for="g-name">Your Name</label>
+        <input type="text" id="g-name" name="name" placeholder="Maria Gonzalez" required>
+
+        <label for="g-title">Title</label>
+        <input type="text" id="g-title" name="title" placeholder="Head of School / CFO / Business Manager">
+
+        <label for="g-school">School Name</label>
+        <input type="text" id="g-school" name="school" placeholder="Charter Academy of…" required>
+
+        <label for="g-email">Work Email</label>
+        <input type="email" id="g-email" name="email" placeholder="you@yourschool.org" required>
+
+        <button type="submit" class="gate-btn">Access the Report Card &#8594;</button>
+        <p class="gate-fine">No spam. Just one free resource. If your renewal is coming up and something looks off, we'd be glad to take a look.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- ── BACK TO SITE BAR ── -->
-<div class="site-back-bar">
+<div class="site-back-bar" style="display:none;" id="siteBar">
   <a href="index.html" class="site-back-btn">
     &#8592; Back to CharterSelect
   </a>
-  <a href="index.html" class="site-home-btn">charterselect.com</a>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <button class="site-print-btn" onclick="window.print()">&#128438; Print / Save PDF</button>
+    <a href="index.html" class="site-home-btn">charterselect.com</a>
+  </div>
 </div>
 
+<div id="checklist">
 <div class="page-wrap">
 
   <!-- REPORT CARD HEADER -->
@@ -806,6 +1001,7 @@
 
   </div><!-- /rc-body -->
 </div><!-- /page-wrap -->
+</div><!-- /checklist -->
 
 <!-- MODAL -->
 <div class="modal-backdrop" id="reviewModal">
@@ -826,6 +1022,27 @@
 </div>
 
 <script>
+  function handleGate(e) {
+    e.preventDefault();
+    const name   = document.getElementById('g-name').value.trim();
+    const title  = document.getElementById('g-title').value.trim();
+    const school = document.getElementById('g-school').value.trim();
+    const email  = document.getElementById('g-email').value.trim();
+
+    try {
+      fetch('/.netlify/functions/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, title, school_name: school, email, source: 'renewal-report-card', ts: new Date().toISOString() })
+      });
+    } catch(_) {}
+
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('siteBar').style.display = 'flex';
+    document.getElementById('checklist').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
   const TOTAL_CHECKS = document.querySelectorAll('.check-box').length;
 
   function updateProgress() {
