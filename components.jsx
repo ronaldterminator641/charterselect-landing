@@ -22,7 +22,7 @@ function TopNav({ onCta }) {
     { href: 'why.html', label: 'Why CharterSelect' },
     { href: 'commitment.html', label: 'Our Commitment' },
     { href: 'about.html', label: 'About' },
-    { href: 'renewal-checklist.html', label: 'Renewal Checklist' },
+    { href: 'renewal-report-card.html', label: 'Renewal Report Card' },
   ];
   return (
     <header className="cs-nav" style={{position:'relative', zIndex:300}}>
@@ -34,9 +34,8 @@ function TopNav({ onCta }) {
           {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
         </nav>
         <div className="cs-nav__cta">
-          <a className="cs-link" href="contact.html">Contact</a>
           <a className="cs-btn cs-btn--primary cs-btn--sm" href="contact.html" style={{textDecoration:'none'}}>
-            Get a Review
+            Get a Free Review
           </a>
         </div>
         <button className="cs-hamburger" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
@@ -50,9 +49,7 @@ function TopNav({ onCta }) {
           {links.map(l => (
             <a key={l.href} href={l.href} className="cs-mobile-menu__link" onClick={() => setOpen(false)}>{l.label}</a>
           ))}
-          <a href="contact.html" className="cs-mobile-menu__link" onClick={() => setOpen(false)}>Contact</a>
-          <a href="renewal-checklist.html" className="cs-mobile-menu__link" onClick={() => setOpen(false)}>Renewal Checklist</a>
-          <a href="contact.html" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Review</a>
+          <a href="contact.html" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
         </nav>
       )}
     </header>

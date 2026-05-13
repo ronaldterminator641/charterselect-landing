@@ -116,7 +116,7 @@
     function ContactPage() {
       const [form, setForm] = React.useState({
         school_name: '', contact_name: '', title: '', email: '', phone: '',
-        state: '', campuses: '', insurance_situation: '', how_heard: ''
+        state: '', campuses: '', insurance_situation: '', how_heard: '', how_heard_other: ''
       });
       const [submitting, setSubmitting] = React.useState(false);
       const [error, setError] = React.useState(null);
@@ -238,6 +238,16 @@
                       <option value="">Select…</option>
                       {HOW_OPTIONS.map(h => <option key={h} value={h}>{h}</option>)}
                     </select>
+                    {form.how_heard === 'Other' && (
+                      <input
+                        className="contact-input"
+                        style={{marginTop: 10}}
+                        type="text"
+                        placeholder="Please describe…"
+                        value={form.how_heard_other}
+                        onChange={setField('how_heard_other')}
+                      />
+                    )}
                   </div>
 
                   {error && <div className="contact-error">{error}</div>}
