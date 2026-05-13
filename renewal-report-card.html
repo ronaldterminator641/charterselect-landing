@@ -1,540 +1,857 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Renewal Report Card — CharterSelect</title>
-  <meta name="description" content="A comprehensive renewal checklist for charter school insurance — walk through every coverage area before your next renewal." />
-  <link rel="stylesheet" href="colors_and_type.css" />
-  <link rel="stylesheet" href="site.css?v=2" />
-  <link rel="icon" href="assets/logo-icon.png" />
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charter School Insurance Renewal Report Card | CharterSelect</title>
+  <link rel="stylesheet" href="colors_and_type.css">
   <style>
-    /* ── Page hero ── */
-    .rrc-hero {
-      background: var(--cs-teal);
-      padding: 48px 32px 52px;
-    }
-    .rrc-hero__inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .rrc-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      margin-bottom: 20px;
-      transition: color 140ms;
-    }
-    .rrc-back:hover { color: #fff; }
-    .rrc-hero__eyebrow {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
       font-family: var(--font-body);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--cs-gold);
-      margin-bottom: 8px;
-    }
-    .rrc-hero__title {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      color: #fff;
-      margin: 0 0 12px;
-    }
-    .rrc-hero__lead {
-      font-size: 16px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.85);
-      margin: 0;
-      max-width: 58ch;
+      background: var(--bg-cream);
+      color: var(--fg-1);
+      min-height: 100vh;
     }
 
-    /* ── Bandwidth CTA widget ── */
-    .rrc-bandwidth {
-      background: var(--cs-gold-50);
-      border: 1.5px solid var(--cs-gold);
-      border-radius: 14px;
-      padding: 20px 24px;
+    /* ── BACK TO SITE BAR ── */
+    .site-back-bar {
+      background: var(--cs-teal);
+      padding: .65rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin: 32px auto;
-      max-width: 900px;
-    }
-    .rrc-bandwidth__text {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--cs-charcoal);
-      margin: 0;
-    }
-    .rrc-bandwidth__text span {
-      color: var(--cs-teal-700);
-    }
-    .rrc-bandwidth__actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      flex-shrink: 0;
+      gap: 1rem;
     }
 
-    /* ── Modal overlay ── */
-    .rrc-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: 200;
+    .site-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    .site-back-btn:hover { color: #fff; }
+
+    .site-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 700;
+      background: var(--cs-gold);
+      color: var(--cs-charcoal);
+      text-decoration: none;
+      padding: .45rem 1rem;
+      border-radius: 6px;
+      transition: background .15s;
+    }
+
+    .site-home-btn:hover { background: var(--cs-gold-600); }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── REPORT CARD HEADER ── */
+    .rc-header {
+      background: var(--cs-teal);
+      border-radius: 12px 12px 0 0;
+      color: white;
+      padding: 1.5rem 2rem 1.25rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 24px;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .rrc-modal {
-      background: #fff;
-      border-radius: 20px;
-      padding: 36px 32px;
-      max-width: 420px;
-      width: 100%;
-      box-shadow: var(--shadow-lg);
-      text-align: center;
-      position: relative;
-    }
-    .rrc-modal__close {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--fg-muted);
-      padding: 4px;
+
+    .rc-logo-area {
       display: flex;
+      align-items: center;
+      gap: .75rem;
     }
-    .rrc-modal__title {
+
+    .rc-logo-area img {
+      height: 36px;
+      filter: brightness(0) invert(1);
+    }
+
+    .rc-title-group .rc-eyebrow {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cs-gold);
+    }
+
+    .rc-title-group h1 {
       font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 400;
-      color: var(--fg-1);
-      margin: 12px 0 8px;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      color: #fff;
     }
-    .rrc-modal__sub {
-      font-size: 14px;
-      color: var(--fg-muted);
-      margin: 0 0 24px;
+
+    .rc-meta {
+      text-align: right;
+      font-size: .72rem;
+      opacity: .8;
+      line-height: 1.7;
+      color: #fff;
+    }
+
+    .rc-meta strong { color: var(--cs-gold); font-size: .75rem; }
+
+    /* INFO STRIP */
+    .rc-info-strip {
+      background: var(--cs-charcoal);
+      padding: .65rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+    }
+
+    .rc-info-cell {
+      font-size: .7rem;
+      color: rgba(255,255,255,.65);
       line-height: 1.5;
     }
-    .rrc-modal__actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .rrc-modal__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 20px;
-      border-radius: 999px;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: background 140ms, color 140ms;
-    }
-    .rrc-modal__btn--teal { background: var(--cs-teal); color: #fff; }
-    .rrc-modal__btn--teal:hover { background: var(--cs-teal-700); }
-    .rrc-modal__btn--outline { background: #fff; color: var(--cs-teal); border: 1.5px solid var(--cs-teal); }
-    .rrc-modal__btn--outline:hover { background: var(--cs-teal-50); }
 
-    /* ── Checklist body ── */
-    .rrc-body {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 32px 80px;
-    }
-    @media (max-width: 600px) { .rrc-body { padding: 0 16px 60px; } }
-
-    /* ── Section cards ── */
-    .rrc-section {
-      margin-bottom: 28px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-1);
-    }
-    .rrc-section__header {
-      background: var(--cs-teal);
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .rrc-section__title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 400;
-      color: #fff;
-      margin: 0;
-    }
-    .rrc-section__icon {
+    .rc-info-cell strong {
+      display: block;
       color: var(--cs-gold);
-      flex-shrink: 0;
-    }
-    .rrc-section__body {
-      background: #fff;
-      padding: 20px 24px 24px;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
-    /* ── Checklist items ── */
-    .rrc-items {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    /* ── MAIN BODY ── */
+    .rc-body {
+      background: white;
+      border: 1.5px solid #d1d5db;
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 1.75rem 2rem 2rem;
     }
-    .rrc-item {
+
+    /* SECTION */
+    .subject {
+      border: 1.5px solid var(--border-2);
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    .subject-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem 1rem;
+      background: var(--cs-teal);
+      border-bottom: 1.5px solid rgba(255,255,255,.15);
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .subject-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .subject-name .icon { font-size: 1rem; }
+
+    /* Write-in grade box */
+    .grade-input {
+      width: 44px;
+      height: 36px;
+      background: rgba(255,255,255,.12);
+      border: 1.5px solid rgba(255,255,255,.35);
+      border-radius: 6px;
+      color: var(--cs-gold);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      flex-shrink: 0;
+      outline: none;
+      transition: border-color .15s, background .15s;
+    }
+
+    .grade-input:focus {
+      border-color: var(--cs-gold);
+      background: rgba(255,255,255,.2);
+    }
+
+    .subject-items {
+      padding: .75rem 1rem;
+    }
+
+    .check-item {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: .65rem;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--cs-gray-100, #f3f4f6);
+      font-size: .84rem;
+      color: var(--fg-1);
+      line-height: 1.5;
     }
-    .rrc-item__cb {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--cs-teal);
-      border-radius: 5px;
+
+    .check-item:last-child { border-bottom: none; }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--cs-teal);
+      border-radius: 3px;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 1px;
       cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      background: #fff;
-      transition: background 140ms, border-color 140ms;
       position: relative;
+      background: white;
+      transition: background .15s;
     }
-    .rrc-item__cb:checked {
+
+    .check-box.checked {
       background: var(--cs-teal);
       border-color: var(--cs-teal);
     }
-    .rrc-item__cb:checked::after {
+
+    .check-box.checked::after {
       content: '';
       position: absolute;
-      left: 3px;
-      top: 0px;
-      width: 6px;
-      height: 11px;
-      border: 2px solid #fff;
+      top: 2px; left: 5px;
+      width: 5px; height: 9px;
+      border: 2px solid white;
       border-top: none;
       border-left: none;
       transform: rotate(45deg);
     }
-    .rrc-item__label {
-      font-size: 14.5px;
-      line-height: 1.6;
-      color: var(--fg-2);
-      flex: 1;
-    }
-    .rrc-item__label strong {
-      color: var(--fg-1);
-      font-weight: 600;
-    }
 
-    /* ── Write-in area ── */
-    .rrc-notes {
-      width: 100%;
-      min-height: 60px;
-      border: 1.5px solid var(--border-1);
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-family: var(--font-body);
-      font-size: 14px;
-      color: var(--fg-1);
-      background: var(--cs-gray-50);
-      resize: vertical;
-      outline: none;
-      transition: border-color 140ms;
-      box-sizing: border-box;
-    }
-    .rrc-notes:focus { border-color: var(--cs-teal); background: #fff; }
-    .rrc-notes::placeholder { color: var(--fg-muted); }
-    .rrc-notes-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--cs-charcoal-3);
+    .check-label { flex: 1; }
+    .check-label .flag {
+      display: inline-block;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      margin-bottom: 6px;
-      display: block;
+      padding: .1em .4em;
+      border-radius: 3px;
+      margin-left: .3rem;
+      vertical-align: middle;
     }
 
-    /* ── Bandwidth widget in page body ── */
-    .rrc-bandwidth--body {
+    .flag-red { background: #FEE2E2; color: #B91C1C; }
+    .flag-amber { background: #FEF3C7; color: #92400E; }
+    .flag-teal { background: var(--cs-teal-50, #E6F2F1); color: var(--cs-teal); }
+
+    .check-note {
+      font-size: .73rem;
+      color: var(--fg-muted);
+      margin-top: .15rem;
+      line-height: 1.5;
+    }
+
+    /* REMARKS */
+    .remarks {
+      background: var(--cs-gold-50, #FEF6E0);
+      border: 1.5px dashed var(--cs-gold-600);
+      border-radius: 6px;
+      padding: .75rem 1rem;
+      margin-top: .75rem;
+    }
+
+    .remarks-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cs-gold-600);
+      margin-bottom: .3rem;
+    }
+
+    .remarks p {
+      font-size: .78rem;
+      color: var(--fg-2);
+      line-height: 1.6;
+    }
+
+    /* PROGRESS BAR */
+    .progress-bar-wrap {
+      margin-top: 1.5rem;
+      margin-bottom: .5rem;
+    }
+
+    .progress-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .72rem;
+      color: var(--fg-muted);
+      margin-bottom: .35rem;
+    }
+
+    .progress-bar-label span { font-weight: 600; color: var(--cs-teal); }
+
+    .progress-track {
+      height: 8px;
+      background: var(--cs-gray-200);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
       background: var(--cs-teal);
+      border-radius: 99px;
+      width: 0%;
+      transition: width .5s ease;
+    }
+
+    /* FOOTER */
+    .rc-footer {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1.5px solid var(--border-1);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .rc-footer-brand {
+      font-size: .72rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+
+    .rc-footer-brand strong { color: var(--cs-teal); }
+
+    .cta-btn {
+      background: var(--cs-gold);
+      color: var(--cs-charcoal);
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      padding: .6rem 1.25rem;
       border: none;
-      border-radius: 16px;
-      padding: 32px 28px;
-      margin-top: 16px;
-      text-align: center;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .15s;
     }
-    .rrc-bandwidth--body .rrc-bandwidth__text {
-      color: #fff;
-      font-size: 18px;
-      font-family: var(--font-display);
-      font-weight: 400;
-      margin-bottom: 8px;
+
+    .cta-btn:hover { background: var(--cs-gold-600); }
+
+    /* BANDWIDTH BANNER */
+    .bandwidth-banner {
+      background: var(--cs-teal);
+      border-radius: 8px;
+      padding: .9rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .rrc-bandwidth--body .rrc-bandwidth__sub {
-      font-size: 14px;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 20px;
+
+    .bandwidth-banner-text {
+      color: white;
+      font-size: .85rem;
+      line-height: 1.5;
     }
-    .rrc-bandwidth--body .rrc-bandwidth__actions {
+
+    .bandwidth-banner-text strong {
+      display: block;
+      font-size: .95rem;
+      margin-bottom: .15rem;
+    }
+
+    .bandwidth-btn {
+      background: var(--cs-gold);
+      color: var(--cs-charcoal);
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      padding: .55rem 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .15s;
+    }
+
+    .bandwidth-btn:hover { background: var(--cs-gold-600); }
+
+    /* MODAL */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 200;
+      align-items: center;
       justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px; right: 14px;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--fg-muted);
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--fg-1);
+      margin: .5rem 0 .4rem;
+    }
+
+    .modal p {
+      font-size: .85rem;
+      color: var(--fg-2);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+
+    .modal-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .75rem 1rem;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+
+    .modal-btn--teal { background: var(--cs-teal); color: #fff; }
+    .modal-btn--teal:hover { background: var(--cs-teal-700); }
+    .modal-btn--outline { background: #fff; color: var(--cs-teal); border: 1.5px solid var(--cs-teal); }
+    .modal-btn--outline:hover { background: var(--cs-teal-50); }
+
+    @media print {
+      .site-back-bar { display: none; }
+      .bandwidth-banner { display: none; }
+      .rc-footer { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 520px) {
+      .rc-header { flex-direction: column; align-items: flex-start; }
+      .rc-meta { text-align: left; }
+      .rc-info-strip { grid-template-columns: 1fr 1fr; }
+      .rc-body { padding: 1.25rem 1rem; }
+      .site-back-bar { flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel" src="components.jsx?v=8"></script>
-  <script type="text/babel">
 
-    const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
-    const EMAIL = 'mailto:aschwen@charterselect.com';
+<!-- ── BACK TO SITE BAR ── -->
+<div class="site-back-bar">
+  <a href="index.html" class="site-back-btn">
+    &#8592; Back to CharterSelect
+  </a>
+  <a href="index.html" class="site-home-btn">charterselect.com</a>
+</div>
 
-    const SECTIONS = [
-      {
-        id: 'property',
-        icon: 'building-2',
-        title: 'Property Coverage',
-        items: [
-          { id: 'p1', label: 'Bond covenants satisfied — coverage meets all requirements of facility leases and lender agreements.' },
-          { id: 'p2', label: 'Deductible reviewed and appropriately funded.' },
-          { id: 'p3', label: 'All locations confirmed and scheduled on policy.' },
-          { id: 'p4', label: 'Equipment breakdown / boiler & machinery coverage in place where applicable.' },
-        ],
-      },
-      {
-        id: 'gl',
-        icon: 'shield-check',
-        title: 'Package Policy, Educators Legal Liability',
-        items: [
-          { id: 'gl1', label: <span><strong>Abuse &amp; Molestation:</strong> This is frequently sublimited or can even be compromised if not written properly. If claims made, confirm retro date reaches back far enough to cover liability for any prior unreported incidents.</span> },
-          { id: 'gl2', label: 'Educators Legal Liability retro date confirmed and preserved from prior policy term.' },
-          { id: 'gl3', label: 'General Liability limits adequate for all operations and contracts.' },
-        ],
-      },
-      {
-        id: 'umbrella',
-        icon: 'layers',
-        title: 'Umbrella / Excess',
-        items: [
-          { id: 'u1', label: 'Abuse, Auto, Workers Comp, General Liability, and Educators Legal Liability are all included as underlying policies.' },
-        ],
-      },
-      {
-        id: 'auto',
-        icon: 'car',
-        title: 'Auto & Vehicle Schedule',
-        items: [
-          { id: 'a1', label: 'All owned vehicles accurately listed and scheduled.' },
-          { id: 'a2', label: 'Hired and non-owned auto coverage included.' },
-          { id: 'a3', label: 'Driver roster reviewed annually.' },
-        ],
-      },
-      {
-        id: 'wc',
-        icon: 'hard-hat',
-        title: 'Workers Comp & Classification',
-        items: [
-          { id: 'wc1', label: 'Employee classifications and payroll reviewed.' },
-          { id: 'wc2', label: 'All locations and estimated payroll confirmed on policy.' },
-        ],
-      },
-      {
-        id: 'specialty',
-        icon: 'star',
-        title: 'Specialty Lines',
-        items: [
-          { id: 's1', label: <span><strong>Crime / Employee Dishonesty:</strong> Some schools are required by contract with their authorizers to carry crime coverage or a surety bond for a specific limit. There is also meaningful overlap between cyber and crime policies on fraudulent wire transfers — we recommend carrying both. Confirm limit is in place and policy language is current.</span> },
-          { id: 's2', label: <span><strong>Student Accident:</strong> Student accident coverage pays medical bills for students injured during school activities — whether uninsured, or to cover a family's out-of-pocket costs when they have insurance. This is distinct from general liability: GL responds to negligence; student accident pays regardless of fault. Many schools don't realize a student injury without negligence won't trigger GL — this coverage fills that gap.</span> },
-          { id: 's3', label: 'Cyber Liability: policy in place, limits reviewed, and retention confirmed.' },
-          { id: 's4', label: 'Directors & Officers / Management Liability in place.' },
-        ],
-      },
-      {
-        id: 'retro',
-        icon: 'clock',
-        title: 'Retroactive Dates & Claims History',
-        items: [
-          { id: 'r1', label: 'All claims-made policies: retro dates confirmed and preserved from prior policy term.' },
-          { id: 'r2', label: 'Claims history reviewed and accurate.' },
-        ],
-      },
-    ];
+<div class="page-wrap">
 
-    function BandwidthModal({ onClose }) {
-      return (
-        <div className="rrc-modal-backdrop" onClick={onClose}>
-          <div className="rrc-modal" onClick={e => e.stopPropagation()}>
-            <button className="rrc-modal__close" onClick={onClose} aria-label="Close">
-              <i data-lucide="x" style={{width:20,height:20}} />
-            </button>
-            <i data-lucide="calendar-heart" style={{width:40,height:40,color:'var(--cs-teal)',margin:'0 auto'}} />
-            <h2 className="rrc-modal__title">Get a free review</h2>
-            <p className="rrc-modal__sub">Let us walk through this with you — takes about 20 minutes and there's no obligation.</p>
-            <div className="rrc-modal__actions">
-              <a className="rrc-modal__btn rrc-modal__btn--teal" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
-                <i data-lucide="calendar" style={{width:18,height:18}} />
-                Book a Meeting
-              </a>
-              <a className="rrc-modal__btn rrc-modal__btn--outline" href={EMAIL}>
-                <i data-lucide="mail" style={{width:18,height:18}} />
-                Send an Email
-              </a>
-            </div>
+  <!-- REPORT CARD HEADER -->
+  <div class="rc-header">
+    <div class="rc-logo-area">
+      <img src="BK-charterselect-logo.png" alt="CharterSelect" onerror="this.style.display='none'">
+      <div class="rc-title-group">
+        <div class="rc-eyebrow">Insurance Renewal</div>
+        <h1>Renewal Report Card</h1>
+      </div>
+    </div>
+    <div class="rc-meta">
+      <strong>RENEWAL YEAR</strong><br>
+      Academic Year ________<br>
+      Renewal Date ________<br>
+      Prepared by CharterSelect
+    </div>
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="rc-info-strip">
+    <div class="rc-info-cell"><strong>School Name</strong>_________________</div>
+    <div class="rc-info-cell"><strong>Contact</strong>_________________</div>
+    <div class="rc-info-cell"><strong>Current Carrier(s)</strong>_________________</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="rc-body">
+
+    <!-- BANDWIDTH BANNER (top) -->
+    <div class="bandwidth-banner">
+      <div class="bandwidth-banner-text">
+        <strong>Don't have the bandwidth to go through this yourself?</strong>
+        We'll review your current policy and flag every gap — free, no obligation.
+      </div>
+      <button class="bandwidth-btn" onclick="openModal()">Get a Free Review &#8594;</button>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-label">Renewal Readiness Score <span id="prog-pct">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
+    </div>
+
+    <!-- ── 1. PROPERTY ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">🏫</span> Property Coverage</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Blanket vs. Scheduled coverage verified — limits match current appraised values
+            <div class="check-note">Blanket pools limits across locations. Scheduled assigns a per-building cap. Underinsured buildings won't be made whole at claim time.</div>
           </div>
         </div>
-      );
-    }
-
-    function BandwidthCta({ onOpen, dark }) {
-      if (dark) {
-        return (
-          <div className="rrc-bandwidth--body">
-            <p className="rrc-bandwidth__text">Don't have the bandwidth to go through this yourself?</p>
-            <p className="rrc-bandwidth__sub">We'll walk through every item with you — free, no obligation.</p>
-            <div className="rrc-bandwidth__actions">
-              <button className="cs-btn cs-btn--gold" onClick={onOpen} style={{border:'none'}}>
-                <i data-lucide="calendar-heart" style={{width:16,height:16}} />
-                Get a Free Review
-              </button>
-            </div>
-          </div>
-        );
-      }
-      return (
-        <div className="rrc-bandwidth">
-          <p className="rrc-bandwidth__text">
-            Don't have the bandwidth to go through this yourself?{' '}
-            <span>Get a free review — no obligation.</span>
-          </p>
-          <div className="rrc-bandwidth__actions">
-            <button className="cs-btn cs-btn--primary cs-btn--sm" onClick={onOpen} style={{border:'none'}}>
-              <i data-lucide="calendar-heart" style={{width:15,height:15}} />
-              Book a Meeting
-            </button>
-            <a className="cs-btn cs-btn--secondary cs-btn--sm" href={EMAIL} style={{textDecoration:'none'}}>
-              <i data-lucide="mail" style={{width:15,height:15}} />
-              Email Us
-            </a>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Water damage sublimit reviewed
+            <span class="flag flag-red">Common Gap</span>
+            <div class="check-note">Many policies cap water damage at $100K–$500K buried in the sublimit schedule — well below a real loss. Find the line and compare it to your exposure.</div>
           </div>
         </div>
-      );
-    }
-
-    function CheckSection({ section }) {
-      const [checked, setChecked] = React.useState({});
-      const [notes, setNotes] = React.useState('');
-
-      const toggle = (id) => setChecked(prev => ({ ...prev, [id]: !prev[id] }));
-      const allDone = section.items.every(it => checked[it.id]);
-
-      return (
-        <div className="rrc-section">
-          <div className="rrc-section__header">
-            <i data-lucide={section.icon} className="rrc-section__icon" style={{width:22,height:22}} />
-            <h2 className="rrc-section__title">{section.title}</h2>
-            {allDone && (
-              <i data-lucide="check-circle-2" style={{width:20,height:20,color:'var(--cs-gold)',marginLeft:'auto',flexShrink:0}} />
-            )}
-          </div>
-          <div className="rrc-section__body">
-            <ul className="rrc-items">
-              {section.items.map(item => (
-                <li key={item.id} className="rrc-item">
-                  <input
-                    type="checkbox"
-                    className="rrc-item__cb"
-                    checked={!!checked[item.id]}
-                    onChange={() => toggle(item.id)}
-                    id={item.id}
-                  />
-                  <label className="rrc-item__label" htmlFor={item.id}>{item.label}</label>
-                </li>
-              ))}
-            </ul>
-            <span className="rrc-notes-label">Notes</span>
-            <textarea
-              className="rrc-notes"
-              placeholder="Add notes for this section…"
-              value={notes}
-              onChange={e => setNotes(e.target.value)}
-            />
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            All campus addresses listed and up to date on declarations page
+            <span class="flag flag-amber">Verify</span>
+            <div class="check-note">New portables, leased annexes, or off-site program locations not on the dec page = no coverage.</div>
           </div>
         </div>
-      );
-    }
-
-    function RenewalReportCard() {
-      const [modalOpen, setModalOpen] = React.useState(false);
-
-      React.useEffect(() => {
-        window.lucide && window.lucide.createIcons();
-      });
-
-      return (
-        <div data-screen-label="Renewal Report Card">
-          <TopNav onCta={() => { window.location.href = 'contact.html'; }} />
-
-          {/* Hero */}
-          <div className="rrc-hero">
-            <div className="rrc-hero__inner">
-              <a className="rrc-back" href="index.html">
-                <i data-lucide="arrow-left" style={{width:14,height:14}} /> Back to CharterSelect
-              </a>
-              <div className="rrc-hero__eyebrow">Charter School Insurance</div>
-              <h1 className="rrc-hero__title">Renewal Report Card</h1>
-              <p className="rrc-hero__lead">Walk through every coverage area before your next renewal. Check off items as you confirm them, and use the notes area in each section to capture anything that needs follow-up.</p>
-            </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Bond covenants or landlord requirements reviewed for minimum coverage thresholds
+            <div class="check-note">Your lease or bond docs may require specific limits. Make sure your policy meets them.</div>
           </div>
-
-          {/* Top bandwidth CTA */}
-          <div style={{padding:'0 32px', maxWidth:'964px', margin:'0 auto'}}>
-            <BandwidthCta onOpen={() => setModalOpen(true)} />
-          </div>
-
-          {/* Checklist sections */}
-          <div className="rrc-body">
-            {SECTIONS.map(section => (
-              <CheckSection key={section.id} section={section} />
-            ))}
-
-            {/* Bottom bandwidth CTA */}
-            <BandwidthCta onOpen={() => setModalOpen(true)} dark />
-          </div>
-
-          <Footer />
-
-          {modalOpen && <BandwidthModal onClose={() => setModalOpen(false)} />}
         </div>
-      );
-    }
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Flood coverage evaluated — NFIP vs. private market vs. excluded
+            <span class="flag flag-amber">Location Dependent</span>
+            <div class="check-note">Standard property policies exclude flood. If you're in or near a flood zone — or even if you're not — confirm this intentionally.</div>
+          </div>
+        </div>
+      </div>
+      <div class="remarks">
+        <div class="remarks-label">Comments</div>
+        <p>Property is where schools get surprised most at claim time. The policy that looks fine at renewal doesn't look fine when you're rebuilding. Check limits against actual replacement costs — construction costs have risen significantly.</p>
+      </div>
+    </div>
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<RenewalReportCard />);
-  </script>
+    <!-- ── 2. PACKAGE POLICY / ELL ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">⚖️</span> Package Policy, Educators Legal Liability</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Defense costs: inside limits vs. outside limits confirmed
+            <span class="flag flag-red">Critical</span>
+            <div class="check-note">Defense <em>inside</em> limits means legal fees eat your coverage limit — a $1M policy could be $700K gone to lawyers before any settlement. Outside limits preserves the full amount for judgments.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Abuse &amp; Molestation coverage confirmed
+            <span class="flag flag-red">Critical</span>
+            <div class="check-note">This is frequently sublimited or can even be compromised if not written properly. If claims made, confirm retro date reaches back far enough to cover liability for any prior unreported incidents.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Educators Legal Liability retro date confirmed and preserved from prior policy term
+            <span class="flag flag-red">Never Change This</span>
+            <div class="check-note">If the retro date moves forward at renewal, you lose coverage for everything that happened before the new date. Verify this matches your prior policy every year.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Corporal punishment — premium charge confirmed as $0
+            <span class="flag flag-teal">Should Be Free</span>
+            <div class="check-note">Almost no schools practice corporal punishment. If you're paying a surcharge for it, that's a classification error. Get it removed.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 3. UMBRELLA ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">☂️</span> Umbrella / Excess Liability</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Abuse, Auto, Workers' Comp, General Liability, and Educators Legal Liability are all included as underlying policies
+            <span class="flag flag-red">Critical</span>
+            <div class="check-note">Any policy line not scheduled as an underlying is excluded from umbrella protection. Confirm all five are listed and that limits match.</div>
+          </div>
+        </div>
+      </div>
+      <div class="remarks">
+        <div class="remarks-label">Comments</div>
+        <p>An umbrella without abuse coverage is like a rain jacket with holes. The whole point is catching what falls through below — make sure the underlying policies and the umbrella speak to each other correctly.</p>
+      </div>
+    </div>
+
+    <!-- ── 4. AUTO & VEHICLE ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">🚌</span> Auto &amp; Vehicle Schedule</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Full vehicle schedule up to date — every bus, van, and car listed with correct VIN
+            <span class="flag flag-red">Verify Now</span>
+            <div class="check-note">A vehicle not on the schedule is not insured. Run this list quarterly.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Hired &amp; Non-Owned Auto coverage in place
+            <div class="check-note">Covers staff using personal vehicles for school business and rentals. Often missed on education policies.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 5. WORKERS COMP ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">👷</span> Workers' Comp &amp; Classification</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Employee classifications reviewed — teachers coded as teachers, not higher-risk codes
+            <span class="flag flag-red">Audit This</span>
+            <div class="check-note">Misclassified employees can cost thousands in unnecessary premium. A WC audit or classification review often finds recoverable money.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            All locations and estimated payroll confirmed on policy
+            <div class="check-note">New campuses or programs not reflected mean your mod and limits may be wrong.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Experience modification factor (e-mod) reviewed and contested if incorrect
+            <div class="check-note">Errors in the NCCI or state rating bureau data can inflate your e-mod and cost you every year. Request a loss run and compare to what's on file.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6. SPECIALTY LINES ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">🔒</span> Specialty Lines</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Cyber Liability — standalone or endorsed — limits reviewed
+            <span class="flag flag-red">Do Not Skip</span>
+            <div class="check-note">Student PII, SIS data, and financial records make schools targets. Incident response costs alone often exceed $200K. Confirm ransomware and data breach are both covered.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Crime / Employee Dishonesty coverage in place
+            <div class="check-note">Some schools are required by contract with their authorizers to carry crime coverage or a surety bond for a specific limit. There is also meaningful overlap between cyber and crime policies on fraudulent wire transfers — we recommend carrying both. Confirm limit is in place and policy language is current.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Student Accident coverage confirmed
+            <div class="check-note">Student accident coverage pays medical bills for students injured during school activities — whether uninsured, or to cover a family's out-of-pocket costs when they have insurance. This is distinct from general liability: GL responds to negligence; student accident pays regardless of fault. Many schools don't realize a student injury without negligence won't trigger GL — this coverage fills that gap.</div>
+          </div>
+        </div>
+      </div>
+      <div class="remarks">
+        <div class="remarks-label">Comments</div>
+        <p>Cyber and Crime are the two lines most schools under-buy until they need them. A single ransomware event or embezzlement case can destabilize a small school's finances. These aren't optional extras — they're core coverage.</p>
+      </div>
+    </div>
+
+    <!-- ── 7. RETRO DATES ── -->
+    <div class="subject">
+      <div class="subject-header">
+        <div class="subject-name"><span class="icon">📅</span> Retroactive Dates &amp; Claims History</div>
+        <input class="grade-input" type="text" maxlength="2" aria-label="Grade" />
+      </div>
+      <div class="subject-items">
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Retro date on claims-made policies preserved from prior year
+            <span class="flag flag-red">Never Change This</span>
+            <div class="check-note">If your retro date moves forward at renewal, you lose coverage for everything that happened before the new date. Verify this matches your prior policy every year.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box" onclick="toggleCheck(this)"></div>
+          <div class="check-label">
+            Loss runs pulled — open claims reviewed with current carrier before renewal
+            <div class="check-note">Open claims affect your renewal pricing. Know what's open, what's reserved, and whether any should be closed before the renewal date runs the numbers.</div>
+          </div>
+        </div>
+      </div>
+      <div class="remarks">
+        <div class="remarks-label">Comments</div>
+        <p>Retroactive dates are the most dangerous thing most school leaders have never heard of. One wrong move at renewal can leave years of potential liability completely uninsured. This one always warrants a second set of eyes.</p>
+      </div>
+    </div>
+
+    <!-- BANDWIDTH BANNER (bottom) -->
+    <div class="bandwidth-banner" style="margin-top:1.75rem;margin-bottom:0;">
+      <div class="bandwidth-banner-text">
+        <strong>Don't have the bandwidth to go through this yourself?</strong>
+        We'll review your current policy and flag every gap — free, no obligation.
+      </div>
+      <button class="bandwidth-btn" onclick="openModal()">Get a Free Review &#8594;</button>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="rc-footer">
+      <div class="rc-footer-brand">
+        <strong>CharterSelect Insurance</strong><br>
+        Specialty insurance for charter schools.<br>
+        <a href="index.html" style="color:var(--cs-teal);font-size:.7rem;">charterselect.com</a>
+      </div>
+      <a href="contact.html" class="cta-btn">Get a Free Policy Review &#8594;</a>
+    </div>
+
+  </div><!-- /rc-body -->
+</div><!-- /page-wrap -->
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="reviewModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&#215;</button>
+    <div style="font-size:2rem;">📋</div>
+    <h2>Get a free review</h2>
+    <p>Let us walk through this with you — takes about 20 minutes and there's no obligation.</p>
+    <div class="modal-actions">
+      <a class="modal-btn modal-btn--teal" href="https://calendar.app.google/JmcCzGBFQQdTYA1b6" target="_blank" rel="noopener noreferrer">
+        📅&nbsp; Book a Meeting
+      </a>
+      <a class="modal-btn modal-btn--outline" href="mailto:aschwen@charterselect.com">
+        ✉️&nbsp; Send an Email
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const TOTAL_CHECKS = document.querySelectorAll('.check-box').length;
+
+  function updateProgress() {
+    const checked = document.querySelectorAll('.check-box.checked').length;
+    const pct = Math.round((checked / TOTAL_CHECKS) * 100);
+    document.getElementById('prog-pct').textContent = pct + '%';
+    document.getElementById('prog-fill').style.width = pct + '%';
+  }
+
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function openModal() {
+    document.getElementById('reviewModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('reviewModal').classList.remove('open');
+  }
+
+  document.getElementById('reviewModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+
 </body>
 </html>
