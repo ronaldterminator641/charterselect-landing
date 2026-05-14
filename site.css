@@ -3,6 +3,13 @@
 * { box-sizing: border-box; }
 body { margin: 0; }
 
+/* Hide static pre-render fallback content until React mounts */
+#root > header,
+#root > main,
+#root > nav {
+  display: none;
+}
+
 /* ----- Buttons ----- */
 .cs-btn {
   font-family: var(--font-body);
