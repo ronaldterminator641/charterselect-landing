@@ -62,8 +62,8 @@ function Hero({ onPrimary, onSecondary }) {
     <section className="cs-hero">
       <div className="cs-hero__inner">
         <div className="cs-hero__copy">
-          <div className="cs-eyebrow">Insurance Solutions for Charter Schools</div>
-          <h1 className="cs-display">
+          <div className="cs-eyebrow" style={{fontSize:11, letterSpacing:'0.1em', marginBottom:8}}>Property &amp; Liability Insurance</div>
+          <h1 className="cs-display" style={{marginTop:0}}>
             Protection<br/>with purpose.
           </h1>
           <p className="cs-lead">
@@ -144,7 +144,7 @@ function StatsBar() {
 function Solutions() {
   const items = [
     { icon: 'shield-check', title: 'Property & Liability', body: 'Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits.' },
-    { icon: 'graduation-cap', title: 'Employee Benefits', body: 'Your HR coordinator is running open enrollment, answering claims questions, and chasing billing errors — alone. We take that off their plate. One-on-one enrollment support for every employee. A concierge that fights surprise bills on your staff\'s behalf. And funding structures that put pharmacy rebates directly back in your school\'s budget.' },
+    { icon: 'graduation-cap', title: 'Employee Benefits', body: 'We take enrollment, billing, and claims questions off your HR coordinator\'s plate. One-on-one support for every employee, a concierge that fights surprise bills, and funding structures that put pharmacy rebates back in your budget.' },
     { icon: 'compass', title: 'Risk Guidance', body: 'Year-round advisory, contract review, claims advocacy, renewal benchmarking, and board level risk briefings. Not just a quote at renewal.' },
     { icon: 'handshake', title: 'Partnership Model', body: 'Independent and carrier agnostic. We represent you, not the insurer who pays the biggest bonus. Responsiveness, Follow Through, Innovation and Expertise are core to how we operate.' },
   ];
@@ -163,6 +163,11 @@ function Solutions() {
               <p className="cs-card__body">{it.body}</p>
             </article>
           ))}
+        </div>
+        <div style={{textAlign:'center', marginTop:40}}>
+          <a className="cs-btn cs-btn--primary" href="contact.html" style={{textDecoration:'none'}}>
+            <Lucide name="shield-check" size={16} /> Get a Free Coverage Review
+          </a>
         </div>
       </div>
     </section>
@@ -650,7 +655,7 @@ function UploadCta() {
 /* ---------- Community / Stronger Together ---------- */
 function Community() {
   return (
-    <section className="cs-section" id="community">
+    <section className="cs-section cs-section--cream" id="community">
       <div className="cs-section__inner cs-community">
         <div className="cs-community__copy">
           <div className="cs-eyebrow">Stronger Together</div>
@@ -658,7 +663,9 @@ function Community() {
           <p className="cs-lead">
             A portion of CharterSelect profits supports the nonprofits and community initiatives that make a lasting impact alongside the schools we serve.
           </p>
-          <a className="cs-link cs-link--lg" href="commitment.html">Our Commitment <Lucide name="arrow-right" size={16} /></a>
+          <a className="cs-btn cs-btn--primary" href="commitment.html" style={{textDecoration:'none', marginTop:8, alignSelf:'flex-start'}}>
+            Our Commitment <Lucide name="arrow-right" size={16} />
+          </a>
         </div>
         <div className="cs-community__seal">
           <img src="assets/logo-badge.png" alt="CharterSelect badge" />
