@@ -172,9 +172,9 @@ body { margin: 0; }
 
 /* ----- Rank / drag-to-order ----- */
 .cs-rank { display: flex; flex-direction: column; gap: 10px; }
-.cs-rank__row { display: grid; grid-template-columns: 32px 1fr auto; gap: 16px; align-items: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px 20px; cursor: grab; transition: background 120ms, border-color 120ms, opacity 120ms, transform 120ms; user-select: none; }
+.cs-rank__row { display: grid; grid-template-columns: 32px 1fr auto; gap: 16px; align-items: center; background: rgba(255,255,255,0.07); border: 1.5px solid rgba(251,191,36,0.55); border-radius: 12px; padding: 16px 20px; cursor: grab; transition: background 120ms, border-color 120ms, opacity 120ms, transform 120ms; user-select: none; }
 .cs-rank__row:active { cursor: grabbing; }
-.cs-rank__row:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+.cs-rank__row:hover { background: rgba(255,255,255,0.12); border-color: #FBBF24; }
 .cs-rank__row.is-dragging { opacity: 0.35; cursor: grabbing; }
 .cs-rank__row.is-over { border-color: var(--cs-gold); background: rgba(251,191,36,0.12); transform: scale(1.01); }
 .cs-rank__num { font-family: var(--font-display); font-size: 22px; color: var(--cs-gold); line-height: 1; text-align: center; }
@@ -253,6 +253,11 @@ body { margin: 0; }
 .cs-need-btn--gold .cs-need-btn__arrow { color: #1F2937; opacity: 0.6; }
 .cs-need-btn--gold:hover { background: #F59E0B; border-color: #F59E0B; color: #1F2937; }
 .cs-need-btn--gold:hover .cs-need-btn__arrow { color: #1F2937; opacity: 1; transform: translateX(3px); }
+
+/* Gold border when need-btns sit on teal background */
+.cs-section--teal .cs-need-btn { border-color: #FBBF24; }
+.cs-section--teal .cs-need-btn:hover { border-color: #F59E0B; background: rgba(255,255,255,0.12); color: #fff; }
+.cs-section--teal .cs-need-btn:hover .cs-need-btn__arrow { color: #FBBF24; }
 
 /* ----- Footer ----- */
 .cs-footer { background: var(--cs-charcoal); color: rgba(255,255,255,0.85); padding: 64px 32px 24px; }
