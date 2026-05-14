@@ -9,6 +9,61 @@
 [[plugins]]
   package = "@netlify/plugin-emails"
 
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/property-liability.html"
+  to = "/property-liability"
+  status = 301
+
+[[redirects]]
+  from = "/employee-benefits.html"
+  to = "/employee-benefits"
+  status = 301
+
+[[redirects]]
+  from = "/why.html"
+  to = "/why"
+  status = 301
+
+[[redirects]]
+  from = "/commitment.html"
+  to = "/commitment"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/renewal-report-card.html"
+  to = "/renewal-report-card"
+  status = 301
+
+[[redirects]]
+  from = "/solutions.html"
+  to = "/solutions"
+  status = 301
+
+[[redirects]]
+  from = "/what-we-find.html"
+  to = "/what-we-find"
+  status = 301
+
+[[redirects]]
+  from = "/contact-success.html"
+  to = "/contact-success"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

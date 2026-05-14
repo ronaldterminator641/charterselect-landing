@@ -17,24 +17,24 @@ const Lucide = ({ name, size = 20, className = '', color }) => (
 function TopNav({ onCta }) {
   const [open, setOpen] = React.useState(false);
   const links = [
-    { href: 'property-liability.html', label: 'Property & Liability' },
-    { href: 'employee-benefits.html', label: 'Employee Benefits' },
-    { href: 'why.html', label: 'Why CharterSelect' },
-    { href: 'commitment.html', label: 'Our Commitment' },
-    { href: 'about.html', label: 'About' },
-    { href: 'renewal-report-card.html', label: 'Renewal Report Card' },
+    { href: 'property-liability', label: 'Property & Liability' },
+    { href: 'employee-benefits', label: 'Employee Benefits' },
+    { href: 'why', label: 'Why CharterSelect' },
+    { href: 'commitment', label: 'Our Commitment' },
+    { href: 'about', label: 'About' },
+    { href: 'renewal-report-card', label: 'Renewal Report Card' },
   ];
   return (
     <header className="cs-nav" style={{position:'relative', zIndex:300}}>
       <div className="cs-nav__inner">
-        <a className="cs-nav__brand" href="index.html">
-          <img src="assets/logo-horizontal.png" alt="CharterSelect" />
+        <a className="cs-nav__brand" href="/">
+          <img src="assets/logo-horizontal.png" alt="CharterSelect — Charter School Insurance" />
         </a>
         <nav className="cs-nav__links">
           {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
         </nav>
         <div className="cs-nav__cta">
-          <a className="cs-btn cs-btn--primary cs-btn--sm" href="contact.html" style={{textDecoration:'none'}}>
+          <a className="cs-btn cs-btn--primary cs-btn--sm" href="contact" style={{textDecoration:'none'}}>
             Get a Free Review
           </a>
         </div>
@@ -49,7 +49,7 @@ function TopNav({ onCta }) {
           {links.map(l => (
             <a key={l.href} href={l.href} className="cs-mobile-menu__link" onClick={() => setOpen(false)}>{l.label}</a>
           ))}
-          <a href="contact.html" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
+          <a href="contact" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
         </nav>
       )}
     </header>
@@ -74,12 +74,12 @@ function Hero({ onPrimary, onSecondary }) {
           <div className="cs-need-selector">
             <p className="cs-need-selector__label">What are you looking for?</p>
             <div className="cs-need-selector__btns">
-              <a className="cs-need-btn" href="property-liability.html">
+              <a className="cs-need-btn" href="property-liability">
                 <Lucide name="shield" size={20} />
                 <span>Property &amp; Liability Insurance</span>
                 <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
               </a>
-              <a className="cs-need-btn" href="employee-benefits.html">
+              <a className="cs-need-btn" href="employee-benefits">
                 <Lucide name="heart-pulse" size={20} />
                 <span>Employee Benefits</span>
                 <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
@@ -105,7 +105,7 @@ function Hero({ onPrimary, onSecondary }) {
           </div>
         </div>
         <div className="cs-hero__art">
-          <img src="BK-charterselect-logo.png" alt="CharterSelect" className="cs-hero__mark" style={{filter:'none'}} />
+          <img src="BK-charterselect-logo.png" alt="CharterSelect — Charter School Insurance" className="cs-hero__mark" style={{filter:'none'}} />
         </div>
       </div>
     </section>
@@ -165,7 +165,7 @@ function Solutions() {
           ))}
         </div>
         <div style={{textAlign:'center', marginTop:40}}>
-          <a className="cs-btn cs-btn--primary" href="contact.html" style={{textDecoration:'none'}}>
+          <a className="cs-btn cs-btn--primary" href="contact" style={{textDecoration:'none'}}>
             <Lucide name="shield-check" size={16} /> Get a Free Coverage Review
           </a>
         </div>
@@ -663,7 +663,7 @@ function Community() {
           <p className="cs-lead">
             A portion of CharterSelect profits supports the nonprofits and community initiatives that make a lasting impact alongside the schools we serve.
           </p>
-          <a className="cs-btn cs-btn--primary" href="commitment.html" style={{textDecoration:'none', marginTop:8, alignSelf:'flex-start'}}>
+          <a className="cs-btn cs-btn--primary" href="commitment" style={{textDecoration:'none', marginTop:8, alignSelf:'flex-start'}}>
             Our Commitment <Lucide name="arrow-right" size={16} />
           </a>
         </div>
@@ -681,11 +681,11 @@ function Footer() {
     <footer className="cs-footer">
       {/* Mobile-only quick nav strip */}
       <div className="cs-footer__mobile-nav">
-        <a href="property-liability.html" className="cs-footer__mobile-btn">
+        <a href="property-liability" className="cs-footer__mobile-btn">
           <Lucide name="shield" size={16} />
-          Property &amp; Casualty
+          Property &amp; Liability
         </a>
-        <a href="employee-benefits.html" className="cs-footer__mobile-btn">
+        <a href="employee-benefits" className="cs-footer__mobile-btn">
           <Lucide name="heart-pulse" size={16} />
           Employee Benefits
         </a>
@@ -697,21 +697,21 @@ function Footer() {
 
       <div className="cs-footer__inner">
         <div className="cs-footer__brand">
-          <img src="assets/logo-horizontal.png" alt="CharterSelect" className="cs-footer__logo" />
+          <img src="assets/logo-horizontal.png" alt="CharterSelect — Charter School Insurance" className="cs-footer__logo" />
           <p>Any insurance you need - built for charter schools, not adapted to them. The only agency built exclusively for charter schools.</p>
         </div>
         <div className="cs-footer__cols">
           <div>
             <h5>Coverage</h5>
-            <a href="property-liability.html">Property &amp; Casualty</a>
-            <a href="employee-benefits.html">Employee Benefits</a>
+            <a href="property-liability">Property &amp; Liability</a>
+            <a href="employee-benefits">Employee Benefits</a>
           </div>
           <div>
             <h5>Company</h5>
-            <a href="why.html">Why CharterSelect</a>
-            <a href="commitment.html">Our Commitment</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="why">Why CharterSelect</a>
+            <a href="commitment">Our Commitment</a>
+            <a href="about">About</a>
+            <a href="contact">Contact</a>
           </div>
         </div>
       </div>
