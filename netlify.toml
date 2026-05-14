@@ -8,3 +8,17 @@
 
 [[plugins]]
   package = "@netlify/plugin-emails"
+
+[[redirects]]
+  from = "https://charterselect.com/*"
+  to = "https://www.charterselect.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
