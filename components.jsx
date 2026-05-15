@@ -387,11 +387,11 @@ function getPeerStat(topId) {
 
 function UploadCta() {
   const ITEMS = [
-    { id: 0, text: 'Your umbrella policy sits over Educators Legal Liability, adding million(s) in coverage to D&O, EPLI, & Failure to Educate limits.' },
-    { id: 1, text: 'Coverage to repair/replace damaged property due to water damage.' },
-    { id: 2, text: 'If there was a total loss at campus, you\'d have enough coverage to rebuild your campus, and money to provide temporary space to continue educating.' },
-    { id: 3, text: 'A fraudulent invoice your school paid as a result of a phishing scam would be covered.' },
-    { id: 4, text: 'A student seriously injured with no health insurance has their medical bills covered.' },
+    { id: 0, text: 'Your umbrella policy isn\'t sitting over your Educators Legal Liability coverage — leaving you exposed and missing out on millions in potential coverage.' },
+    { id: 1, text: 'A clog in a second-floor bathroom causes a six-figure water damage claim — but your sublimit for this type of loss is only $25,000.' },
+    { id: 2, text: 'Your campus suffers a total loss and faces a year-long construction project to rebuild. You have no coverage to rent temporary school space in the meantime.' },
+    { id: 3, text: 'A fraudulent invoice is paid via ACH — there\'s no coverage and no way to recover the funds.' },
+    { id: 4, text: 'A student is seriously injured during a school-sponsored activity — the parents have no health insurance, and there\'s no coverage to help with medical bills.' },
   ];
 
   const [items, setItems] = React.useState(ITEMS);
