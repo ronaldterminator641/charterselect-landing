@@ -307,12 +307,6 @@ function WhyUs() {
           onTouchEnd={onTouchEnd}
           style={{userSelect:'none'}}
         >
-          {t.found && (
-            <div style={{display:'flex', alignItems:'flex-start', gap:8, background:'#fef9ec', border:'1px solid #fde68a', borderRadius:8, padding:'8px 12px', marginBottom:12, fontSize:12, color:'#78350f', lineHeight:1.4}}>
-              <Lucide name="search" size={13} color="#b45309" style={{flexShrink:0, marginTop:1}} />
-              <span>{t.found}</span>
-            </div>
-          )}
           {t.outcome && (
             <div style={{display:'inline-flex', alignItems:'center', gap:6, background:'var(--cs-teal-50)', color:'var(--cs-teal)', fontSize:11, fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', padding:'4px 10px', borderRadius:999, marginBottom:12}}>
               <Lucide name="check-circle" size={12} />
