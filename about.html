@@ -22,34 +22,51 @@
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" integrity="sha384-ZgnJ3Zpr70Xoify35DjOZWqHib1iYJBpYpQUIEpDASG9+fJ745WzNQuC004dwU0W" crossorigin="anonymous"></script>
   <style>
-    /* ── Founder card layout ── */
-    .founder-hero { max-width: 1200px; margin: 0 auto; padding: 56px 40px 0; display: flex; align-items: flex-start; gap: 40px; }
-    .founder-photo { flex-shrink: 0; }
-    .founder-photo img { width: 180px; height: 180px; border-radius: 16px; object-fit: cover; object-position: center top; box-shadow: 0 8px 32px rgba(15,118,110,0.15); display: block; }
-    .founder-photo__placeholder { width: 180px; height: 180px; border-radius: 16px; background: var(--cs-teal-50); border: 2px dashed var(--cs-teal); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--cs-teal); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-align: center; padding: 16px; }
-    .founder-id { padding-top: 8px; }
-    .founder-name { font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1.1; color: var(--fg-1); margin: 0 0 6px; }
-    .founder-title { font-size: 15px; color: var(--cs-teal); font-weight: 600; letter-spacing: 0.04em; margin: 0 0 16px; }
-    .founder-social { display: flex; gap: 12px; flex-wrap: wrap; }
+    /* ── Two-column layout ── */
+    .founder-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
 
-    /* ── Letter body ── */
-    .founder-letter { max-width: 1200px; margin: 0 auto; padding: 40px 40px 0; }
-    .founder-letter p { font-family: var(--font-body); font-size: 17.5px; line-height: 1.8; color: var(--fg-2); margin: 0 0 26px; max-width: 72ch; }
+    /* ── Left: sticky sidebar ── */
+    .founder-sidebar {
+      position: sticky;
+      top: 96px;
+    }
+    .founder-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 16px;
+      object-fit: cover;
+      object-position: center top;
+      box-shadow: 0 8px 32px rgba(15,118,110,0.15);
+      display: block;
+      margin-bottom: 24px;
+    }
+    .founder-name { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--fg-1); margin: 0 0 4px; }
+    .founder-title { font-size: 14px; color: var(--cs-teal); font-weight: 600; letter-spacing: 0.04em; margin: 0 0 20px; }
+    .founder-social { display: flex; flex-direction: column; gap: 10px; }
+    .founder-social a { text-decoration: none; }
+
+    /* ── Right: letter ── */
+    .founder-letter p { font-family: var(--font-body); font-size: 17.5px; line-height: 1.85; color: var(--fg-2); margin: 0 0 28px; }
     .founder-letter p:last-child { margin-bottom: 0; }
-    .founder-letter .founder-closing { font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--fg-1); border-left: 3px solid var(--cs-gold); padding-left: 20px; margin: 40px 0 0; line-height: 1.6; max-width: 72ch; }
-
-    /* ── CTA row ── */
-    .founder-ctas { max-width: 1200px; margin: 48px auto 0; padding: 0 40px 80px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .founder-letter .founder-closing { font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--fg-1); border-left: 3px solid var(--cs-gold); padding-left: 24px; margin: 48px 0 40px; line-height: 1.65; }
+    .founder-sig__name { font-family: var(--font-display); font-style: italic; font-size: 32px; color: var(--fg-1); line-height: 1; margin-bottom: 6px; }
+    .founder-sig__role { font-size: 13px; color: var(--fg-muted); font-weight: 500; margin-bottom: 32px; }
+    .founder-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .founder-ctas__divider { width: 1px; height: 32px; background: var(--border-1); margin: 0 4px; }
 
-    /* ── Signature flourish ── */
-    .founder-sig { max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; }
-    .founder-sig__name { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--fg-1); line-height: 1; }
-    .founder-sig__role { font-size: 13px; color: var(--fg-muted); margin-top: 6px; font-weight: 500; }
-
-    @media (max-width: 640px) {
-      .founder-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
-      .founder-social { justify-content: center; }
+    @media (max-width: 860px) {
+      .founder-layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px 64px; }
+      .founder-sidebar { position: static; display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .founder-photo img { width: 160px; aspect-ratio: 1; border-radius: 50%; margin-bottom: 16px; }
+      .founder-social { flex-direction: row; justify-content: center; flex-wrap: wrap; }
       .founder-letter p { font-size: 16px; }
       .founder-ctas { flex-direction: column; align-items: flex-start; }
       .founder-ctas__divider { display: none; }
@@ -81,96 +98,61 @@
             </div>
           </section>
 
-          {/* ── Founder card ── */}
-          <section style={{background: '#fff', borderBottom: '1px solid var(--border-1)'}}>
-            <div className="founder-hero">
-              <div className="founder-photo">
-                {hasPhoto ? (
+          {/* ── Two-column layout ── */}
+          <section style={{background: '#fff'}}>
+            <div className="founder-layout">
+
+              {/* Left sidebar */}
+              <div className="founder-sidebar">
+                <div className="founder-photo">
                   <img src="assets/aaron-schwen-sm.jpg" alt="Aaron Schwen, Founder of CharterSelect" />
-                ) : (
-                  <div className="founder-photo__placeholder">
-                    <Lucide name="user" size={36} />
-                    <span>Photo<br/>Placeholder</span>
-                  </div>
-                )}
-              </div>
-              <div className="founder-id">
+                </div>
                 <h2 className="founder-name">Aaron Schwen</h2>
                 <p className="founder-title">Founder, CharterSelect</p>
                 <div className="founder-social">
-                  <a
-                    className="cs-btn cs-btn--secondary cs-btn--sm"
-                    href={LINKEDIN_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{textDecoration: 'none'}}
-                  >
+                  <a className="cs-btn cs-btn--primary cs-btn--sm" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
+                    <Lucide name="calendar" size={15} />
+                    Book a Benchmark Review
+                  </a>
+                  <a className="cs-btn cs-btn--secondary cs-btn--sm" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                     <Lucide name="linkedin" size={15} />
                     Connect on LinkedIn
                   </a>
-                  <a
-                    className="cs-btn cs-btn--primary cs-btn--sm"
-                    href={CALENDAR_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{textDecoration: 'none'}}
-                  >
-                    <Lucide name="calendar" size={15} />
+                </div>
+              </div>
+
+              {/* Right: letter */}
+              <div className="founder-letter">
+                <p>
+                  I started my career in insurance the same way most brokers do — working inside large firms with big client lists and corporate mandates. Early on I identified charter schools as an underserved niche and made a deliberate choice to go deep. What I found was a community I never expected to fall in love with.
+                </p>
+                <p>
+                  One of my first calls from a charter school CFO came while she was driving a school bus, asking me about a workers compensation audit. That moment told me everything I needed to know about this community. Entrepreneurial, mission-driven, wearing ten hats at once, and almost always underserved by brokers who saw them as too small to matter.
+                </p>
+                <p>
+                  I spent 15 years fighting that from the inside — pushing for better coverage, earlier renewals, and creative solutions for schools that couldn't afford to get it wrong. Too small to matter to the firm. Too important to me to accept that. So I stopped fighting from the inside and built something from scratch.
+                </p>
+                <p>
+                  CharterSelect exists for one reason. To be the broker I always wanted to be for the schools that deserve it most. Independent, carrier-agnostic, and built entirely around your mission — not a corporation's bottom line. A portion of every policy we write goes back to the communities our schools serve, because that's what this work is actually for.
+                </p>
+                <div className="founder-closing">
+                  If you've ever felt like your broker doesn't really understand your world, you're probably right. Let's fix that.
+                </div>
+                <div className="founder-sig__name" style={{marginTop: 40}}>Aaron Schwen</div>
+                <div className="founder-sig__role">Founder, CharterSelect · aschwen@charterselect.com</div>
+                <div className="founder-ctas">
+                  <a className="cs-btn cs-btn--primary" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+                    <Lucide name="calendar" size={16} />
                     Book a Complimentary Benchmark Review
+                  </a>
+                  <div className="founder-ctas__divider" />
+                  <a className="cs-link cs-link--lg" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                    <Lucide name="linkedin" size={16} />
+                    Connect on LinkedIn
                   </a>
                 </div>
               </div>
-            </div>
-          </section>
 
-          {/* ── Letter ── */}
-          <section style={{background: '#fff'}}>
-            <div className="founder-letter">
-              <p>
-                I started my career in insurance the same way most brokers do — working inside large firms with big client lists and corporate mandates. Early on I identified charter schools as an underserved niche and made a deliberate choice to go deep. What I found was a community I never expected to fall in love with.
-              </p>
-              <p>
-                One of my first calls from a charter school CFO came while she was driving a school bus, asking me about a workers compensation audit. That moment told me everything I needed to know about this community. Entrepreneurial, mission-driven, wearing ten hats at once, and almost always underserved by brokers who saw them as too small to matter.
-              </p>
-              <p>
-                I spent 15 years fighting that from the inside — pushing for better coverage, earlier renewals, and creative solutions for schools that couldn't afford to get it wrong. Too small to matter to the firm. Too important to me to accept that. So I stopped fighting from the inside and built something from scratch.
-              </p>
-              <p>
-                CharterSelect exists for one reason. To be the broker I always wanted to be for the schools that deserve it most. Independent, carrier-agnostic, and built entirely around your mission — not a corporation's bottom line. A portion of every policy we write goes back to the communities our schools serve, because that's what this work is actually for.
-              </p>
-              <div className="founder-closing">
-                If you've ever felt like your broker doesn't really understand your world, you're probably right. Let's fix that.
-              </div>
-            </div>
-
-            {/* ── Signature ── */}
-            <div className="founder-sig">
-              <div className="founder-sig__name">Aaron Schwen</div>
-              <div className="founder-sig__role">Founder, CharterSelect · aschwen@charterselect.com</div>
-            </div>
-
-            {/* ── CTAs ── */}
-            <div className="founder-ctas">
-              <a
-                className="cs-btn cs-btn--primary"
-                href={CALENDAR_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{textDecoration: 'none'}}
-              >
-                <Lucide name="calendar" size={16} />
-                Book a Complimentary Benchmark Review
-              </a>
-              <div className="founder-ctas__divider" />
-              <a
-                className="cs-link cs-link--lg"
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Lucide name="linkedin" size={16} />
-                Connect on LinkedIn
-              </a>
             </div>
           </section>
 
