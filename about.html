@@ -23,7 +23,7 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" integrity="sha384-ZgnJ3Zpr70Xoify35DjOZWqHib1iYJBpYpQUIEpDASG9+fJ745WzNQuC004dwU0W" crossorigin="anonymous"></script>
   <style>
     /* ── Founder card layout ── */
-    .founder-hero { max-width: 860px; margin: 0 auto; padding: 56px 32px 0; display: flex; align-items: flex-start; gap: 40px; }
+    .founder-hero { max-width: 1200px; margin: 0 auto; padding: 56px 40px 0; display: flex; align-items: flex-start; gap: 40px; }
     .founder-photo { flex-shrink: 0; }
     .founder-photo img { width: 180px; height: 180px; border-radius: 16px; object-fit: cover; object-position: center top; box-shadow: 0 8px 32px rgba(15,118,110,0.15); display: block; }
     .founder-photo__placeholder { width: 180px; height: 180px; border-radius: 16px; background: var(--cs-teal-50); border: 2px dashed var(--cs-teal); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--cs-teal); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-align: center; padding: 16px; }
@@ -33,17 +33,17 @@
     .founder-social { display: flex; gap: 12px; flex-wrap: wrap; }
 
     /* ── Letter body ── */
-    .founder-letter { max-width: 860px; margin: 0 auto; padding: 40px 32px 0; }
-    .founder-letter p { font-family: var(--font-body); font-size: 17.5px; line-height: 1.8; color: var(--fg-2); margin: 0 0 26px; }
+    .founder-letter { max-width: 1200px; margin: 0 auto; padding: 40px 40px 0; }
+    .founder-letter p { font-family: var(--font-body); font-size: 17.5px; line-height: 1.8; color: var(--fg-2); margin: 0 0 26px; max-width: 72ch; }
     .founder-letter p:last-child { margin-bottom: 0; }
-    .founder-letter .founder-closing { font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--fg-1); border-left: 3px solid var(--cs-gold); padding-left: 20px; margin: 40px 0 0; line-height: 1.6; }
+    .founder-letter .founder-closing { font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--fg-1); border-left: 3px solid var(--cs-gold); padding-left: 20px; margin: 40px 0 0; line-height: 1.6; max-width: 72ch; }
 
     /* ── CTA row ── */
-    .founder-ctas { max-width: 860px; margin: 48px auto 0; padding: 0 32px 80px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .founder-ctas { max-width: 1200px; margin: 48px auto 0; padding: 0 40px 80px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .founder-ctas__divider { width: 1px; height: 32px; background: var(--border-1); margin: 0 4px; }
 
     /* ── Signature flourish ── */
-    .founder-sig { max-width: 860px; margin: 0 auto; padding: 32px 32px 0; }
+    .founder-sig { max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; }
     .founder-sig__name { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--fg-1); line-height: 1; }
     .founder-sig__role { font-size: 13px; color: var(--fg-muted); margin-top: 6px; font-weight: 500; }
 
