@@ -13,6 +13,7 @@ const OUTPUT = path.join(ROOT, 'sitemap.xml');
 const EXCLUDE = new Set([
   'charterselect-marketing-site-lastnight.html', // scratch file
   'contact-success.html',                        // thank-you page, no SEO value
+  'renewal-checklist.html',                      // replaced by renewal-report-card
 ]);
 
 // Slug for a given filename (index.html → /)
