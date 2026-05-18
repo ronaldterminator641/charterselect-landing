@@ -64,6 +64,11 @@
   to = "/contact-success"
   status = 301
 
+[[redirects]]
+  from = "/renewal-checklist.html"
+  to = "/renewal-checklist"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
