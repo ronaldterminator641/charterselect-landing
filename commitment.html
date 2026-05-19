@@ -34,7 +34,12 @@
   <style>
     .cs-detail-grid--3 { grid-template-columns: repeat(3, 1fr); }
     @media (max-width: 760px) { .cs-detail-grid--3 { grid-template-columns: 1fr; } }
-  </style>
+    .cs-giving-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; }
+    @media (max-width: 768px) {
+      .cs-giving-grid { grid-template-columns: 1fr; gap: 32px; }
+      .cs-giving-grid .cs-community__seal { order: -1; display: flex; justify-content: center; }
+    }
+</style>
 </head>
 <body>
   <div id="root"><header><a href="/">CharterSelect</a> — Charter School Insurance Specialists</header><main><h1>Strong schools build strong communities.</h1><p>CharterSelect was founded on a simple idea: insurance done well puts more money back into classrooms and more support back into communities.</p><h2>Our Commitment to Charter Schools</h2><p>Every dollar we save a charter school on insurance is a dollar that can stay in the classroom — for teachers, students, and the operations that hold a campus together. That's not a marketing line. It's the reason we built this agency exclusively for charter schools and why we've stayed focused on nothing else since 2011.</p><nav><a href="/">Home</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/about">About</a> | <a href="/contact">Get a Free Review</a></nav></main></div>
@@ -84,7 +89,7 @@
 
           <section className="cs-section cs-section--cream" style={{paddingTop: 56, paddingBottom: 80}}>
             <div className="cs-prose">
-              <div style={{display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 64, alignItems: 'center'}}>
+              <div className="cs-giving-grid">
                 <div>
                   <div className="cs-eyebrow">Where the giving goes</div>
                   <h2 style={{marginTop: 8}}>A portion of every policy supports the work around the school.</h2>

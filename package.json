@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "googleapis": "^131.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
   }
 }

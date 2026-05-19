@@ -25,7 +25,7 @@ function TopNav({ onCta }) {
     { href: 'renewal-report-card', label: 'Renewal Report Card' },
   ];
   return (
-    <header className="cs-nav" style={{position:'relative', zIndex:300}}>
+    <header className="cs-nav" style={{zIndex:300}}>
       <div className="cs-nav__inner">
         <a className="cs-nav__brand" href="/">
           <img src="assets/logo-horizontal.png" alt="CharterSelect — Charter School Insurance" />
