@@ -4,24 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charter School Insurance Renewal Report Card | CharterSelect</title>
-  <meta name="description" content="Score your charter school's insurance renewal with our free report card. Find out where your coverage has gaps, where you're overpaying, and what to fix before renewal." />
-  <link rel="canonical" href="https://www.charterselect.com/renewal-report-card" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.charterselect.com/renewal-report-card" />
-  <meta property="og:title" content="Charter School Insurance Renewal Report Card | CharterSelect" />
-  <meta property="og:description" content="Score your charter school's insurance renewal with our free report card. Find out where your coverage has gaps, where you're overpaying, and what to fix before renewal." />
-  <meta property="og:image" content="https://www.charterselect.com/assets/logo-horizontal.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Charter School Insurance Renewal Report Card | CharterSelect",
-    "description": "Score your charter school's insurance renewal with our free report card. Find out where your coverage has gaps, where you're overpaying, and what to fix before renewal.",
-    "url": "https://www.charterselect.com/renewal-report-card",
-    "isPartOf": { "@type": "WebSite", "url": "https://www.charterselect.com" }
-  }
-  </script>
   <link rel="stylesheet" href="colors_and_type.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -94,9 +76,9 @@
     .site-print-btn:hover { background: rgba(255,255,255,.22); color: #fff; }
 
     .page-wrap {
-      max-width: 1100px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 2rem 2.5rem 4rem;
+      padding: 2rem 1.5rem 4rem;
     }
 
     /* ── REPORT CARD HEADER ── */
@@ -135,7 +117,7 @@
       font-family: var(--font-display);
       font-size: 1.35rem;
       line-height: 1.15;
-      color: #fff;
+      color: #fff !important;
     }
 
     .rc-meta {
@@ -515,7 +497,6 @@
     .modal-btn--outline { background: #fff; color: var(--cs-teal); border: 1.5px solid var(--cs-teal); }
     .modal-btn--outline:hover { background: var(--cs-teal-50); }
 
-    /* ── GATE ── */
     .rrc-topbar {
       background: var(--cs-charcoal);
       padding: .7rem 1.5rem;
@@ -544,20 +525,21 @@
     @media (max-width: 520px) { .rrc-topbar img { display: none; } }
     @media print { .rrc-topbar { display: none; } }
 
+    /* ── GATE ── */
     #gate {
       min-height: calc(100vh - 44px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem;
-      background: linear-gradient(150deg, var(--cs-teal) 0%, #0a5c55 45%, #093d38 100%);
+      padding: 2rem 1rem;
+      background: var(--bg-cream);
     }
 
     .gate-card {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.25);
-      max-width: 580px;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(15,118,110,.12);
+      max-width: 480px;
       width: 100%;
       overflow: hidden;
     }
@@ -588,7 +570,7 @@
 
     .gate-header p {
       font-size: .85rem;
-      color: rgba(255, 255, 255, 0.9);
+      opacity: .85;
       line-height: 1.5;
     }
 
@@ -685,6 +667,23 @@
       .rc-footer { page-break-inside: avoid; }
     }
 
+    /* FILLABLE INFO STRIP INPUTS */
+    .rc-info-input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,.3);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: .75rem;
+      padding: .15rem 0 .15rem;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .rc-info-input::placeholder { color: rgba(255,255,255,.4); }
+    .rc-info-input:focus { border-bottom-color: var(--cs-gold); }
+
     @media (max-width: 520px) {
       .rc-header { flex-direction: column; align-items: flex-start; }
       .rc-meta { text-align: left; }
@@ -712,11 +711,6 @@
     </div>
     <div class="gate-body">
       <p>This report card covers the areas I review first on every charter school program — the coverage nuances, policy details, and limit structures that have the most impact when a claim happens. Written by a specialist who works exclusively with charter schools.</p>
-
-      <div class="checklist-preview">
-        <strong>What I look for every single renewal</strong>
-        The sublimits that quietly cap your biggest claims. The one date that, if it changes, can erase years of protection. The umbrella gaps that only show up when you need them most. And the line items your broker probably skipped because no one asked.
-      </div>
 
       <form class="gate-form" id="gateForm" onsubmit="handleGate(event)">
         <label for="g-name">Your Name</label>
@@ -758,7 +752,7 @@
       <img src="BK-charterselect-logo.png" alt="CharterSelect" onerror="this.style.display='none'">
       <div class="rc-title-group">
         <div class="rc-eyebrow">Insurance Renewal</div>
-        <h2>Renewal Report Card</h2>
+        <h1>Renewal Report Card</h1>
       </div>
     </div>
     <div class="rc-meta">
@@ -771,9 +765,9 @@
 
   <!-- INFO STRIP -->
   <div class="rc-info-strip">
-    <div class="rc-info-cell"><strong>School Name</strong>_________________</div>
-    <div class="rc-info-cell"><strong>Contact</strong>_________________</div>
-    <div class="rc-info-cell"><strong>Current Carrier(s)</strong>_________________</div>
+    <div class="rc-info-cell"><strong>School Name</strong><input type="text" class="rc-info-input" id="rc-school" placeholder="School name" /></div>
+    <div class="rc-info-cell"><strong>Contact</strong><input type="text" class="rc-info-input" id="rc-contact" placeholder="Contact name" /></div>
+    <div class="rc-info-cell"><strong>Current Carrier(s)</strong><input type="text" class="rc-info-input" id="rc-carriers" placeholder="Carrier(s)" /></div>
   </div>
 
   <!-- BODY -->
@@ -840,10 +834,6 @@
           </div>
         </div>
       </div>
-      <div class="remarks">
-        <div class="remarks-label">Comments</div>
-        <p>Property is where schools get surprised most at claim time. The policy that looks fine at renewal doesn't look fine when you're rebuilding. Check limits against actual replacement costs — construction costs have risen significantly.</p>
-      </div>
     </div>
 
     <!-- ── 2. PACKAGE POLICY / ELL ── -->
@@ -903,10 +893,6 @@
             <div class="check-note">Any policy line not scheduled as an underlying is excluded from umbrella protection. Confirm all five are listed and that limits match.</div>
           </div>
         </div>
-      </div>
-      <div class="remarks">
-        <div class="remarks-label">Comments</div>
-        <p>An umbrella without abuse coverage is like a rain jacket with holes. The whole point is catching what falls through below — make sure the underlying policies and the umbrella speak to each other correctly.</p>
       </div>
     </div>
 
@@ -997,10 +983,6 @@
           </div>
         </div>
       </div>
-      <div class="remarks">
-        <div class="remarks-label">Comments</div>
-        <p>Cyber and Crime are the two lines most schools under-buy until they need them. A single ransomware event or embezzlement case can destabilize a small school's finances. These aren't optional extras — they're core coverage.</p>
-      </div>
     </div>
 
     <!-- ── 7. RETRO DATES ── -->
@@ -1026,10 +1008,6 @@
           </div>
         </div>
       </div>
-      <div class="remarks">
-        <div class="remarks-label">Comments</div>
-        <p>Retroactive dates are the most dangerous thing most school leaders have never heard of. One wrong move at renewal can leave years of potential liability completely uninsured. This one always warrants a second set of eyes.</p>
-      </div>
     </div>
 
     <!-- BANDWIDTH BANNER (bottom) -->
@@ -1048,7 +1026,6 @@
         Specialty insurance for charter schools.<br>
         <a href="index.html" style="color:var(--cs-teal);font-size:.7rem;">charterselect.com</a>
       </div>
-      <a href="contact.html" class="cta-btn">Get a Free Policy Review &#8594;</a>
     </div>
 
   </div><!-- /rc-body -->
@@ -1066,20 +1043,25 @@
       <a class="modal-btn modal-btn--teal" href="https://calendar.app.google/JmcCzGBFQQdTYA1b6" target="_blank" rel="noopener noreferrer">
         📅&nbsp; Book a Meeting
       </a>
-      <a class="modal-btn modal-btn--outline" href="mailto:aschwen@charterselect.com">
+      <a class="modal-btn modal-btn--outline" id="emailDraftLink" href="mailto:aschwen@charterselect.com">
         ✉️&nbsp; Send an Email
       </a>
+      <p style="font-size:.72rem;color:var(--fg-muted);line-height:1.5;margin-top:.25rem;">Tip: attach your current policy documents before sending, and feel free to include your enrollment, number of staff, and upcoming renewal date.</p>
     </div>
   </div>
 </div>
 
 <script>
+  let gateData = {};
+
   function handleGate(e) {
     e.preventDefault();
     const name   = document.getElementById('g-name').value.trim();
     const title  = document.getElementById('g-title').value.trim();
     const school = document.getElementById('g-school').value.trim();
     const email  = document.getElementById('g-email').value.trim();
+
+    gateData = { name, title, school, email };
 
     try {
       fetch('/.netlify/functions/lead-capture', {
@@ -1092,7 +1074,43 @@
     document.getElementById('gate').style.display = 'none';
     document.getElementById('siteBar').style.display = 'flex';
     document.getElementById('checklist').style.display = 'block';
+
+    // Pre-fill info strip from gate form
+    if (school) document.getElementById('rc-school').value = school;
+    if (name)   document.getElementById('rc-contact').value = name;
+
+    updateEmailLink();
     window.scrollTo(0, 0);
+  }
+
+  // ── GRADING ──────────────────────────────────────────
+  function scoreToGrade(checked, total) {
+    if (total === 1) return checked === 1 ? 'A' : 'F';
+    const pct = (checked / total) * 100;
+    if (pct === 100) return 'A+';
+    if (pct >= 93)   return 'A';
+    if (pct >= 90)   return 'A-';
+    if (pct >= 87)   return 'B+';
+    if (pct >= 83)   return 'B';
+    if (pct >= 80)   return 'B-';
+    if (pct >= 77)   return 'C+';
+    if (pct >= 73)   return 'C';
+    if (pct >= 70)   return 'C-';
+    if (pct >= 67)   return 'D+';
+    if (pct >= 63)   return 'D';
+    if (pct >= 60)   return 'D-';
+    return 'F';
+  }
+
+  function updateSectionGrade(checkEl) {
+    const subject = checkEl.closest('.subject');
+    if (!subject) return;
+    const allBoxes     = subject.querySelectorAll('.check-box');
+    const checkedBoxes = subject.querySelectorAll('.check-box.checked');
+    const gradeInput   = subject.querySelector('.grade-input');
+    if (gradeInput) {
+      gradeInput.value = scoreToGrade(checkedBoxes.length, allBoxes.length);
+    }
   }
 
   const TOTAL_CHECKS = document.querySelectorAll('.check-box').length;
@@ -1107,9 +1125,42 @@
   function toggleCheck(el) {
     el.classList.toggle('checked');
     updateProgress();
+    updateSectionGrade(el);
   }
 
+  // ── EMAIL DRAFT ───────────────────────────────────────
+  function updateEmailLink() {
+    const school = gateData.school || 'our school';
+    const name   = gateData.name   || '';
+    const title  = gateData.title  || '';
+
+    const subject = 'Charter School Insurance Review Request – ' + school;
+
+    const body = [
+      'Hi Aaron,',
+      '',
+      'I recently completed the CharterSelect Renewal Report Card for ' + school + ' and wanted to follow up directly.',
+      '',
+      'We\'d like you to review our current insurance policies to identify any potential coverage gaps and ensure we\'re properly protected for our operations. I\'d also appreciate a benchmark against comparable charter schools — both in terms of coverage quality and pricing — so we can make informed decisions at renewal.',
+      '',
+      'There\'s no obligation on our end — we just want to make sure we\'re making the right calls on coverage.',
+      '',
+      'Looking forward to connecting.',
+      '',
+      (name  ? name  + '\n' : '') + (title ? title + '\n' : '') + school,
+    ].join('\n');
+
+    const link = document.getElementById('emailDraftLink');
+    if (link) {
+      link.href = 'mailto:aschwen@charterselect.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body='    + encodeURIComponent(body);
+    }
+  }
+
+  // ── MODAL ─────────────────────────────────────────────
   function openModal() {
+    updateEmailLink();
     document.getElementById('reviewModal').classList.add('open');
   }
 
