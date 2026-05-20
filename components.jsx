@@ -28,7 +28,7 @@ function TopNav({ onCta }) {
     <header className="cs-nav" style={{zIndex:300}}>
       <div className="cs-nav__inner">
         <a className="cs-nav__brand" href="/">
-          <img src="assets/logo-horizontal.png" alt="CharterSelect — Charter School Insurance" />
+          <img src="assets/logo-no-slogan.svg" alt="CharterSelect — Charter School Insurance" />
         </a>
         <nav className="cs-nav__links">
           {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
@@ -691,7 +691,7 @@ function Footer() {
 
       <div className="cs-footer__inner">
         <div className="cs-footer__brand">
-          <img src="assets/logo-horizontal.png" alt="CharterSelect — Charter School Insurance" className="cs-footer__logo" />
+          <img src="assets/logo-no-slogan.svg" alt="CharterSelect — Charter School Insurance" className="cs-footer__logo" />
           <p>Any insurance you need - built for charter schools, not adapted to them. The only agency built exclusively for charter schools.</p>
         </div>
         <div className="cs-footer__cols">
