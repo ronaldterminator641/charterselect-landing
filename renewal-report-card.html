@@ -178,7 +178,7 @@
       background: var(--cs-teal);
       border-bottom: 1.5px solid rgba(255,255,255,.15);
       gap: .5rem;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .subject-name {
@@ -188,6 +188,8 @@
       display: flex;
       align-items: center;
       gap: .4rem;
+      flex: 1;
+      min-width: 0;
     }
 
     .subject-name .icon { font-size: 1rem; }
@@ -1067,7 +1069,7 @@
       fetch('/.netlify/functions/lead-capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, title, school_name: school, email, source: 'renewal-report-card', ts: new Date().toISOString() })
+        body: JSON.stringify({ contact_name: name, title, school_name: school, email, source: 'renewal-report-card', ts: new Date().toISOString() })
       });
     } catch(_) {}
 

@@ -49,18 +49,20 @@ async function sendEmailNotification(data) {
   oauth2.setCredentials({ refresh_token: refreshToken });
 
   const gmail = google.gmail({ version: 'v1', auth: oauth2 });
-  const subject = `New lead: ${data.school_name || 'Unknown School'} (${data.state || ''})`;
+  const sourceLabel = data.source === 'renewal-report-card' ? '[Renewal Report Card] ' : '';
+  const subject = `${sourceLabel}New lead: ${data.school_name || 'Unknown School'}${data.state ? ` (${data.state})` : ''}`;
   const body = [
     `New inbound lead from charterselect.com`,
+    `Source:     ${data.source || 'contact-form'}`,
     ``,
     `School:     ${data.school_name}`,
     `Contact:    ${data.contact_name} — ${data.title}`,
     `Email:      ${data.email}`,
-    `Phone:      ${data.phone}`,
-    `State:      ${data.state}`,
-    `Campuses:   ${data.campuses}`,
-    `Situation:  ${data.insurance_situation}`,
-    `Heard via:  ${data.how_heard}`,
+    ...(data.phone      ? [`Phone:      ${data.phone}`]             : []),
+    ...(data.state      ? [`State:      ${data.state}`]             : []),
+    ...(data.campuses   ? [`Campuses:   ${data.campuses}`]          : []),
+    ...(data.insurance_situation ? [`Situation:  ${data.insurance_situation}`] : []),
+    ...(data.how_heard  ? [`Heard via:  ${data.how_heard}`]         : []),
     ``,
     `Submitted:  ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })} CT`,
   ].join('\n');
@@ -90,10 +92,10 @@ exports.handler = async function (event) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
   }
 
-  if (!data.school_name || !data.contact_name || !data.email) {
+  if (!data.school_name || !data.email) {
     return {
       statusCode: 422,
-      body: JSON.stringify({ error: 'Missing required fields: school_name, contact_name, email' }),
+      body: JSON.stringify({ error: 'Missing required fields: school_name, email' }),
     };
   }
 
