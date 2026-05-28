@@ -515,24 +515,24 @@ function UploadCta() {
     setSubmitError(null);
 
     const priorityText = items.map((item, i) => `${i + 1}. ${item.text}`).join('\n');
-    const body = new URLSearchParams();
-    body.append('_replyto', contactEmail);
-    body.append('_subject', `Coverage Check — ${schoolName} (${contactName})`);
-    body.append('_autoresponse', `Hi ${contactName}, thanks for completing the CharterSelect coverage check! Your #1 concern was: "${items[0].text}". Aaron will be in touch shortly. — CharterSelect`);
-    body.append('Form Type', 'Coverage Check / Ranking');
-    body.append('Contact Name', contactName);
-    body.append('School Name', schoolName);
-    body.append('Email', contactEmail);
-    body.append('Top Concern', items[0].text);
-    body.append('Full Priority Ranking', priorityText);
 
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body, headers: { Accept: 'application/json' } });
+      const res = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          school_name: schoolName,
+          contact_name: contactName,
+          email: contactEmail,
+          source: 'coverage-check',
+          insurance_situation: PEER_LABELS[items[0].id],
+          priority_ranking: priorityText,
+        }),
+      });
       if (res.ok) {
         setSubmitted(true);
       } else {
-        const data = await res.json().catch(() => ({}));
-        setSubmitError(data.error || 'Submission failed — please try again.');
+        setSubmitError('Submission failed — please try again.');
       }
     } catch {
       setSubmitError('Network error. Please check your connection.');

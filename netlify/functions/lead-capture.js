@@ -63,7 +63,9 @@ async function sendEmailNotification(data) {
     auth: { user: GMAIL_USER, pass: appPassword },
   });
 
-  const sourceLabel = data.source === 'renewal-report-card' ? '[Renewal Report Card] ' : '';
+  const sourceLabel = data.source === 'renewal-report-card' ? '[Renewal Report Card] '
+                    : data.source === 'coverage-check'      ? '[Coverage Check] '
+                    : '';
   const subject     = `${sourceLabel}New lead: ${data.school_name || 'Unknown School'}${data.state ? ` (${data.state})` : ''}`;
 
   const lines = [
@@ -75,8 +77,10 @@ async function sendEmailNotification(data) {
     `Email:      ${data.email}`,
     ...(data.phone               ? [`Phone:      ${data.phone}`]               : []),
     ...(data.state               ? [`State:      ${data.state}`]               : []),
-    ...(data.campuses            ? [`Situation:  ${data.insurance_situation}`] : []),
+    ...(data.campuses            ? [`Campuses:   ${data.campuses}`]             : []),
+    ...(data.insurance_situation ? [`Situation:  ${data.insurance_situation}`] : []),
     ...(data.how_heard           ? [`Heard via:  ${data.how_heard}`]           : []),
+    ...(data.priority_ranking    ? [``, `Priority Ranking (1 = most concerning):`, ...data.priority_ranking.split('\n').map(l => `  ${l}`)] : []),
     ``,
     `Submitted:  ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })} CT`,
   ];
