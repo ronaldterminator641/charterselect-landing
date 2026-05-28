@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessibility Statement — CharterSelect</title>
+  <meta name="description" content="CharterSelect's commitment to web accessibility and how to request assistance if you encounter any barriers." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx?v=8"></script>
+  <script type="text/babel" src="_page-shell.jsx"></script>
+  <script type="text/babel">
+
+    function AccessibilityPage() {
+      return (
+        <PageShell
+          screen="Accessibility"
+          eyebrow="Commitment to Access"
+          title="Accessibility Statement"
+          lead="CharterSelect is committed to ensuring our website is usable by everyone, including people with disabilities.">
+
+          <section className="cs-section cs-section--white" style={{paddingTop: 48, paddingBottom: 64}}>
+            <div className="cs-prose">
+
+              <h2>Our Standard</h2>
+              <p>
+                We aim to conform to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong> — the
+                benchmark recognized by the U.S. Department of Justice and federal courts as the standard for digital
+                accessibility compliance. We review and update our site on an ongoing basis to maintain and improve that
+                conformance.
+              </p>
+
+              <h2>Features We Support</h2>
+              <ul>
+                <li>
+                  <strong>Keyboard navigation.</strong> All interactive elements — navigation menus, quote forms, and
+                  call-to-action buttons — are reachable and operable using Tab, Enter, and arrow keys alone. The mobile
+                  navigation menu can be closed with the Escape key. Press Tab from the top of any page to reveal a
+                  "Skip to main content" link that bypasses the navigation.
+                </li>
+                <li>
+                  <strong>Screen reader support.</strong> Forms include visible, programmatically associated labels.
+                  Required fields are marked both visually and in code (<code>aria-required</code>). Error messages use
+                  live regions (<code>role="alert"</code>) so assistive technology announces them immediately. Dynamic
+                  content — including the testimonial carousel and form submission results — uses <code>aria-live</code>
+                  regions.
+                </li>
+                <li>
+                  <strong>Alternative text.</strong> Every meaningful image carries descriptive <code>alt</code> text.
+                  Decorative images and icons are hidden from assistive technology with <code>aria-hidden="true"</code>.
+                </li>
+                <li>
+                  <strong>Color contrast.</strong> Text meets a minimum contrast ratio of 4.5:1 against its background
+                  throughout the site, including form labels on colored backgrounds and footer text on dark backgrounds.
+                </li>
+                <li>
+                  <strong>Reduced motion.</strong> Users who have enabled the "reduce motion" preference in their
+                  operating system will see transitions and animations disabled or minimized across the site.
+                </li>
+                <li>
+                  <strong>Resizable text.</strong> The layout responds correctly when text is enlarged up to 200% in
+                  browser settings without loss of content or functionality.
+                </li>
+              </ul>
+
+              <h2>Known Limitations</h2>
+              <p>
+                The coverage-priority ranking tool on our home page uses drag-and-drop. We have added keyboard support
+                (arrow keys to reorder items), but users of some screen reader and browser combinations may find the
+                interaction announcement incomplete. If you experience difficulty, please contact us directly — we are
+                happy to walk through the ranking exercise with you by phone or email.
+              </p>
+
+              <h2>Third-Party Content</h2>
+              <p>
+                Our site includes an embedded calendar booking tool (Google Calendar) and a contact form processor
+                (Formspree). These third-party services maintain their own accessibility policies. If you encounter
+                barriers within those tools, please contact us and we will arrange an alternative path to completing
+                your request.
+              </p>
+
+              <h2>Get Help or Report an Issue</h2>
+              <p>
+                If you find any part of this site difficult to use, or if you need information in an alternative format,
+                please reach out — we will respond within one business day and work with you to find a solution.
+              </p>
+              <ul>
+                <li><strong>Email:</strong> <a href="mailto:info@charterselect.com">info@charterselect.com</a></li>
+                <li><strong>Subject line:</strong> "Accessibility Request" helps us route your message quickly.</li>
+              </ul>
+              <p>
+                We welcome feedback on how we can improve. Identifying and fixing barriers is an ongoing process, and
+                reports from real users are the most effective way for us to find issues that automated tools miss.
+              </p>
+
+              <h2>Formal Complaints</h2>
+              <p>
+                If you are not satisfied with our response, you may contact the U.S. Department of Justice Civil Rights
+                Division regarding Title III of the Americans with Disabilities Act (ADA) at
+                <strong> 1-800-514-0301 (voice)</strong> or <strong>1-800-514-0383 (TTY)</strong>.
+              </p>
+
+              <p style={{marginTop: 48, fontSize: 14, color: 'var(--fg-muted)'}}>
+                <em>Last reviewed: May 2026. This statement will be updated following any significant redesign or content
+                change.</em>
+              </p>
+
+            </div>
+          </section>
+
+          <section className="cs-cta-strip">
+            <div className="cs-cta-strip__inner">
+              <div>
+                <h2>Questions? We're here.</h2>
+                <p>Reach out any time — we respond within one business day.</p>
+              </div>
+              <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
+                <a className="cs-btn cs-btn--gold" href="mailto:aschwen@charterselect.com" style={{textDecoration:'none'}}>
+                  <Lucide name="mail" size={18} />
+                  Email Us
+                </a>
+                <a className="cs-btn" href="contact" style={{textDecoration:'none', background:'transparent', border:'1.5px solid rgba(255,255,255,0.4)', color:'#fff'}}>
+                  <Lucide name="clipboard-list" size={18} />
+                  Contact Form
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </PageShell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<AccessibilityPage />);
+  </script>
+</body>
+</html>

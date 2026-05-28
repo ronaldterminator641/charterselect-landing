@@ -10,12 +10,13 @@ const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const Lucide = ({ name, size = 20, className = '', color }) => (
-  <i data-lucide={name} style={{ width: size, height: size, color }} className={className} />
+  <i data-lucide={name} style={{ width: size, height: size, color }} className={className} aria-hidden="true" />
 );
 
 /* ---------- Top Nav ---------- */
 function TopNav({ onCta }) {
   const [open, setOpen] = React.useState(false);
+  const firstMenuLinkRef = React.useRef(null);
   const links = [
     { href: 'property-liability', label: 'Property & Liability' },
     { href: 'employee-benefits', label: 'Employee Benefits' },
@@ -24,42 +25,66 @@ function TopNav({ onCta }) {
     { href: 'about', label: 'About' },
     { href: 'renewal-report-card', label: 'Renewal Report Card' },
   ];
+
+  React.useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (e) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', handleKeyDown);
+    if (firstMenuLinkRef.current) firstMenuLinkRef.current.focus();
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [open]);
+
   return (
-    <header className="cs-nav" style={{zIndex:300}}>
-      <div className="cs-nav__inner">
-        <a className="cs-nav__brand" href="/">
-          <img src="assets/logo-no-slogan.svg" alt="CharterSelect — Charter School Insurance" />
-        </a>
-        <nav className="cs-nav__links">
-          {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
-        </nav>
-        <div className="cs-nav__cta">
-          <a className="cs-btn cs-btn--primary cs-btn--sm" href="contact" style={{textDecoration:'none'}}>
-            Get a Free Review
+    <>
+      <a className="cs-skip-link" href="#main-content">Skip to main content</a>
+      <header className="cs-nav" style={{zIndex:300, position:'relative'}}>
+        <div className="cs-nav__inner">
+          <a className="cs-nav__brand" href="/">
+            <img src="assets/logo-no-slogan.svg" alt="CharterSelect — Charter School Insurance" />
           </a>
+          <nav className="cs-nav__links" aria-label="Main navigation">
+            {links.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
+          </nav>
+          <div className="cs-nav__cta">
+            <a className="cs-btn cs-btn--primary cs-btn--sm" href="contact" style={{textDecoration:'none'}}>
+              Get a Free Review
+            </a>
+          </div>
+          <button
+            className="cs-hamburger"
+            onClick={() => setOpen(o => !o)}
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={open}
+            aria-controls="cs-mobile-menu"
+          >
+            <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} aria-hidden="true" />
+            <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} aria-hidden="true" />
+            <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} aria-hidden="true" />
+          </button>
         </div>
-        <button className="cs-hamburger" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
-          <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} />
-          <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} />
-          <span className={`cs-hamburger__bar ${open ? 'open' : ''}`} />
-        </button>
-      </div>
-      {open && (
-        <nav className="cs-mobile-menu">
-          {links.map(l => (
-            <a key={l.href} href={l.href} className="cs-mobile-menu__link" onClick={() => setOpen(false)}>{l.label}</a>
-          ))}
-          <a href="contact" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
-        </nav>
-      )}
-    </header>
+        {open && (
+          <nav id="cs-mobile-menu" className="cs-mobile-menu" aria-label="Mobile navigation">
+            {links.map((l, i) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="cs-mobile-menu__link"
+                onClick={() => setOpen(false)}
+                ref={i === 0 ? firstMenuLinkRef : null}
+              >{l.label}</a>
+            ))}
+            <a href="contact" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
+          </nav>
+        )}
+      </header>
+    </>
   );
 }
 
 /* ---------- Hero ---------- */
 function Hero({ onPrimary, onSecondary }) {
   return (
-    <section className="cs-hero">
+    <section className="cs-hero" id="main-content">
       <div className="cs-hero__inner">
         <div className="cs-hero__copy">
           <div className="cs-eyebrow" style={{fontSize:11, letterSpacing:'0.1em', marginBottom:8}}>Property &amp; Liability Insurance</div>
@@ -86,9 +111,9 @@ function Hero({ onPrimary, onSecondary }) {
               </a>
               <a className="cs-need-btn" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer"
                 style={{background:'#FBBF24', borderColor:'#FBBF24', color:'#1F2937'}}>
-                <i data-lucide="star" style={{width:20, height:20, color:'#1F2937', flexShrink:0}} />
+                <i data-lucide="star" style={{width:20, height:20, color:'#1F2937', flexShrink:0}} aria-hidden="true" />
                 <span>Both — I want a full coverage review</span>
-                <i data-lucide="arrow-right" style={{width:16, height:16, color:'#1F2937', opacity:0.7, flexShrink:0}} />
+                <i data-lucide="arrow-right" style={{width:16, height:16, color:'#1F2937', opacity:0.7, flexShrink:0}} aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -121,7 +146,7 @@ function StatsBar() {
     { kind: 'usa', label: 'Nationwide' },
   ];
   return (
-    <section className="cs-stats">
+    <section className="cs-stats" aria-label="Company statistics">
       <div className="cs-stats__inner">
         {stats.map(s => (
           <div className="cs-stat" key={s.label}>
@@ -306,22 +331,25 @@ function WhyUs() {
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
           style={{userSelect:'none'}}
+          aria-label="Client testimonials"
         >
-          {t.outcome && (
-            <div style={{display:'inline-flex', alignItems:'center', gap:6, background:'var(--cs-teal-50)', color:'var(--cs-teal)', fontSize:11, fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', padding:'4px 10px', borderRadius:999, marginBottom:12}}>
-              <Lucide name="check-circle" size={12} />
-              {t.outcome}
-            </div>
-          )}
-          <Lucide name="quote" size={28} />
-          <p className="cs-quote">"{t.quote}"</p>
-          <div className="cs-quote-attr" style={{display:'flex', alignItems:'center', gap:12}}>
-            {t.photo && (
-              <img src={t.photo} alt={t.name} style={{width:52, height:52, borderRadius:'50%', objectFit:'cover', objectPosition:'center top', border:'2px solid var(--cs-teal)', flexShrink:0}} />
+          <div aria-live="polite" aria-atomic="true">
+            {t.outcome && (
+              <div style={{display:'inline-flex', alignItems:'center', gap:6, background:'var(--cs-teal-50)', color:'var(--cs-teal)', fontSize:11, fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', padding:'4px 10px', borderRadius:999, marginBottom:12}}>
+                <Lucide name="check-circle" size={12} />
+                {t.outcome}
+              </div>
             )}
-            <div>
-              <strong>{t.name}</strong><br/>
-              <span>{t.role}{t.school ? ` · ${t.school}` : ''}</span>
+            <Lucide name="quote" size={28} />
+            <p className="cs-quote">"{t.quote}"</p>
+            <div className="cs-quote-attr" style={{display:'flex', alignItems:'center', gap:12}}>
+              {t.photo && (
+                <img src={t.photo} alt={t.name} style={{width:52, height:52, borderRadius:'50%', objectFit:'cover', objectPosition:'center top', border:'2px solid var(--cs-teal)', flexShrink:0}} />
+              )}
+              <div>
+                <strong>{t.name}</strong><br/>
+                <span>{t.role}{t.school ? ` · ${t.school}` : ''}</span>
+              </div>
             </div>
           </div>
           {/* Nav row: prev · dots · next */}
@@ -331,13 +359,14 @@ function WhyUs() {
               onMouseLeave={e => { e.currentTarget.style.background='#fff'; e.currentTarget.style.color='var(--cs-teal)'; }}>
               <Lucide name="chevron-left" size={20} />
             </button>
-            <div style={{display:'flex', gap:8, flex:1, justifyContent:'center'}}>
+            <div style={{display:'flex', gap:8, flex:1, justifyContent:'center'}} role="tablist" aria-label="Testimonial navigation">
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
                   className={`cs-quote-dot ${i === idx ? 'is-active' : ''}`}
                   onClick={() => handleDot(i)}
-                  aria-label={`Show testimonial ${i + 1}`}
+                  aria-label={`Show testimonial ${i + 1} of ${TESTIMONIALS.length}`}
+                  aria-current={i === idx ? 'true' : undefined}
                 />
               ))}
             </div>
@@ -396,6 +425,25 @@ function UploadCta() {
   // Touch sort state
   const touchDragIdx = React.useRef(null);
   const touchRowRefs = React.useRef([]);
+
+  // ── Keyboard reorder handler ──
+  const handleRankKeyDown = (e, idx) => {
+    if (e.key === 'ArrowUp' && idx > 0) {
+      e.preventDefault();
+      const next = [...items];
+      [next[idx - 1], next[idx]] = [next[idx], next[idx - 1]];
+      setItems(next);
+      setHasRanked(true);
+      setTimeout(() => touchRowRefs.current[idx - 1] && touchRowRefs.current[idx - 1].focus(), 0);
+    } else if (e.key === 'ArrowDown' && idx < items.length - 1) {
+      e.preventDefault();
+      const next = [...items];
+      [next[idx + 1], next[idx]] = [next[idx], next[idx + 1]];
+      setItems(next);
+      setHasRanked(true);
+      setTimeout(() => touchRowRefs.current[idx + 1] && touchRowRefs.current[idx + 1].focus(), 0);
+    }
+  };
 
   // ── Mouse drag handlers (desktop) ──
   const onDragStart = (e, idx) => { setDragging(idx); e.dataTransfer.effectAllowed = 'move'; };
@@ -549,13 +597,29 @@ function UploadCta() {
         </p>
 
         {/* ── Ranking rows ── */}
-        <div className="cs-rank">
+        <p className="cs-sr-only" id="rank-instructions">
+          Use arrow keys to reorder items. Drag and drop also supported with a mouse or touch.
+        </p>
+        <div
+          className="cs-rank"
+          role="listbox"
+          aria-orientation="vertical"
+          aria-label="Coverage concern priority ranking"
+          aria-describedby="rank-instructions"
+        >
           {items.map((item, idx) => (
             <div
               key={item.id}
               ref={el => touchRowRefs.current[idx] = el}
               className={['cs-rank__row', dragging === idx ? 'is-dragging' : '', dragOver === idx && dragging !== idx ? 'is-over' : ''].join(' ')}
               draggable
+              tabIndex={0}
+              role="option"
+              aria-selected={false}
+              aria-posinset={idx + 1}
+              aria-setsize={items.length}
+              aria-label={`Priority ${idx + 1}: ${item.text}`}
+              onKeyDown={e => handleRankKeyDown(e, idx)}
               onDragStart={e => onDragStart(e, idx)}
               onDragOver={e => onDragOver(e, idx)}
               onDrop={e => onDrop(e, idx)}
@@ -565,9 +629,9 @@ function UploadCta() {
               onTouchEnd={onTouchEndRow}
               style={{touchAction: 'none'}}
             >
-              <div className="cs-rank__num">{idx + 1}</div>
+              <div className="cs-rank__num" aria-hidden="true">{idx + 1}</div>
               <div className="cs-rank__label">{item.text}</div>
-              <div className="cs-rank__handle"><Lucide name="grip-vertical" size={18} /></div>
+              <div className="cs-rank__handle" aria-hidden="true"><Lucide name="grip-vertical" size={18} /></div>
             </div>
           ))}
         </div>
@@ -587,19 +651,19 @@ function UploadCta() {
             <form onSubmit={handleSubmit} style={{width: '100%'}}>
               <div className="cs-upload__fields">
                 <div className="cs-upload__field">
-                  <label className="cs-upload__label">Your Name *</label>
-                  <input className="cs-upload__input" type="text" placeholder="Jane Smith" value={contactName} onChange={e => setContactName(e.target.value)} required />
+                  <label className="cs-upload__label" htmlFor="cc-name">Your Name <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
+                  <input id="cc-name" className="cs-upload__input" type="text" placeholder="Jane Smith" value={contactName} onChange={e => setContactName(e.target.value)} required aria-required="true" />
                 </div>
                 <div className="cs-upload__field">
-                  <label className="cs-upload__label">School Name *</label>
-                  <input className="cs-upload__input" type="text" placeholder="Lincoln Charter Academy" value={schoolName} onChange={e => setSchoolName(e.target.value)} required />
+                  <label className="cs-upload__label" htmlFor="cc-school">School Name <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
+                  <input id="cc-school" className="cs-upload__input" type="text" placeholder="Lincoln Charter Academy" value={schoolName} onChange={e => setSchoolName(e.target.value)} required aria-required="true" />
                 </div>
                 <div className="cs-upload__field">
-                  <label className="cs-upload__label">Your Email *</label>
-                  <input className="cs-upload__input" type="email" placeholder="jane@yourschool.org" value={contactEmail} onChange={e => setContactEmail(e.target.value)} required />
+                  <label className="cs-upload__label" htmlFor="cc-email">Your Email <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
+                  <input id="cc-email" className="cs-upload__input" type="email" placeholder="jane@yourschool.org" value={contactEmail} onChange={e => setContactEmail(e.target.value)} required aria-required="true" />
                 </div>
               </div>
-              {submitError && <div className="cs-upload__error">{submitError}</div>}
+              {submitError && <div className="cs-upload__error" role="alert">{submitError}</div>}
               <button type="submit" className="cs-btn cs-btn--gold cs-upload__submit" disabled={!canSubmit}>
                 {submitting
                   ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> Submitting…</>
@@ -616,7 +680,7 @@ function UploadCta() {
 
         {/* ── Success: peer stat + soft CTAs ── */}
         {submitted && peerStat && (
-          <div className="cs-assess__result" style={{marginTop: 32}}>
+          <div className="cs-assess__result" style={{marginTop: 32}} role="status" aria-live="polite">
             <div className="cs-peer-stat">
               <div className="cs-peer-stat__emoji">{peerStat.emoji}</div>
               <div>
@@ -706,6 +770,7 @@ function Footer() {
             <a href="commitment">Our Commitment</a>
             <a href="about">About</a>
             <a href="contact">Contact</a>
+            <a href="accessibility">Accessibility</a>
           </div>
         </div>
       </div>

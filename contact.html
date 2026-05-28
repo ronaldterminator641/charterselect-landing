@@ -4,33 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Get a Free Insurance Review — CharterSelect</title>
-  <meta name="description" content="Get a free, no-obligation insurance benchmark review for your charter school. We compare your current coverage against what schools your size actually pay — takes 10 minutes." />
-  <link rel="canonical" href="https://www.charterselect.com/contact" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.charterselect.com/contact" />
-  <meta property="og:title" content="Get a Free Insurance Review — CharterSelect" />
-  <meta property="og:description" content="Get a free, no-obligation insurance benchmark review for your charter school. We compare your current coverage against what schools your size actually pay — takes 10 minutes." />
-  <meta property="og:image" content="https://www.charterselect.com/assets/logo-horizontal.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Get a Free Insurance Review — CharterSelect",
-    "description": "Get a free, no-obligation insurance benchmark review for your charter school. We compare your current coverage against what schools your size actually pay — takes 10 minutes.",
-    "url": "https://www.charterselect.com/contact",
-    "isPartOf": { "@type": "WebSite", "url": "https://www.charterselect.com" }
-  }
-  </script>
+  <meta name="description" content="Request a complimentary benchmark insurance review for your charter school." />
   <link rel="stylesheet" href="colors_and_type.css" />
   <link rel="stylesheet" href="site.css?v=2" />
-  <link rel="preconnect" href="https://unpkg.com" />
   <link rel="icon" href="assets/logo-icon.png" />
-  <link rel="apple-touch-icon" href="assets/logo-icon.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" integrity="sha384-ZgnJ3Zpr70Xoify35DjOZWqHib1iYJBpYpQUIEpDASG9+fJ745WzNQuC004dwU0W" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     .contact-wrap { max-width: 680px; margin: 0 auto; padding: 40px 32px 96px; }
     .contact-intro { margin-bottom: 36px; }
@@ -179,7 +160,7 @@
             </div>
           </section>
 
-          <section style={{background:'var(--cs-cream,#fafaf8)'}}>
+          <section id="main-content" style={{background:'var(--cs-cream,#fafaf8)'}}>
             <div className="contact-wrap">
               <div className="contact-intro">
                 <h1>Get Your Free Insurance Benchmark Review</h1>
@@ -190,14 +171,14 @@
                 <form onSubmit={handleSubmit} noValidate>
 
                   <div className="contact-field">
-                    <label className="contact-label" htmlFor="school_name">School Name <span>*</span></label>
-                    <input id="school_name" className="contact-input" type="text" placeholder="Academy Charter School" value={form.school_name} onChange={setField('school_name')} />
+                    <label className="contact-label" htmlFor="school_name">School Name <span aria-hidden="true">*</span><span style={{position:'absolute',width:1,height:1,overflow:'hidden',clip:'rect(0,0,0,0)'}}>(required)</span></label>
+                    <input id="school_name" className="contact-input" type="text" placeholder="Academy Charter School" value={form.school_name} onChange={setField('school_name')} aria-required="true" />
                   </div>
 
                   <div className="contact-row">
                     <div className="contact-field">
-                      <label className="contact-label" htmlFor="contact_name">Your Name <span>*</span></label>
-                      <input id="contact_name" className="contact-input" type="text" placeholder="Jane Smith" value={form.contact_name} onChange={setField('contact_name')} />
+                      <label className="contact-label" htmlFor="contact_name">Your Name <span aria-hidden="true">*</span></label>
+                      <input id="contact_name" className="contact-input" type="text" placeholder="Jane Smith" value={form.contact_name} onChange={setField('contact_name')} aria-required="true" />
                     </div>
                     <div className="contact-field">
                       <label className="contact-label" htmlFor="title">Title / Role</label>
@@ -207,8 +188,8 @@
 
                   <div className="contact-row">
                     <div className="contact-field">
-                      <label className="contact-label" htmlFor="email">Email <span>*</span></label>
-                      <input id="email" className="contact-input" type="email" placeholder="jane@school.org" value={form.email} onChange={setField('email')} />
+                      <label className="contact-label" htmlFor="email">Email <span aria-hidden="true">*</span></label>
+                      <input id="email" className="contact-input" type="email" placeholder="jane@school.org" value={form.email} onChange={setField('email')} aria-required="true" />
                     </div>
                     <div className="contact-field">
                       <label className="contact-label" htmlFor="phone">Phone</label>
@@ -218,8 +199,8 @@
 
                   <div className="contact-row">
                     <div className="contact-field">
-                      <label className="contact-label" htmlFor="state">State <span>*</span></label>
-                      <select id="state" className="contact-input" value={form.state} onChange={setField('state')}>
+                      <label className="contact-label" htmlFor="state">State <span aria-hidden="true">*</span></label>
+                      <select id="state" className="contact-input" value={form.state} onChange={setField('state')} aria-required="true">
                         <option value="">Select state…</option>
                         {STATES.map(s => <option key={s} value={s}>{s}</option>)}
                       </select>
@@ -233,9 +214,9 @@
                     </div>
                   </div>
 
-                  <div className="contact-field">
-                    <label className="contact-label">What best describes your situation?</label>
-                    <div className="contact-radios">
+                  <fieldset className="contact-field" style={{border:'none', padding:0, margin:'0 0 22px 0'}}>
+                    <legend className="contact-label" style={{padding:0, marginBottom:7, float:'left', width:'100%'}}>What best describes your situation?</legend>
+                    <div className="contact-radios" style={{clear:'both'}}>
                       {INSURANCE_OPTIONS.map(opt => (
                         <label key={opt.value} className={'contact-radio-label' + (form.insurance_situation === opt.value ? ' checked' : '')}>
                           <input
@@ -249,7 +230,7 @@
                         </label>
                       ))}
                     </div>
-                  </div>
+                  </fieldset>
 
                   <div className="contact-field" style={{marginBottom:0}}>
                     <label className="contact-label" htmlFor="how_heard">How did you hear about us?</label>
@@ -258,18 +239,22 @@
                       {HOW_OPTIONS.map(h => <option key={h} value={h}>{h}</option>)}
                     </select>
                     {form.how_heard === 'Other' && (
-                      <input
-                        className="contact-input"
-                        style={{marginTop: 10}}
-                        type="text"
-                        placeholder="Please describe…"
-                        value={form.how_heard_other}
-                        onChange={setField('how_heard_other')}
-                      />
+                      <>
+                        <label className="contact-label" htmlFor="how_heard_other" style={{marginTop:10, display:'block'}}>Please describe</label>
+                        <input
+                          id="how_heard_other"
+                          className="contact-input"
+                          style={{marginTop: 6}}
+                          type="text"
+                          placeholder="Please describe…"
+                          value={form.how_heard_other}
+                          onChange={setField('how_heard_other')}
+                        />
+                      </>
                     )}
                   </div>
 
-                  {error && <div className="contact-error">{error}</div>}
+                  {error && <div className="contact-error" role="alert" aria-live="assertive">{error}</div>}
 
                   <button type="submit" className="contact-submit" disabled={submitting}>
                     <Lucide name="send" size={16} />
