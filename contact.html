@@ -67,19 +67,6 @@
 </head>
 <body>
 
-  <!-- Hidden form so Netlify detects it at build time -->
-  <form name="lead-capture" data-netlify="true" action="/contact-success.html" hidden>
-    <input type="text" name="school_name" />
-    <input type="text" name="contact_name" />
-    <input type="text" name="title" />
-    <input type="email" name="email" />
-    <input type="tel" name="phone" />
-    <select name="state"><option value=""></option></select>
-    <select name="campuses"><option value=""></option></select>
-    <input type="text" name="insurance_situation" />
-    <input type="text" name="how_heard" />
-  </form>
-
   <div id="root"></div>
   <script type="text/babel" src="components.jsx?v=8"></script>
   <script type="text/babel" src="_page-shell.jsx"></script>
@@ -134,7 +121,7 @@
         }
         setSubmitting(true);
         try {
-          const res = await fetch('/.netlify/functions/lead-capture', {
+          const res = await fetch('/api/lead-capture', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form),

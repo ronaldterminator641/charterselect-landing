@@ -1066,7 +1066,7 @@
     gateData = { name, title, school, email };
 
     try {
-      fetch('/.netlify/functions/lead-capture', {
+      fetch('/api/lead-capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ contact_name: name, title, school_name: school, email, source: 'renewal-report-card', ts: new Date().toISOString() })
