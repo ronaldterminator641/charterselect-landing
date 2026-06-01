@@ -497,6 +497,7 @@ function UploadCta() {
   const [contactName, setContactName] = React.useState('');
   const [schoolName, setSchoolName] = React.useState('');
   const [contactEmail, setContactEmail] = React.useState('');
+  const [website, setWebsite] = React.useState(''); // honeypot — humans leave blank
   const [submitting, setSubmitting] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
   const [submitError, setSubmitError] = React.useState(null);
@@ -527,6 +528,7 @@ function UploadCta() {
           source: 'coverage-check',
           insurance_situation: PEER_LABELS[items[0].id],
           priority_ranking: priorityText,
+          website, // honeypot
         }),
       });
       if (res.ok) {
@@ -649,6 +651,10 @@ function UploadCta() {
               Enter your name and email to submit your ranking and see how you compare to other charter school leaders.
             </p>
             <form onSubmit={handleSubmit} style={{width: '100%'}}>
+              {/* Honeypot: hidden from humans, bots fill it → server discards the submission */}
+              <input type="text" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true"
+                     value={website} onChange={e => setWebsite(e.target.value)}
+                     style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0}} />
               <div className="cs-upload__fields">
                 <div className="cs-upload__field">
                   <label className="cs-upload__label" htmlFor="cc-name">Your Name <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>

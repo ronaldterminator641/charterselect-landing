@@ -93,6 +93,28 @@ async function sendEmailNotification(data) {
   });
 }
 
+// ── Spam protection ─────────────────────────────────────────────────────────
+
+// Hidden form fields a human never fills. If any arrives non-empty, it's a bot.
+const HONEYPOT_FIELDS = ['website', 'company', 'fax'];
+
+// Best-effort in-memory rate limit. Serverless instances are reused for short
+// bursts, so this catches rapid bot floods from a single IP. Not a hard guarantee.
+const RATE_LIMIT_MAX    = 5;                // requests…
+const RATE_LIMIT_WINDOW = 10 * 60 * 1000;   // …per 10 minutes per IP
+const hits = new Map();                     // ip -> [timestamps]
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter(t => now - t < RATE_LIMIT_WINDOW);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear(); // crude memory guard
+  return recent.length > RATE_LIMIT_MAX;
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 // ── Handler ───────────────────────────────────────────────────────────────────
 
 module.exports = async function handler(req, res) {
@@ -104,6 +126,27 @@ module.exports = async function handler(req, res) {
 
   if (!data || !data.school_name || !data.email) {
     return res.status(422).json({ error: 'Missing required fields: school_name, email' });
+  }
+
+  // Honeypot: bots fill hidden fields. Pretend success so they don't retry,
+  // but write nothing.
+  if (HONEYPOT_FIELDS.some(f => data[f] && String(data[f]).trim())) {
+    return res.status(200).json({ success: true });
+  }
+
+  // Reject malformed emails and oversized payloads (basic abuse guard).
+  if (!EMAIL_RE.test(String(data.email))) {
+    return res.status(422).json({ error: 'Invalid email address' });
+  }
+  if (Object.values(data).some(v => typeof v === 'string' && v.length > 5000)) {
+    return res.status(413).json({ error: 'Field too large' });
+  }
+
+  // Rate limit per client IP.
+  const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim()
+           || req.socket?.remoteAddress || 'unknown';
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Too many submissions. Please try again later.' });
   }
 
   const warnings = [];
