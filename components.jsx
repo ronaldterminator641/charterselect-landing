@@ -725,7 +725,7 @@ function Community() {
           <div className="cs-eyebrow">Stronger Together</div>
           <h2>Strong schools build strong communities.</h2>
           <p className="cs-lead">
-            A portion of CharterSelect profits supports the nonprofits and community initiatives that make a lasting impact alongside the schools we serve.
+            A portion of CharterSelect revenue supports the nonprofits and community initiatives that make a lasting impact alongside the schools we serve.
           </p>
           <a className="cs-btn cs-btn--primary" href="/commitment" style={{textDecoration:'none', marginTop:8, alignSelf:'flex-start'}}>
             Our Commitment <Lucide name="arrow-right" size={16} />
