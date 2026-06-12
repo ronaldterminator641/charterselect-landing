@@ -133,7 +133,7 @@
             body: JSON.stringify(form),
           });
           if (!res.ok) throw new Error('Server error');
-          window.location.href = 'contact-success.html';
+          window.location.href = '/contact-success';
         } catch (err) {
           setError('Something went wrong — please try again or email aschwen@charterselect.com directly.');
           setSubmitting(false);
@@ -146,7 +146,7 @@
 
           <section style={{background:'var(--cs-cream,#fafaf8)', borderBottom:'1px solid var(--border-1)', padding:'24px 32px 0'}}>
             <div style={{maxWidth:680, margin:'0 auto'}}>
-              <a href="index.html" style={{display:'inline-flex',alignItems:'center',gap:6,fontSize:13,color:'var(--fg-muted)',textDecoration:'none',marginBottom:16,fontFamily:'var(--font-body)'}}>
+              <a href="/" style={{display:'inline-flex',alignItems:'center',gap:6,fontSize:13,color:'var(--fg-muted)',textDecoration:'none',marginBottom:16,fontFamily:'var(--font-body)'}}>
                 <Lucide name="arrow-left" size={13} /> Back to home
               </a>
               <div className="cs-eyebrow">Free · No Obligation</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page Not Found — CharterSelect</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/colors_and_type.css" />
+  <link rel="stylesheet" href="/site.css?v=2" />
+  <link rel="icon" href="/assets/logo-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" integrity="sha384-ZgnJ3Zpr70Xoify35DjOZWqHib1iYJBpYpQUIEpDASG9+fJ745WzNQuC004dwU0W" crossorigin="anonymous"></script>
+  <style>
+    .cs-404-wrap { max-width: 640px; margin: 0 auto; padding: 80px 32px 96px; text-align: center; }
+    .cs-404-code { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); margin: 0 0 16px; }
+    .cs-404-wrap h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; color: var(--fg-1); margin: 0 0 16px; }
+    .cs-404-wrap p { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--fg-2); margin: 0 0 40px; }
+    .cs-404-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .cs-404-link { font-family: var(--font-body); font-size: 15px; color: var(--cs-teal); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--border-1); border-radius: 999px; transition: border-color 140ms, background 140ms; }
+    .cs-404-link:hover { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); }
+    .cs-404-link--primary { background: var(--cs-teal); color: #fff; border-color: var(--cs-teal); }
+    .cs-404-link--primary:hover { background: var(--cs-teal-700, #0d6560); border-color: var(--cs-teal-700, #0d6560); }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <header><a href="/">CharterSelect</a> — Charter School Insurance Specialists</header>
+    <main>
+      <h1>Page not found</h1>
+      <p>The page you're looking for doesn't exist or may have moved.</p>
+      <nav>
+        <a href="/">Home</a> |
+        <a href="/property-liability">Property &amp; Liability</a> |
+        <a href="/employee-benefits">Employee Benefits</a> |
+        <a href="/why">Why CharterSelect</a> |
+        <a href="/contact">Contact</a>
+      </nav>
+    </main>
+  </div>
+  <script type="text/babel" src="/components.jsx?v=10"></script>
+  <script type="text/babel">
+    function NotFoundPage() {
+      return (
+        <div data-screen-label="404">
+          <TopNav onCta={() => { window.location.href = '/contact'; }} />
+
+          <section style={{background:'var(--cs-cream,#fafaf8)', minHeight:'75vh', display:'flex', alignItems:'center'}}>
+            <div className="cs-404-wrap">
+              <div className="cs-404-code">404 — Page Not Found</div>
+              <h1>This page doesn't exist.</h1>
+              <p>The link you followed may be outdated, or the page may have moved. Here are a few places to start instead.</p>
+              <div className="cs-404-links">
+                <a className="cs-404-link cs-404-link--primary" href="/contact">Get a Free Review</a>
+                <a className="cs-404-link" href="/">Home</a>
+                <a className="cs-404-link" href="/property-liability">Property &amp; Liability</a>
+                <a className="cs-404-link" href="/employee-benefits">Employee Benefits</a>
+                <a className="cs-404-link" href="/why">Why CharterSelect</a>
+              </div>
+            </div>
+          </section>
+
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<NotFoundPage />);
+  </script>
+</body>
+</html>
