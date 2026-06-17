@@ -11,7 +11,7 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 |---|---|---|---|
 | Retroactive Date Trap | retroactive-date-trap | Drafted + Sliced | no |
 | Crime vs. Cyber (social engineering gap) | crime-vs-cyber | Drafted | no |
-| Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Drafted | yes (umbrella usually excludes mgmt liability) |
+| Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Drafted + Sliced | yes (umbrella usually excludes mgmt liability) |
 | Law Enforcement Legal Liability (SROs, MOUs) | sro-legal-liability | Queued | yes |
 | Employed Legal Counsel (in-house malpractice) | employed-legal-counsel | Queued | yes |
 | Board Protection (Side-A / DIC) | board-side-a-protection | Queued | yes |
