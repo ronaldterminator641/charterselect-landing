@@ -11,7 +11,7 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 |---|---|---|---|
 | Retroactive Date Trap | retroactive-date-trap | Drafted + Sliced | no |
 | Crime vs. Cyber (social engineering gap) | crime-vs-cyber | Drafted | no |
-| Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Queued | yes (umbrella usually excludes mgmt liability) |
+| Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Drafted | yes (umbrella usually excludes mgmt liability) |
 | Law Enforcement Legal Liability (SROs, MOUs) | sro-legal-liability | Queued | yes |
 | Employed Legal Counsel (in-house malpractice) | employed-legal-counsel | Queued | yes |
 | Board Protection (Side-A / DIC) | board-side-a-protection | Queued | yes |
@@ -49,8 +49,8 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 | Stop-Loss Contract Terms & Lasering | stop-loss-terms-lasering | Queued | yes |
 
 ## Counts
-- Drafted or sliced: 6 of 23
-- Queued: 17 (7 flagged Verify)
+- Drafted or sliced: 7 of 23
+- Queued: 16 (6 flagged Verify)
 
 ## Standing note
 Distribution gate: the Retro Date hub is publish-ready and sliced. Nothing is live until a human posts it. Producing more papers grows inventory; it does not move it.
