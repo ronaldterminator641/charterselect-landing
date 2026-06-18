@@ -10,7 +10,7 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 | Topic | Slug | Status | Verify |
 |---|---|---|---|
 | Retroactive Date Trap | retroactive-date-trap | Drafted + Sliced | no |
-| Crime vs. Cyber (social engineering gap) | crime-vs-cyber | Drafted | no |
+| Crime vs. Cyber (social engineering gap) | crime-vs-cyber | Drafted + Sliced | no |
 | Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Drafted + Sliced | yes (umbrella usually excludes mgmt liability) |
 | Law Enforcement Legal Liability (SROs, MOUs) | sro-legal-liability | Queued | yes |
 | Employed Legal Counsel (in-house malpractice) | employed-legal-counsel | Queued | yes |
@@ -21,7 +21,7 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 
 | Topic | Slug | Status | Verify |
 |---|---|---|---|
-| Active Assailant Coverage | active-assailant-coverage | Drafted | no |
+| Active Assailant Coverage | active-assailant-coverage | Drafted + Sliced | no |
 | Extra Expense Coverage | extra-expense-coverage | Queued | no |
 | Smart Risk Mitigation (IoT sensors) | smart-risk-mitigation | Queued | no |
 | Facility Use Agreements (Additional Insured) | facility-use-agreements | Queued | no |
@@ -32,7 +32,7 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 
 | Topic | Slug | Status | Verify |
 |---|---|---|---|
-| Hired & Non-Owned Auto | hired-non-owned-auto | Drafted | no |
+| Hired & Non-Owned Auto | hired-non-owned-auto | Drafted + Sliced | no |
 | Student Accident Insurance | student-accident-insurance | Queued | no |
 | Program Value-Adds (carrier perks audit) | program-value-adds | Queued | no |
 | Workers' Comp Experience-Mod & Class Codes | workers-comp-experience-mod | Queued | no |
@@ -41,16 +41,16 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 
 | Topic | Slug | Status | Verify |
 |---|---|---|---|
-| The Failure of Fully Insured | failure-of-fully-insured | Drafted | no |
-| Alternative Funding (Level-Funded, Captives) | alternative-funding-arrangements | Drafted | no |
+| The Failure of Fully Insured | failure-of-fully-insured | Drafted + Sliced | no |
+| Alternative Funding (Level-Funded, Captives) | alternative-funding-arrangements | Drafted + Sliced | no |
 | Cost Controls (Reference-Based Pricing) | reference-based-pricing | Queued | yes |
 | Advanced Employee Care (DPC, transparent Rx) | advanced-employee-care | Queued | no |
 | Open Enrollment Modernization | open-enrollment-modernization | Queued | no |
 | Stop-Loss Contract Terms & Lasering | stop-loss-terms-lasering | Queued | yes |
 
 ## Counts
-- Drafted or sliced: 7 of 23
+- Drafted + Sliced: 7 of 23 (every drafted hub now has its full spoke set)
 - Queued: 16 (6 flagged Verify)
 
 ## Standing note
-Distribution gate: the Retro Date hub is publish-ready and sliced. Nothing is live until a human posts it. Producing more papers grows inventory; it does not move it.
+Distribution gate: all 7 drafted hubs are now publish-ready and sliced (each has a newsletter, company checklist, 7 short hooks, and a 3-week distribution schedule starting 2026-06-22). Nothing is live until a human posts it. The bottleneck is no longer asset production; it is a human pressing publish. Producing more papers grows inventory; it does not move it.
