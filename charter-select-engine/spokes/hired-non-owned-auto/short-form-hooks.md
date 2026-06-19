@@ -5,54 +5,57 @@
 ---
 
 **Hook 1**
-A parent volunteer drove three of your students to a field trip.
-She caused a wreck. Someone got hurt.
-The attorney isn't suing her. He's suing your school.
-Here's the policy you think covers this, and why it doesn't: [LINK]
+"Can a parent drive three of our kids to the field trip in her minivan?"
+Yes. It's allowed, and it's coverable.
+Schools ask this every year and almost never get a straight answer.
+Here's the one most of them never hear: [LINK]
 
 ---
 
 **Hook 2**
-"The driver has their own insurance."
-True. It pays first, then it runs out.
-Then the lawyer turns to the school standing right behind it.
-Personal limits are a first layer, not a shield: [LINK]
+Two lanes, and people mix them up constantly.
+The driver's personal auto policy is the first layer of liability.
+The school's Hired and Non-Owned Auto sits on top, protecting the school.
+Here's how the split actually works: [LINK]
 
 ---
 
 **Hook 3**
-Your commercial auto policy covers vehicles the school owns.
-A staff member's car on a supply run is not one of them.
-Guess who's exposed the second that car gets in a wreck on your errand: [LINK]
+The part that surprises everyone:
+If a teacher or parent dents their own car driving your students, the school never pays to fix it.
+That's their personal auto policy. Geico, Allstate, whoever they carry.
+The school's policy covers liability, not their car: [LINK]
 
 ---
 
 **Hook 4**
-Hired and Non-Owned Auto.
-The name is terrible. The gap it fills is everywhere.
-Field trips, bank runs, coaches hauling athletes, volunteers driving kids.
-None of it feels like "the school driving." That's exactly why nobody insures it: [LINK]
+Want a confident yes the next time someone offers to drive students?
+Start by running motor vehicle records on your regular drivers.
+It's cheap, it screens out the worst risks, and you re-run it on a schedule.
+Here's the rest of the playbook: [LINK]
 
 ---
 
 **Hook 5**
-Some personal auto policies quietly exclude coverage when the car is used for business.
-A volunteer driving your students may not know that.
-You'll both find out at the worst possible moment: [LINK]
+Ask every regular driver for the declarations page of their personal auto policy.
+Confirm it's active, confirm it clears a minimum you set, keep it on file.
+Then refresh it every year.
+That one folder turns an anxious question into a routine yes: [LINK]
 
 ---
 
 **Hook 6**
-This is one of the cheapest gaps to close in your entire insurance program.
-Often an inexpensive endorsement you already qualify for.
-Which is why it's so frustrating that it's the one most schools are missing: [LINK]
+Two short forms make student driving clean instead of nerve-wracking.
+A driver acknowledgment: their personal policy is primary, they hold the school harmless for their own car.
+Parent consent for the specific driver.
+Simple, signed, and on file before the trip: [LINK]
 
 ---
 
 **Hook 7**
 One question for whoever handles your school's insurance:
-If a volunteer caused a serious-injury accident tomorrow driving their own car for your school, and their policy maxed out, who pays the rest?
-If you can't answer that, read this: [LINK]
+Next time a parent offers to drive a few students, do you have a clear yes ready, a process behind it, and HNOA you've actually seen on your policy?
+If the honest answer is "I'd have to check," read this: [LINK]
 
 ---
 

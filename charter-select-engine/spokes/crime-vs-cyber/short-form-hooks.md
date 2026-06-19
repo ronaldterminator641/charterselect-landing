@@ -5,55 +5,57 @@
 ---
 
 **Hook 1**
-A school wired $80,000 to a vendor.
-The vendor never asked for it. A criminal did, by email.
-The cyber policy said no. The crime policy said no.
-Here's the gap that swallowed the money: [LINK]
+Every broker sold your school cyber insurance.
+Almost none of them mentioned crime.
+That's the older, more boring policy that quietly fell off the table.
+It's also the one that pays when your money walks out the door: [LINK]
 
 ---
 
 **Hook 2**
-"We have cyber and crime, we're covered."
-That's a category, not an answer.
-The most common financial loss a school suffers lives in the space between those two policies.
-This is where it hides: [LINK]
+A longtime employee in the business office moved money out for months.
+The school filed on its cyber policy.
+Denied. Nobody hacked the network, so cyber doesn't see a loss.
+Employee theft is a crime policy loss, and they didn't have one: [LINK]
 
 ---
 
 **Hook 3**
-Nobody hacked your network.
-Nobody broke into your office.
-Your own employee read an email and sent the wire, and both your carriers walked away.
-The name for this is social engineering fraud: [LINK]
+Ransomware locks your student information system the week before enrollment.
+You file on your crime policy.
+Denied. Nobody stole your money in the sense crime means.
+This is a network event, and only cyber pays for it: [LINK]
 
 ---
 
 **Hook 4**
-Your budget is public.
-Your board minutes are public.
-Your vendors and your fiscal calendar are findable in an afternoon.
-That's the homework a criminal does before the fake invoice lands: [LINK]
+A criminal poses as a known vendor and emails new banking details.
+Your business manager updates the file and sends the payment.
+The cyber carrier says no breach. The crime carrier says no break-in.
+That seam needs its own endorsement, or nobody pays: [LINK]
 
 ---
 
 **Hook 5**
-There's one endorsement that pays when an employee gets tricked into wiring money.
-Most schools either don't have it or have it capped at a fraction of a real loss.
-Two things to check before your next payment goes out: [LINK]
+Your policy might include the wire-fraud endorsement and still leave you exposed.
+It usually carries a sublimit far below your main limit.
+Cap it at $25,000 against a $200,000 payment and you've got a partial answer dressed up as a full one.
+Here's how to size it to your actual wires: [LINK]
 
 ---
 
 **Hook 6**
-A policy can technically include social engineering coverage and still leave you exposed.
-Cap it at $25,000 against an $80,000 loss and you've got a partial answer dressed up as a full one.
-Here's how to size the sublimit to your actual wires: [LINK]
+The cheapest fraud control your school has costs nothing.
+Any change to vendor banking details gets confirmed by phone to a known number, never the number in the email.
+Some carriers won't even pay without it.
+It stops most of these losses cold: [LINK]
 
 ---
 
 **Hook 7**
-One question for whoever handles your school's insurance:
-If a fake vendor email asked your office to change banking details tomorrow and the payment went out, which policy pays, and what's the limit on it?
-If the answer is "I assume one of them does," read this: [LINK]
+Three questions for whoever handles your school's insurance:
+If an employee stole from your accounts, which policy pays? If ransomware locked your systems, which policy pays? If a fake vendor email got a payment sent, which policy pays, and what's the limit?
+If any answer is "I think we have something for that," read this: [LINK]
 
 ---
 

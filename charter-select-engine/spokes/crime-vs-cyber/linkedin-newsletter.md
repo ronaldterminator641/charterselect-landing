@@ -4,43 +4,43 @@
 
 ---
 
-**Headline:** A school sent $80,000 to a criminal who simply asked nicely. Then both insurance policies said no.
+**Headline:** This school was proud of its cyber policy. Then an employee walked off with the money, and the carrier said no.
 
 ---
 
-A business manager I talked with had paid the same facilities vendor for years. Then one Tuesday an email came in. New banking details, please update the file. She updated it and sent the next payment, exactly the way she'd sent dozens before.
+A school I know was proud of its cyber policy. They had bought it the year cyber became the product every broker was pushing. Modern, responsible, box checked. If you'd asked them whether they were covered, they would have said yes without blinking.
 
-The vendor never sent that email. The money was gone by that afternoon.
+Then a longtime employee in the business office got caught moving money out, quietly, over many months. Real theft, real dollars. They filed on the only financial policy they had, the cyber policy, and the carrier said no. Nobody hacked your network. Nobody breached your data. This is employee theft, and that's a crime policy loss. You do not have a crime policy.
 
-So they did what you'd do. They filed on the cyber policy. Denied. They filed on the crime policy. Denied. Two policies, one loss, zero coverage, both denials in writing inside of a week.
+One policy. The wrong one for that loss. Nothing to fall back on.
 
-I grew up around manual labor and a ranch, where if you did a job halfway, somebody got hurt or something broke, and you owned it. That's the standard I expected when I got into insurance. Watching a school get told "you're covered for crime and cyber" and then watching both carriers walk away from the most common loss a school actually suffers is the kind of thing that put me in this lane for good.
+I grew up around manual labor and a ranch, where doing a job halfway meant somebody got hurt or something broke, and you owned it. That's the standard I expected when I got into insurance. Handing a school one financial policy, saying "you're covered," and leaving the other half of the picture blank is not that standard. It's most of why Charter Select exists.
 
-Here's the mechanic, in plain English.
+Here's the part nobody explains in plain English.
 
-A crime policy protects your assets from theft. Employee dishonesty, an embezzling bookkeeper, forgery, robbery, a thief who breaks in and moves your funds. The core idea is somebody took something from you.
+Crime and cyber sound like cousins. They aren't. They pay for two completely different disasters, and the losses one covers are mostly invisible to the other.
 
-A cyber policy protects against a network or data event. Ransomware, a breach of student or staff records, the cost to notify families, the downtime when your systems are knocked out. The core idea is your data or your network got hit.
+A crime policy protects your money from theft. Employee dishonesty and embezzlement, forgery and altered checks, stolen funds. The through-line is simple: someone took money from you.
 
-Read those two again and look for the wire fraud from the opening. It isn't in either one.
+A cyber policy protects against a network or data event and the fallout. Ransomware, a breach of student or staff records, the cost to notify families, the downtime when your systems are dark. The through-line there: your data or your network got hit.
 
-The technical name for what happened is social engineering fraud. Sometimes it shows up as deception fraud or fraudulent instruction. A human being at your school was tricked into voluntarily sending money to a criminal. The cyber carrier says nobody breached your network, your own employee read an email and chose to pay. The crime carrier says nobody broke in, your employee had full authority to send wires and used it, you parted with the money voluntarily. Both denials are defensible under standard policy language. The loss is real, the money is gone, and each policy points at the other one.
+Look at those two lists and you'll see almost nothing on one shows up on the other. That's the whole problem. Carry only one and you're fully exposed to every loss on the list you skipped.
 
-This is worse for schools than for almost anyone, because schools hand the criminal the homework for free. Your budget is public. Your board minutes are public. Your vendors, your leadership names, your fiscal calendar, often all findable in an afternoon. On the other side of that lookalike email is a back office run lean, one or two people in accounts payable, both stretched, both trained to be responsive and helpful. A request to update vendor banking details doesn't look like an attack. It looks like a Tuesday.
+Run it in both directions and it gets clear fast.
 
-The fix isn't complicated. It's just work nobody bothered to do:
+The loss only crime pays for: a bookkeeper writes checks to a fake vendor for a year, or someone forges signatures and drains a student-activity account. Your cyber policy will not engage. No network was compromised, no data exposed. From the cyber carrier's chair, nothing happened that the policy is built to see. That's theft of your own funds, and theft of funds is what a crime policy is for.
 
-- Add the social engineering fraud endorsement. It usually bolts onto the crime policy and goes by names like fraudulent instruction or deception fraud coverage. It is the piece that actually responds when an employee gets tricked into sending money.
-- Check the sublimit, because it's usually smaller than you think. This coverage is often capped well below your main crime limit. A policy that includes it but caps it at $25,000 against an $80,000 loss is a partial answer dressed up as a full one.
-- Put a callback rule in place. Any change to vendor banking details gets confirmed by phone to a known number, never the number in the email. Some carriers require it before they'll pay, and it stops most of these losses before they start.
+The loss only cyber pays for: ransomware locks your student information system the week before enrollment. You're paying to restore systems, you may owe notification to every family whose data was touched, and you're down for days. Your crime policy shrugs. Nobody stole your money in the sense crime means. This is a network and data event start to finish, which is cyber's job and nobody else's.
 
-That's the whole fix. An endorsement, an adequate sublimit, and a callback rule. The reason it gets missed isn't that it's hard. It's that a generalist broker quoted two policies, said "you're covered for crime and cyber," and moved on. Technically true. Practically, they left the most common door wide open. That's the part I can't stomach, and it's most of why Charter Select only works with charter schools and maps the seam between these policies out loud.
+Then there's the seam that even both policies can miss. A criminal poses as a known vendor and emails new banking details. Your business manager updates the file and sends the next payment. The money's gone that afternoon. The cyber carrier says no network was breached, your employee authorized the payment. The crime carrier says nobody broke in, your employee had authority and used it. Both denials hold up. That loss needs its own endorsement, funds transfer fraud and social engineering fraud coverage. It can ride on the crime policy or the cyber policy depending on the carrier, but it never comes free, and when it's there it usually carries a sublimit well below the main limit. So you check that it exists, and you check that the sublimit matches a payment your school could realistically send.
 
-I wrote the full breakdown up on our site, no jargon, no gate, free to read and free to forward to your board or your business manager: **[LINK TO WHITE PAPER]**
+A covered school carries three things, stacked: crime, cyber, and that endorsement with a real sublimit. Plus one habit. Any change to vendor banking details gets verified by a phone call to a known number, never the number in the email.
 
-If you only do one thing with this, ask whoever handles your insurance one question.
+I wrote the full breakdown on our site, no jargon, no gate, free to read and free to forward to your board or your business manager: **[LINK TO WHITE PAPER]**
 
-If someone emailed your business office tomorrow posing as a known vendor and asked to update banking details, and that payment went out before anyone caught it, which policy pays, and what's the limit on it? If the answer is "I assume one of them does," that assumption is exactly what these schemes are built to exploit.
+If you only do one thing with this, answer three questions out loud. If an employee quietly stole from your accounts over the next year, which policy pays? If ransomware locked your systems next week, which policy pays? And if someone emailed your business office posing as a vendor and a payment went out before anyone caught it, which policy pays, and what's the limit on it?
+
+If any one of those answers is "I think we have something for that," that uncertainty is the gap. These losses are built to find it.
 
 Forward this to the school leader who needs it. This one's too expensive to find out the hard way.
 

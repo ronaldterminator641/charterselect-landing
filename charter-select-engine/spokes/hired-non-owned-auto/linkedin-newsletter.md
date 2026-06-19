@@ -4,49 +4,41 @@
 
 ---
 
-**Headline:** A parent volunteer drove three of your students to a field trip and caused a wreck. The policy you'd reach for sits this one out.
+**Headline:** A parent offered to drive three kids to the field trip in her minivan. Is that allowed, and who is covered if there's a fender bender? Here's the straight answer most schools never get.
 
 ---
 
-Picture a Tuesday. A parent volunteer loads three of your students into her minivan and drives them to the science museum. On the way back she's distracted for a second and rear-ends the car in front of her. Someone in that car is hurt.
+Every year, like clockwork, a school leader asks me some version of the same question.
 
-Now the injured driver's attorney goes looking for who to sue. They don't chase the parent. Her policy is small and she isn't worth the fight. They go after the school, because the school has the deeper pockets and the parent was doing the school's business when it happened.
+A parent offered to take three students to the science museum in her minivan. Is that allowed? Can our teachers drive kids to the game? What if a parent wants to load up a whole carload across town? And the one sitting underneath all of them: if something happens out there, who pays?
 
-Here's where it gets quiet and expensive. The school leader assumes one of her policies pays. For a lot of schools, the honest answer is none of the ones they think.
+These are good questions. They come up constantly because charter schools run on exactly this kind of everyday driving. The ride to the regional tournament. The supply run before the performance. The carpool to the museum. Almost every school I work with has this sitting in its week, whether anyone has named it or not.
 
-I grew up around manual labor and a ranch, where if you did a job halfway, somebody got hurt or something broke, and you owned it. That's the standard I expected when I got into insurance. It is not the standard a lot of charter schools are getting, and this gap is one of the clearest examples I know.
+What frustrates me is how rarely schools get a clear answer. It gets treated as a grey area, so the safe-sounding response is a shrug, or a "probably not, better not risk it." That leaves good programs scared to do normal things.
 
-Let me give you the mechanic in plain English.
+So let me give you the straight version. Yes, staff and parents can drive students. Yes, that exposure is insurable, and I have confirmed it with carriers directly. And there is a right way to run it that protects the kids, the drivers, and the school all at once.
 
-The coverage this scenario calls for is Hired and Non-Owned Auto liability, usually shortened to HNOA. The name does a bad job of describing something simple, so I'll translate it.
+Here is how it actually works.
 
-"Non-owned auto" means a vehicle your school does not own but that gets used for school business. A staff member's personal car. A parent volunteer's minivan. A coach's truck hauling equipment to a game. The school owns none of them, but the moment someone drives one on the school's behalf, the school can get pulled into the liability when something goes wrong.
+The coverage that handles this is called Hired and Non-Owned Auto, usually shortened to HNOA. The name is terrible, so let me translate. "Non-owned auto" is a vehicle the school does not own but that gets used for the school's business: a teacher's sedan, a parent's minivan, a coach's truck hauling gear. "Hired auto" is a vehicle the school rents, like a passenger van for a trip. HNOA covers the school's liability when one of those vehicles is being driven on the school's behalf and an accident injures someone. It is a common, well-understood endorsement. Nothing exotic about it.
 
-"Hired auto" means a vehicle your school rents or borrows, like a van rented for a trip.
+Now the part that surprises almost everyone, and it is worth reading twice.
 
-The gap most schools fall into is this. Your commercial auto policy, if you even have one, covers vehicles the school owns. It frequently does not respond to a personal car driven on school business. So when a volunteer or a staff member crashes their own vehicle while running the school's errand, the policy you'd reach for sits this one out, and the school's liability is exposed with nothing standing behind it.
+HNOA covers the school's liability. It does not repair the driver's own car. If a teacher or parent gets in a fender bender while driving students, the damage to their personal vehicle is paid by their personal auto policy. Geico, Allstate, State Farm, whoever they carry. There is no version of the school's policy that pays to fix an employee's or a parent's personal car. First-party physical damage on a personal car always lives with the owner's own policy. The one nuance: if the school rents a van, the school can choose to insure physical damage to that rented vehicle, because a hired vehicle is a different animal than someone's personal car.
 
-The reassurance people reach for is "but the driver has their own insurance." True, and it isn't enough. The driver's personal policy pays first, but personal auto limits are often modest, and a serious-injury claim blows through them fast. The moment that policy is exhausted, the attorney turns to the next available pocket, and the school is standing right there. Worse, some personal auto policies limit or exclude coverage when the car is being used for business, so a volunteer who didn't know that can find their own insurer narrowing the claim, which puts the school in the crosshairs even faster.
+Think of it as two lanes. The driver's personal auto policy handles their own car and is the first layer of liability when they cause a wreck. The school's HNOA sits on top of that, protecting the school when the personal limits get exhausted or when business use gets questioned. The personal policy is primary, so it pays first. HNOA is what stands behind the school after that.
 
-This isn't a rare event you can plan around. Staff drive their own cars to make the bank deposit, grab supplies, pick something up for an event. Teachers and volunteers drive on field trips. Coaches transport athletes. None of it feels like "the school driving," which is exactly why nobody insures it.
+That is the why behind the program I tell every school to run. None of it is expensive. It is mostly process, and it turns a grey area into a confident yes.
 
-The fix is almost embarrassingly cheap, which is what makes it so frustrating when it's missing:
+Confirm HNOA is actually on your policy, with real limits, in writing. Run motor vehicle records on anyone who regularly transports students, and re-run them on a schedule. Collect the declarations page from each driver's personal auto policy, confirm the limits clear a minimum you set, and refresh those dec pages every year. Have each driver sign a short acknowledgment that their personal policy is primary and that they hold the school harmless for damage to their own car. Get parent consent for the specific driver. Have drivers sign off on simple rules of the road. Then keep an approved-driver roster so the trip organizer pulls from a list instead of improvising in the parking lot.
 
-- Add HNOA coverage. It's frequently an inexpensive endorsement on your existing liability or commercial auto coverage. Confirm in writing that it's there and that the limits are adequate.
-- Understand the boundary. HNOA protects the school's liability. It does not repair the volunteer's own car. Make sure everyone driving for the school knows their personal coverage handles their own vehicle.
-- Put basic driver guidelines in place. A valid license, a minimum level of personal auto coverage, and a simple driving-record check for anyone regularly transporting students.
+That is the whole thing. A folder, basically, that turns an anxious question into a routine yes.
 
-A broker doing the job asks one question a generalist almost never does: who drives for your school in vehicles the school doesn't own? Then they make sure HNOA is on the policy with limits that match the real exposure. That's most of why Charter Select only works with charter schools and reads the whole policy every renewal.
+This is most of why Charter Select only works with charter schools. A broker paying attention asks who drives for your school in vehicles you don't own, confirms the coverage matches the real activity, and helps you stand up the program above. The point was never to scare anyone out of field trips. It is to let you run them with a clear answer behind you.
 
-I wrote the full breakdown up on our site, no jargon, no gate, free to read and free to forward to your board or your business manager: **[LINK TO WHITE PAPER]**
+I wrote the full breakdown up on our site, no jargon, no gate, free to forward to your board or business manager: **[LINK TO WHITE PAPER]**
 
-If you only do one thing with this, do this. Ask whoever handles your insurance:
-
-If a staff member or a parent volunteer caused a serious-injury accident tomorrow while driving their own car for your school, and their personal policy maxed out, who pays the rest? And have you ever actually seen Hired and Non-Owned Auto coverage, with real limits, on your policy?
-
-If you're not sure, that uncertainty is riding along on every trip your school takes.
-
-Forward this to the school leader who needs it. This one's too ordinary to leave uncovered.
+If you do one thing with this, do this. Next month a parent is going to offer to drive a few kids somewhere. When that happens, do you have a clear yes ready, a simple process behind it, and coverage you have actually seen on your policy to back it up? Or is the honest answer "I would have to check"? Because that is a much better thing to know before the trip pulls out of the lot than after.
 
 Aaron Schwen
 

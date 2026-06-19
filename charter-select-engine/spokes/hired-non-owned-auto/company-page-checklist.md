@@ -1,36 +1,36 @@
-# Company Page Spoke: Hired and Non-Owned Auto Exposure Checklist
+# Company Page Spoke: Hired and Non-Owned Auto Driver Program Checklist
 
 *Spoke type: Company storefront page (authoritative, technical, credibility-building). Goal: validate Charter Select to a prospect actively vetting us. Post from the Charter Select company page. Lead with the matrix, then the checklist.*
 
 ---
 
-**Headline:** Someone drives for your school in a car the school doesn't own. Confirm who pays before there's a wreck, not after.
+**Headline:** Can teachers and parents drive your students? Yes. Here is exactly who pays for what, and how to run it the right way.
 
-Every charter school runs on personal vehicles it does not own. Staff make the bank run, volunteers drive field trips, coaches haul athletes. When one of those drivers causes a serious-injury accident on school business, the school gets named as a defendant with the deep pockets. The coverage that answers for it is Hired and Non-Owned Auto liability (HNOA), and it is one of the most common gaps we find. Here is how the policies actually respond, and the checklist we run to close the gap.
+Charter schools run on everyday driving: field trips, athletic events, the carpool to the museum, the supply run before a performance. Staff and parents driving students is allowed, and it is coverable. The questions schools actually need answered are who is covered and who pays which part. Here is the breakdown, then the program we put in place on every school we work with.
 
-## How the coverage actually responds
+## Who pays for what
 
-| Policy | What it covers | What it does NOT cover | Where the gap lives |
-|---|---|---|---|
-| **Commercial auto** | Vehicles the school owns | A personal car driven on school business (frequently no response) | The school's liability when staff or a volunteer drives their own vehicle |
-| **The driver's personal auto** | The driver and their own vehicle, primary, up to their limits | The school's exposure once limits are exhausted; may limit or exclude business use | A serious claim blows through modest personal limits, then turns to the school |
-| **Hired and Non-Owned Auto (HNOA)** | The school's liability for non-owned and hired vehicles used on school business | Repair of the volunteer's own car (that stays with their personal policy) | This is the layer that stands behind the school after the driver's policy ends |
+| Source | What it covers | What it does NOT cover |
+|---|---|---|
+| **Driver's personal auto policy** (Geico, Allstate, State Farm, etc.) | The driver's own vehicle (first-party physical damage) AND their primary liability when they cause an accident | Nothing about this layer covers the school's separate liability beyond the driver's limits |
+| **School's Hired and Non-Owned Auto (HNOA)** | The school's third-party liability, sitting excess over the driver's personal liability, when a non-owned or hired vehicle is driven on school business | Repair of an employee's or a parent's personal car (that always stays with their personal policy) |
+| **Hired-auto physical damage** (optional) | Physical damage to a vehicle the school rents, such as a passenger van for a trip | Personal vehicles; only applies to a rented or "hired" vehicle |
 
-The driver's policy is a first layer, not a shield. The school's exposure begins exactly where that policy runs out. HNOA is what stands there.
+The driver's personal policy is primary. It pays first, and it is the only thing that ever repairs the driver's own car. The school's HNOA is the liability layer that protects the school when those personal limits are exhausted or when business use is questioned.
 
-## The HNOA checklist
+## The driver program checklist
 
-- [ ] List who drives for the school in vehicles the school doesn't own: staff errands, field trips, athletics, volunteers.
-- [ ] Confirm in writing whether HNOA coverage is on the current liability or commercial auto program.
-- [ ] Confirm the liability limits are adequate for a serious-injury claim, not just present.
-- [ ] Confirm the boundary in writing: HNOA covers the school's liability, not repair of the driver's own vehicle.
-- [ ] Put a one-page volunteer driver policy in place: valid license, minimum personal auto coverage, basic driving-record check for anyone regularly transporting students.
-- [ ] Communicate to drivers that their personal coverage handles their own car.
-- [ ] Document the confirmed HNOA coverage and limits for the board record.
+- [ ] Confirm HNOA is on the policy with adequate liability limits, in writing. Do not assume it rode along automatically.
+- [ ] Run motor vehicle records (MVRs) on anyone who regularly transports students, and re-run on a set schedule.
+- [ ] Collect the declarations page from each driver's personal auto policy, confirm it is active and meets a minimum limit you set in advance, and keep it on file. Refresh annually.
+- [ ] Have each driver sign an acknowledgment / hold-harmless: their personal auto policy is primary, and they hold the school harmless for damage to their own vehicle.
+- [ ] Get parent consent for the specific driver and arrangement, in both directions when parents drive other families' children.
+- [ ] Have drivers sign off on the rules of the road: valid license, seatbelts for every passenger, no phone use, no unscheduled stops, no impaired or exhausted driving, a clear route.
+- [ ] Maintain an approved-driver roster of everyone who has cleared the MVR, submitted a dec page, and signed the forms. The trip organizer pulls from the roster.
 
-## Why this is standard practice for us and rare elsewhere
+## Why this is standard practice for us
 
-A generalist quotes your property and your general liability, never asks who drives for the school, and leaves one of the most ordinary exposures a school has completely uncovered. We ask the question, confirm HNOA is on the policy with limits that match the real exposure, and put it in writing, because this is one of the cheapest gaps to close and one of the most expensive to discover the hard way.
+Schools rarely get a clear answer here because the topic gets treated as a grey area, so the result is a shrug. We confirm HNOA is on the policy with limits that match the real activity, then help stand up the driver program above so the coverage is backed by good practice. The point is not to keep a school from running field trips. It is to let the school run them with a clear answer and a clean process behind it.
 
 **Read the full breakdown:** [LINK TO WHITE PAPER]
 
