@@ -1,0 +1,778 @@
+{
+  "brand": "Charter Select",
+  "generated_for": "CRM marketing tab",
+  "model": "hub-and-spoke (GaryVee waterfall)",
+  "topic_count": 7,
+  "topics": [
+    {
+      "slug": "crime-vs-cyber",
+      "title": "Everyone Sold Your School Cyber Insurance. Nobody Mentioned Crime. That Gap Is Where the Money Actually Walks Out.",
+      "subtitle": "Cyber and crime cover two different disasters. Most schools carry one and assume it does the other's job. Here are the losses each one pays for, the losses each one ignores, and why a school needs both.",
+      "pillar": "Governance & Legal Shield",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-1-governance-legal-shield/crime-vs-cyber.md",
+        "word_count": 1376
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/crime-vs-cyber/linkedin-newsletter.md",
+          "word_count": 895
+        },
+        "checklist": {
+          "path": "spokes/crime-vs-cyber/company-page-checklist.md",
+          "word_count": 675
+        },
+        "hooks": {
+          "path": "spokes/crime-vs-cyber/short-form-hooks.md",
+          "word_count": 407
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Every broker sold your school cyber insurance. Almost none of them mentioned crime. That's the older, more boring policy that quietly fell off the table. It's also the one that pays when your money walks out the door:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "This school was proud of its cyber policy. Then an employee walked off with the money, and the carrier said no. (Full newsletter \u2014 see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "A longtime employee in the business office moved money out for months. The school filed on its cyber policy. Denied. Nobody hacked the network, so cyber doesn't see a loss. Employee theft is a crime policy loss, and they didn't have one:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "Crime and cyber cover two different disasters. Carrying one and assuming it does the other's job is how a school ends up with the wrong coverage for the loss it actually suffers. (Checklist + matrix \u2014 see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Ransomware locks your student information system the week before enrollment. You file on your crime policy. Denied. Nobody stole your money in the sense crime means. This is a network event, and only cyber pays for it:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "A criminal poses as a known vendor and emails new banking details. Your business manager updates the file and sends the payment. The cyber carrier says no breach. The crime carrier says no break-in. That seam needs its own endorsement, or nobody pays:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your policy might include the wire-fraud endorsement and still leave you exposed. It usually carries a sublimit far below your main limit. Cap it at $25,000 against a $200,000 payment and you've got a partial answer dressed up as a full one. Here's how to size it to your actual wires:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "The cheapest fraud control your school has costs nothing. Any change to vendor banking details gets confirmed by phone to a known number, never the number in the email. Some carriers won't even pay without it. It stops most of these losses cold:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "Three questions for whoever handles your school's insurance: if an employee stole from your accounts, which policy pays? If ransomware locked your systems, which policy pays? If a fake vendor email got a payment sent, which policy pays, and what's the limit? If any answer is 'I think we have something for that,' read this:",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    },
+    {
+      "slug": "management-liability-placement",
+      "title": "Your Board Was Told The Umbrella Has Them Covered. The Umbrella Almost Never Does.",
+      "subtitle": "A plain-English look at where board protection actually comes from, and why the commercial umbrella has nothing to do with it.",
+      "pillar": "Governance & Legal Shield",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-1-governance-legal-shield/management-liability-placement.md",
+        "word_count": 1911
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/management-liability-placement/linkedin-newsletter.md",
+          "word_count": 780
+        },
+        "checklist": {
+          "path": "spokes/management-liability-placement/company-page-checklist.md",
+          "word_count": 674
+        },
+        "hooks": {
+          "path": "spokes/management-liability-placement/short-form-hooks.md",
+          "word_count": 363
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "A lawsuit names one of your board members. Personally. Not the school, her. The chair calls the broker, calm, because everyone remembers being told the umbrella covers the board. The broker goes quiet. Here's why that umbrella was never there:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "Her board member got named in a lawsuit. The umbrella everyone trusted had nothing to do with protecting him. (Full newsletter \u2014 see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "\"You've got a five-million umbrella, the board is covered.\" It's the most comforting sentence a broker can say. It's also almost never true. Here's what actually protects your board:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "\"We have a large umbrella, so the board is covered.\" If that's the plan for your directors, the plan almost certainly has a hole in it. (Matrix + checklist \u2014 see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "A commercial umbrella follows the form of the policies under it: general liability, auto, employers liability. None of those is D&O. So there is nothing for the umbrella to sit on top of for your board. The full explanation:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your D&O policy has three sides, and they usually share one limit. When the school and the board get sued together, the entity's defense can burn that limit before a single trustee is protected. This is the gap nobody mentions:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "There's a coverage built to give your individual trustees their own protected limit, one the entity's side of a lawsuit can't drain. Most generalist brokers never place it. It's called Side-A DIC. Here's why it matters for a board:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Failure to educate. Denial of special-education services. Student civil-rights disputes. A generic nonprofit D&O policy may not respond to any of them. The line that does is built for schools, and a lot of boards don't have it:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "One question for whoever handles your school's coverage: if a board member were named personally next month, which policy would defend them, and is it actually in place with its own limit? If the answer is the umbrella, read this:",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    },
+    {
+      "slug": "retroactive-date-trap",
+      "title": "The One Date On Your Insurance Policy That Can Quietly Erase Five Years of Coverage",
+      "subtitle": "A plain-English look at the claims-made retroactive date: the most expensive line of fine print most school leaders were never told to check.",
+      "pillar": "Governance & Legal Shield",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-1-governance-legal-shield/retroactive-date-trap.md",
+        "word_count": 1457
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/retroactive-date-trap/linkedin-newsletter.md",
+          "word_count": 742
+        },
+        "checklist": {
+          "path": "spokes/retroactive-date-trap/company-page-checklist.md",
+          "word_count": 528
+        },
+        "hooks": {
+          "path": "spokes/retroactive-date-trap/short-form-hooks.md",
+          "word_count": 334
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your broker saved you $4,000 at renewal. The fine print just deleted five years of your abuse coverage. Nobody told the board. Here's the one date that did it:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "A single date on her policy quietly erased five years of coverage. Nobody told her until the claim came in. (Full newsletter \u2014 see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "A claim lands in 2026 for something that happened in 2021. You were insured the whole time. You're still not covered. This is how that happens to a school:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "Switching carriers on a claims-made policy? Confirm these before you sign, or you may be paying full premium for a fraction of your coverage history. (Checklist + matrix \u2014 see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "There's one line on your liability policy your broker probably moved without asking you. It can wipe out coverage for the worst thing that can happen to a school. Two minutes to check:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "'Claims-made' coverage only pays for things that happened after one specific date. Move that date forward, and everything before it disappears. Guess what a carrier switch does to that date by default.",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Most school leaders have never been told to read the declarations page of their claims-made policy. The most expensive line on it lives right there. Here's what to look for before you renew:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Abuse claims often surface years, sometimes decades, after the fact. An advanced retroactive date refuses to cover events from before your last carrier switch. Stack those two facts and you'll see why this matters most for schools:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "One question for whoever handles your school's insurance: when did anyone last confirm, in writing, whether your retroactive date moved at your last carrier switch? If the answer is a shrug, read this:",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    },
+    {
+      "slug": "active-assailant-coverage",
+      "title": "Your Property Insurance Needs a Broken Window to Pay. The Worst Day at a School Doesn't Come With One.",
+      "subtitle": "Why a violent event on campus can cost a school everything and still trigger no property claim, and the coverage built specifically to respond when there's no physical damage to point at.",
+      "pillar": "Operational Continuity",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-2-operational-continuity/active-assailant-coverage.md",
+        "word_count": 1057
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/active-assailant-coverage/linkedin-newsletter.md",
+          "word_count": 858
+        },
+        "checklist": {
+          "path": "spokes/active-assailant-coverage/company-page-checklist.md",
+          "word_count": 658
+        },
+        "hooks": {
+          "path": "spokes/active-assailant-coverage/short-form-hooks.md",
+          "word_count": 344
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "The worst day a school can have doesn't break a window. So your property policy, the one built to respond to a disaster, never opens. Here's the coverage that actually does:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "The worst day a school can have doesn't break a window. So the policy built to respond to a disaster never opens. (Full newsletter \u2014 see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "You file the claim. The adjuster asks where the physical damage is. After a violent event, often there isn't any. That one question is why the policy stays shut. Here's what doesn't:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "A violent event on campus can cost a school everything and trigger no property claim. Here is which policy actually responds, and what to confirm before you assume you're covered. (Checklist + matrix \u2014 see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Property insurance pays when something happens to the building. A violent event happens to the people. Read that gap before you assume you're covered:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "For most businesses, a violent event is a tragedy and a disruption. For a charter school it's also a funding cliff, because the money follows the students who stop showing up. Here's why this lands harder on a school:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Counselors. Round-the-clock security. A crisis team. Families who need support. Months of lost enrollment. Which of your current policies pays for any of it after a no-damage event? If you're not sure, start here:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "There's a coverage written for the event itself, not for damage to the building. The trigger is the whole point: it pays where your property policy can't. Most schools have never been shown it exists:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "One question for whoever handles your school's insurance: if a violent event tomorrow caused no physical damage, which policy pays for the crisis team, the security, and the enrollment you'd lose over the next year? If the answer is a shrug, read this:",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    },
+    {
+      "slug": "hired-non-owned-auto",
+      "title": "Can a Teacher Drive Students to the Game? Can a Parent? Here Is the Straight Answer Most Schools Never Get.",
+      "subtitle": "Field trips, athletic events, and the carpool to the science museum raise the same questions every single year. Who is allowed to drive, who is covered when something happens, and how do you run it the right way.",
+      "pillar": "Daily Liability Blindspots",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-3-daily-liability-blindspots/hired-non-owned-auto.md",
+        "word_count": 1505
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/hired-non-owned-auto/linkedin-newsletter.md",
+          "word_count": 968
+        },
+        "checklist": {
+          "path": "spokes/hired-non-owned-auto/company-page-checklist.md",
+          "word_count": 649
+        },
+        "hooks": {
+          "path": "spokes/hired-non-owned-auto/short-form-hooks.md",
+          "word_count": 394
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "\"Can a parent drive three of our kids to the field trip in her minivan?\" Yes. It's allowed, and it's coverable. Schools ask this every year and almost never get a straight answer. Here's the one most of them never hear:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "A parent offered to drive three kids to the field trip in her minivan. Is that allowed, and who is covered if there's a fender bender? (Full newsletter, see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Two lanes, and people mix them up constantly. The driver's personal auto policy is the first layer of liability. The school's Hired and Non-Owned Auto sits on top, protecting the school. Here's how the split actually works:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "Can teachers and parents drive your students? Yes. Here is exactly who pays for what, and how to run it the right way. (Checklist + matrix, see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "The part that surprises everyone: if a teacher or parent dents their own car driving your students, the school never pays to fix it. That's their personal auto policy. Geico, Allstate, whoever they carry. The school's policy covers liability, not their car:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Want a confident yes the next time someone offers to drive students? Start by running motor vehicle records on your regular drivers. It's cheap, it screens out the worst risks, and you re-run it on a schedule. Here's the rest of the playbook:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Ask every regular driver for the declarations page of their personal auto policy. Confirm it's active, confirm it clears a minimum you set, keep it on file. Then refresh it every year. That one folder turns an anxious question into a routine yes:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Two short forms make student driving clean instead of nerve-wracking. A driver acknowledgment: their personal policy is primary, they hold the school harmless for their own car. Parent consent for the specific driver. Simple, signed, and on file before the trip:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "One question for whoever handles your school's insurance: next time a parent offers to drive a few students, do you have a clear yes ready, a process behind it, and HNOA you've actually seen on your policy? If the honest answer is \"I'd have to check,\" read this:",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    },
+    {
+      "slug": "alternative-funding-arrangements",
+      "title": "The Health Plan Where a Healthy Year Pays You Back",
+      "subtitle": "A plain-English look at level-funded plans and group captives: the funding models that return surplus to the school instead of the insurer, what they actually require, and the honest risk nobody should hide from you.",
+      "pillar": "Benefits Revolution",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-4-benefits-revolution/alternative-funding-arrangements.md",
+        "word_count": 1154
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/alternative-funding-arrangements/linkedin-newsletter.md",
+          "word_count": 871
+        },
+        "checklist": {
+          "path": "spokes/alternative-funding-arrangements/company-page-checklist.md",
+          "word_count": 664
+        },
+        "hooks": {
+          "path": "spokes/alternative-funding-arrangements/short-form-hooks.md",
+          "word_count": 383
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your school had a healthy year. Low claims, no big events. Then the renewal came back with an increase on it. On a fully insured plan, every dollar you saved stayed with the insurer. There's a version where it comes back to you:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "Your school had a healthy year. So where did the money go? (Full newsletter: see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Fully insured: you pay a fixed premium, the insurer keeps the surplus. That's the whole design. A good year never pays you back. Schools your size already run on something better. Here's what your broker never showed you:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "Fully insured isn't your only option. Before you renew, see how the funding models actually compare, including the downside. (Checklist + matrix: see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "A level-funded plan splits your monthly payment three ways: claims fund, admin fee, stop-loss. Stop-loss caps your downside. The surplus from a healthy year comes back as a refund. Same budget predictability. Real upside. How it actually works:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "One charter school is usually too small to self-fund alone. A hundred charter schools that share a risk profile are not. That's the whole idea behind a group captive. Why pooling changes the math for schools:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Any broker who pitches alternative funding as free money is lying to you. In a bad year you pay more, up to a ceiling you set in advance. The point is a capped downside in exchange for the upside. The honest version, downside included:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "On a fully insured plan you get one number at renewal and no explanation. A level-funded plan hands you monthly claims data: ER usage, prescriptions, real cost drivers. You can finally manage what you can see. What that data actually shows you:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "One question for whoever handles your school's benefits: has anyone ever run your real claims history against a level-funded or captive model and shown you, in dollars, what a healthy year would have returned to your budget? If the answer is no, read this:",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    },
+    {
+      "slug": "failure-of-fully-insured",
+      "title": "Your School Had a Healthy Year. Your Reward Was a 12% Premium Increase. Here's Where the Money Went.",
+      "subtitle": "Why the standard health plan most charter schools carry is built so the school loses in a good year and loses in a bad one, and what that costs a budget that can't absorb it.",
+      "pillar": "Benefits Revolution",
+      "status": "Drafted + Sliced",
+      "hub": {
+        "path": "hub-whitepapers/pillar-4-benefits-revolution/failure-of-fully-insured.md",
+        "word_count": 960
+      },
+      "spokes": {
+        "newsletter": {
+          "path": "spokes/failure-of-fully-insured/linkedin-newsletter.md",
+          "word_count": 944
+        },
+        "checklist": {
+          "path": "spokes/failure-of-fully-insured/company-page-checklist.md",
+          "word_count": 656
+        },
+        "hooks": {
+          "path": "spokes/failure-of-fully-insured/short-form-hooks.md",
+          "word_count": 380
+        }
+      },
+      "timeline": [
+        {
+          "Date": "2026-06-22",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your staff had a healthy year. No big claims, no surgeries, twelve quiet months. Your reward was a 12% premium increase. Here's exactly where that money went:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-24",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Newsletter)",
+          "Asset_Type": "Newsletter",
+          "Post_Text": "Your school had a healthy year. Your reward was a 12% premium hike. Here's where that money went. (Full newsletter \u2014 see linkedin-newsletter.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Publish as LinkedIn newsletter issue"
+        },
+        {
+          "Date": "2026-06-26",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "In your health plan, who keeps the money when your people stay healthy? Not your school. The insurer keeps every dollar of the surplus. Bad year? They raise your rate. Good year? They keep the difference. Read both outcomes together:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-06-29",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Company)",
+          "Asset_Type": "Checklist",
+          "Post_Text": "Before you accept another fully insured renewal, understand what the model does with your money in a good year and a bad one. (Matrix + checklist \u2014 see company-page-checklist.md)",
+          "Link": "[HUB_URL]",
+          "Notes": "Post from company page; consider PDF lead-capture version"
+        },
+        {
+          "Date": "2026-07-01",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your fully insured plan hands you a renewal number and tells you to take it or leave it. What it never hands you is the claims data behind that number. You can't manage what they won't let you see. Here's why that's by design:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-03",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Every premium dollar your health plan eats is a classroom aide you didn't hire. A counselor you didn't add. A raise that didn't keep a good teacher from leaving. A double-digit increase isn't a line item. It's a cut somewhere else in the building:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-06",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "You're competing for staff against districts with deep benefits and pensions behind them. Then your health plan eats your budget and raises rates every year anyway. The fully insured model quietly works against the one thing your school most needs to do:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-08",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "Short hook",
+          "Post_Text": "Your generalist broker probably never told you this: the surplus from a healthy year does not have to vanish into the insurer's pocket. There are funding models that put it back in your budget, and schools your size use them:",
+          "Link": "[HUB_URL]",
+          "Notes": "Link in first comment recommended"
+        },
+        {
+          "Date": "2026-07-10",
+          "Time": "08:00 CT",
+          "Platform": "LinkedIn (Personal)",
+          "Asset_Type": "NEPQ question",
+          "Post_Text": "One question for whoever handles your school's benefits: the last time your staff had a healthy claims year, what happened to the money? Did any come back to your school, or did the insurer keep all of it and raise your rate anyway?",
+          "Link": "[HUB_URL]",
+          "Notes": "Closes the campaign on the NEPQ question"
+        }
+      ],
+      "campaign_window": "2026-06-22 to 2026-07-10",
+      "suggested_use": "3-week LinkedIn campaign: personal newsletter in week 1, company-page checklist/matrix in week 2, 7 short-form hooks filling Mon/Wed/Fri, closing on the NEPQ question. Link to the hub white paper in the first comment of each post."
+    }
+  ]
+}
