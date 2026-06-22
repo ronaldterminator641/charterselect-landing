@@ -48,15 +48,51 @@
       position: sticky;
       top: 96px;
     }
-    .founder-photo img {
+    /* ── Flip card ── */
+    .founder-photo {
+      width: 100%;
+      perspective: 1200px;
+      cursor: default;
+      margin-bottom: 24px;
+    }
+    .founder-photo__inner {
+      position: relative;
       width: 100%;
       aspect-ratio: 3/4;
-      border-radius: 16px;
+      transform-style: preserve-3d;
+      transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .founder-photo:hover .founder-photo__inner {
+      transform: rotateY(180deg);
+    }
+    .founder-photo__front,
+    .founder-photo__back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .founder-photo__back {
+      transform: rotateY(180deg);
+    }
+    .founder-photo__front img,
+    .founder-photo__back img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center;
+      border-radius: 16px;
       box-shadow: 0 8px 32px rgba(15,118,110,0.15);
       display: block;
+    }
+    .founder-photo__hint {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--fg-muted);
+      text-align: center;
+      margin-top: -16px;
       margin-bottom: 24px;
+      letter-spacing: 0.02em;
     }
     .founder-name { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--fg-1); margin: 0 0 4px; }
     .founder-title { font-size: 14px; color: var(--cs-teal); font-weight: 600; letter-spacing: 0.04em; margin: 0 0 20px; }
@@ -75,7 +111,10 @@
     @media (max-width: 860px) {
       .founder-layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px 64px; }
       .founder-sidebar { position: static; display: flex; flex-direction: column; align-items: center; text-align: center; }
-      .founder-photo img { width: 160px; aspect-ratio: 1; border-radius: 50%; margin-bottom: 16px; }
+      .founder-photo { width: 160px; margin-bottom: 0; }
+      .founder-photo__inner { aspect-ratio: 1; }
+      .founder-photo__front img, .founder-photo__back img { border-radius: 50%; }
+      .founder-photo__hint { margin-top: 8px; margin-bottom: 16px; }
       .founder-social { flex-direction: row; justify-content: center; flex-wrap: wrap; }
       .founder-letter p { font-size: 16px; }
       .founder-ctas { flex-direction: column; align-items: flex-start; }
@@ -115,8 +154,16 @@
               {/* Left sidebar */}
               <div className="founder-sidebar">
                 <div className="founder-photo">
-                  <img src="assets/aaron-schwen-sm.jpg" alt="Aaron Schwen, Founder of CharterSelect" />
+                  <div className="founder-photo__inner">
+                    <div className="founder-photo__front">
+                      <img src="assets/aaron-schwen-sm.jpg" alt="Aaron Schwen, Founder of CharterSelect" />
+                    </div>
+                    <div className="founder-photo__back">
+                      <img src="assets/aaron-schwen-childhood.webp" alt="Young Aaron on the farm" />
+                    </div>
+                  </div>
                 </div>
+                <p className="founder-photo__hint">hover for the origin story</p>
                 <h2 className="founder-name">Aaron Schwen</h2>
                 <p className="founder-title">Founder, CharterSelect</p>
                 <div className="founder-social">
