@@ -47,11 +47,17 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 | Advanced Employee Care (DPC, transparent Rx) | advanced-employee-care | Drafted | no |
 | Open Enrollment Modernization | open-enrollment-modernization | Drafted | no |
 | Stop-Loss Contract Terms & Lasering | stop-loss-terms-lasering | Drafted | yes (verified w/ sources) |
+| Price Transparency & Provider Price Variance | price-transparency-variance | Drafted | yes (verified w/ sources) |
+| PBM Deep-Dive (transparent / pass-through) | pbm-deep-dive | Drafted | yes (verified w/ sources) |
+| Level-Funded: Independents vs. Carriers | level-funded-independent-vs-carrier | Drafted | yes (verified w/ sources) |
+| Stop-Loss Captives (the funding endgame) | stop-loss-captives | Drafted | yes (verified w/ sources) |
+| State-of-the-Art Benefits Stack & Member Support | benefits-member-support-stack | Drafted | yes (verified w/ sources) |
 
 ## Counts
-- Drafted + Sliced: 7 of 23
-- Drafted (hub written, awaiting review then slicing): 16 of 23
+- Total topics: 28
+- Drafted + Sliced: 7
+- Drafted (hub written, awaiting review then slicing): 21
 - Queued: 0
 
 ## Standing note
-Every topic in the library now has a drafted hub white paper. 7 are fully sliced into spoke sets; the 16 newest are drafted and awaiting founder review before slicing. The 6 Verify topics (SRO liability, employed counsel, board Side-A, SAM, reference-based pricing, stop-loss/lasering) were web-researched and drafted conservatively from cited sources; the founder should still gut-check the mechanics against his own carriers. Distribution gate unchanged: nothing is live until a human posts it. Inventory is full. The bottleneck is review and publishing, not production.
+Every topic in the library now has a drafted hub white paper (28 total). 7 are fully sliced into spoke sets; 21 are drafted and awaiting founder review before slicing. The 5 newest (price transparency, PBM deep-dive, independent level-funded, stop-loss captives, and the state-of-the-art stack) come straight from the founder's playbook and name specific vendors (SmithRx, Gravie, Benecon, Pareto, Captive Resources, Roundstone, Evergreen, Centivo, Boon-Chapman, etc.) as his real-world examples and informed opinion. All Verify topics were web-researched and drafted conservatively from cited sources; the founder should still gut-check mechanics and vendor positioning against his own experience and carriers. Distribution gate unchanged: nothing is live until a human posts it. Inventory is full. The bottleneck is review and publishing, not production.
