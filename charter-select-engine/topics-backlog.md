@@ -47,16 +47,16 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 | Advanced Employee Care (DPC, transparent Rx) | advanced-employee-care | Drafted | no |
 | Open Enrollment Modernization | open-enrollment-modernization | Drafted | no |
 | Stop-Loss Contract Terms & Lasering | stop-loss-terms-lasering | Drafted | yes (verified w/ sources) |
-| Price Transparency & Provider Price Variance | price-transparency-variance | Drafted | yes (verified w/ sources) |
-| PBM Deep-Dive (transparent / pass-through) | pbm-deep-dive | Drafted | yes (verified w/ sources) |
-| Level-Funded: Independents vs. Carriers | level-funded-independent-vs-carrier | Drafted | yes (verified w/ sources) |
-| Stop-Loss Captives (the funding endgame) | stop-loss-captives | Drafted | yes (verified w/ sources) |
-| State-of-the-Art Benefits Stack & Member Support | benefits-member-support-stack | Drafted | yes (verified w/ sources) |
+| Price Transparency & Provider Price Variance | price-transparency-variance | Drafted + Sliced | yes (verified w/ sources) |
+| PBM Deep-Dive (transparent / pass-through) | pbm-deep-dive | Drafted + Sliced | yes (verified w/ sources) |
+| Level-Funded: Independents vs. Carriers | level-funded-independent-vs-carrier | Drafted + Sliced | yes (verified w/ sources) |
+| Stop-Loss Captives (the funding endgame) | stop-loss-captives | Drafted + Sliced | yes (verified w/ sources) |
+| State-of-the-Art Benefits Stack & Member Support | benefits-member-support-stack | Drafted + Sliced | yes (verified w/ sources) |
 
 ## Counts
 - Total topics: 28
-- Drafted + Sliced: 7
-- Drafted (hub written, awaiting review then slicing): 21
+- Drafted + Sliced: 12
+- Drafted (hub written, awaiting review then slicing): 16
 - Queued: 0
 
 ## Standing note
