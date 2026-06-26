@@ -108,6 +108,47 @@
     .founder-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .founder-ctas__divider { width: 1px; height: 32px; background: var(--border-1); margin: 0 4px; }
 
+    /* ── Podcast card ── */
+    .cs-podcast-card {
+      background: #fff;
+      border: 1px solid var(--border-1);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow-md, 0 4px 24px rgba(0,0,0,0.07));
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .cs-podcast-art {
+      flex-shrink: 0;
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #9333ea 0%, #6d28d9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-podcast-body { flex: 1; min-width: 0; }
+    .cs-podcast-show { font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-muted); margin: 0 0 8px; }
+    .cs-podcast-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.25; color: var(--fg-1); margin: 0 0 12px; }
+    .cs-podcast-desc { font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--fg-2); margin: 0 0 24px; }
+    .cs-podcast-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .cs-podcast-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 600;
+      padding: 10px 18px; border-radius: 999px;
+      text-decoration: none; transition: opacity 140ms, transform 100ms;
+      white-space: nowrap;
+    }
+    .cs-podcast-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cs-podcast-btn--apple { background: #9333ea; color: #fff; }
+    .cs-podcast-btn--spotify { background: #1db954; color: #fff; }
+    @media (max-width: 640px) {
+      .cs-podcast-card { flex-direction: column; gap: 20px; padding: 28px 24px; }
+      .cs-podcast-art { width: 72px; height: 72px; border-radius: 12px; }
+    }
+
     @media (max-width: 860px) {
       .founder-layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px 64px; }
       .founder-sidebar { position: static; display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -136,12 +177,12 @@
 
       return (
         <div data-screen-label="About">
-          <TopNav onCta={() => { window.location.href = 'index.html#contact'; }} />
+          <TopNav onCta={() => { window.location.href = '/contact'; }} />
 
           {/* ── Page hero ── */}
           <section className="cs-page-hero">
             <div className="cs-page-hero__inner">
-              <a className="cs-back" href="index.html"><Lucide name="arrow-left" size={14} /> Back to home</a>
+              <a className="cs-back" href="/"><Lucide name="arrow-left" size={14} /> Back to home</a>
               <div className="cs-eyebrow">Message from the Founder</div>
               <h1 className="cs-page-hero__title">Why I Built CharterSelect</h1>
             </div>
@@ -197,6 +238,48 @@
                 </div>
               </div>
 
+            </div>
+          </section>
+
+          {/* ── Podcast ── */}
+          <section className="cs-section cs-section--cream" style={{paddingTop: 56, paddingBottom: 72}}>
+            <div className="cs-prose">
+              <div className="cs-eyebrow" style={{marginBottom: 24}}>Recently Featured</div>
+              <div className="cs-podcast-card">
+                <div className="cs-podcast-art">
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="10" stroke="white" strokeWidth="2.5" fill="none"/>
+                    <circle cx="22" cy="22" r="3.5" fill="white"/>
+                    <path d="M22 12V9M22 33v3M12 22H9M33 22h3" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                    <path d="M15 15l-2-2M29 29l2 2M29 15l2-2M15 29l-2 2" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.6"/>
+                  </svg>
+                </div>
+                <div className="cs-podcast-body">
+                  <p className="cs-podcast-show">The Burnt Out Educator Podcast</p>
+                  <h2 className="cs-podcast-title">When Success Isn't Enough: Aaron Schwen on Leaving Corporate to Build with Purpose</h2>
+                  <p className="cs-podcast-desc">Coach Joe sits down with Aaron to discuss why he walked away from a successful corporate insurance career to build a company centered around service instead of sales quotas.</p>
+                  <div className="cs-podcast-links">
+                    <a
+                      className="cs-podcast-btn cs-podcast-btn--apple"
+                      href="https://podcasts.apple.com/us/podcast/when-success-isnt-enough-aaron-schwen-on-leaving-corporate/id1791609981?i=1000774117890"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a3 3 0 110 6 3 3 0 010-6zm0 14.5a7.5 7.5 0 01-6-3c.017-1.996 4-3.1 6-3.1s5.983 1.104 6 3.1a7.5 7.5 0 01-6 3z"/></svg>
+                      Listen on Apple Podcasts
+                    </a>
+                    <a
+                      className="cs-podcast-btn cs-podcast-btn--spotify"
+                      href="https://open.spotify.com/episode/1jN1FVt5h432a9QVqR3bVl?si=clTvZuGWRXmjtYlaz1DnTg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.723a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.973c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 11-.543-1.794c3.532-1.072 9.404-.865 13.115 1.338a.937.937 0 11-.955 1.612z"/></svg>
+                      Listen on Spotify
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
