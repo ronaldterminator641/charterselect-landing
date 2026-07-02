@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Your Policy — CharterSelect</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/colors_and_type.css" />
+  <link rel="stylesheet" href="/site.css?v=2" />
+  <link rel="icon" href="/assets/logo-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/logo-icon.png" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" integrity="sha384-ZgnJ3Zpr70Xoify35DjOZWqHib1iYJBpYpQUIEpDASG9+fJ745WzNQuC004dwU0W" crossorigin="anonymous"></script>
+  <style>
+    .upload-wrap  { max-width: 640px; margin: 0 auto; padding: 40px 32px 96px; }
+    .upload-intro { margin-bottom: 32px; }
+    .upload-intro h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.1; color: var(--fg-1); margin: 8px 0 14px; }
+    .upload-intro p  { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--fg-2); margin: 0; }
+
+    .upload-card { background: #fff; border: 1px solid var(--border-1); border-radius: 16px; padding: 40px; box-shadow: var(--shadow-md); }
+    @media (max-width: 540px) { .upload-card { padding: 24px; } }
+
+    .upload-field  { margin-bottom: 20px; }
+    .upload-label  { display: block; font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--fg-1); letter-spacing: 0.03em; margin-bottom: 7px; }
+    .upload-label span { color: var(--cs-teal); margin-left: 2px; }
+    .upload-input  {
+      display: block; width: 100%;
+      font-family: var(--font-body); font-size: 15px; color: var(--fg-1);
+      background: #fafaf8; border: 1.5px solid var(--border-1);
+      border-radius: 10px; padding: 11px 14px;
+      outline: none; transition: border-color 140ms, box-shadow 140ms;
+      appearance: none; -webkit-appearance: none;
+    }
+    .upload-input:focus { border-color: var(--cs-teal); box-shadow: 0 0 0 3px rgba(15,118,110,0.12); }
+    .upload-input::placeholder { color: var(--fg-muted); }
+    .upload-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 540px) { .upload-row { grid-template-columns: 1fr; } }
+
+    /* Drop zone */
+    .upload-zone {
+      border: 2px dashed var(--border-1); border-radius: 12px;
+      padding: 36px 24px; text-align: center; cursor: pointer;
+      transition: border-color 140ms, background 140ms;
+      background: #fafaf8;
+    }
+    .upload-zone:hover, .upload-zone.drag-over { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); }
+    .upload-zone.has-file { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); }
+    .upload-zone__icon { color: var(--fg-muted); margin-bottom: 12px; }
+    .upload-zone__text { font-family: var(--font-body); font-size: 15px; color: var(--fg-2); }
+    .upload-zone__hint { font-family: var(--font-body); font-size: 12px; color: var(--fg-muted); margin-top: 6px; }
+    .upload-zone__file { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--cs-teal); margin-top: 8px; }
+    .upload-zone input[type="file"] { display: none; }
+
+    /* Progress */
+    .upload-progress { margin-top: 20px; }
+    .upload-progress__bar-track { height: 6px; background: var(--border-1); border-radius: 999px; overflow: hidden; }
+    .upload-progress__bar-fill  { height: 100%; background: var(--cs-teal); border-radius: 999px; transition: width 100ms linear; }
+    .upload-progress__label { font-family: var(--font-body); font-size: 13px; color: var(--fg-muted); margin-top: 8px; text-align: center; }
+
+    /* Submit */
+    .upload-submit {
+      width: 100%; margin-top: 28px;
+      font-family: var(--font-body); font-size: 16px; font-weight: 600;
+      background: var(--cs-teal); color: #fff;
+      border: none; border-radius: 999px; padding: 15px 24px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 14px rgba(15,118,110,0.35); transition: background 140ms, transform 100ms;
+    }
+    .upload-submit:hover  { background: var(--cs-teal-700, #0d6560); }
+    .upload-submit:active { transform: translateY(1px); }
+    .upload-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+
+    .upload-trust { display: flex; align-items: center; gap: 6px; justify-content: center; margin-top: 14px; font-size: 13px; color: var(--fg-muted); font-family: var(--font-body); }
+    .upload-error { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 10px; padding: 12px 16px; font-size: 14px; color: #b91c1c; margin-top: 16px; font-family: var(--font-body); }
+
+    /* Success */
+    .upload-success { text-align: center; padding: 48px 24px; }
+    .upload-success__icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(15,118,110,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--cs-teal); }
+    .upload-success h2 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; color: var(--fg-1); margin: 0 0 12px; }
+    .upload-success p  { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 0 0 32px; }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <header><a href="/">CharterSelect</a> — Charter School Insurance Specialists</header>
+    <main>
+      <h1>Upload Your Policy Documents</h1>
+      <p>Share your current insurance policies for a complimentary benchmark review. We'll compare your coverage against what similar charter schools pay and show you where you stand.</p>
+    </main>
+  </div>
+  <script type="text/babel" src="/components.jsx?v=10"></script>
+  <script type="text/babel">
+
+    const MAX_SIZE_BYTES = 50 * 1024 * 1024; // 50 MB
+
+    function formatBytes(bytes) {
+      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    }
+
+    function UploadPage() {
+      const [form, setForm] = React.useState({
+        school_name: '', contact_name: '', email: '',
+      });
+      const [file,       setFile]       = React.useState(null);
+      const [dragging,   setDragging]   = React.useState(false);
+      const [uploading,  setUploading]  = React.useState(false);
+      const [progress,   setProgress]   = React.useState(0);
+      const [statusMsg,  setStatusMsg]  = React.useState('');
+      const [error,      setError]      = React.useState(null);
+      const [done,       setDone]       = React.useState(false);
+      const fileInputRef = React.useRef(null);
+
+      function setField(f) { return e => setForm(p => ({ ...p, [f]: e.target.value })); }
+
+      function handleFileSelect(f) {
+        if (!f) return;
+        if (f.size > MAX_SIZE_BYTES) {
+          setError(`File is too large (${formatBytes(f.size)}). Maximum 50 MB.`);
+          return;
+        }
+        setError(null);
+        setFile(f);
+      }
+
+      function onDrop(e) {
+        e.preventDefault();
+        setDragging(false);
+        const f = e.dataTransfer.files[0];
+        if (f) handleFileSelect(f);
+      }
+
+      async function handleSubmit(e) {
+        e.preventDefault();
+        setError(null);
+
+        if (!form.school_name.trim() || !form.email.trim()) {
+          setError('School name and email are required.');
+          return;
+        }
+        if (!file) {
+          setError('Please select a file to upload.');
+          return;
+        }
+
+        setUploading(true);
+        setProgress(0);
+        setStatusMsg('Preparing upload…');
+
+        try {
+          // Step 1: Get a Drive resumable upload URL from our server
+          const initRes = await fetch('/api/upload-policy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              school_name:  form.school_name.trim(),
+              contact_name: form.contact_name.trim(),
+              email:        form.email.trim(),
+              file_name:    file.name,
+              file_type:    file.type || 'application/octet-stream',
+              file_size:    file.size,
+            }),
+          });
+
+          const initData = await initRes.json();
+          if (!initRes.ok) throw new Error(initData.error || 'Failed to initialize upload.');
+
+          const { uploadUrl } = initData;
+
+          // Step 2: Upload file directly to Google Drive via XHR (supports progress)
+          setStatusMsg('Uploading to secure storage…');
+          const fileId = await new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('PUT', uploadUrl);
+            xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+
+            xhr.upload.addEventListener('progress', ev => {
+              if (ev.lengthComputable) {
+                setProgress(Math.round((ev.loaded / ev.total) * 90));
+              }
+            });
+
+            xhr.addEventListener('load', () => {
+              if (xhr.status >= 200 && xhr.status < 300) {
+                try {
+                  const data = JSON.parse(xhr.responseText);
+                  resolve(data.id || null);
+                } catch {
+                  resolve(null);
+                }
+              } else {
+                reject(new Error(`Upload failed (${xhr.status})`));
+              }
+            });
+            xhr.addEventListener('error', () => reject(new Error('Network error during upload.')));
+            xhr.send(file);
+          });
+
+          // Step 3: Notify server (share file + send email)
+          setProgress(95);
+          setStatusMsg('Notifying your advisor…');
+          await fetch('/api/upload-complete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              file_id:      fileId,
+              school_name:  form.school_name.trim(),
+              contact_name: form.contact_name.trim(),
+              email:        form.email.trim(),
+              file_name:    file.name,
+            }),
+          });
+
+          setProgress(100);
+          setDone(true);
+
+        } catch (err) {
+          setError(err.message || 'Something went wrong. Please email aschwen@charterselect.com directly.');
+          setUploading(false);
+          setProgress(0);
+          setStatusMsg('');
+        }
+      }
+
+      if (done) {
+        return (
+          <div data-screen-label="Upload Success">
+            <TopNav onCta={() => { window.location.href = '/contact'; }} />
+            <section style={{background: 'var(--cs-cream,#fafaf8)', minHeight: '70vh', display: 'flex', alignItems: 'center'}}>
+              <div className="upload-wrap">
+                <div className="upload-card">
+                  <div className="upload-success">
+                    <div className="upload-success__icon">
+                      <Lucide name="check-circle" size={36} />
+                    </div>
+                    <h2>Policy received!</h2>
+                    <p>Aaron will review your documents and reach out within 1 business day with your complimentary benchmark report.</p>
+                    <a className="cs-btn cs-btn--primary" href="/" style={{textDecoration:'none', display:'inline-flex'}}>
+                      Back to Home
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <Footer />
+          </div>
+        );
+      }
+
+      return (
+        <div data-screen-label="Upload Policy">
+          <TopNav onCta={() => { window.location.href = '/contact'; }} />
+
+          <section style={{background:'var(--cs-cream,#fafaf8)', borderBottom:'1px solid var(--border-1)', padding:'24px 32px 0'}}>
+            <div style={{maxWidth:640, margin:'0 auto'}}>
+              <a href="/" style={{display:'inline-flex',alignItems:'center',gap:6,fontSize:13,color:'var(--fg-muted)',textDecoration:'none',marginBottom:16,fontFamily:'var(--font-body)'}}>
+                <Lucide name="arrow-left" size={13} /> Back to home
+              </a>
+              <div className="cs-eyebrow">Free · Confidential · No Obligation</div>
+            </div>
+          </section>
+
+          <section id="main-content" style={{background:'var(--cs-cream,#fafaf8)'}}>
+            <div className="upload-wrap">
+              <div className="upload-intro">
+                <h1>Upload Your Policy Documents</h1>
+                <p>Share your current insurance policies for a complimentary benchmark review. We'll compare your coverage against what similar charter schools pay and show you exactly where you stand.</p>
+              </div>
+
+              <div className="upload-card">
+                <form onSubmit={handleSubmit} noValidate>
+
+                  <div className="upload-field">
+                    <label className="upload-label" htmlFor="school_name">
+                      School Name <span aria-hidden="true">*</span>
+                    </label>
+                    <input id="school_name" className="upload-input" type="text"
+                      placeholder="Academy Charter School"
+                      value={form.school_name} onChange={setField('school_name')}
+                      aria-required="true" disabled={uploading} />
+                  </div>
+
+                  <div className="upload-row">
+                    <div className="upload-field">
+                      <label className="upload-label" htmlFor="contact_name">Your Name</label>
+                      <input id="contact_name" className="upload-input" type="text"
+                        placeholder="Jane Smith"
+                        value={form.contact_name} onChange={setField('contact_name')}
+                        disabled={uploading} />
+                    </div>
+                    <div className="upload-field">
+                      <label className="upload-label" htmlFor="email">
+                        Email <span aria-hidden="true">*</span>
+                      </label>
+                      <input id="email" className="upload-input" type="email"
+                        placeholder="jane@school.org"
+                        value={form.email} onChange={setField('email')}
+                        aria-required="true" disabled={uploading} />
+                    </div>
+                  </div>
+
+                  {/* Drop zone */}
+                  <div className="upload-field" style={{marginBottom: 0}}>
+                    <label className="upload-label">Policy File <span aria-hidden="true">*</span></label>
+                    <div
+                      className={`upload-zone${dragging ? ' drag-over' : ''}${file ? ' has-file' : ''}`}
+                      onClick={() => !uploading && fileInputRef.current?.click()}
+                      onDragOver={e => { e.preventDefault(); setDragging(true); }}
+                      onDragLeave={() => setDragging(false)}
+                      onDrop={onDrop}
+                      role="button"
+                      aria-label="Upload policy file"
+                    >
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg"
+                        onChange={e => handleFileSelect(e.target.files[0])}
+                        disabled={uploading}
+                      />
+                      <div className="upload-zone__icon">
+                        <Lucide name={file ? 'file-check' : 'upload-cloud'} size={32} />
+                      </div>
+                      {file ? (
+                        <>
+                          <div className="upload-zone__file">{file.name}</div>
+                          <div className="upload-zone__hint">{formatBytes(file.size)} · click to change</div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="upload-zone__text">Drop your policy here, or click to browse</div>
+                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 50 MB</div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Progress bar */}
+                  {uploading && (
+                    <div className="upload-progress">
+                      <div className="upload-progress__bar-track">
+                        <div className="upload-progress__bar-fill" style={{width: `${progress}%`}} />
+                      </div>
+                      <div className="upload-progress__label">{statusMsg} {progress > 0 && progress < 100 ? `${progress}%` : ''}</div>
+                    </div>
+                  )}
+
+                  {error && <div className="upload-error" role="alert">{error}</div>}
+
+                  <button type="submit" className="upload-submit" disabled={uploading}>
+                    <Lucide name={uploading ? 'loader' : 'send'} size={16} />
+                    {uploading ? 'Uploading…' : 'Send for Review'}
+                  </button>
+
+                  <p className="upload-trust">
+                    <Lucide name="lock" size={14} />
+                    Uploaded securely to Google Drive. Never shared.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<UploadPage />);
+  </script>
+</body>
+</html>
