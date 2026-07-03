@@ -5,26 +5,26 @@
 ---
 
 **Hook 1**
-Every broker sold your school cyber insurance.
-Almost none of them mentioned crime.
-That's the older, more boring policy that quietly fell off the table.
-It's also the one that pays when your money walks out the door: [LINK]
+Before you ask "are we covered," ask a better question.
+What is your school actually trying to protect against?
+Someone taking your funds and your network getting hit are two different disasters.
+One policy does not answer both: [LINK]
 
 ---
 
 **Hook 2**
 A longtime employee in the business office moved money out for months.
 The school filed on its cyber policy.
-Denied. Nobody hacked the network, so cyber doesn't see a loss.
+Denied. Nobody hacked the network, so cyber never saw a loss.
 Employee theft is a crime policy loss, and they didn't have one: [LINK]
 
 ---
 
 **Hook 3**
+Now run it the other way.
 Ransomware locks your student information system the week before enrollment.
-You file on your crime policy.
-Denied. Nobody stole your money in the sense crime means.
-This is a network event, and only cyber pays for it: [LINK]
+You file on your crime policy. Denied. Nobody stole your money in the sense crime means.
+That is why a school needs both, not the better-sounding one: [LINK]
 
 ---
 
@@ -32,15 +32,15 @@ This is a network event, and only cyber pays for it: [LINK]
 A criminal poses as a known vendor and emails new banking details.
 Your business manager updates the file and sends the payment.
 The cyber carrier says no breach. The crime carrier says no break-in.
-That seam needs its own endorsement, or nobody pays: [LINK]
+That seam needs its own endorsement, or both policies point at each other: [LINK]
 
 ---
 
 **Hook 5**
-Your policy might include the wire-fraud endorsement and still leave you exposed.
-It usually carries a sublimit far below your main limit.
-Cap it at $25,000 against a $200,000 payment and you've got a partial answer dressed up as a full one.
-Here's how to size it to your actual wires: [LINK]
+You can carry crime and cyber and still lose the wire-fraud claim.
+The endorsement that covers it usually rides a sublimit far below your main limit.
+Cap it at $25,000 against a $200,000 payment and you have a partial answer dressed up as a full one.
+Here is how to size it to your actual wires: [LINK]
 
 ---
 
