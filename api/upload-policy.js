@@ -121,7 +121,9 @@ module.exports = async function handler(req, res) {
     if (!initRes.ok) {
       const text = await initRes.text();
       console.error('[upload-policy] Drive init error', initRes.status, text);
-      return res.status(502).json({ error: `Could not initialize upload session (${initRes.status}).` });
+      let reason = text;
+      try { reason = JSON.parse(text).error?.message || text; } catch {}
+      return res.status(502).json({ error: `Drive error (${initRes.status}): ${reason}` });
     }
 
     const uploadUrl = initRes.headers.get('location');
