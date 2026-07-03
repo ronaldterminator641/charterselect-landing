@@ -8,6 +8,11 @@
 const { google } = require('googleapis');
 const { Readable } = require('stream');
 
+// Tell Vercel to allow up to 4.5 MB request bodies (default is 1 MB).
+module.exports.config = {
+  api: { bodyParser: { sizeLimit: '4.5mb' } },
+};
+
 const NOTIFY_TO   = 'aschwen@charterselect.com';
 const FOLDER_NAME = 'CharterSelect — Policy Uploads';
 const EMAIL_RE    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

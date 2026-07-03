@@ -56,18 +56,12 @@ async function getOrCreateFolder(drive) {
     return _folderId;
   }
 
-  // First run: create the folder and share it with Aaron
+  // First run: create the folder (DWD means it already belongs to Aaron's Drive)
   const folder = await drive.files.create({
     requestBody: { name: FOLDER_NAME, mimeType: 'application/vnd.google-apps.folder' },
     fields: 'id',
   });
   _folderId = folder.data.id;
-
-  await drive.permissions.create({
-    fileId: _folderId,
-    requestBody: { type: 'user', role: 'writer', emailAddress: NOTIFY_TO },
-    sendNotificationEmail: false,
-  });
 
   console.log(`[upload-policy] Created Drive folder "${FOLDER_NAME}" id=${_folderId}`);
   return _folderId;
@@ -111,6 +105,7 @@ module.exports = async function handler(req, res) {
           'Authorization':           `Bearer ${token}`,
           'Content-Type':            'application/json',
           'X-Upload-Content-Type':   file_type || 'application/pdf',
+          'Origin':                  'https://www.charterselect.com',
           ...(file_size ? { 'X-Upload-Content-Length': String(file_size) } : {}),
         },
         body: JSON.stringify({

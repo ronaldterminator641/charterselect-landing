@@ -109,7 +109,9 @@
   <script type="text/babel" src="/components.jsx?v=10"></script>
   <script type="text/babel">
 
-    const MAX_SIZE_BYTES = 4 * 1024 * 1024; // 4 MB (Vercel payload limit)
+    const MAX_SIZE_BYTES        = 10 * 1024 * 1024; // 10 MB overall UI limit
+    const MAX_SIZE_BYTES_SERVER =  4 * 1024 * 1024; // 4 MB — route to /api/upload-file
+    // Files > MAX_SIZE_BYTES_SERVER go browser → Drive directly (no Vercel limit)
 
     function formatBytes(bytes) {
       if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
@@ -137,7 +139,7 @@
         const valid = [];
         for (const f of list) {
           if (f.size > MAX_SIZE_BYTES) {
-            err = `"${f.name}" is too large (${formatBytes(f.size)}). Maximum 50 MB per file.`;
+            err = `"${f.name}" is too large (${formatBytes(f.size)}). Maximum 10 MB per file.`;
           } else {
             valid.push(f);
           }
@@ -187,50 +189,95 @@
           const fileShare = 90 / files.length; // each file gets an equal slice of 0–90%
 
           for (let i = 0; i < files.length; i++) {
-            const file       = files[i];
+            const file        = files[i];
             const baseProgress = i * fileShare;
 
             setStatusMsg(`Uploading "${file.name}" (${i + 1} of ${files.length})…`);
             setProgress(Math.round(baseProgress));
 
-            // Upload to our server, which forwards to Google Drive (avoids CORS issues).
-            const fileId = await new Promise((resolve, reject) => {
-              const xhr = new XMLHttpRequest();
-              xhr.open('POST', '/api/upload-file');
-              xhr.setRequestHeader('Content-Type',   file.type || 'application/octet-stream');
-              xhr.setRequestHeader('X-School-Name',  encodeURIComponent(form.school_name.trim()));
-              xhr.setRequestHeader('X-Contact-Name', encodeURIComponent(form.contact_name.trim()));
-              xhr.setRequestHeader('X-Email',        encodeURIComponent(form.email.trim()));
-              xhr.setRequestHeader('X-File-Name',    encodeURIComponent(file.name));
+            let fileId;
 
-              xhr.upload.addEventListener('progress', ev => {
-                if (ev.lengthComputable) {
-                  const pct = baseProgress + (ev.loaded / ev.total) * fileShare * 0.85;
-                  setProgress(Math.round(pct));
-                }
-              });
+            if (file.size <= MAX_SIZE_BYTES_SERVER) {
+              // ≤ 4 MB: POST to Vercel (server proxies to Drive, most reliable path)
+              fileId = await new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/api/upload-file');
+                xhr.setRequestHeader('Content-Type',   file.type || 'application/octet-stream');
+                xhr.setRequestHeader('X-School-Name',  encodeURIComponent(form.school_name.trim()));
+                xhr.setRequestHeader('X-Contact-Name', encodeURIComponent(form.contact_name.trim()));
+                xhr.setRequestHeader('X-Email',        encodeURIComponent(form.email.trim()));
+                xhr.setRequestHeader('X-File-Name',    encodeURIComponent(file.name));
 
-              xhr.addEventListener('load', () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                  try {
-                    const data = JSON.parse(xhr.responseText);
-                    setProgress(Math.round(baseProgress + fileShare));
-                    resolve(data.fileId || null);
-                  } catch {
-                    resolve(null);
+                xhr.upload.addEventListener('progress', ev => {
+                  if (ev.lengthComputable) {
+                    const pct = baseProgress + (ev.loaded / ev.total) * fileShare * 0.85;
+                    setProgress(Math.round(pct));
                   }
-                } else {
-                  let errMsg = `Upload failed (${xhr.status})`;
-                  try { errMsg = JSON.parse(xhr.responseText).error || errMsg; } catch {}
-                  reject(new Error(errMsg));
-                }
+                });
+                xhr.addEventListener('load', () => {
+                  if (xhr.status >= 200 && xhr.status < 300) {
+                    try {
+                      const data = JSON.parse(xhr.responseText);
+                      resolve(data.fileId || null);
+                    } catch { resolve(null); }
+                  } else {
+                    let msg = `Upload failed (${xhr.status})`;
+                    try { msg = JSON.parse(xhr.responseText).error || msg; } catch {}
+                    reject(new Error(msg));
+                  }
+                });
+                xhr.addEventListener('error', () => reject(new Error(`Network error uploading "${file.name}".`)));
+                xhr.send(file);
               });
-              xhr.addEventListener('error', () => reject(new Error(`Network error uploading "${file.name}".`)));
-              xhr.send(file);
-            });
+
+            } else {
+              // > 4 MB: browser PUTs directly to Google Drive (bypasses Vercel size limit)
+              const initRes = await fetch('/api/upload-policy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  school_name:  form.school_name.trim(),
+                  contact_name: form.contact_name.trim(),
+                  email:        form.email.trim(),
+                  file_name:    file.name,
+                  file_type:    file.type || 'application/octet-stream',
+                  file_size:    file.size,
+                }),
+              });
+              if (!initRes.ok) {
+                const d = await initRes.json().catch(() => ({}));
+                throw new Error(d.error || 'Could not start upload session.');
+              }
+              const { uploadUrl } = await initRes.json();
+              if (!uploadUrl) throw new Error('Server did not return a Drive upload URL.');
+
+              fileId = await new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('PUT', uploadUrl);
+                xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+
+                xhr.upload.addEventListener('progress', ev => {
+                  if (ev.lengthComputable) {
+                    const pct = baseProgress + (ev.loaded / ev.total) * fileShare * 0.85;
+                    setProgress(Math.round(pct));
+                  }
+                });
+                xhr.addEventListener('load', () => {
+                  if (xhr.status >= 200 && xhr.status < 300) {
+                    try { resolve(JSON.parse(xhr.responseText).id || null); }
+                    catch { resolve(null); }
+                  } else {
+                    reject(new Error(`Upload failed (${xhr.status}).`));
+                  }
+                });
+                xhr.addEventListener('error', () => reject(new Error(`Network error uploading "${file.name}" — check your connection and try again.`)));
+                xhr.send(file);
+              });
+            }
 
             uploadedIds.push(fileId);
             uploadedNames.push(file.name);
+            setProgress(Math.round(baseProgress + fileShare));
           }
 
           // Step 3: notify server (share files + send email)
@@ -396,7 +443,7 @@
                             <Lucide name="upload-cloud" size={32} />
                           </div>
                           <div className="upload-zone__text">Drop your policies here, or click to browse</div>
-                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 4 MB per file · multiple files OK</div>
+                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 10 MB per file · multiple files OK</div>
                         </>
                       )}
                     </div>
