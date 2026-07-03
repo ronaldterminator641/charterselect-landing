@@ -12,9 +12,12 @@ const GMAIL_USER = 'aschwen@charterselect.com';
 function getDriveClient() {
   const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
   if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON not set');
-  const auth = new google.auth.GoogleAuth({
-    credentials: JSON.parse(raw),
-    scopes: ['https://www.googleapis.com/auth/drive'],
+  const credentials = JSON.parse(raw);
+  const auth = new google.auth.JWT({
+    email:   credentials.client_email,
+    key:     credentials.private_key,
+    scopes:  ['https://www.googleapis.com/auth/drive'],
+    subject: 'aschwen@charterselect.com',
   });
   return google.drive({ version: 'v3', auth });
 }

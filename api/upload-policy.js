@@ -26,9 +26,12 @@ function isRateLimited(ip) {
 function getAuth() {
   const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
   if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON not set');
-  return new google.auth.GoogleAuth({
-    credentials: JSON.parse(raw),
-    scopes: ['https://www.googleapis.com/auth/drive'],
+  const credentials = JSON.parse(raw);
+  return new google.auth.JWT({
+    email:   credentials.client_email,
+    key:     credentials.private_key,
+    scopes:  ['https://www.googleapis.com/auth/drive'],
+    subject: 'aschwen@charterselect.com',
   });
 }
 
@@ -95,8 +98,7 @@ module.exports = async function handler(req, res) {
     const folderId = await getOrCreateFolder(drive);
 
     // Get a short-lived access token for the resumable upload initiation
-    const client = await auth.getClient();
-    const { token } = await client.getAccessToken();
+    const { token } = await auth.getAccessToken();
 
     // Start a Drive resumable upload session.
     // The Location URL returned here is sent to the browser, which PUTs the
@@ -121,9 +123,7 @@ module.exports = async function handler(req, res) {
     if (!initRes.ok) {
       const text = await initRes.text();
       console.error('[upload-policy] Drive init error', initRes.status, text);
-      let reason = text;
-      try { reason = JSON.parse(text).error?.message || text; } catch {}
-      return res.status(502).json({ error: `Drive error (${initRes.status}): ${reason}` });
+      return res.status(502).json({ error: 'Could not initialize upload session.' });
     }
 
     const uploadUrl = initRes.headers.get('location');
