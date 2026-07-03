@@ -79,11 +79,6 @@ module.exports = async function handler(req, res) {
       let link = id ? `https://drive.google.com/file/d/${id}/view` : null;
       if (id) {
         try {
-          await drive.permissions.create({
-            fileId: id,
-            requestBody: { type: 'user', role: 'writer', emailAddress: NOTIFY_TO },
-            sendNotificationEmail: false,
-          });
           const file = await drive.files.get({ fileId: id, fields: 'webViewLink' });
           link = file.data.webViewLink || link;
         } catch (err) {

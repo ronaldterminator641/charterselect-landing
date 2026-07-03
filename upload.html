@@ -109,7 +109,7 @@
   <script type="text/babel" src="/components.jsx?v=10"></script>
   <script type="text/babel">
 
-    const MAX_SIZE_BYTES = 50 * 1024 * 1024; // 50 MB
+    const MAX_SIZE_BYTES = 4 * 1024 * 1024; // 4 MB (Vercel payload limit)
 
     function formatBytes(bytes) {
       if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
@@ -190,38 +190,22 @@
             const file       = files[i];
             const baseProgress = i * fileShare;
 
-            setStatusMsg(`Preparing file ${i + 1} of ${files.length}…`);
+            setStatusMsg(`Uploading "${file.name}" (${i + 1} of ${files.length})…`);
             setProgress(Math.round(baseProgress));
 
-            // Step 1: get a Drive resumable upload URL from our server
-            const initRes = await fetch('/api/upload-policy', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                school_name:  form.school_name.trim(),
-                contact_name: form.contact_name.trim(),
-                email:        form.email.trim(),
-                file_name:    file.name,
-                file_type:    file.type || 'application/octet-stream',
-                file_size:    file.size,
-              }),
-            });
-
-            const initData = await initRes.json();
-            if (!initRes.ok) throw new Error(initData.error || `Failed to prepare "${file.name}".`);
-
-            const { uploadUrl } = initData;
-
-            // Step 2: upload directly to Google Drive via XHR (progress events)
-            setStatusMsg(`Uploading "${file.name}" (${i + 1} of ${files.length})…`);
+            // Upload to our server, which forwards to Google Drive (avoids CORS issues).
             const fileId = await new Promise((resolve, reject) => {
               const xhr = new XMLHttpRequest();
-              xhr.open('PUT', uploadUrl);
-              xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+              xhr.open('POST', '/api/upload-file');
+              xhr.setRequestHeader('Content-Type',   file.type || 'application/octet-stream');
+              xhr.setRequestHeader('X-School-Name',  encodeURIComponent(form.school_name.trim()));
+              xhr.setRequestHeader('X-Contact-Name', encodeURIComponent(form.contact_name.trim()));
+              xhr.setRequestHeader('X-Email',        encodeURIComponent(form.email.trim()));
+              xhr.setRequestHeader('X-File-Name',    encodeURIComponent(file.name));
 
               xhr.upload.addEventListener('progress', ev => {
                 if (ev.lengthComputable) {
-                  const pct = baseProgress + (ev.loaded / ev.total) * fileShare;
+                  const pct = baseProgress + (ev.loaded / ev.total) * fileShare * 0.85;
                   setProgress(Math.round(pct));
                 }
               });
@@ -230,12 +214,15 @@
                 if (xhr.status >= 200 && xhr.status < 300) {
                   try {
                     const data = JSON.parse(xhr.responseText);
-                    resolve(data.id || null);
+                    setProgress(Math.round(baseProgress + fileShare));
+                    resolve(data.fileId || null);
                   } catch {
                     resolve(null);
                   }
                 } else {
-                  reject(new Error(`Upload failed for "${file.name}" (${xhr.status}).`));
+                  let errMsg = `Upload failed (${xhr.status})`;
+                  try { errMsg = JSON.parse(xhr.responseText).error || errMsg; } catch {}
+                  reject(new Error(errMsg));
                 }
               });
               xhr.addEventListener('error', () => reject(new Error(`Network error uploading "${file.name}".`)));
@@ -409,7 +396,7 @@
                             <Lucide name="upload-cloud" size={32} />
                           </div>
                           <div className="upload-zone__text">Drop your policies here, or click to browse</div>
-                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 50 MB per file · multiple files OK</div>
+                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 4 MB per file · multiple files OK</div>
                         </>
                       )}
                     </div>

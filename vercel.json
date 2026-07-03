@@ -4,6 +4,9 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/upload-file.js": { "maxDuration": 30 }
+  },
   "redirects": [
     { "source": "/index.html",              "destination": "/",                    "statusCode": 301 },
     { "source": "/about.html",              "destination": "/about",               "statusCode": 301 },
