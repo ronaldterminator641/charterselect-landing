@@ -1,6 +1,6 @@
-# Everyone Sold Your School Cyber Insurance. Nobody Mentioned Crime. That Gap Is Where the Money Actually Walks Out.
+# Two Different Disasters, Two Different Policies: What Is Your School Actually Trying To Protect Against?
 
-*Cyber and crime cover two different disasters. Most schools carry one and assume it does the other's job. Here are the losses each one pays for, the losses each one ignores, and why a school needs both.*
+*Crime and cyber answer completely different losses. Carrying one and assuming it does the other's job is the trap. Here is what each protects against, the seam that can fall between them, and why a school needs both.*
 
 ---
 
@@ -10,21 +10,21 @@ Then a longtime employee in the business office was caught moving money out over
 
 One policy. The wrong one for that loss. Nothing to fall back on.
 
-This is the pattern I see over and over. Cyber became the shiny new thing everyone sells, and crime, the older and frankly more boring coverage, quietly fell off the table. Schools end up with one of the two and assume the word "covered" stretches across both. It does not.
+The question that would have saved them is the one nobody asked out loud: what are you actually trying to protect against? Because crime and cyber are not two versions of the same coverage. They are two different policies for two different disasters, and the honest answer for a school is that you need both.
 
 ---
 
-## Two policies, two completely different disasters
+## Start with the exposure, not the product
 
-Cyber and crime sound like cousins. They are not. They respond to different events, and the losses one pays for are mostly invisible to the other.
+Before you can know whether you are covered, you have to name what you are protecting. There are two very different categories of financial disaster a school faces, and each has its own policy.
 
 A **crime policy** protects your money and assets from theft. Employee dishonesty and embezzlement, forgery and altered checks, stolen money or securities, robbery, and certain computer and funds-transfer fraud where a criminal moves your money. The through-line is simple: someone took funds from you.
 
 A **cyber policy** protects against a network or data event and its fallout. Ransomware and extortion, a breach of student or staff records, the cost to notify families, regulatory exposure, and the business interruption when your systems are down. The through-line there: your data or your network got hit.
 
-Notice that almost nothing on one list appears on the other. That is the whole problem. A school carrying only one of them is fully exposed to every loss on the list it skipped.
+Almost nothing on one list appears on the other. That is the whole point. These are not competing options where you pick the better one. They are complementary, each built to catch the losses the other was never designed to see. A school carrying only one is fully exposed to every loss on the list it skipped.
 
-## Example one: the loss only crime pays for
+## The loss only crime pays for
 
 Picture the embezzling employee from the opening, or a simpler version. A bookkeeper writes checks to a fake vendor for a year. Or someone forges signatures and drains a student-activity account.
 
@@ -32,7 +32,7 @@ Your cyber policy will not engage with any of it. No network was compromised, no
 
 A school with cyber but no crime eats this loss in full. And employee dishonesty is not exotic. A lean back office, trusted long-tenured staff, and limited separation of duties is the exact environment where it happens.
 
-## Example two: the loss only cyber pays for
+## The loss only cyber pays for
 
 Now flip it. Ransomware locks your student information system the week before enrollment. You are paying to restore systems, you may owe notification to every family whose data was touched, and you are down for days.
 
@@ -50,11 +50,11 @@ Watch what happens. The cyber carrier says no network was breached, your employe
 
 The fix for this seam is a specific endorsement, funds transfer fraud and social engineering fraud coverage, and it is its own line item. It can be attached to the crime policy or the cyber policy depending on the carrier, but it does not ride along for free on either one. A school can hold both base policies and still have this exact loss denied because the endorsement was never added. And when it is added, it usually carries a sublimit far below the main policy limit, which is its own thing to check.
 
-## So what does a covered school actually carry
+## So what does a protected school actually carry
 
-Three things, stacked.
+Three things, and the point of naming all three is that each answers an exposure the others do not.
 
-**A crime policy with real limits.** It catches employee theft, forgery, and stolen funds. The losses that come from inside or from a thief taking what is yours.
+**A crime policy with real limits.** It catches employee theft, forgery, and stolen funds. The losses that come from inside, or from a thief taking what is yours.
 
 **A cyber policy with real limits.** It catches ransomware, breach response, notification, and downtime. The losses that come from your network or data being attacked.
 
@@ -62,13 +62,13 @@ Three things, stacked.
 
 Add one habit to all of it. Any change to vendor banking details gets verified by a phone call to a known number, never the number in the email. Some carriers require that control before they pay, and it stops most of these losses cold.
 
-## What the cyber sales rush left behind
+## Why the wrong question gets asked
 
-The market spent the last several years selling cyber hard, and for good reason, the threat is real. But the same energy quietly skipped crime. A lot of schools were sold the new product, told they were "covered for cyber," and never asked the obvious follow-up: covered against employee theft? Against a forged check? Against a wired payment to a fake vendor?
+The market spent the last several years selling cyber hard, and for good reason, the threat is real. But that energy trained a lot of schools to think about this as a single purchase. Buy the cyber policy, hear the word "covered," and stop. The question became "do we have cyber," when the question that actually protects a school is "what are we trying to protect against, and does something respond to each of those things."
 
-A broker doing the full job does not hand you a cyber quote and call it financial protection. They put crime and cyber side by side, show you which loss lands on which policy, point out the seam between them, and make sure the social engineering endorsement is on one of the two with a sublimit that means something.
+A broker doing the full job does not hand you one quote and call it financial protection. They put crime and cyber side by side, show you which loss lands on which policy, point out the seam between them, and make sure the social engineering endorsement is on one of the two with a sublimit that means something. They treat the two as the pair they are, not as substitutes where owning one excuses the other.
 
-A generalist sells the shiny policy, says the word "covered," and leaves the older half of the picture blank.
+A generalist sells the policy of the moment, says the word "covered," and leaves the other half of the picture blank.
 
 ## Before your next payment goes out, or your next system update
 
@@ -80,4 +80,4 @@ If any one of those answers is "I think we have something for that," that uncert
 
 ---
 
-*Charter Select works exclusively with charter schools across the country, handling both property & liability and employee benefits under one roof. If you want someone to lay your crime and cyber coverage side by side and show you exactly which losses each one pays for, that is the kind of review we run as a matter of course.*
+*Charter Select works exclusively with charter schools across the country, handling both property & liability and employee benefits under one roof. If you want someone to lay your crime and cyber coverage side by side and show you exactly which losses each one pays for, and where the seam between them is, that is the kind of review we run as a matter of course.*
