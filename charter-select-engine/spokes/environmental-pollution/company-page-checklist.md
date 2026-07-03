@@ -1,40 +1,48 @@
-# Company Page Spoke: Pollution Exclusion Coverage Gap Checklist
+# Company Page Spoke: Environmental Coverage Decision Checklist
 
-*Spoke type: Company storefront page (authoritative, technical, credibility-building). Goal: validate Charter Select to a prospect actively vetting us. Post from the Charter Select company page. Lead with the matrix, then the checklist.*
+*Spoke type: Company storefront page (authoritative, technical, credibility-building). Goal: validate Charter Select to a prospect actively vetting us. Post from the Charter Select company page. Lead with the decision matrix, then the checklist.*
 
 ---
 
-**Headline:** Your property policy covers the building. Your general liability policy covers the people. The pollution exclusion sits in both, and an environmental loss can trigger two denials from one event.
+**Headline:** Before you buy environmental coverage, answer why you are buying it and whether you have the exposure. The placement decision follows from those two answers, not from a reflex quote.
 
-Nearly every standard commercial property policy and general liability policy carries a pollution exclusion that removes environmental losses from coverage. The definition of "pollutant" is broad enough to capture the everyday issues older and repurposed school buildings produce on their own. Here is which policy is supposed to respond to each event, what the exclusion does to it, and the checklist we run before every property and liability renewal.
+The pollution exclusion sits in nearly every standard property policy and general liability policy, so one environmental event can trigger two denials: first-party cleanup on the property side, third-party defense on the liability side. That is the risk. But the right response is a needs analysis, not an automatic standalone. Here is the decision framework we run, then the checklist that feeds it.
 
-## Where the gap opens: event by event
+## The decision matrix: driver, what to confirm, where it goes
 
-| Environmental event | Policy you'd expect to respond | What the pollution exclusion does | What actually responds |
-|---|---|---|---|
-| Mold from a slow water leak | Property (first-party cleanup) | Treats mold as a pollutant, denies remediation | Pollution Legal Liability / site pollution policy |
-| Lead from old paint or plumbing | Property + General Liability | Excludes both cleanup and injury claims | Dedicated environmental coverage |
-| Asbestos fibers released in renovation | Property + General Liability | Excludes abatement and bodily injury | Dedicated environmental coverage |
-| Fuel oil tank leak or release | Property | Excluded as a pollutant release | Site pollution policy (often required for tanks) |
-| Sewage backup into the building | Property | Excluded as a contaminant event | Pollution coverage, sometimes by endorsement |
-| Family or staff claims illness from exposure | General Liability (third-party) | Excludes the defense and the claim | Third-party pollution liability |
+| What is driving the question | What to confirm | Likely placement |
+|---|---|---|
+| **Requirement** (authorizer, state rule, lease or facility agreement) | The exact limit and terms the requirement names, and whether it specifies a form | Package **endorsement** in most cases, sized to satisfy the requirement cleanly |
+| **Moderate real exposure** (some age, no known tank, no active renovation) | Building age and prior use, water history, materials inventory | Package **endorsement**, folded into the existing program |
+| **Significant real exposure** (old or converted building with a known tank, renovation underway, or contamination history) | Tank status, renovation scope, prior loss history, site specifics | **Standalone** Pollution Legal Liability / site pollution policy, sized to the site |
+| **Newer facility, no tank, no renovation, no water history** | That the above are genuinely absent, on the record | Modest exposure; a requirement may be met with a small endorsement, or with nothing beyond what you carry |
 
-One environmental event can land on both the first-party and third-party side. That is two denials from a single leak, which is the exposure dedicated environmental coverage is built to close.
+The endorsement-versus-standalone call is a judgment driven by the first two columns. It is not a default. A generalist who skips straight to a standalone quote, or skips the topic entirely, is guessing.
 
-## The renewal checklist
+## The building-and-reason checklist
 
-- [ ] Locate the pollution exclusion in both the property policy and the general liability policy, and read it in plain language.
-- [ ] Document the building's age and prior use (church, warehouse, storefront, industrial) on the record.
+**First, why am I buying?**
+- [ ] Name the driver: is environmental coverage a requirement, or a response to real exposure, or both?
+- [ ] If it is a requirement, pull the exact source (authorizer, state rule, lease or facility agreement) and the limit and terms it names.
+- [ ] If it is exposure, confirm the exposure is real before pricing anything.
+
+**Second, do I actually have the exposure?**
+- [ ] Document the building's age and prior use (church, warehouse, storefront, industrial).
 - [ ] Confirm whether a fuel oil tank exists on the property, in the ground or the basement, or whether anyone has ever looked.
 - [ ] Flag any planned renovation, because disturbing old materials is the trigger event for asbestos and lead.
 - [ ] Inventory known older materials: lead paint, lead service lines or solder, asbestos floor tile, insulation, pipe wrap.
-- [ ] Price dedicated environmental coverage (Pollution Legal Liability or site pollution) scaled to the actual building.
-- [ ] Confirm the coverage responds on both fronts: first-party cleanup and third-party bodily injury and property damage.
-- [ ] Record the carry-or-skip decision for the board, made on purpose with numbers in front of you.
+- [ ] Record any history of water intrusion or mold behind walls.
 
-## Why this is standard practice for us and rare elsewhere
+**Third, where does it go?**
+- [ ] Locate the pollution exclusion in both the property policy and the general liability policy, and read it in plain language.
+- [ ] For a requirement or moderate exposure, price the package endorsement first.
+- [ ] For genuine significant exposure, price a standalone Pollution Legal Liability policy scaled to the actual site.
+- [ ] Confirm whichever path responds on both fronts the standard forms exclude: first-party cleanup and third-party bodily injury.
+- [ ] Record the carry, endorse, or standalone decision for the board, made on purpose with numbers in front of you.
 
-A generalist broker renewing the same property and general liability policies year after year rarely reads the pollution exclusion out loud, and rarely asks about the building those forms are insuring. We start with the building, not the form. We read the exclusion in plain language, map your specific site against it, and price the dedicated coverage so the decision is one you make on purpose, not one an exclusion makes for you at claim time.
+## Why this is standard practice for us
+
+A generalist broker renewing the same property and liability policies year after year either never raises environmental coverage or reflexively quotes a standalone without asking why you are buying or whether you have the exposure. We start with the building and the reason, not the form. We name the driver, test the exposure honestly, read the exclusion in plain language, and price both the endorsement and the standalone so the placement is one you choose on purpose.
 
 **Read the full breakdown:** [LINK TO WHITE PAPER]
 
