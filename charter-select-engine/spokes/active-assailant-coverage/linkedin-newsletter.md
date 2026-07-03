@@ -4,41 +4,33 @@
 
 ---
 
-**Headline:** The worst day a school can have doesn't break a window. So the policy built to respond to a disaster never opens.
+**Headline:** She bought an active assailant policy to defend the school if it got sued. The trigger was property damage.
 
 ---
 
-A while back I sat with a school leader who walked me through what her year would look like if the unthinkable happened on her campus. Not because she expected it. Because a board member had finally asked the question out loud, and nobody in the room could answer it.
+A school leader I sat with had bought an active assailant policy the year before. In her head, the job was done. If the unthinkable happened and the school got dragged into a lawsuit, this was the policy that would defend the organization and the board.
 
-We didn't dwell on the event itself. We looked at the bill that arrives after. The counselors. The round-the-clock security that wasn't in any budget the week before. The families who need support. The crisis communications team. And the quiet one that I watched land on her, the one that changes the math for a charter school specifically: the students who don't come back.
+Then we read the form together. The trigger was physical damage to the property. The coverage was built to respond to a first-party loss, the cost of putting the building and the operation back together, not to defend the school against a claim. What she thought she bought and what sat on the paper were two different things.
 
-Then she asked me which of her policies would pay for all of that. I told her the honest answer, which is the reason I'm writing this.
+She was not careless. She got handed a product as an easy answer, and nobody walked her through what it did, what she already owned, or what she was actually trying to protect. That gap is the real problem with how this coverage gets sold.
 
-Her standard property policy, the one most schools assume is the safety net, almost certainly would not pay a dime of it.
+I grew up around manual labor and a ranch, where a job done halfway meant somebody got hurt or something broke, and you owned it. That is the standard I expected in insurance. A lot of charter schools are not getting it.
 
-Here's the mechanic, in plain English.
+So let me give you the honest way through active assailant coverage. It is three questions, not one purchase.
 
-A commercial property policy, and the business interruption coverage stapled to it, runs on one trigger: direct physical loss or damage to the building. A fire. A burst pipe. A storm that peels back the roof. Something physically happened to the property, so the policy responds and the business interruption piece replaces the income you lost while you repaired it.
+First, what are you actually trying to protect against? "Active assailant" is a label, not a single product. Some of these forms are first-party, written around property damage or extra expense after an event. Others are third-party liability forms built to defend the school when it gets sued for negligent security. Those are not interchangeable. If your fear is a lawsuit and the form is triggered by property damage, it does not answer your fear. Name the exposure before you shop it.
 
-That structure works fine for a flood. It falls apart for an act of violence.
+Second, what does your package already cover? This is the step a generalist skips, because it means reading your program instead of selling on top of it. A well-built school package often already funds crisis counseling and therapists, and carries PR and crisis-communications coverage for the day the press trucks show up. Your student accident policy is written to pay student medical expenses and death benefits. And if the concern is the board or the school getting sued, that defense already lives in your School Leaders management liability program. Counseling, PR, student medical, board defense: much of what the standalone advertises may already sit in coverage you carry.
 
-A violent event on a campus can be the most devastating thing that ever happens to a school and cause almost no qualifying physical damage. The harm is human, operational, and reputational. The adjuster shows up, asks where the physical damage is, and there isn't any. So the policy that was supposed to keep the school running stays shut, looking for a kind of damage this disaster never produced.
+Third, what is your risk tolerance, premium versus out of pocket? Subtract everything you already own, and you are left with a residual. Usually it is some mix of physical remediation and the enrollment-driven business interruption that is unique to a school funded by attendance. That residual is a decision, not an emergency. One leader looks at the numbers and self-funds the property piece rather than pay a recurring premium on a low-probability loss. Another wants the enrollment protection insured, because a funding cliff is the one thing the budget cannot absorb. For some campuses, terrorism coverage is a separate lever worth pricing. There is no universal right answer. There is the one that fits your exposure and your appetite, made with the full picture in front of you.
 
-I grew up around manual labor and a ranch, where if you did a job halfway, somebody got hurt or something broke, and you owned it. That's the standard I expected when I got into insurance. Telling a school leader after the fact that her disaster coverage doesn't recognize her disaster is the opposite of that standard. It's the part I can't stomach, and it's most of why Charter Select exists.
-
-Now, why this lands harder on a school than on almost any other organization. Charter schools live and die on enrollment. The funding follows the student. When attendance drops, when families transfer out, when next year's enrollment softens because of what happened, that is a direct hit to the dollars that keep the doors open and the staff paid. A normal business takes a violent event as a tragedy and a disruption. A charter school takes it as a tragedy, a disruption, and a funding cliff at the same time, with no corporate risk department and no cash cushion to ride it out.
-
-There is coverage written specifically for this. It goes by names like active assailant, deadly weapon protection, or active shooter coverage, and specialty carriers now write it as a standalone policy. The thing that makes it different is the trigger. It doesn't wait for physical damage. It responds to the violent event itself. That single design choice is the whole point, because it's the reason it pays where your property policy can't.
-
-A well-built version of it funds the costs that actually show up: crisis management and PR, medical and psychiatric care for victims, extra security, counseling, business interruption tied to the drop in attendance and enrollment, and remediation or relocation of the space. It puts money in motion in the days after, when a school has the least capacity to figure out funding and the most need for it.
+The generalist version of this conversation skips all three and lands on "here is a quote." A new policy is a clean transaction, a premium and a renewal, and it looks like action. Doing the real work is harder. It means reading your property form, your student accident policy, and your management liability program, then telling you in plain language which risks are handled and which are open, even when the honest answer is "you may already be covered for most of this, and the rest might be worth self-funding." That sentence does not earn a commission. It is most of why Charter Select only works with charter schools and reads the whole program before anyone talks about buying anything.
 
 I wrote the full breakdown up on our site, no jargon, no gate, free to read and free to forward to your board or your business manager: **[LINK TO WHITE PAPER]**
 
-If you only do one thing with this, sit with one question.
+If you do one thing with this, sit with two questions. The active assailant policy on your desk, or the one someone is trying to sell you, what triggers it to pay, and is that the same thing you were trying to protect against? And once you account for the counseling, the PR, the student medical and death benefits, and the board defense you may already carry, what is genuinely left for it to cover that you could not just decide to self-fund?
 
-If a violent event happened on your campus tomorrow and caused no physical damage to the building, which of your current policies pays for the counselors, the security, the crisis team, and the enrollment you'd lose over the following year? If the honest answer is "I'm not sure any of them do," then the gap isn't theoretical. It's the one your current broker never brought up.
-
-Forward this to the school leader who needs it.
+If nobody has walked you through those two questions, you do not have a coverage answer yet. You have a quote, and a decision that was never really put in your hands.
 
 Aaron Schwen
 

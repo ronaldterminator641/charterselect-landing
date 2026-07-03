@@ -6,53 +6,57 @@
 
 **Hook 1**
 A lawsuit names one of your board members. Personally. Not the school, her.
-The chair calls the broker, calm, because everyone remembers being told the umbrella covers the board.
+The chair calls the broker, calm, because everyone was told the umbrella covers the board.
 The broker goes quiet.
-Here's why that umbrella was never there: [LINK]
+Here is why that umbrella was never sitting over the board at all: [LINK]
 
 ---
 
 **Hook 2**
-"You've got a five-million umbrella, the board is covered."
-It's the most comforting sentence a broker can say.
-It's also almost never true.
-Here's what actually protects your board: [LINK]
+"You have a five-million umbrella, so the board is covered."
+A generic commercial umbrella only stretches limits on the policies scheduled under it: general liability, auto, employers liability.
+None of those defends a trustee named for a governance decision.
+Here is what actually does: [LINK]
 
 ---
 
 **Hook 3**
-A commercial umbrella follows the form of the policies under it: general liability, auto, employers liability.
-None of those is D&O.
-So there is nothing for the umbrella to sit on top of for your board.
-The full explanation: [LINK]
+There are two ways brokers get board coverage wrong.
+One points at the generic umbrella and calls it protection. It never was.
+The other overcorrects and bolts on a standalone tower from three outside carriers.
+The clean answer for a school is neither of those: [LINK]
 
 ---
 
 **Hook 4**
-Your D&O policy has three sides, and they usually share one limit.
-When the school and the board get sued together, the entity's defense can burn that limit before a single trustee is protected.
-This is the gap nobody mentions: [LINK]
+A standalone D&O policy from one carrier. An excess tower from a second. A separate Side-A layer from a third.
+Three placements, three sets of terms, three retroactive dates to reconcile by hand.
+That architecture fits a public company, not a charter school.
+Here is the cleaner way to place it: [LINK]
 
 ---
 
 **Hook 5**
-There's a coverage built to give your individual trustees their own protected limit, one the entity's side of a lawsuit can't drain.
-Most generalist brokers never place it.
-It's called Side-A DIC. Here's why it matters for a board: [LINK]
+Your board protection has a name: management liability.
+Place it with the carrier that already writes your package, as one School Leaders program, then extend any excess limit under a school program umbrella built to follow that coverage.
+One carrier, one program, terms that already agree.
+Why one program beats three invoices: [LINK]
 
 ---
 
 **Hook 6**
 Failure to educate. Denial of special-education services. Student civil-rights disputes.
-A generic nonprofit D&O policy may not respond to any of them.
-The line that does is built for schools, and a lot of boards don't have it: [LINK]
+A generic nonprofit D&O policy may not answer any of them.
+The School Leaders line was written for schools, so it does.
+What your board form should actually reach: [LINK]
 
 ---
 
 **Hook 7**
-One question for whoever handles your school's coverage:
-if a board member were named personally next month, which policy would defend them, and is it actually in place with its own limit?
-If the answer is "the umbrella," read this: [LINK]
+One question for whoever handles your school's coverage.
+If a board member were named personally next month, does their protection come from a School Leaders program your policy was built to place and extend, or from an umbrella someone just pointed at?
+And has anyone confirmed which, in writing?
+Read this before you need the answer: [LINK]
 
 ---
 

@@ -1,69 +1,69 @@
-# The Day Your Network Hires Its Own Lawyer, It Creates a Risk None of Your Policies Were Built to Catch
+# You Hired In-House Counsel. Your Broker Tried To Sell You A Whole New Policy. That Was The Wrong Move.
 
-*A plain-English look at Employed Lawyers professional liability: the coverage your existing program quietly leaves out the moment legal advice starts coming from inside the building.*
+*A plain-English look at Employed Lawyers coverage for charter networks, and why the right answer is a definition inside the program you already carry, not a separate policy a generalist wants to bolt on.*
 
 ---
 
 Your network grew. You stopped renting legal help by the hour and brought an attorney on staff. Smart move. In-house counsel reviews your contracts, reads your charter, advises the board, and keeps three campuses out of trouble.
 
-Then one of those decisions goes sideways. A contract your lawyer drafted leaves the network exposed. A piece of advice turns out to be wrong, and it costs real money. Someone files a claim that points straight at the legal advice your employee gave.
+You mention the hire to your broker. Their response is to quote you a brand-new standalone policy for it.
 
-You reach for your insurance, and you find out the policies you already pay for were never built to answer that exact claim.
+Stop there. That reflex, reaching for a separate policy the moment they hear the word "lawyer," is the tell. It usually means the person handling your account does not understand what your attorney actually does, or how your existing program is built to cover it.
 
 ---
 
-## What actually changed when you made that hire
+## What your in-house attorney actually is
 
-For years, your legal work came from outside firms. If one of them blew it, that was their malpractice problem, sitting on their professional liability policy. The risk lived somewhere else.
+Picture the job. Your general counsel reviews vendor agreements, interprets the charter, walks the board through a governance question, checks a termination before it happens. That is advisory work. It is legal judgment applied to your own operation, for one client, the employer who signs the paycheck.
 
-The day a lawyer becomes your employee, that risk moves inside your walls. Now the person giving legal advice is on your payroll, and the professional exposure that used to belong to an outside firm belongs to you. Most networks never stop to ask whether their insurance program followed the risk in the door. It usually did not.
+That attorney is not running a litigation practice. They do not have a roster of outside clients who hired them, paid them, and can turn around and sue them for malpractice. They are not spending their days in a courtroom taking matters for third parties. The exposure they create is the exposure of an employee giving your organization professional advice, and that is a narrower, more contained risk than the one a law firm carries.
 
-This is mostly a larger-organization issue. A single-site charter rarely employs its own attorney. But growing networks and charter management organizations do, and the moment they make that hire, the math changes. Let me walk through why the policies you already carry leave a hole here, and what fills it.
+That distinction is the whole game. It decides which coverage answers, and it is exactly the distinction a generalist skips right over.
 
-## Three policies you already have, and what each one skips
+## Yes, there is a real gap in the raw policies
 
-Start with your general liability policy. It is the workhorse, and it is genuinely useful for slip-and-falls and the ordinary bodily-injury and property-damage claims a school faces. But every standard general liability form carries a professional services exclusion. That exclusion exists on purpose. It separates everyday liability from professional errors, the mistakes that come from giving specialized advice. Legal malpractice is the textbook example of what it carves out. So when a claim says your lawyer's advice was negligent, the general liability policy is designed to step back, not step in.
+Give the concern its due, because the underlying point is legitimate. Two of the policies you already carry were not built to answer a claim about your lawyer's professional advice.
 
-Next, your management liability or D&O policy. This one protects your board and your leadership from claims about how they govern and manage the organization. People assume it covers the general counsel too, and sometimes the general counsel does qualify as an insured executive. The trouble is the kind of claim. A D&O form is built to respond when leaders are sued for management decisions, not for practicing law. Many of these policies carry their own professional services exclusion, and a legal malpractice allegation against your in-house attorney can fall right into it. There is a second wrinkle worth knowing. The lawyers on your staff below the general counsel, the associates and contract attorneys doing the day-to-day legal work, often do not count as covered executives at all. They can be left out of the grant of coverage entirely.
+Your general liability policy carries a professional services exclusion. That exclusion exists on purpose, to separate everyday slip-and-fall liability from claims that come out of giving specialized advice. A legal malpractice allegation is the textbook thing it carves out. So general liability, on its own, steps back from a claim about your counsel's legal work.
 
-Now the policy that sounds like the obvious answer: a lawyers professional liability policy, the malpractice coverage law firms buy. Surely that is the fit. It is not, and the reason matters. A traditional lawyers professional liability policy is built for a firm serving outside clients. Its entire architecture assumes the lawyer has clients who hired the firm, paid the firm, and can sue the firm. Your in-house counsel has one client, the employer who signs the paycheck. That is a different relationship, and the standard law-firm form is not written for it. Several states even exempt in-house counsel from the malpractice-disclosure rules that apply to firms, because everyone understands the in-house lawyer is doing something structurally different. Buy the wrong product and you have paid for protection aimed at a risk you do not have.
+A plain, off-the-shelf nonprofit D&O form has its own wrinkle. It is built to respond when leaders are sued for governance and management decisions. The general counsel sometimes qualifies as a covered executive, but the staff attorneys and contract lawyers underneath them frequently do not appear in the grant of coverage at all. Lean on a generic D&O form and you can find your junior legal staff sitting outside the policy.
 
-So here is the position a growing network can land in without realizing it. General liability excludes the professional act. D&O may exclude it too, and may not even name the junior lawyers. And the law-firm policy is built for a relationship your in-house counsel does not have. The risk walked in the door, and none of the three doors it tried to enter were the right one.
+So the exposure is real. The mistake is in the fix.
 
-## The coverage built for this exact situation
+## Why the standalone policy is the wrong buy for a charter network
 
-There is a line designed for precisely this gap. It is called Employed Lawyers professional liability, sometimes just Employed Lawyers coverage. Its whole job is to protect the attorneys you employ for claims arising out of the legal services they provide to you, the employer.
+A standalone Employed Lawyers professional liability policy is a real product. It is built for organizations that run a substantial in-house legal department, a team of attorneys practicing law at volume, handling significant legal matters as a core function of the business. For that profile, a dedicated policy makes sense.
 
-In plain terms, it does the thing the other policies decline to do. It responds when someone alleges your in-house lawyer's professional work, the advice, the opinion, the drafting, the legal judgment, was negligent and caused harm. It typically covers the general counsel and the legal team beneath them, including the contract and staff attorneys a D&O form tends to skip. It usually advances defense costs, which matters because defending a malpractice-style allegation gets expensive long before anyone decides whether the claim has merit.
+Your charter network is not that profile. Your counsel advises. They are not a litigation shop wearing an employee badge. Buying a separate policy engineered for a large practicing legal department means paying a second premium, running a second renewal, and managing a second set of terms, all to insure a risk your management liability program is already positioned to pick up.
 
-The cleanest way to picture it is as a deliberate exception. Where your other policies exclude the professional acts of a lawyer, an Employed Lawyers policy is written to cover exactly those acts. It is the patch made to fit the hole the standard forms cut out by design.
+The right carriers, the ones that actually write for schools and understand how a charter network operates, fold employed lawyers coverage directly into the definition of the insured on the management liability side, or add it by endorsement for little or nothing. It sits inside the program you already carry. It covers the general counsel and the legal team beneath them for the legal services they provide to you, the employer. One program, one renewal, one carrier who understands the account.
 
-A few policies go further if you ask. Some can extend to pro bono work your lawyer does on the side, or to outside board service, when those activities are added by endorsement. If your general counsel sits on a community board or takes pro bono matters, that is worth raising specifically, because it does not come along automatically.
+That is the point a generalist misses. They hear "we hired a lawyer" and pattern-match to "sell lawyer insurance," because selling a new policy is a transaction they know how to run. Confirming that your existing management liability definition already reaches your employed attorneys takes reading the form and understanding your operation. One is faster. The other is the job.
 
-One honest caveat. These policies carry the conduct exclusions you would expect. Deliberately fraudulent, criminal, or intentionally unlawful acts are not covered, and they should not be. This coverage is built for honest professional mistakes, which is the risk that actually keeps a careful lawyer up at night.
+## What the tell tells you
 
-## Why your broker never raised it
+When a broker's answer to "we brought counsel in-house" is a fresh standalone quote, you have learned two things about your account.
 
-Here is the part that should bother you. This is not obscure coverage. Major carriers write it. Industry groups have published on it for years. Any broker who actually thought about your organization as it grew would have flagged it the moment you mentioned hiring an attorney.
+First, they did not check what you already own. They did not read the definition of insured in your management liability program, or ask whether employed lawyers coverage was included or available by endorsement. If they had, the separate policy would rarely be the recommendation.
 
-Most never do. A generalist broker treats your charter network like a renewal to process, not a risk to understand. They run the easy-button renewal every year, roll the same package forward, and never ask the one question that matters after you scale: what changed about your operation since last year? Hiring in-house counsel is exactly the kind of change that should trigger a coverage conversation. Instead it sails past, because reading your operation and matching it to the right line of coverage is work, and clearing your file off the desk is faster.
+Second, they did not think about what your attorney does. A broker who understood that your counsel is advisory, not a practicing litigation department, would place the coverage where it belongs, inside your program, and would not reach for a product designed for an operation you do not run.
 
-The gap does not exist because the coverage is hard to find. It exists because nobody on your account connected a staffing decision to an insurance consequence. That is the entire job, and it went undone.
+The gap does not usually get filled by a new policy. It gets filled by placing your management liability with a carrier whose form was built to reach your employed attorneys in the first place, and confirming in writing that it does.
 
 ## What it looks like when someone is actually paying attention
 
-A broker who knows growing charter organizations asks about your structure, not just your address. They want to know whether you employ attorneys, how many, what they do, and whether they touch anything outside their day job. Then they check your general liability and D&O forms for the professional services exclusions, confirm in plain language where your employed lawyers fall in or out, and tell you whether an Employed Lawyers policy belongs in your program.
+A broker who knows charter networks asks about your structure, not just your address. They want to know whether you employ attorneys, how many, and what they actually do day to day. Then they go to your management liability program and read it. They confirm the definition of insured reaches your general counsel and the staff attorneys under them for the legal services they provide to the organization. If the language is not there, they add the endorsement. If your current carrier's form cannot get there, they move the program to one built for schools that can.
 
-None of that is exotic. It is the difference between a broker who maps coverage to how your organization actually operates and one who renews last year's package and hopes the year stays quiet.
+What they do not do is treat a staffing decision as an excuse to sell you a second policy. The coverage you need is almost always a line in the program you already carry, placed correctly. Getting it there is quiet, unglamorous work, and it is the entire value of having a broker who reads your operation instead of quoting off a keyword.
 
 ## Before your next renewal
 
 You do not have to take this page's word for any of it. You just have to ask one question and sit with the answer.
 
-When your network hired its own attorney, did anyone on your insurance team look at whether the legal advice now coming from inside your organization was actually covered? Or did the renewal roll forward unchanged, while a brand-new professional exposure quietly took a seat at your conference table?
+When you told your broker you had brought an attorney on staff, did they confirm that your existing management liability program already covers your lawyer's work, and show you the language that does it? Or did they reach for a separate policy and a separate premium, without ever looking at what you already own?
 
-If you cannot answer that with confidence, you do not have a claim problem yet. You have a question nobody checked. The check is quick. What it costs to skip it does not show up until a claim arrives with your own lawyer's name on it.
+One of those answers means someone read your program and understood your operation. The other means they saw the word "lawyer" and reached for the checkbook. If you are not sure which one you got, that is worth a look before the coverage ever gets tested.
 
 ---
 
-*Charter Select works exclusively with charter schools and networks across the country, handling both property & liability and employee benefits under one roof. If your organization has brought legal counsel in-house and you want a second set of eyes on whether the advice is actually covered, that is the kind of thing we look at before anyone asks.*
+*Charter Select works exclusively with charter schools and networks across the country, handling both property & liability and employee benefits under one roof. If your organization has brought legal counsel in-house, we start by reading what you already own and confirming your program reaches your employed attorneys, before anyone talks about buying something new.*

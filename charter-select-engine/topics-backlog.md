@@ -11,7 +11,7 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 |---|---|---|---|
 | Retroactive Date Trap | retroactive-date-trap | Drafted + Sliced | no |
 | Crime vs. Cyber (social engineering gap) | crime-vs-cyber | Drafted + Sliced | no |
-| Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Drafted + Sliced | yes (umbrella usually excludes mgmt liability) |
+| Management Liability Placement (D&O/EPLI under Umbrella) | management-liability-placement | Drafted + Sliced | yes (founder approach: School Leaders w/ package carrier under a following-form program umbrella) |
 | Law Enforcement Legal Liability (SROs, MOUs) | sro-legal-liability | Drafted + Sliced | yes (verified w/ sources) |
 | Employed Legal Counsel (in-house malpractice) | employed-legal-counsel | Drafted + Sliced | yes (verified w/ sources) |
 | Board Protection (Side-A / DIC) | board-side-a-protection | Drafted + Sliced | yes (verified w/ sources) |
@@ -61,3 +61,5 @@ The single tracker for this engine. The `deai-editor` agent updates the Status c
 
 ## Standing note
 The library is fully built and fully sliced: all 28 topics have a drafted hub white paper AND a complete spoke set (LinkedIn newsletter, company-page checklist/matrix, 7 short-form hooks, distribution-schedule.csv). Campaigns are staggered roughly 3 weeks apart on a Mon/Wed/Fri omnipresence cadence; the latest batch runs out to 2027-09-06. The vendor-named benefits papers (SmithRx, Gravie, Benecon, Pareto, Captive Resources, Roundstone, Evergreen, Centivo, Boon-Chapman, etc.) carry the founder's real-world examples and informed opinion; he should still gut-check mechanics and vendor positioning against his own experience and carriers. All spoke newsletters and checklists pass the de-AI gate and the full new batch is em-dash-free. Distribution gate unchanged: nothing is live until a human posts it from the CRM. The bottleneck is now entirely review and publishing, not production.
+
+Founder review pass (in progress): four Governance/Continuity papers were repositioned on the founder's direction to a consistent editorial line, do not reflexively sell a standalone specialty policy, check what the package already covers and run a needs/risk-tolerance analysis. employed-legal-counsel (employed-lawyer coverage belongs in the management liability definition, standalone is the generalist over-sell), management-liability-placement (School Leaders coverage with the package carrier under a following-form program umbrella, scattered standalone tower is the over-sell), board-side-a-protection (individual-director protection built into the School Leaders program, bolted-on external Side-A DIC is the over-sell), and active-assailant-coverage (a trigger-vs-fear and buy-vs-self-fund decision, not a default buy). Hubs and spokes both updated. Other standalone-pushing papers may get the same lens on request.

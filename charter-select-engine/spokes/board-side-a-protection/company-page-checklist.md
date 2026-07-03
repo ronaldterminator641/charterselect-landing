@@ -4,38 +4,42 @@
 
 ---
 
-**Headline:** "The school has D&O" and "every board member is personally protected" are two different statements. Here is the difference, and how we close the gap between them.
+**Headline:** "The school has D&O" and "every board member is personally protected" are two different statements. Here is the difference, and how we close the gap without stapling on a second policy.
 
-A standard D&O policy is three coverages sharing one combined limit. That structure leaves four specific gaps where an individual director's personal assets can be pulled into a claim. Side-A DIC is the layer built to close them. Here is how the individual's exposure compares to the protection, and the checklist we run on every charter board's D&O program.
+A standard D&O policy is three coverages sharing one combined limit. That structure can leave an individual director's personal assets exposed when the entity's defense drains the shared pot, when the school cannot or is barred from indemnifying, or when the main policy is rescinded. A broker has three ways to respond to that exposure. Only one of them holds together under a claim.
 
-## Where a standard D&O leaves the individual exposed, and what closes it
+## Three ways brokers handle the individual exposure
 
-| Exposure | What happens to the individual | Standard D&O alone | Side-A DIC |
+| Dimension | Base D&O only | Bolted-on standalone Side-A DIC from an outside carrier | Protection built into one School Leaders program |
 |---|---|---|---|
-| **Shared limit eroded** | Entity defense (Side C) and defense costs drain the one combined pot before trustees are made whole | Individuals share the pot; no protected limit | Adds dedicated excess Side-A limit the entity cannot touch |
-| **School can't indemnify** | Insolvency, closure, or financial distress leaves no money to defend a former director | Relies on Side A inside a limit that may already be gone | Drops down and pays in place of the failed coverage |
-| **School legally barred from indemnifying** | Certain derivative suits and public-policy limits prohibit the school from covering the person | Coverage depends on the underlying form responding | Written with far fewer exclusions; responds where the base form denies |
-| **Policy fails to respond** | Main policy rescinded, voided over the application, refused, or carrier insolvent | Individual holds the bag if the policy unravels | Typically non-rescindable; protects the person from someone else's application error |
+| **Individual's dedicated limit** | None; individuals share one pot with the entity | Present, but sitting on separate paper | Present, reserved for the directors and officers inside the program |
+| **Carriers involved** | One, exposure ignored | Two, each with its own set of terms | One, writing both the entity and the individual protection |
+| **Responds when the school cannot indemnify** | Relies on a limit that may already be gone | Depends on drop-down wording reconciling by hand | Written into the program to respond |
+| **How the forms fit together** | The gap is simply left open | Reconciled by hand against a primary it was never drafted alongside | Already agree, because they were drafted together |
+| **Where it fails** | The gap sits unseen until a claim | At the seams, on the worst day, where the two policies are supposed to meet | Designed to hold together under a claim |
+| **Verdict** | Exposure ignored | Over-corrected, scattered, fragile | Clean |
 
-You need a working answer for all four. Volunteer-immunity statutes and the federal Volunteer Protection Act do not fill them; they offer limited immunity, generally do not pay defense costs, and fall away for gross negligence or conduct outside the role. A baseless claim still has to be fought, and fighting it costs real money.
+The first column is the common miss. The second looks more sophisticated and is usually just as clumsy for a charter school: a second carrier, a second set of terms, and drop-down language that has to line up by hand at exactly the moment it matters. The third is the one we place.
 
-## The board protection checklist
+## The checklist: confirm the individuals are protected inside the program
 
 - [ ] Confirm whether the D&O program's three sides share one combined limit, in writing.
-- [ ] Identify whether the individual directors have any limit protected from the entity's side of a shared-limit claim.
+- [ ] Confirm whether the individual directors have limit reserved for them that the entity's side of a claim cannot drain.
+- [ ] Confirm that protected limit sits inside the School Leaders program, on one carrier's paper, not on a separate bolted-on tower.
+- [ ] Confirm the program's terms respond when the school cannot indemnify, is legally barred from indemnifying, or is insolvent.
 - [ ] Confirm whether defense costs erode the limit or sit on top of it.
-- [ ] Stress-test the four exposures against the school's real financial picture (enrollment, authorizer status, reserves).
-- [ ] Determine whether a dedicated Side-A DIC layer is in place, and if so, that its limit is sized to the school's actual risk.
-- [ ] Confirm in writing that the Side-A DIC layer is non-rescindable.
-- [ ] Confirm the drop-down terms reach insolvency, refusal to indemnify, legal bar to indemnify, and carrier insolvency or rescission.
+- [ ] Confirm the individual protection does not depend on drop-down wording reconciling by hand between two carriers.
+- [ ] Stress-test the exposure against the school's real financial picture (enrollment, authorizer status, reserves).
 - [ ] Document the individual-protection findings for the board record before recruiting the next trustee.
+
+A note on the statutes people lean on: volunteer-immunity laws and the federal Volunteer Protection Act do not fill these gaps. They offer limited immunity, generally do not pay defense costs, and fall away for gross negligence or conduct outside the role. A baseless claim still has to be fought, and fighting it costs real money.
 
 ## Why this is standard practice for us and rare elsewhere
 
-A generalist broker chasing a quick renewal sells the base D&O and stops, because raising the individual-exposure question means answering it. We start from the individual, not the entity. We read the full D&O program every renewal, map it against the four ways a standard policy can leave a volunteer exposed, and size and confirm the Side-A DIC layer in writing, because the people risking their own homes to serve a school should not find the gap on the day a claim makes it visible.
+One broker sells the base D&O and never raises the individual exposure. Another overcorrects, bolts a standalone policy on from a separate carrier, and hands you the reconciliation problem. We place management liability as one School Leaders program built to protect the individuals within it, with limit reserved for the directors and officers and terms that reach the situations a charter is most likely to face, all on paper that already agrees with itself. The people risking their own homes to serve a school should not find the gap on the day a claim makes it visible.
 
 **Read the full breakdown:** [LINK TO WHITE PAPER]
 
 ---
 
-*Posting notes: this is the credibility asset. Keep it clean and technical. The checklist also works as a downloadable PDF lead-capture on the website (top/bottom of the hub page). Triggers, exclusions, and drop-down wording vary by carrier; treat the matrix as the concept, not fixed contract language. Replace [LINK TO WHITE PAPER] with the live URL.*
+*Posting notes: this is the credibility asset. Keep it clean and technical. The checklist also works as a downloadable PDF lead-capture on the website (top/bottom of the hub page). Program structure, terms, and drop-down wording vary by carrier; treat the matrix as the concept, not fixed contract language. Replace [LINK TO WHITE PAPER] with the live URL.*

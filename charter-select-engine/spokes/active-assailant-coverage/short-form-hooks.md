@@ -5,51 +5,50 @@
 ---
 
 **Hook 1**
-The worst day a school can have doesn't break a window.
-So your property policy, the one built to respond to a disaster, never opens.
-Here's the coverage that actually does: [LINK]
+Someone sold you an active assailant policy to defend the school if it gets sued.
+Read the trigger. A lot of these forms only pay when the building is physically damaged.
+Know what you actually bought: [LINK]
 
 ---
 
 **Hook 2**
-You file the claim. The adjuster asks where the physical damage is.
-After a violent event, often there isn't any.
-That one question is why the policy stays shut. Here's what doesn't: [LINK]
+"Active assailant coverage" is a label, not a product.
+One version defends you against a lawsuit. Another only opens if the property is damaged. Different buys entirely.
+Know the trigger before you fear the wrong thing: [LINK]
 
 ---
 
 **Hook 3**
-Property insurance pays when something happens to the building.
-A violent event happens to the people.
-Read that gap before you assume you're covered: [LINK]
+Before you buy a standalone active assailant policy, ask what your package already covers.
+Crisis counselors, PR, student medical, board defense. A well-built program may already carry most of it.
+Here is how to inventory it first: [LINK]
 
 ---
 
 **Hook 4**
-For most businesses, a violent event is a tragedy and a disruption.
-For a charter school it's also a funding cliff, because the money follows the students who stop showing up.
-Here's why this lands harder on a school: [LINK]
+Your student accident policy already pays student medical bills and death benefits.
+Your School Leaders program already defends the board.
+So what is the standalone active assailant policy actually left to cover? [LINK]
 
 ---
 
 **Hook 5**
-Counselors. Round-the-clock security. A crisis team. Families who need support. Months of lost enrollment.
-Which of your current policies pays for any of it after a no-damage event?
-If you're not sure, start here: [LINK]
+A broker who sells you a standalone active assailant policy as "the answer," without reading what you already own, is selling a product, not managing a risk.
+Here is the conversation you should have gotten: [LINK]
 
 ---
 
 **Hook 6**
-There's a coverage written for the event itself, not for damage to the building.
-The trigger is the whole point: it pays where your property policy can't.
-Most schools have never been shown it exists: [LINK]
+Subtract what your package already covers and you are usually left with two things: physical remediation and lost enrollment.
+That is not an automatic buy. It is a risk-tolerance call you get to make.
+Premium now versus out of pocket later: [LINK]
 
 ---
 
 **Hook 7**
-One question for whoever handles your school's insurance:
-if a violent event tomorrow caused no physical damage, which policy pays for the crisis team, the security, and the enrollment you'd lose over the next year?
-If the answer is a shrug, read this: [LINK]
+One question for whoever put an active assailant quote in front of you:
+what triggers it to pay, and once you account for the counseling, PR, student medical, and board defense you may already carry, what is genuinely left for it to cover?
+If they cannot answer, read this: [LINK]
 
 ---
 

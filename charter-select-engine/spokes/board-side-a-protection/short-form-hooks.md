@@ -34,22 +34,22 @@ The exposure and the empty bank account peak on the same day: [LINK]
 ---
 
 **Hook 5**
-There's a D&O layer that gives individual directors their own protected limit the entity can't touch, and pays even when the main policy gets rescinded.
-Your broker has probably never mentioned it.
-It's called Side-A DIC: [LINK]
+A broker can miss your board's exposure two ways.
+Sell base D&O and ignore it, or bolt a standalone protection policy on from an outside carrier that has to reconcile by hand.
+Both leave your volunteers exposed at the seams: [LINK]
 
 ---
 
 **Hook 6**
-You think state volunteer-immunity laws protect your board members.
-They generally don't pay the cost of defending the lawsuit, and they fall away for gross negligence.
-A baseless claim still has to be fought, and fighting it costs real money: [LINK]
+The cleanest board protection is a reserved limit for the individual directors, written into the school's own management liability program, on paper that already agrees with itself.
+No second carrier. No bolt-on. No reconciliation problem.
+Here's what that looks like: [LINK]
 
 ---
 
 **Hook 7**
 One question for whoever handles your school's insurance:
-If the school went insolvent and a former board member were sued personally, has anyone confirmed she has protected limit the school's own legal bills can't drain first?
+If the school went insolvent and a former board member were sued personally, has anyone confirmed she has protected limit the school's own legal bills can't drain first, built into the school's own program and not stapled on from outside?
 If the answer is a shrug, read this: [LINK]
 
 ---

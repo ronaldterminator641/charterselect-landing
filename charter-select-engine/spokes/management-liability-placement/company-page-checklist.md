@@ -4,36 +4,34 @@
 
 ---
 
-**Headline:** "We have a large umbrella, so the board is covered." If that's the plan for your directors, the plan almost certainly has a hole in it.
+**Headline:** "We have a large umbrella, so the board is covered." Before you count on that, confirm where your directors' protection actually comes from.
 
-A commercial umbrella adds limit over general liability, auto, and employers liability. It follows the form of those policies, so it has no Directors & Officers or management liability line to sit over. Real board protection comes from a separate management liability program, and higher limits come from a dedicated excess tower, never the umbrella. Here is how the pieces actually fit, and the checklist we run on every board-protection placement.
+When a charter school's board, or a trustee personally, ends up named in a claim, one thing decides whether real protection responds: where the management liability was placed. A generic commercial umbrella does not extend to it. A standalone tower stitched across three outside carriers is over-built and fragile at the seams. The clean placement for a school is one School Leaders program with the package carrier, extended under a program umbrella written to follow it. Here is how the three approaches compare, and the checklist we run on every board-protection placement.
 
-## Where board protection actually comes from
+## Three ways brokers handle board protection, and how they hold up
 
-| Layer | What it does | What it is NOT |
-|---|---|---|
-| **Primary management liability** | The base program protecting the board and entity: D&O, EPLI, fiduciary, often crime. Responds to governance, employment, and benefit-plan claims. | Not part of the GL/auto package, and not provided by the umbrella. |
-| **Follow-form excess D&O** | Stacked layers on top of the primary management liability policy, each adding limit, each following the primary form. This is the real source of higher board limits. | Not the commercial umbrella. The umbrella cannot extend a coverage that isn't beneath it. |
-| **Side-A / Side-A DIC** | Dedicated limit for the individual directors and officers only, and it drops down when underlying coverage can't or won't respond. | Not shared with the entity, so the school's own defense can't drain it. |
-| **Educators Legal Liability** | The school-specific D&O/E&O hybrid covering failure-to-educate, student-rights, and special-education claims. | Not always present in a generic nonprofit D&O form. |
+| Approach | What it does for the board | How it is structured | Where it breaks |
+|---|---|---|---|
+| **Generic commercial umbrella ("you're covered")** | Nothing for the board. It follows general liability, auto, and employers liability only. | Excess limit scheduled over policies that contain no board coverage. | The moment a trustee is named for a governance decision. There is nothing underneath for it to extend. |
+| **Scattered standalone tower** | Real D&O, but assembled from the outside. | Standalone D&O from one carrier, an excess tower from a second, a separate Side-A layer from a third. | At the seams: mismatched terms and retro dates, reconciliation by hand, premium load, carriers who have never seen a charter. |
+| **School Leaders program under a program umbrella** | D&O, employment practices, and educators legal liability protecting the board, placed as one program. | One School Leaders program with your package carrier, excess extended under a school program umbrella built to follow that line. | Designed to respond where the claim lands. One carrier, one program, terms written together. |
 
-A standard D&O policy's three insuring agreements (Side A for individuals, Side B reimbursing the entity, Side C for the entity itself) usually share one aggregate limit. In a claim naming the school and the board together, the entity's defense can erode that shared limit before the individual trustees are protected. Dedicated Side-A coverage is built to close exactly that gap.
+The failure mode of the first two shows up at the same instant, the day a trustee is named. The third is built so the limit sits over the board coverage instead of missing it or arriving from three directions that only pretend to connect.
 
-## The board-protection checklist
+## The board-protection placement checklist
 
-- [ ] Confirm management liability is placed as its own program, separate from the GL/auto/umbrella package.
-- [ ] Do NOT assume the umbrella extends over D&O, EPLI, or fiduciary. Confirm the umbrella's scheduled underlying policies in writing.
-- [ ] Verify the insured definition covers trustees, officers, employees, volunteers, and committee members.
-- [ ] Confirm the form reaches Educators Legal Liability exposures (failure to educate, student rights, special education), not just generic nonprofit D&O.
-- [ ] Right-size the primary limit knowing defense costs typically erode it rather than sitting on top.
-- [ ] Where higher limits are needed, build a follow-form excess D&O tower, not an umbrella extension.
-- [ ] Place dedicated Side-A or Side-A DIC so individual trustees have protected, non-shared limit.
-- [ ] Carry fiduciary coverage deliberately, and confirm the ERISA bond requirement for any benefit plan is satisfied.
-- [ ] Reconcile claims-made details across the tower: matching retroactive dates, prior-acts coverage, consistent terms layer to layer.
+- [ ] Confirm management liability is placed as School Leaders coverage with a carrier that writes for schools, not a generic nonprofit D&O form.
+- [ ] Confirm the program bundles directors and officers, employment practices, and educators legal liability in one place.
+- [ ] Confirm the form reaches the claims unique to schools: failure to educate, special-education denial, student civil-rights and discipline.
+- [ ] Confirm the insured definition names trustees, officers, employees, volunteers, and committee members.
+- [ ] Do NOT assume a generic GL/auto umbrella extends over the board line. Confirm its scheduled underlying policies in writing.
+- [ ] Build any excess limit by extending the School Leaders line under a school program umbrella written to follow it, not a commercial umbrella that excludes it.
+- [ ] Reconcile claims-made details inside the one program: retroactive date and prior-acts coverage, consistent terms.
+- [ ] Confirm in writing which policy responds if a trustee is named personally, and document it for the board record.
 
 ## Why this is standard practice for us and rare elsewhere
 
-A generalist broker often ends the board-protection conversation with a single reassuring sentence about the umbrella, then never builds the program that sentence implied. We place management liability as its own deliberate structure, confirm the form actually responds to school-specific claims, and put dedicated limit where the individual trustees can reach it, because the people on a charter board are putting their personal assets on the line to serve a community.
+A generalist ends the board-protection conversation with a single reassuring sentence about the umbrella, then never places the program that sentence implied. The broker who knows better swings the other way and bolts on a standalone tower from carriers who have never written a charter. We do neither. We place board coverage inside one School Leaders program with the package carrier and build any excess under an umbrella written to follow it, because scattering the coverage across three carriers and trusting a generic umbrella both fail at the same moment, the day a trustee is named.
 
 **Read the full breakdown:** [LINK TO WHITE PAPER]
 

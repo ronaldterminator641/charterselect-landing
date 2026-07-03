@@ -5,53 +5,53 @@
 ---
 
 **Hook 1**
-Your network hired its own attorney. Smart move.
-The day you signed that offer letter, you created a risk none of your policies were built to catch.
-Here's the gap nobody flagged: [LINK]
+You told your broker you hired an attorney.
+Their answer was a quote for a brand new policy.
+That reflex, reaching for a separate policy the second they hear "lawyer," is the tell.
+Here is what it tells you about your account: [LINK]
 
 ---
 
 **Hook 2**
-A claim says your in-house lawyer's advice was negligent and it cost the network money.
-You reach for your three insurance policies.
-All three have a built-in reason to say no.
-Which ones, and why: [LINK]
+A standalone Employed Lawyers policy means a second premium, a second renewal, a second set of terms.
+For a charter network, it usually insures a risk your management liability program already picks up.
+Before you agree to pay twice, read this: [LINK]
 
 ---
 
 **Hook 3**
-Your general liability policy covers slip-and-falls.
-It specifically excludes legal malpractice. On purpose. Every standard form does.
-So who covers your in-house counsel? [LINK]
+Your in-house counsel reviews contracts, reads the charter, advises the board.
+That is advisory work for one client, the employer who signs the paycheck.
+They are not running a litigation practice with a badge on.
+Why that distinction decides your coverage: [LINK]
 
 ---
 
 **Hook 4**
-"Our D&O covers the general counsel."
-Maybe the general counsel. Often not the associates or staff attorneys at all.
-And a legal malpractice claim can fall straight into the D&O's own exclusion.
-Here's where your legal team actually stands: [LINK]
+A broker hears "we brought counsel in-house" and reaches for a fresh standalone quote.
+You just learned two things. They did not read what you already own. They did not think about what your attorney actually does.
+Here is the rest of it: [LINK]
 
 ---
 
 **Hook 5**
-A law firm's malpractice policy assumes the lawyer has outside clients who hired and paid the firm.
-Your in-house counsel has one client: the employer who signs the paycheck.
-Buy the firm form and you paid for protection aimed at a risk you don't have: [LINK]
+The carriers that actually write for schools fold employed lawyers coverage into your management liability definition, or add it by endorsement for little or nothing.
+One program. One renewal. One carrier who understands the account.
+That is the answer a generalist skips right over: [LINK]
 
 ---
 
 **Hook 6**
-There is a single line of coverage written for the exact gap your other policies leave open.
-It's called Employed Lawyers professional liability. Major carriers write it.
-Your broker never mentioned it because reading your operation is work: [LINK]
+Yes, your general liability form excludes legal malpractice. Yes, a generic D&O form can leave your staff attorneys out of the grant of coverage.
+The exposure is real. The fix is not a second policy.
+Here is where the coverage actually belongs: [LINK]
 
 ---
 
 **Hook 7**
-One question for whoever handles your network's insurance:
-When you brought legal counsel in-house, did anyone confirm the advice was actually covered?
-If the answer is a shrug, you don't have a claim problem yet. You have a question nobody checked: [LINK]
+One question for whoever handles your network's insurance.
+When you told them you brought an attorney on staff, did they confirm your existing program already covers your lawyer's work and show you the language, or did they reach for a separate policy and a separate premium?
+If you are not sure which answer you got, read this: [LINK]
 
 ---
 

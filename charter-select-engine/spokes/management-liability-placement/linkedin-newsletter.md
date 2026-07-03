@@ -1,44 +1,48 @@
 # LinkedIn Personal Newsletter: Management Liability Placement
 
-*Spoke type: Personal profile newsletter (Aaron's voice). Goal: human story + compressed insight, driving to the full white paper. Post from Aaron's personal LinkedIn. ~750 words.*
+*Spoke type: Personal profile newsletter (Aaron's voice). Goal: human story + compressed insight, driving to the full white paper. Post from Aaron's personal LinkedIn. ~780 words.*
 
 ---
 
-**Headline:** Her board member got named in a lawsuit. The umbrella everyone trusted had nothing to do with protecting him.
+**Headline:** A lawsuit named one of her trustees personally. The umbrella everyone trusted had nothing to do with protecting her.
 
 ---
 
-A school leader walked me through her coverage a while back, and somewhere in the conversation she said the thing I hear constantly. "We're fine on the board side, we carry a big umbrella."
+A charter school board chair called her broker last year in the calm voice people use right before everything speeds up.
 
-I asked her who told her the umbrella covered the board. She couldn't remember. Some broker, some renewal, some sentence said years ago that everybody just kept repeating. It had become a fact in her mind without anyone ever checking it.
+One of her trustees had been named in a lawsuit. Personally. A volunteer. A parent who ran a small business across town and joined the board to help the school, now with her own name on a complaint over a governance decision. Not the school's name. Hers.
 
-So we checked it. And the umbrella, like almost every commercial umbrella, did nothing for her board at all.
+The chair wasn't panicked yet, because she remembered the sentence all of us have heard at some point: the school carries a big umbrella, so the board is covered.
 
-I grew up around manual labor and a ranch, where doing a job halfway meant somebody got hurt or something broke, and you owned it. That's the standard I expected when I got into insurance. The "you've got an umbrella, you're covered" line fails that standard, because it sounds like protection while leaving the people it names completely exposed.
+The broker went quiet. That pause is the whole story.
 
-Here's the mechanic, in plain English.
+Here is what the silence was about.
 
-The protection a board reaches for when a director gets sued personally has a name. Management liability. It's a bundle, usually Directors & Officers, Employment Practices Liability, and fiduciary coverage, and it responds when the claim is about decisions and conduct rather than a slip-and-fall or a car wreck.
+A generic commercial umbrella is built to do one narrow job. It adds excess limit on top of a specific, scheduled set of policies, almost always general liability, commercial auto, and employers liability. It follows the form of those policies. It can stretch a limit higher only on a coverage that already sits underneath it.
 
-A commercial umbrella does a real job, but a different one. It adds limit on top of a specific set of underlying policies, almost always general liability, auto, and employers liability. And it follows the form of those policies. It can only raise the limit on a coverage that already sits underneath it. Since there's no D&O under the umbrella, there is nothing for it to extend. The umbrella was built to sit somewhere else entirely.
+Line that up and the problem is plain. If the only things under that umbrella are GL, auto, and employers liability, there is no board protection down there for it to extend. A claim that names a trustee for how the school was governed is not a slip-and-fall or a fender bender. It lives in a completely different category of coverage. A bolt-on commercial umbrella was never built to reach it. So the chair reaches for the umbrella, and it turns out the umbrella had nothing to do with protecting the board. The word made it sound like a blanket over the whole school. A generic one is not.
 
-When a board actually needs more protection, that limit gets built as its own tower. Follow-form excess D&O layers stacked on the primary policy. And at the top, the piece generalists almost never place, Side-A DIC, which gives the individual directors their own dedicated limit.
+The protection she was actually reaching for has a name. Management liability. For a school it travels as one coverage part, and the good markets brand it around exactly who it protects: School Leaders Risk Protection, the school-built version of directors and officers coverage. It bundles the pieces a charter actually needs. Directors and officers protection for your trustees and officers personally. Employment practices for the staff claims a people-heavy school faces constantly. And educators legal liability, the piece a generic nonprofit form skips, built for the claims that are uniquely yours: failure to educate, denial of special-education services, student civil-rights and discipline disputes.
 
-That last part matters more than it sounds. A standard D&O policy has three sides that usually share one limit. Side A pays the individuals, Side B reimburses the school, Side C covers the entity. Picture the school and several board members sued together. The entity's own defense starts drawing down that shared limit, and in a hard-fought case it can be gone before the individual trustees are ever protected. Side-A DIC exists to keep that from happening.
+Now here is where I watch brokers go wrong in two directions, and why I built Charter Select the way I did.
 
-There's a piece that's purely a school problem, too. Some of the claims you face aren't about governance or employment. They're about students. Failure to educate, denial of special-education services, student civil-rights disputes. A generic nonprofit D&O may not contemplate those at all. The line that does is Educators Legal Liability, built for schools, and plenty of boards are sitting without it and have no idea.
+Direction one is the umbrella myth above. Point at it, call the board covered, end the conversation. That protection was never there.
 
-None of this is exotic. It's a placement done with care instead of on autopilot. The reason it gets missed is the same reason most of these things get missed: the generalist gave the board a sentence that ended the conversation, and nobody went back to check whether it was true. That's most of why Charter Select only works with charter schools and actually reads what's in the program.
+Direction two looks smarter and is usually just as clumsy. The broker who knows the umbrella won't answer overcorrects and starts bolting things on from the side. A standalone D&O policy from one carrier. An excess tower from a second. A separate Side-A layer from a third. Three placements, three carriers, three sets of terms and retroactive dates that somebody has to reconcile by hand, and a premium to match. For a giant public company that architecture has its place. For a charter school it is over-engineered and fragile at exactly the seams where the pieces are supposed to meet.
 
-I wrote the full breakdown on our site. No jargon, no gate, free to read and free to forward to your board or your business manager: **[LINK TO WHITE PAPER]**
+The clean answer for a school is neither. Place your management liability with the carrier that already writes your package, as one School Leaders program. And if you need more limit, extend that coverage under a school program umbrella actually written to follow the School Leaders line, not the generic GL-and-auto umbrella that excludes it. One carrier that understands schools. One program. One set of terms that already agree because they were written together. Excess limit that sits over the board coverage instead of missing it entirely.
 
-If you only do one thing with this, do this. Ask whoever handles your insurance one question.
+I grew up around manual labor, where doing a job halfway meant somebody got hurt or something broke, and you owned it. That is the standard I expected when I got into insurance, and it is not the standard a lot of charter boards are getting. A lean charter business office has no in-house risk manager to catch that the umbrella excludes board protection, or that the coverage got scattered across three carriers instead of placed in one program. So the error sits there, invisible, until a claim makes it loud.
 
-If a board member were named personally in a lawsuit next month, which policy would defend them, and has anyone confirmed it's actually in place, with its own limit? Or would someone just point at the umbrella?
+That is most of why Charter Select works only with charter schools, reads the whole program, and places board coverage where it belongs instead of pointing at an umbrella or selling a tower from the outside.
 
-If the answer is the umbrella, your board doesn't have protection there. It has a misunderstanding. And the good news is that a placement problem gets fixed before the claim, never during it.
+I wrote the full breakdown up on our site. No jargon, no gate, free to read and free to forward to your board or your business manager: **[LINK TO WHITE PAPER]**
 
-Forward this to the board member who's been told they're covered. They'd want to know which it is.
+If you do one thing with this, do this. Ask whoever handles your insurance one question.
+
+If a board member were named personally in a lawsuit next month, does their protection come from School Leaders coverage your program was built to place and extend, or from a generic umbrella someone pointed at, or a standalone tower someone tried to sell you from the outside? And has anyone confirmed, in writing, which one is actually in place?
+
+If the honest answer is the umbrella, that isn't protection. That is a misunderstanding. The good news is that a placement problem gets fixed before the claim, never during it.
 
 Aaron Schwen
 

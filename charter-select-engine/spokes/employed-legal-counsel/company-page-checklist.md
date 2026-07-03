@@ -1,39 +1,40 @@
-# Company Page Spoke: Employed Lawyers Coverage Gap Checklist
+# Company Page Spoke: Employed Lawyers Coverage Placement Checklist
 
 *Spoke type: Company storefront page (authoritative, technical, credibility-building). Goal: validate Charter Select to a prospect actively vetting us. Post from the Charter Select company page. Lead with the matrix, then the checklist.*
 
 ---
 
-**Headline:** Brought legal counsel in-house? Three policies you already carry each have a built-in reason to decline a malpractice-style claim against your own attorney. Here is what actually responds.
+**Headline:** Brought legal counsel in-house? The coverage belongs inside the management liability program you already carry, not in a standalone policy a generalist wants to bolt on. Here is the difference.
 
-The day a charter network hires its own lawyer, the professional liability that used to sit on an outside firm's policy moves inside the building. Most growing networks never confirm whether their insurance program followed that risk in the door. Here is how the policies you carry treat a claim that your in-house attorney's legal advice was negligent, and the checklist we run when a network brings counsel on staff.
+When a charter network hires its own attorney, that attorney is advisory, not a practicing litigation department. The right carriers, the ones that write for schools, reach your employed lawyers inside the program you already own, either in the definition of the insured or by endorsement. A generalist's reflex is to quote a separate standalone policy. Here is how the two approaches compare, and the checklist we run when a network brings counsel on staff.
 
-## How your current policies treat an in-house legal malpractice claim
+## Included in your management liability definition vs. a standalone policy a generalist sells
 
-| Policy | What it is built for | Why it declines the in-house legal claim |
+| | Employed lawyers coverage inside your management liability program | Standalone Employed Lawyers policy |
 |---|---|---|
-| **General Liability (GL)** | Slip-and-falls, bodily injury, property damage | Standard professional services exclusion carves out professional advice; legal malpractice is the textbook example |
-| **Management Liability / D&O** | Board and leadership sued over governance and management decisions | Built for management acts, not the practice of law; often carries its own professional services exclusion, and staff/contract attorneys frequently are not covered "insureds" at all |
-| **Lawyers Professional Liability (firm form)** | A firm serving outside clients who hired, paid, and can sue it | Assumes an attorney-client relationship your in-house counsel does not have; the form is written for the wrong relationship |
-| **Employed Lawyers Professional Liability** | Attorneys you employ, for legal services they provide to you, the employer | This is the line written to cover exactly the acts the others exclude; typically includes the general counsel and the legal team beneath them, and usually advances defense costs |
+| **Where the coverage lives** | The program you already carry, in the definition of insured or added by endorsement | A separate, second policy sitting outside your core program |
+| **Who it is built for** | An organization whose counsel is advisory, one client, the employer who signs the paycheck | An organization running a substantial in-house legal department practicing law at volume |
+| **Fit for a charter network** | Matches how your network actually operates | Engineered for a profile you do not run |
+| **Cost and admin** | One premium, one renewal, one carrier, often added for little or nothing | Second premium, second renewal, second set of terms to manage |
+| **Who provides it** | A carrier whose form was built to reach your employed attorneys | A separate market chasing a keyword |
+| **What it signals about your broker** | They read your program and understood your operation | They heard "lawyer" and reached for the checkbook |
 
-The first three each have a structural reason to step back. Employed Lawyers coverage is the patch made to fit the hole the standard forms cut out by design.
+The standalone policy is a real product for a large practicing legal department. For a charter network whose counsel advises, the coverage is almost always a line in the program you already carry, placed correctly.
 
-## The in-house counsel coverage checklist
+## The in-house counsel placement checklist
 
-- [ ] Confirm whether the organization employs any attorneys (general counsel, associates, staff or contract attorneys); count them and document what they do.
-- [ ] Pull the GL form and locate the professional services exclusion in writing.
-- [ ] Pull the D&O form; confirm whether it carries a professional services exclusion and whether the in-house attorneys qualify as covered insureds, not just the general counsel.
-- [ ] Confirm that any lawyers professional liability policy on file is not a firm form mistakenly bought for an in-house relationship it does not fit.
-- [ ] Determine whether an Employed Lawyers professional liability policy belongs in the program, and confirm it covers the full legal team, not only the general counsel.
-- [ ] Confirm the policy advances defense costs.
-- [ ] If your counsel does pro bono work or sits on an outside board, confirm those activities by endorsement; they do not come along automatically.
-- [ ] Note the conduct exclusions (deliberately fraudulent, criminal, or intentionally unlawful acts are excluded, as expected); the coverage is built for honest professional mistakes.
-- [ ] Document the program decision for the board record.
+- [ ] Confirm whether the organization employs any attorneys (general counsel, associates, staff or contract attorneys); count them and document what they actually do day to day.
+- [ ] Pull the management liability program and read the definition of insured; confirm it reaches the general counsel and the staff attorneys beneath them for legal services provided to the organization.
+- [ ] If the definition does not reach them, confirm whether the carrier adds employed lawyers coverage by endorsement, and at what cost.
+- [ ] If the current carrier's form cannot get there, evaluate moving the program to a carrier whose school-focused form was built to reach employed attorneys.
+- [ ] Get the confirming language in writing before binding; do not rely on a verbal assurance.
+- [ ] Confirm the coverage advances defense costs, since these allegations get expensive before merit is ever decided.
+- [ ] Treat a reflexive standalone Employed Lawyers quote as a flag that the account was not read, not as a recommendation to accept.
+- [ ] Document the placement decision and the confirming language for the board record.
 
-## Why this is standard practice for us and rare elsewhere
+## Why this is standard practice for us
 
-A generalist broker treats a growing network like a renewal to process, rolls the same package forward, and never asks the one question that matters after you scale: what changed about your operation since last year? Hiring in-house counsel is exactly the kind of change that should trigger a coverage conversation. We ask about your structure, not just your address, read the full program every renewal, and connect a staffing decision to its insurance consequence, because the cost of missing this does not show up until a claim arrives with your own lawyer's name on it.
+A generalist treats a growing network like a renewal to process, hears "we hired a lawyer," and pattern-matches to selling a new policy, because a fresh transaction is easy to run. We start by reading what you already own. We ask about your structure, not just your address, read the full program every renewal, and confirm in writing that your management liability definition reaches your employed attorneys before anyone talks about buying something new. That is quiet, unglamorous work, and it is the entire value of a broker who reads your operation instead of quoting off a keyword.
 
 **Read the full breakdown:** [LINK TO WHITE PAPER]
 
