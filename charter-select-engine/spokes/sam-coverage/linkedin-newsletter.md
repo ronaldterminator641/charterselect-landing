@@ -24,15 +24,13 @@ Both halves touch insurance. And this is where most schools have a quiet problem
 
 Here is the mechanic, in plain English.
 
-Coverage for this risk is usually called Sexual Abuse and Molestation coverage, SAM for short. It shows up one of three ways. As a small sublimit tucked inside the general liability policy, which is the most common and the most quietly dangerous. As an outright exclusion, where the coverage everyone assumes is there simply is not. Or as standalone coverage built with meaningful limits, broader language, and defense designed for this specific kind of claim.
+Coverage for this risk is usually called Sexual Abuse and Molestation coverage, SAM for short. It shows up in one of three ways. As a small sublimit tucked inside the general liability policy, which is the most common and the most quietly dangerous. As an outright exclusion, where the coverage everyone assumes is there simply is not. Or as adequate coverage built into a real school program, at meaningful limits, with broader language and defense designed for this specific kind of claim.
 
 These claims are uniquely severe for three reasons. The dollar figures run very high. The allegations often surface years, sometimes decades, after the events, because of how and when survivors are able to come forward. And even an allegation found to have no merit must still be investigated and defended, which is expensive on its own. Severe, slow to surface, costly to defend, and capable of pulling in more than one claimant at once. That is exactly the kind of exposure insurance is supposed to be built around.
 
+Now, a warning about the "fix" a generalist reaches for once they finally notice the gap. The lazy move is to bolt on a monoline SAM policy, a separate abuse-only form from another carrier, and call it solved. That is almost never the right answer. It hands you a second carrier and a second set of terms that have to reconcile by hand at exactly the claim where a seam between two policies is the last thing you want. Worse, if a monoline form is the only way your broker can get you abuse coverage at all, that is a red flag. It usually means your program will not properly insure a school for this, or you are being underwritten as a distressed risk, or your broker lacks the markets that handle schools well. A charter school with reasonable prevention controls should be able to get adequate SAM built right into a real program.
+
 Real protection has a few features. Meaningful limits structured for more than one claimant, with both a per-victim figure and an aggregate. Defense costs that sit outside the limit, so legal bills do not quietly eat the coverage. And deliberate attention to how the policy is triggered and dated, because claims about a long-past period live or die on that detail.
-
-There is even a quiet upside. To write good SAM coverage, an underwriter wants to see real prevention controls in place. Background checks, a written policy, recurring training, a two-adult rule, clear reporting procedures. So buying the protection seriously tends to push the school toward the practices that make the harm less likely in the first place. Few lines of insurance work that way.
-
-So how does a careful school end up with a sliver of coverage, or an exclusion, and never know? Almost always the same way. A generalist broker treats the school as a small account to process fast, the sublimit comes in at the package default, and nobody raises it, because raising it means starting a hard, uncomfortable conversation. The easy-button renewal does not require one.
 
 That is most of why Charter Select exists, and why I read the whole policy, out loud, every renewal.
 
@@ -40,7 +38,7 @@ I wrote the full breakdown on our site. No jargon, no gate, free to read and fre
 
 Here is the question worth sitting with.
 
-If an abuse allegation surfaced at your school next month, possibly about a period years in the past, do you actually know what limit would respond, whether it sits inside your general liability or stands on its own, whether your defense costs would eat into that limit, and whether anyone has ever weighed that figure against what these claims really cost? Or has that line simply renewed itself, untouched, because it was easier for everyone not to bring it up?
+If an abuse allegation surfaced at your school next month, possibly about a period years in the past, do you actually know what limit would respond, whether it sits inside your program at a meaningful figure or hides as a tiny sublimit, whether your defense costs would eat into that limit, and whether anyone has ever weighed that figure against what these claims really cost? Or has that line simply renewed itself, untouched, because it was easier for everyone not to bring it up?
 
 If the honest answer is that you are not sure, you do not have a crisis. You have a line on a page that nobody has read closely. Reading it now is a very different thing than discovering it afterward.
 

@@ -13,8 +13,8 @@ Here is how to find your real number: [LINK]
 ---
 
 **Hook 2**
-Abuse and molestation coverage shows up three ways on a school policy.
-A tiny sublimit buried in general liability. An outright exclusion. Or real standalone coverage.
+Abuse and molestation coverage gets handled four ways on a school policy.
+A tiny sublimit buried in general liability. An outright exclusion. A monoline bolt-on stapled on from another carrier. Or adequate coverage built into a real school program.
 Most schools have one of the first two and have never been told which: [LINK]
 
 ---
@@ -41,15 +41,15 @@ Find out whether yours sit inside or outside: [LINK]
 ---
 
 **Hook 6**
-There is a quiet upside to insuring abuse exposure properly.
-To write good coverage, an underwriter wants real prevention controls in place: screening, training, a two-adult rule, clear reporting.
-So buying the protection seriously tends to make the harm less likely: [LINK]
+If the only way your broker can insure your school's abuse exposure is a separate abuse-only policy from another carrier, read that as a warning sign.
+A charter school with reasonable prevention controls should be able to get adequate coverage built into a real program.
+Here is what that seam is actually telling you: [LINK]
 
 ---
 
 **Hook 7**
 One question for whoever handles your school's insurance.
-If an abuse allegation surfaced next month, about a period years past, do you know what limit would respond, and whether anyone has ever weighed it against what these claims really cost?
+If an abuse allegation surfaced next month, about a period years past, do you know what limit would respond, whether it sits inside your program or hides as a tiny sublimit, and whether anyone has ever weighed it against what these claims really cost?
 If you are not sure, read this: [LINK]
 
 ---
