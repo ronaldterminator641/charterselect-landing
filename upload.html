@@ -41,17 +41,33 @@
     /* Drop zone */
     .upload-zone {
       border: 2px dashed var(--border-1); border-radius: 12px;
-      padding: 36px 24px; text-align: center; cursor: pointer;
+      padding: 28px 24px; text-align: center; cursor: pointer;
       transition: border-color 140ms, background 140ms;
       background: #fafaf8;
     }
     .upload-zone:hover, .upload-zone.drag-over { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); }
-    .upload-zone.has-file { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); }
-    .upload-zone__icon { color: var(--fg-muted); margin-bottom: 12px; }
+    .upload-zone.has-files { border-color: var(--cs-teal); background: rgba(15,118,110,0.04); border-style: solid; }
+    .upload-zone__icon { color: var(--fg-muted); margin-bottom: 10px; }
     .upload-zone__text { font-family: var(--font-body); font-size: 15px; color: var(--fg-2); }
     .upload-zone__hint { font-family: var(--font-body); font-size: 12px; color: var(--fg-muted); margin-top: 6px; }
-    .upload-zone__file { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--cs-teal); margin-top: 8px; }
     .upload-zone input[type="file"] { display: none; }
+
+    /* File list */
+    .upload-file-list { list-style: none; margin: 0 0 10px; padding: 0; text-align: left; }
+    .upload-file-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 8px; background: rgba(15,118,110,0.06);
+      font-family: var(--font-body); font-size: 13px; color: var(--fg-1);
+      margin-bottom: 6px;
+    }
+    .upload-file-item__name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; color: var(--cs-teal); }
+    .upload-file-item__size { color: var(--fg-muted); white-space: nowrap; flex-shrink: 0; }
+    .upload-file-item__remove {
+      background: none; border: none; cursor: pointer; padding: 2px 4px;
+      color: var(--fg-muted); line-height: 1; flex-shrink: 0;
+      border-radius: 4px; transition: color 120ms, background 120ms;
+    }
+    .upload-file-item__remove:hover { color: #b91c1c; background: rgba(185,28,28,0.08); }
 
     /* Progress */
     .upload-progress { margin-top: 20px; }
@@ -104,7 +120,7 @@
       const [form, setForm] = React.useState({
         school_name: '', contact_name: '', email: '',
       });
-      const [file,       setFile]       = React.useState(null);
+      const [files,      setFiles]      = React.useState([]);
       const [dragging,   setDragging]   = React.useState(false);
       const [uploading,  setUploading]  = React.useState(false);
       const [progress,   setProgress]   = React.useState(0);
@@ -115,21 +131,37 @@
 
       function setField(f) { return e => setForm(p => ({ ...p, [f]: e.target.value })); }
 
-      function handleFileSelect(f) {
-        if (!f) return;
-        if (f.size > MAX_SIZE_BYTES) {
-          setError(`File is too large (${formatBytes(f.size)}). Maximum 50 MB.`);
-          return;
+      function addFiles(incoming) {
+        const list = Array.from(incoming);
+        let err = null;
+        const valid = [];
+        for (const f of list) {
+          if (f.size > MAX_SIZE_BYTES) {
+            err = `"${f.name}" is too large (${formatBytes(f.size)}). Maximum 50 MB per file.`;
+          } else {
+            valid.push(f);
+          }
         }
+        if (err) setError(err);
+        if (valid.length) {
+          setFiles(prev => {
+            // Deduplicate by name+size
+            const existing = new Set(prev.map(x => `${x.name}|${x.size}`));
+            const fresh = valid.filter(f => !existing.has(`${f.name}|${f.size}`));
+            return [...prev, ...fresh];
+          });
+        }
+      }
+
+      function removeFile(index) {
+        setFiles(prev => prev.filter((_, i) => i !== index));
         setError(null);
-        setFile(f);
       }
 
       function onDrop(e) {
         e.preventDefault();
         setDragging(false);
-        const f = e.dataTransfer.files[0];
-        if (f) handleFileSelect(f);
+        addFiles(e.dataTransfer.files);
       }
 
       async function handleSubmit(e) {
@@ -140,76 +172,92 @@
           setError('School name and email are required.');
           return;
         }
-        if (!file) {
-          setError('Please select a file to upload.');
+        if (files.length === 0) {
+          setError('Please select at least one file to upload.');
           return;
         }
 
         setUploading(true);
         setProgress(0);
-        setStatusMsg('Preparing upload…');
+
+        const uploadedIds   = [];
+        const uploadedNames = [];
 
         try {
-          // Step 1: Get a Drive resumable upload URL from our server
-          const initRes = await fetch('/api/upload-policy', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              school_name:  form.school_name.trim(),
-              contact_name: form.contact_name.trim(),
-              email:        form.email.trim(),
-              file_name:    file.name,
-              file_type:    file.type || 'application/octet-stream',
-              file_size:    file.size,
-            }),
-          });
+          const fileShare = 90 / files.length; // each file gets an equal slice of 0–90%
 
-          const initData = await initRes.json();
-          if (!initRes.ok) throw new Error(initData.error || 'Failed to initialize upload.');
+          for (let i = 0; i < files.length; i++) {
+            const file       = files[i];
+            const baseProgress = i * fileShare;
 
-          const { uploadUrl } = initData;
+            setStatusMsg(`Preparing file ${i + 1} of ${files.length}…`);
+            setProgress(Math.round(baseProgress));
 
-          // Step 2: Upload file directly to Google Drive via XHR (supports progress)
-          setStatusMsg('Uploading to secure storage…');
-          const fileId = await new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open('PUT', uploadUrl);
-            xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
-
-            xhr.upload.addEventListener('progress', ev => {
-              if (ev.lengthComputable) {
-                setProgress(Math.round((ev.loaded / ev.total) * 90));
-              }
+            // Step 1: get a Drive resumable upload URL from our server
+            const initRes = await fetch('/api/upload-policy', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                school_name:  form.school_name.trim(),
+                contact_name: form.contact_name.trim(),
+                email:        form.email.trim(),
+                file_name:    file.name,
+                file_type:    file.type || 'application/octet-stream',
+                file_size:    file.size,
+              }),
             });
 
-            xhr.addEventListener('load', () => {
-              if (xhr.status >= 200 && xhr.status < 300) {
-                try {
-                  const data = JSON.parse(xhr.responseText);
-                  resolve(data.id || null);
-                } catch {
-                  resolve(null);
+            const initData = await initRes.json();
+            if (!initRes.ok) throw new Error(initData.error || `Failed to prepare "${file.name}".`);
+
+            const { uploadUrl } = initData;
+
+            // Step 2: upload directly to Google Drive via XHR (progress events)
+            setStatusMsg(`Uploading "${file.name}" (${i + 1} of ${files.length})…`);
+            const fileId = await new Promise((resolve, reject) => {
+              const xhr = new XMLHttpRequest();
+              xhr.open('PUT', uploadUrl);
+              xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+
+              xhr.upload.addEventListener('progress', ev => {
+                if (ev.lengthComputable) {
+                  const pct = baseProgress + (ev.loaded / ev.total) * fileShare;
+                  setProgress(Math.round(pct));
                 }
-              } else {
-                reject(new Error(`Upload failed (${xhr.status})`));
-              }
-            });
-            xhr.addEventListener('error', () => reject(new Error('Network error during upload.')));
-            xhr.send(file);
-          });
+              });
 
-          // Step 3: Notify server (share file + send email)
+              xhr.addEventListener('load', () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                  try {
+                    const data = JSON.parse(xhr.responseText);
+                    resolve(data.id || null);
+                  } catch {
+                    resolve(null);
+                  }
+                } else {
+                  reject(new Error(`Upload failed for "${file.name}" (${xhr.status}).`));
+                }
+              });
+              xhr.addEventListener('error', () => reject(new Error(`Network error uploading "${file.name}".`)));
+              xhr.send(file);
+            });
+
+            uploadedIds.push(fileId);
+            uploadedNames.push(file.name);
+          }
+
+          // Step 3: notify server (share files + send email)
           setProgress(95);
           setStatusMsg('Notifying your advisor…');
           await fetch('/api/upload-complete', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              file_id:      fileId,
+              file_ids:     uploadedIds,
+              file_names:   uploadedNames,
               school_name:  form.school_name.trim(),
               contact_name: form.contact_name.trim(),
               email:        form.email.trim(),
-              file_name:    file.name,
             }),
           });
 
@@ -235,7 +283,9 @@
                     <div className="upload-success__icon">
                       <Lucide name="check-circle" size={36} />
                     </div>
-                    <h2>Policy received!</h2>
+                    <h2>
+                      {files.length > 1 ? `${files.length} policies received!` : 'Policy received!'}
+                    </h2>
                     <p>Aaron will review your documents and reach out within 1 business day with your complimentary benchmark report.</p>
                     <a className="cs-btn cs-btn--primary" href="/" style={{textDecoration:'none', display:'inline-flex'}}>
                       Back to Home
@@ -248,6 +298,8 @@
           </div>
         );
       }
+
+      const hasFiles = files.length > 0;
 
       return (
         <div data-screen-label="Upload Policy">
@@ -303,35 +355,61 @@
 
                   {/* Drop zone */}
                   <div className="upload-field" style={{marginBottom: 0}}>
-                    <label className="upload-label">Policy File <span aria-hidden="true">*</span></label>
+                    <label className="upload-label">
+                      Policy Files <span aria-hidden="true">*</span>
+                    </label>
                     <div
-                      className={`upload-zone${dragging ? ' drag-over' : ''}${file ? ' has-file' : ''}`}
+                      className={`upload-zone${dragging ? ' drag-over' : ''}${hasFiles ? ' has-files' : ''}`}
                       onClick={() => !uploading && fileInputRef.current?.click()}
                       onDragOver={e => { e.preventDefault(); setDragging(true); }}
                       onDragLeave={() => setDragging(false)}
                       onDrop={onDrop}
                       role="button"
-                      aria-label="Upload policy file"
+                      aria-label="Upload policy files"
                     >
                       <input
                         ref={fileInputRef}
                         type="file"
+                        multiple
                         accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg"
-                        onChange={e => handleFileSelect(e.target.files[0])}
+                        onChange={e => { addFiles(e.target.files); e.target.value = ''; }}
                         disabled={uploading}
                       />
-                      <div className="upload-zone__icon">
-                        <Lucide name={file ? 'file-check' : 'upload-cloud'} size={32} />
-                      </div>
-                      {file ? (
+
+                      {hasFiles ? (
                         <>
-                          <div className="upload-zone__file">{file.name}</div>
-                          <div className="upload-zone__hint">{formatBytes(file.size)} · click to change</div>
+                          <ul className="upload-file-list" onClick={e => e.stopPropagation()}>
+                            {files.map((f, i) => (
+                              <li key={i} className="upload-file-item">
+                                <Lucide name="file-text" size={14} style={{flexShrink:0, color:'var(--cs-teal)'}} />
+                                <span className="upload-file-item__name">{f.name}</span>
+                                <span className="upload-file-item__size">{formatBytes(f.size)}</span>
+                                {!uploading && (
+                                  <button
+                                    type="button"
+                                    className="upload-file-item__remove"
+                                    onClick={() => removeFile(i)}
+                                    aria-label={`Remove ${f.name}`}
+                                  >
+                                    <Lucide name="x" size={13} />
+                                  </button>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                          {!uploading && (
+                            <div className="upload-zone__hint" style={{marginTop:4}}>
+                              Drop or click to add more files
+                            </div>
+                          )}
                         </>
                       ) : (
                         <>
-                          <div className="upload-zone__text">Drop your policy here, or click to browse</div>
-                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 50 MB</div>
+                          <div className="upload-zone__icon">
+                            <Lucide name="upload-cloud" size={32} />
+                          </div>
+                          <div className="upload-zone__text">Drop your policies here, or click to browse</div>
+                          <div className="upload-zone__hint">PDF, Word, Excel, or image · up to 50 MB per file · multiple files OK</div>
                         </>
                       )}
                     </div>
@@ -351,7 +429,7 @@
 
                   <button type="submit" className="upload-submit" disabled={uploading}>
                     <Lucide name={uploading ? 'loader' : 'send'} size={16} />
-                    {uploading ? 'Uploading…' : 'Send for Review'}
+                    {uploading ? 'Uploading…' : `Send ${files.length > 1 ? `${files.length} Files` : ''} for Review`}
                   </button>
 
                   <p className="upload-trust">
