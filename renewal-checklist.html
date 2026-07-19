@@ -955,12 +955,11 @@
     document.getElementById('cl-school').textContent = school || ' ';
     document.getElementById('cl-name').textContent   = (name + (title ? ', ' + title : '')) || ' ';
 
-    // Fire lead capture webhook — swap in your endpoint
     try {
-      fetch('https://hooks.zapier.com/hooks/catch/YOUR_HOOK_ID/', {
+      fetch('/api/lead-capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, title, school, email, source: 'renewal-checklist', ts: new Date().toISOString() })
+        body: JSON.stringify({ contact_name: name, title, school_name: school, email, source: 'renewal-checklist', ts: new Date().toISOString() })
       });
     } catch(_) {}
 
