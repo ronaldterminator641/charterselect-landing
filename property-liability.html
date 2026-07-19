@@ -202,6 +202,15 @@
         body.append('Email', contactEmail);
         body.append('Top Concern', items[0].text);
         body.append('Full Priority Ranking', priorityText);
+        // Also land the lead in the CRM pipe (Inbound Leads sheet) — fire-and-forget,
+        // Formspree remains the user-facing submit + autoresponse for now.
+        try {
+          fetch('/api/lead-capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contact_name: contactName, school_name: schoolName, email: contactEmail, source: 'property-liability-coverage-check', insurance_situation: items[0].text, priority_ranking: priorityText, ts: new Date().toISOString() })
+          });
+        } catch(_) {}
         try {
           const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body, headers: { Accept: 'application/json' } });
           if (res.ok) { setSubmitted(true); }

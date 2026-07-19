@@ -159,6 +159,15 @@
         body.append('School Name', schoolName);
         body.append('Email', contactEmail);
         body.append('Top Benefits Challenge', challenge ? challenge.text : '');
+        // Also land the lead in the CRM pipe (Inbound Leads sheet) — fire-and-forget,
+        // Formspree remains the user-facing submit + autoresponse for now.
+        try {
+          fetch('/api/lead-capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contact_name: contactName, school_name: schoolName, email: contactEmail, source: 'employee-benefits-challenge', insurance_situation: challenge ? challenge.text : '', ts: new Date().toISOString() })
+          });
+        } catch(_) {}
         try {
           const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body, headers: { Accept: 'application/json' } });
           if (res.ok) { setSubmitted(true); }
