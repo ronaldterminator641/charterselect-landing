@@ -14,6 +14,9 @@ const EXCLUDE = new Set([
   'charterselect-marketing-site-lastnight.html', // scratch file
   'contact-success.html',                        // thank-you page, no SEO value
   'renewal-checklist.html',                      // replaced by renewal-report-card
+  '404.html',                                    // noindex error page — must not be in sitemap
+  'upload.html',                                 // noindex utility page — must not be in sitemap
+  'what-we-find.html',                           // 301-redirected to /property-liability
 ]);
 
 // Slug for a given filename (index.html → /)
@@ -39,9 +42,22 @@ const files = fs.readdirSync(ROOT)
   .filter(f => f.endsWith('.html') && !EXCLUDE.has(f))
   .sort();
 
+// Last real content change per file: git commit date, not filesystem mtime.
+// (CI checkouts reset mtime to deploy time, which made every lastmod identical.)
+const { execSync } = require('child_process');
+function gitLastmod(file) {
+  try {
+    const out = execSync(`git log -1 --format=%cs -- "${file}"`, {
+      cwd: ROOT, encoding: 'utf8',
+    }).trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(out)) return out;
+  } catch (e) { /* fall through to mtime */ }
+  return null;
+}
+
 const entries = files.map(f => {
   const stat = fs.statSync(path.join(ROOT, f));
-  const lastmod = stat.mtime.toISOString().slice(0, 10);
+  const lastmod = gitLastmod(f) || stat.mtime.toISOString().slice(0, 10);
   const loc = DOMAIN + slug(f);
   const pri = priority(slug(f));
   return [

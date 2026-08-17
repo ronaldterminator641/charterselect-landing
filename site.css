@@ -6,7 +6,8 @@ body { margin: 0; }
 /* Hide static pre-render fallback content until React mounts */
 #root > header,
 #root > main,
-#root > nav {
+#root > nav,
+#root > footer {
   display: none;
 }
 

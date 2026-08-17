@@ -61,7 +61,12 @@
 
 [[redirects]]
   from = "/what-we-find.html"
-  to = "/what-we-find"
+  to = "/property-liability"
+  status = 301
+
+[[redirects]]
+  from = "/what-we-find"
+  to = "/property-liability"
   status = 301
 
 [[redirects]]

@@ -4,21 +4,24 @@
 
 @font-face {
   font-family: "DM Serif Display";
-  src: url("fonts/HEADLINES_DMSerifDisplay-Regular.ttf") format("truetype");
+  src: url("fonts/HEADLINES_DMSerifDisplay-Regular.woff2") format("woff2"),
+       url("fonts/HEADLINES_DMSerifDisplay-Regular.ttf") format("truetype");
   font-weight: 400 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/BODY_Montserrat-Regular.ttf") format("truetype");
+  src: url("fonts/BODY_Montserrat-Regular.woff2") format("woff2"),
+       url("fonts/BODY_Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/SUBHEAD_Montserrat-SemiBold.ttf") format("truetype");
+  src: url("fonts/SUBHEAD_Montserrat-SemiBold.woff2") format("woff2"),
+       url("fonts/SUBHEAD_Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
