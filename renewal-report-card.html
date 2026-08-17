@@ -22,70 +22,10 @@
       min-height: 100vh;
     }
 
-    /* ── BACK TO SITE BAR ── */
-    .site-back-bar {
-      background: var(--cs-teal);
-      padding: .65rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .site-back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      font-family: var(--font-body);
-      font-size: .8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,.85);
-      text-decoration: none;
-      transition: color .15s;
-    }
-
-    .site-back-btn:hover { color: #fff; }
-
-    .site-home-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      font-family: var(--font-body);
-      font-size: .8rem;
-      font-weight: 700;
-      background: var(--cs-gold);
-      color: var(--cs-charcoal);
-      text-decoration: none;
-      padding: .45rem 1rem;
-      border-radius: 6px;
-      transition: background .15s;
-    }
-
-    .site-home-btn:hover { background: var(--cs-gold-600); }
-
-    .site-print-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      font-family: var(--font-body);
-      font-size: .8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,.85);
-      background: rgba(255,255,255,.12);
-      border: 1.5px solid rgba(255,255,255,.3);
-      text-decoration: none;
-      padding: .4rem .9rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background .15s, color .15s;
-    }
-
-    .site-print-btn:hover { background: rgba(255,255,255,.22); color: #fff; }
-
     .page-wrap {
       max-width: 760px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      padding: 1rem 1.5rem 2.5rem;
     }
 
     /* ── REPORT CARD HEADER ── */
@@ -507,8 +447,9 @@
     .modal-btn--outline:hover { background: var(--cs-teal-50); }
 
     .rrc-topbar {
-      background: var(--cs-charcoal);
-      padding: .7rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--border-1);
+      padding: .8rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -517,30 +458,43 @@
     .rrc-topbar__home {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
+      gap: .4rem;
       font-family: var(--font-body);
-      font-size: .95rem;
-      font-weight: 700;
-      color: #fff;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--cs-teal);
       text-decoration: none;
-      background: rgba(255,255,255,.12);
-      border: 1.5px solid rgba(255,255,255,.3);
-      border-radius: 8px;
-      padding: .45rem 1rem;
-      transition: background .15s, border-color .15s;
+      transition: color .15s;
     }
-    .rrc-topbar__home:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.55); }
-    .rrc-topbar img { height: 42px; filter: brightness(0) invert(1); opacity: .9; }
+    .rrc-topbar__home:hover { color: var(--cs-teal-700, #0d6560); }
+    .rrc-topbar img { height: 36px; }
+    .rrc-topbar__print {
+      display: none;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--cs-teal);
+      background: none;
+      border: 1.5px solid var(--cs-teal);
+      border-radius: 6px;
+      padding: .38rem .85rem;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .rrc-topbar__print:hover { background: var(--cs-teal-50, #E6F2F1); }
+    .rrc-topbar__print.visible { display: inline-flex; }
     @media (max-width: 520px) { .rrc-topbar img { display: none; } }
     @media print { .rrc-topbar { display: none; } }
 
     /* ── GATE ── */
     #gate {
-      min-height: calc(100vh - 44px);
+      min-height: calc(100vh - 58px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
       background: var(--bg-cream);
     }
 
@@ -671,7 +625,6 @@
     @media print {
       #gate { display: none !important; }
       #checklist { display: block !important; }
-      .site-back-bar { display: none; }
       .bandwidth-banner { display: none; }
       .rc-footer { page-break-inside: avoid; }
     }
@@ -706,8 +659,9 @@
 
 <!-- ── PERSISTENT TOP BAR ── -->
 <header class="rrc-topbar">
-  <a href="index.html" class="rrc-topbar__home">&#8592; CharterSelect.com</a>
-  <img src="assets/logo-no-slogan.svg" alt="CharterSelect" />
+  <a href="/" class="rrc-topbar__home">&#8592; CharterSelect.com</a>
+  <img src="assets/logo-horizontal.png" alt="CharterSelect" />
+  <button class="rrc-topbar__print" id="printBtn" onclick="window.print()">&#128438; Print / Save PDF</button>
 </header>
 
 <!-- ── GATE ── -->
@@ -741,16 +695,6 @@
   </div>
 </div>
 
-<!-- ── BACK TO SITE BAR ── -->
-<div class="site-back-bar" style="display:none;" id="siteBar">
-  <a href="index.html" class="site-back-btn">
-    &#8592; Back to CharterSelect
-  </a>
-  <div style="display:flex;align-items:center;gap:.6rem;">
-    <button class="site-print-btn" onclick="window.print()">&#128438; Print / Save PDF</button>
-    <a href="index.html" class="site-home-btn">charterselect.com</a>
-  </div>
-</div>
 
 <div id="checklist">
 <div class="page-wrap">
@@ -1081,7 +1025,7 @@
     } catch(_) {}
 
     document.getElementById('gate').style.display = 'none';
-    document.getElementById('siteBar').style.display = 'flex';
+    document.getElementById('printBtn').classList.add('visible');
     document.getElementById('checklist').style.display = 'block';
 
     // Pre-fill info strip from gate form
