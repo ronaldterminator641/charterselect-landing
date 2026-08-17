@@ -501,7 +501,7 @@
     .gate-card {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 8px 40px rgba(15,118,110,.12);
+      box-shadow: 0 8px 40px rgba(15,118,110,.16);
       max-width: 480px;
       width: 100%;
       overflow: hidden;
@@ -527,14 +527,24 @@
       font-family: var(--font-display);
       font-size: 1.6rem;
       line-height: 1.2;
-      margin-bottom: .5rem;
+      margin-bottom: .6rem;
       color: #fff;
     }
 
+    /* subtitle — gold so it reads clearly against teal */
     .gate-header p {
-      font-size: .85rem;
-      opacity: .85;
-      line-height: 1.5;
+      font-size: .9rem;
+      color: var(--cs-gold);
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    /* desktop feature list — hidden on mobile */
+    .gate-features {
+      display: none;
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
     }
 
     .gate-body {
@@ -546,6 +556,71 @@
       color: var(--fg-2);
       line-height: 1.6;
       margin-bottom: 1.25rem;
+    }
+
+    /* ── Desktop two-column gate ── */
+    @media (min-width: 640px) {
+      #gate { padding: 2rem 1.5rem; }
+
+      .gate-card {
+        max-width: 860px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        border-radius: 16px;
+      }
+
+      .gate-header {
+        flex: 0 0 42%;
+        border-radius: 16px 0 0 16px;
+        text-align: left;
+        padding: 3rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .gate-header h1 { font-size: 2.1rem; margin-bottom: .75rem; }
+      .gate-header p  { font-size: 1rem; }
+
+      .gate-features {
+        display: block;
+        margin-top: 1.75rem;
+      }
+
+      .gate-features li {
+        font-size: .82rem;
+        color: rgba(255,255,255,.82);
+        padding: .42rem 0 .42rem 1.3rem;
+        position: relative;
+        line-height: 1.45;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+      .gate-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--cs-gold);
+        font-weight: 700;
+      }
+      .gate-features li:last-child {
+        border-bottom: none;
+        color: var(--cs-gold);
+        font-weight: 600;
+        font-size: .8rem;
+        letter-spacing: .02em;
+      }
+
+      .gate-body {
+        flex: 1;
+        padding: 2.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* left panel covers the pitch — hide the redundant body paragraph */
+      .gate-body > p:first-of-type { display: none; }
     }
 
     .checklist-preview {
@@ -671,6 +746,12 @@
       <div class="eyebrow">Free Resource from CharterSelect</div>
       <h1>Charter School Insurance<br>Renewal Report Card</h1>
       <p>Don't let your renewal sneak up on you with gaps you only discover after a claim.</p>
+      <ul class="gate-features">
+        <li>7 coverage areas every charter school must review</li>
+        <li>The gaps most common to education policies</li>
+        <li>Write-in grades + live readiness score</li>
+        <li>Free &middot; No spam &middot; Instant access</li>
+      </ul>
     </div>
     <div class="gate-body">
       <p>This report card covers the areas I review first on every charter school program — the coverage nuances, policy details, and limit structures that have the most impact when a claim happens. Written by a specialist who works exclusively with charter schools.</p>
