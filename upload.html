@@ -295,6 +295,21 @@
             }),
           });
 
+          // Step 4: capture lead in CRM sheet (fire-and-forget — never block the UX)
+          try {
+            fetch('/api/lead-capture', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                school_name:  form.school_name.trim(),
+                contact_name: form.contact_name.trim(),
+                email:        form.email.trim(),
+                source:       'policy-upload',
+                ts:           new Date().toISOString(),
+              }),
+            });
+          } catch (_) {}
+
           setProgress(100);
           setDone(true);
 

@@ -26,21 +26,22 @@ function getSheetsClient() {
 async function appendToSheet(data) {
   const sheets = getSheetsClient();
   const row = [
-    new Date().toISOString(),
-    data.school_name || '',
-    data.contact_name || '',
-    data.title || '',
-    data.email || '',
-    data.phone || '',
-    data.state || '',
-    data.campuses || '',
-    data.insurance_situation || '',
-    data.how_heard || '',
-    'New',
+    new Date().toISOString(),   // A: Timestamp
+    data.school_name    || '',  // B: School Name
+    data.contact_name   || '',  // C: Contact Name
+    data.title          || '',  // D: Title
+    data.email          || '',  // E: Email
+    data.phone          || '',  // F: Phone
+    data.state          || '',  // G: State
+    data.campuses       || '',  // H: Campuses
+    data.insurance_situation || '', // I: Situation
+    data.how_heard      || '',  // J: How Heard
+    'New',                      // K: Status
+    data.source         || '',  // L: Source  ← added
   ];
   await sheets.spreadsheets.values.append({
     spreadsheetId: SHEET_ID,
-    range: `${INBOUND_TAB}!A:K`,
+    range: `${INBOUND_TAB}!A:L`,
     valueInputOption: 'RAW',
     insertDataOption: 'INSERT_ROWS',
     requestBody: { values: [row] },
@@ -63,9 +64,16 @@ async function sendEmailNotification(data) {
     auth: { user: GMAIL_USER, pass: appPassword },
   });
 
-  const sourceLabel = data.source === 'renewal-report-card' ? '[Renewal Report Card] '
-                    : data.source === 'coverage-check'      ? '[Coverage Check] '
-                    : '';
+  const SOURCE_LABELS = {
+    'contact-form':                      '[Contact Form] ',
+    'coverage-check':                    '[Coverage Check] ',
+    'property-liability-coverage-check': '[P&L Check] ',
+    'employee-benefits-challenge':       '[Benefits Challenge] ',
+    'renewal-checklist':                 '[Renewal Checklist] ',
+    'renewal-report-card':               '[Report Card] ',
+    'policy-upload':                     '[Policy Upload] ',
+  };
+  const sourceLabel = SOURCE_LABELS[data.source] || (data.source ? `[${data.source}] ` : '');
   const subject     = `${sourceLabel}New lead: ${data.school_name || 'Unknown School'}${data.state ? ` (${data.state})` : ''}`;
 
   const lines = [
