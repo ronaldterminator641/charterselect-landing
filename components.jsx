@@ -23,7 +23,9 @@ function TopNav({ onCta }) {
     { href: '/why', label: 'Why CharterSelect' },
     { href: '/commitment', label: 'Our Commitment' },
     { href: '/about', label: 'About' },
+    { href: '/insights', label: 'Insights' },
     { href: '/renewal-report-card', label: 'Renewal Report Card' },
+    { href: '/solutions', label: 'Solutions' },
   ];
 
   React.useEffect(() => {
@@ -769,6 +771,13 @@ function Footer() {
             <h5>Coverage</h5>
             <a href="/property-liability">Property &amp; Liability</a>
             <a href="/employee-benefits">Employee Benefits</a>
+          </div>
+          <div>
+            <h5>Insights</h5>
+            <a href="/insights/charter-school-risk-governance">Governance &amp; Legal Shield</a>
+            <a href="/insights/charter-school-operations-coverage">Operational Continuity</a>
+            <a href="/insights/charter-school-liability-coverage">Daily Liability Blindspots</a>
+            <a href="/insights/charter-school-employee-benefits">Benefits Revolution</a>
           </div>
           <div>
             <h5>Company</h5>
