@@ -19,10 +19,10 @@ const EXCLUDE = new Set([
   'what-we-find.html',                           // 301-redirected to /property-liability
 ]);
 
-// Slug for a given filename (index.html → /)
+// Slug for a given root-relative path (index.html → /, dir/index.html → /dir)
 function slug(filename) {
   if (filename === 'index.html') return '/';
-  return '/' + filename.replace(/\.html$/, '');
+  return '/' + filename.replace(/\/index\.html$/, '').replace(/\.html$/, '');
 }
 
 // Priority hints — tweak as needed
@@ -38,9 +38,23 @@ function priority(s) {
   return PRIORITY[s] || '0.7';
 }
 
-const files = fs.readdirSync(ROOT)
-  .filter(f => f.endsWith('.html') && !EXCLUDE.has(f))
-  .sort();
+// Static insights pages (emitted by scripts/generate-insights.js) live in
+// nested directories — walk them in addition to the root-level pages.
+function walkHtml(dir, prefix) {
+  const out = [];
+  if (!fs.existsSync(dir)) return out;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    const rel = prefix + entry.name;
+    if (entry.isDirectory()) out.push(...walkHtml(path.join(dir, entry.name), rel + '/'));
+    else if (entry.name.endsWith('.html')) out.push(rel);
+  }
+  return out;
+}
+
+const files = [
+  ...fs.readdirSync(ROOT).filter(f => f.endsWith('.html') && !EXCLUDE.has(f)).sort(),
+  ...walkHtml(path.join(ROOT, 'insights'), 'insights/'),
+];
 
 // Last real content change per file: git commit date, not filesystem mtime.
 // (CI checkouts reset mtime to deploy time, which made every lastmod identical.)
