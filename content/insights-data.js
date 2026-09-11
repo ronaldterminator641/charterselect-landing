@@ -70,17 +70,9 @@ const ARTICLES = [
     title: 'Side A Coverage for Charter School Boards',
     metaDescription:
       'What Side A D&O coverage does for charter school board members, when it pays where the school cannot, and how to check your policy for it.',
-    // ── FULLY WIRED EXAMPLE ARTICLE ──────────────────────────────────────
-    body: `
-<p>Charter school board members serve as volunteers, but the personal financial exposure they take on is anything but symbolic. When a lawsuit names individual directors and the school itself cannot — or legally may not — indemnify them, Side A coverage is the layer of the directors &amp; officers (D&amp;O) policy that responds. (example body text)</p>
-<h2>What Side A coverage actually is</h2>
-<p>A D&amp;O policy is typically split into three insuring agreements. Side A protects individual directors and officers directly when the organization does not indemnify them. Side B reimburses the school when it does indemnify. Side C covers the entity itself.</p>
-<h3>When indemnification fails</h3>
-<p>Insolvency, statutory prohibitions, and board deadlock are the classic scenarios where a charter school cannot make its board members whole — and where Side A becomes the only thing standing between a volunteer trustee and their personal assets.</p>
-<h2>Why charter schools are different</h2>
-<p>Public funding, authorizer oversight, and open-meetings obligations create claim scenarios that ordinary nonprofit D&amp;O forms were not drafted around. A charter-specific review looks at how the policy defines "wrongful act," whether regulatory investigations are covered, and whether Side A limits are dedicated or shared.</p>
-<h2>What charter school leaders should do next</h2>
-<p>Pull your current D&amp;O policy and check three things: whether a dedicated Side A limit exists, whether it sits excess of the shared tower, and how the policy treats non-indemnifiable claims. If any of those answers is unclear, that is exactly the kind of gap a benchmark review is built to surface.</p>`,
+    // Was the fully wired example article; taken offline 2026-09-11 so the
+    // Governance hub stays unpublished until real content is ready.
+    body: PLACEHOLDER_BODY('Side A Coverage'),
   },
   {
     slug: 'crime-vs-cyber-coverage',
