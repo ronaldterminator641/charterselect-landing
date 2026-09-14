@@ -25,6 +25,7 @@ function TopNav({ onCta }) {
     { href: '/about', label: 'About' },
     { href: '/insights', label: 'Insights' },
     { href: '/renewal-report-card', label: 'Renewal Report Card' },
+    { href: '/bond-compliance-review', label: 'Bond Compliance Review' },
     { href: '/solutions', label: 'Solutions' },
   ];
 
@@ -109,6 +110,11 @@ function Hero({ onPrimary, onSecondary }) {
               <a className="cs-need-btn" href="/employee-benefits">
                 <Lucide name="heart-pulse" size={20} />
                 <span>Employee Benefits</span>
+                <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
+              </a>
+              <a className="cs-need-btn" href="/bond-compliance-review">
+                <Lucide name="file-check-2" size={20} />
+                <span>Bond holder or lender asking for an insurance review?</span>
                 <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
               </a>
               <a className="cs-need-btn" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer"
@@ -771,6 +777,7 @@ function Footer() {
             <h5>Coverage</h5>
             <a href="/property-liability">Property &amp; Liability</a>
             <a href="/employee-benefits">Employee Benefits</a>
+            <a href="/bond-compliance-review">Bond Compliance Review</a>
           </div>
           <div>
             <h5>Insights</h5>

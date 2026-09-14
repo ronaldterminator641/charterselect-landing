@@ -38,6 +38,7 @@ const NAV_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/insights', label: 'Insights' },
   { href: '/renewal-report-card', label: 'Renewal Report Card' },
+  { href: '/bond-compliance-review', label: 'Bond Compliance Review' },
 ];
 
 function head({ title, metaDescription, canonicalPath, jsonLd }) {

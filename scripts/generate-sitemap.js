@@ -33,6 +33,7 @@ const PRIORITY = {
   '/employee-benefits': '0.8',
   '/renewal-report-card': '0.8',
   '/solutions': '0.8',
+  '/bond-compliance-review': '0.9',
 };
 function priority(s) {
   return PRIORITY[s] || '0.7';
