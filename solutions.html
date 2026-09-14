@@ -36,92 +36,28 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" integrity="sha384-ZgnJ3Zpr70Xoify35DjOZWqHib1iYJBpYpQUIEpDASG9+fJ745WzNQuC004dwU0W" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="root">
-    <header><a href="/">CharterSelect</a> — Charter School Insurance Specialists</header>
-    <main>
-      <h1>Insurance built for charter schools — not adapted to them.</h1>
-      <p>Property, liability, employee benefits, and year-round risk guidance from advisors who only serve charter schools.</p>
-      <h2>Our Solutions</h2>
-      <h3>Property &amp; Liability</h3>
-      <p>Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits.</p>
-      <h3>Employee Benefits</h3>
-      <p>Health, dental, vision, and retirement plans designed for school staff, school budgets, and school calendars.</p>
-      <h3>Risk Guidance</h3>
-      <p>Year-round advisory, contract review, claims advocacy, renewal benchmarking, and board-level risk briefings. Not just a quote at renewal.</p>
-      <h3>Partnership Model</h3>
-      <p>Independent and carrier agnostic. We represent you, not the insurer who pays the biggest bonus. Responsiveness, follow-through, innovation, and expertise are core to how we operate.</p>
-      <nav><a href="/">Home</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/renewal-report-card">Renewal Report Card</a> | <a href="/bond-compliance-review">Bond Compliance Review</a> | <a href="/solutions">Solutions</a> | <a href="/contact">Get a Free Review</a></nav>
-    </main>
-    <footer><a href="/accessibility">Accessibility Statement</a></footer>
-  </div>
-  <script type="text/babel" src="components.jsx?v=12"></script>
+  <div id="root"><!--SHELL:solutions--><header><nav><a href="/">CharterSelect</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/commitment">Our Commitment</a> | <a href="/about">About</a> | <a href="/insights">Insights</a> | <a href="/renewal-report-card">Renewal Report Card</a> | <a href="/bond-compliance-review">Bond Compliance Review</a> | <a href="/solutions">Solutions</a> | <a href="/contact">Get a Free Review</a></nav></header><main><h1>Insurance built for charter schools — not adapted to them.</h1><p>Property, liability, employee benefits, and year-round risk guidance from advisors who only serve charter schools.</p><h2>Our Solutions</h2><h3>Property &amp; Liability</h3><p>Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits. These aren't edge cases - they show up in the majority of policies we review.</p><ul><li>Building, contents, and equipment coverage</li><li>General and professional liability</li><li>Educators legal liability (EPLI)</li><li>Cyber liability and data breach response</li><li>Auto and abuse / molestation coverage</li></ul><h3>Employee Benefits</h3><p>Health, dental, vision, and retirement plans designed for school staff, school budgets, and school calendars.</p><ul><li>Major medical and HSA-compatible plans</li><li>Dental, vision, life, and disability</li><li>403(b) retirement and pension alternatives</li><li>Voluntary benefits and worksite products</li><li>Open-enrollment and onboarding support</li></ul><h3>Risk Guidance</h3><p>Year-round advisory, contract review, claims advocacy, renewal benchmarking, and board level risk briefings. Not just a quote at renewal.</p><ul><li>Annual coverage and exposure review</li><li>Claims advocacy when something goes wrong</li><li>Renewal strategy and market benchmarking</li><li>Vendor and contract review</li><li>Board and board-meeting risk briefings</li></ul><h3>Partnership Model</h3><p>Independent and carrier agnostic. We represent you, not the insurer who pays the biggest bonus. Responsiveness, Follow Through, Innovation and Expertise are core to how we operate.</p><ul><li>Multi-carrier benchmarking</li><li>Transparent commission disclosure</li><li>No high-pressure annual switches</li><li>Direct line to a named advisor</li><li>Long-term renewal stewardship</li></ul><h2>From first call to long-term steward.</h2><p>Most schools come to us mid-renewal, frustrated by a process that feels rushed and opaque. We slow it down.</p><ol><li><strong>Send what you have</strong> Upload current policies, plan summaries, or last year's renewal — whatever you can find.</li><li><strong>Benchmark review</strong> Within three business days we send back a written summary of where you stand against the market.</li><li><strong>Decide</strong> Stay where you are with confidence, or let us shop the market on your behalf. No pressure.</li><li><strong>Steward</strong> If you partner with us, we stay close all year — claims, renewals, board questions, vendor changes.</li></ol><h2>Get a complimentary benchmark review.</h2><p>Send us your current policies and we'll show you where you stand — no obligation. <a href="/contact">Start a Review</a></p></main><footer><a href="/accessibility">Accessibility Statement</a></footer><!--/SHELL--></div>
+  <script src="content/pages/solutions.js"></script>
+  <script type="text/babel" src="components.jsx?v=13"></script>
   <script type="text/babel" src="_page-shell.jsx"></script>
   <script type="text/babel">
-    const SOLUTIONS = [
-      {
-        icon: 'shield-check',
-        title: 'Property & Liability',
-        body: 'Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits. These aren\'t edge cases - they show up in the majority of policies we review.',
-        items: [
-          'Building, contents, and equipment coverage',
-          'General and professional liability',
-          'Educators legal liability (EPLI)',
-          'Cyber liability and data breach response',
-          'Auto and abuse / molestation coverage',
-        ],
-      },
-      {
-        icon: 'graduation-cap',
-        title: 'Employee Benefits',
-        body: 'Health, dental, vision, and retirement plans designed for school staff, school budgets, and school calendars.',
-        items: [
-          'Major medical and HSA-compatible plans',
-          'Dental, vision, life, and disability',
-          '403(b) retirement and pension alternatives',
-          'Voluntary benefits and worksite products',
-          'Open-enrollment and onboarding support',
-        ],
-      },
-      {
-        icon: 'compass',
-        title: 'Risk Guidance',
-        body: 'Year-round advisory, contract review, claims advocacy, renewal benchmarking, and board level risk briefings. Not just a quote at renewal.',
-        items: [
-          'Annual coverage and exposure review',
-          'Claims advocacy when something goes wrong',
-          'Renewal strategy and market benchmarking',
-          'Vendor and contract review',
-          'Board and board-meeting risk briefings',
-        ],
-      },
-      {
-        icon: 'handshake',
-        title: 'Partnership Model',
-        body: 'Independent and carrier agnostic. We represent you, not the insurer who pays the biggest bonus. Responsiveness, Follow Through, Innovation and Expertise are core to how we operate.',
-        items: [
-          'Multi-carrier benchmarking',
-          'Transparent commission disclosure',
-          'No high-pressure annual switches',
-          'Direct line to a named advisor',
-          'Long-term renewal stewardship',
-        ],
-      },
-    ];
+    // All visible text comes from content/pages/solutions.js (window.__PAGE_CONTENT) —
+    // the same object scripts/generate-shells.js renders the static SEO shell
+    // from. Never hardcode copy here; edit the content module instead.
+    const C = window.__PAGE_CONTENT;
+    const S = (id) => C.sections.find(s => s.id === id);
 
-    const STEPS = [
-      { n: '01', title: 'Send what you have', body: 'Upload current policies, plan summaries, or last year\'s renewal — whatever you can find.' },
-      { n: '02', title: 'Benchmark review', body: 'Within three business days we send back a written summary of where you stand against the market.' },
-      { n: '03', title: 'Decide', body: 'Stay where you are with confidence, or let us shop the market on your behalf. No pressure.' },
-      { n: '04', title: 'Steward', body: 'If you partner with us, we stay close all year — claims, renewals, board questions, vendor changes.' },
-    ];
+    const SOLUTIONS = S('solutions-grid').items;
+    const HOW = S('how-it-works');
+    const STEPS = HOW.steps;
 
     function SolutionsPage() {
       return (
         <PageShell
           screen="Solutions"
-          eyebrow="Solutions"
-          title="Insurance built for charter schools — not adapted to them."
-          lead="Property, liability, employee benefits, and year-round risk guidance from advisors who only serve charter schools.">
+          eyebrow={C.hero.eyebrow}
+          title={C.hero.title}
+          lead={C.hero.lead}>
           <section className="cs-section" style={{paddingTop: 56, paddingBottom: 56}}>
             <div className="cs-prose">
               <div className="cs-detail-grid">
@@ -132,7 +68,7 @@
                       <h3>{s.title}</h3>
                     </div>
                     <p>{s.body}</p>
-                    <ul>{s.items.map(i => <li key={i}>{i}</li>)}</ul>
+                    <ul>{s.bullets.map(i => <li key={i}>{i}</li>)}</ul>
                   </article>
                 ))}
               </div>
@@ -141,9 +77,9 @@
 
           <section className="cs-section cs-section--cream" style={{paddingTop: 64, paddingBottom: 80}}>
             <div className="cs-prose">
-              <div className="cs-eyebrow">How it works</div>
-              <h2 style={{marginTop: 8}}>From first call to long-term steward.</h2>
-              <p>Most schools come to us mid-renewal, frustrated by a process that feels rushed and opaque. We slow it down.</p>
+              <div className="cs-eyebrow">{HOW.eyebrow}</div>
+              <h2 style={{marginTop: 8}}>{HOW.h2}</h2>
+              {HOW.paras.map(p => <p key={p.slice(0, 40)}>{p}</p>)}
               <div className="cs-steps">
                 {STEPS.map(s => (
                   <div className="cs-step" key={s.n}>
@@ -159,10 +95,10 @@
           <section className="cs-cta-strip">
             <div className="cs-cta-strip__inner">
               <div>
-                <h2>Get a complimentary benchmark review.</h2>
-                <p>Send us your current policies and we'll show you where you stand — no obligation.</p>
+                <h2>{C.cta.h2}</h2>
+                <p>{C.cta.para}</p>
               </div>
-              <a className="cs-btn cs-btn--gold" href="/contact">Start a Review <Lucide name="arrow-right" size={18} /></a>
+              <a className="cs-btn cs-btn--gold" href="/contact">{C.cta.button} <Lucide name="arrow-right" size={18} /></a>
             </div>
           </section>
         </PageShell>

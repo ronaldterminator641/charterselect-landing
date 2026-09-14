@@ -167,13 +167,26 @@
   </style>
 </head>
 <body>
-  <div id="root"><header><a href="/">CharterSelect</a> — Charter School Insurance Specialists</header><main><h1>About CharterSelect</h1><h2>Aaron Schwen — Founder, CharterSelect</h2><p>CharterSelect is the only insurance agency built exclusively for charter schools. Founded in 2011 by Aaron Schwen, we've spent over a decade building deep expertise in charter school risk — property, liability, employee benefits, and the regulatory landscape that makes charter schools different from every other education institution.</p><p>Most brokers treat charter schools like small businesses or school districts. We don't. We built our agency around charter schools because we believe that specialization leads to better outcomes — better coverage, better pricing, and a broker who actually understands your school's mission.</p><nav><a href="/">Home</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/commitment">Our Commitment</a> | <a href="/renewal-report-card">Renewal Report Card</a> | <a href="/bond-compliance-review">Bond Compliance Review</a> | <a href="/solutions">Solutions</a> | <a href="/contact">Get a Free Review</a></nav></main><footer><a href="/accessibility">Accessibility Statement</a></footer></div>
-  <script type="text/babel" src="components.jsx?v=12"></script>
+  <div id="root"><!--SHELL:about--><header><nav><a href="/">CharterSelect</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/commitment">Our Commitment</a> | <a href="/about">About</a> | <a href="/insights">Insights</a> | <a href="/renewal-report-card">Renewal Report Card</a> | <a href="/bond-compliance-review">Bond Compliance Review</a> | <a href="/solutions">Solutions</a> | <a href="/contact">Get a Free Review</a></nav></header><main><h1>Why I Built CharterSelect</h1><p>I started my career in insurance the same way most brokers do — working inside large firms with big client lists and corporate mandates. Early on I identified charter schools as an underserved niche and made a deliberate choice to go deep. What I found was a community I never expected to fall in love with.</p><p>One of my first calls from a charter school CFO came while she was driving a school bus, asking me about a workers compensation audit. That moment told me everything I needed to know about this community. Entrepreneurial, mission-driven, wearing ten hats at once, and almost always underserved by brokers who saw them as too small to matter.</p><p>I spent 15 years fighting that from the inside — pushing for better coverage, earlier renewals, and creative solutions for schools that couldn't afford to get it wrong. Too small to matter to the firm. Too important to me to accept that. So I stopped fighting from the inside and built something from scratch.</p><p>CharterSelect exists for one reason. To be the broker I always wanted to be for the schools that deserve it most. Independent, carrier-agnostic, and built entirely around your mission — not a corporation's bottom line. A portion of every policy we write goes back to the communities our schools serve, because that's what this work is actually for.</p><p>If you've ever felt like your broker doesn't really understand your world, you're probably right. Let's fix that.</p><p>The Burnt Out Educator Podcast</p><h3>When Success Isn't Enough: Aaron Schwen on Leaving Corporate to Build with Purpose</h3><p>Coach Joe sits down with Aaron to discuss why he walked away from a successful corporate insurance career to build a company centered around service instead of sales quotas.</p></main><footer><a href="/accessibility">Accessibility Statement</a></footer><!--/SHELL--></div>
+  <script src="content/pages/about.js"></script>
+  <script type="text/babel" src="components.jsx?v=13"></script>
   <script type="text/babel" src="_page-shell.jsx"></script>
   <script type="text/babel">
 
     const CALENDAR_LINK = 'https://calendar.app.google/JmcCzGBFQQdTYA1b6';
     const LINKEDIN_URL  = 'https://www.linkedin.com/in/aaron-schwen-2a80451a/';
+
+    // All visible text comes from content/pages/about.js (window.__PAGE_CONTENT) —
+    // the same object scripts/generate-shells.js renders the static SEO shell
+    // from. Never hardcode copy here; edit the content module instead.
+    const C = window.__PAGE_CONTENT;
+    const S = (id) => C.sections.find(s => s.id === id);
+
+    const SIDEBAR = S('sidebar');
+    const LETTER = S('letter');
+    const CLOSING = S('closing');
+    const PODCAST = S('podcast');
+    const PODCAST_EP = PODCAST.items[0];
 
     function AboutPage() {
       const hasPhoto = true;
@@ -185,9 +198,9 @@
           {/* ── Page hero ── */}
           <section className="cs-page-hero">
             <div className="cs-page-hero__inner">
-              <a className="cs-back" href="/"><Lucide name="arrow-left" size={14} /> Back to home</a>
-              <div className="cs-eyebrow">Message from the Founder</div>
-              <h1 className="cs-page-hero__title">Why I Built CharterSelect</h1>
+              <a className="cs-back" href="/"><Lucide name="arrow-left" size={14} /> {C.hero.back}</a>
+              <div className="cs-eyebrow">{C.hero.eyebrow}</div>
+              <h1 className="cs-page-hero__title">{C.hero.title}</h1>
             </div>
           </section>
 
@@ -200,44 +213,33 @@
                 <div className="founder-photo">
                   <div className="founder-photo__inner">
                     <div className="founder-photo__front">
-                      <img src="assets/aaron-schwen-sm.jpg" alt="Aaron Schwen, Founder of CharterSelect" />
+                      <img src="assets/aaron-schwen-sm.jpg" alt={SIDEBAR.alts.front} />
                     </div>
                     <div className="founder-photo__back">
-                      <img src="assets/aaron-schwen-childhood.webp" alt="Young Aaron on the farm" />
+                      <img src="assets/aaron-schwen-childhood.webp" alt={SIDEBAR.alts.back} />
                     </div>
                   </div>
                 </div>
-                <p className="founder-photo__hint">hover for the origin story</p>
-                <h2 className="founder-name">Aaron Schwen</h2>
-                <p className="founder-title">Founder, CharterSelect</p>
+                <p className="founder-photo__hint">{SIDEBAR.hint}</p>
+                <h2 className="founder-name">{SIDEBAR.name}</h2>
+                <p className="founder-title">{SIDEBAR.title}</p>
                 <div className="founder-social">
                   <a className="cs-btn cs-btn--primary cs-btn--sm" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
                     <Lucide name="calendar" size={15} />
-                    Book a Benchmark Review
+                    {SIDEBAR.buttons.calendar}
                   </a>
                   <a className="cs-btn cs-btn--secondary cs-btn--sm" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                     <Lucide name="linkedin" size={15} />
-                    Connect on LinkedIn
+                    {SIDEBAR.buttons.linkedin}
                   </a>
                 </div>
               </div>
 
               {/* Right: letter */}
               <div className="founder-letter">
-                <p>
-                  I started my career in insurance the same way most brokers do — working inside large firms with big client lists and corporate mandates. Early on I identified charter schools as an underserved niche and made a deliberate choice to go deep. What I found was a community I never expected to fall in love with.
-                </p>
-                <p>
-                  One of my first calls from a charter school CFO came while she was driving a school bus, asking me about a workers compensation audit. That moment told me everything I needed to know about this community. Entrepreneurial, mission-driven, wearing ten hats at once, and almost always underserved by brokers who saw them as too small to matter.
-                </p>
-                <p>
-                  I spent 15 years fighting that from the inside — pushing for better coverage, earlier renewals, and creative solutions for schools that couldn't afford to get it wrong. Too small to matter to the firm. Too important to me to accept that. So I stopped fighting from the inside and built something from scratch.
-                </p>
-                <p>
-                  CharterSelect exists for one reason. To be the broker I always wanted to be for the schools that deserve it most. Independent, carrier-agnostic, and built entirely around your mission — not a corporation's bottom line. A portion of every policy we write goes back to the communities our schools serve, because that's what this work is actually for.
-                </p>
+                {LETTER.paras.map(p => <p key={p.slice(0, 40)}>{p}</p>)}
                 <div className="founder-closing">
-                  If you've ever felt like your broker doesn't really understand your world, you're probably right. Let's fix that.
+                  {CLOSING.paras[0]}
                 </div>
               </div>
 
@@ -247,7 +249,7 @@
           {/* ── Podcast ── */}
           <section className="cs-section cs-section--cream" style={{paddingTop: 56, paddingBottom: 72}}>
             <div className="cs-prose">
-              <div className="cs-eyebrow" style={{marginBottom: 24}}>Recently Featured</div>
+              <div className="cs-eyebrow" style={{marginBottom: 24}}>{PODCAST.eyebrow}</div>
               <div className="cs-podcast-card">
                 <div className="cs-podcast-art">
                   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,9 +260,9 @@
                   </svg>
                 </div>
                 <div className="cs-podcast-body">
-                  <p className="cs-podcast-show">The Burnt Out Educator Podcast</p>
-                  <h2 className="cs-podcast-title">When Success Isn't Enough: Aaron Schwen on Leaving Corporate to Build with Purpose</h2>
-                  <p className="cs-podcast-desc">Coach Joe sits down with Aaron to discuss why he walked away from a successful corporate insurance career to build a company centered around service instead of sales quotas.</p>
+                  <p className="cs-podcast-show">{PODCAST.paras[0]}</p>
+                  <h2 className="cs-podcast-title">{PODCAST_EP.title}</h2>
+                  <p className="cs-podcast-desc">{PODCAST_EP.body}</p>
                   <div className="cs-podcast-links">
                     <a
                       className="cs-podcast-btn cs-podcast-btn--apple"
@@ -269,7 +271,7 @@
                       rel="noopener noreferrer"
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a3 3 0 110 6 3 3 0 010-6zm0 14.5a7.5 7.5 0 01-6-3c.017-1.996 4-3.1 6-3.1s5.983 1.104 6 3.1a7.5 7.5 0 01-6 3z"/></svg>
-                      Listen on Apple Podcasts
+                      {PODCAST.buttons.apple}
                     </a>
                     <a
                       className="cs-podcast-btn cs-podcast-btn--spotify"
@@ -278,7 +280,7 @@
                       rel="noopener noreferrer"
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.723a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.973c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 11-.543-1.794c3.532-1.072 9.404-.865 13.115 1.338a.937.937 0 11-.955 1.612z"/></svg>
-                      Listen on Spotify
+                      {PODCAST.buttons.spotify}
                     </a>
                   </div>
                 </div>

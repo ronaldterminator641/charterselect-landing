@@ -85,42 +85,44 @@ function TopNav({ onCta }) {
 }
 
 /* ---------- Hero ---------- */
+// Home-page components below read ALL visible copy from window.__PAGE_CONTENT
+// (content/pages/home.js) — the same object scripts/generate-shells.js renders
+// the static SEO shell from. Never hardcode copy here; edit the content module.
+// They are only rendered on index.html, where that module is loaded.
+// TopNav and Footer are shared across pages and must NOT read __PAGE_CONTENT.
+const homeSection = (id) => window.__PAGE_CONTENT.sections.find(s => s.id === id);
+
 function Hero({ onPrimary, onSecondary }) {
+  const H = window.__PAGE_CONTENT.hero;
+  const NEED = homeSection('need-selector');
+  const [regular, gold] = [NEED.items.filter(i => !i.gold), NEED.items.find(i => i.gold)];
   return (
     <section className="cs-hero" id="main-content">
       <div className="cs-hero__inner">
         <div className="cs-hero__copy">
-          <div className="cs-eyebrow" style={{fontSize:11, letterSpacing:'0.1em', marginBottom:8}}>Property &amp; Liability Insurance</div>
+          <div className="cs-eyebrow" style={{fontSize:11, letterSpacing:'0.1em', marginBottom:8}}>{H.eyebrow}</div>
           <h1 className="cs-display" style={{marginTop:0}}>
-            Protection<br/>with purpose.
+            {H.titleLines[0]}<br/>{H.titleLines[1]}
           </h1>
           <p className="cs-lead">
-            Any insurance you need — built for charter schools, not adapted to them. We protect what matters so you can focus on students, growth, and your mission.
+            {H.lead}
           </p>
 
           {/* ── Need selector ── */}
           <div className="cs-need-selector">
-            <p className="cs-need-selector__label">What are you looking for?</p>
+            <p className="cs-need-selector__label">{NEED.label}</p>
             <div className="cs-need-selector__btns">
-              <a className="cs-need-btn" href="/property-liability">
-                <Lucide name="shield" size={20} />
-                <span>Property &amp; Liability Insurance</span>
-                <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
-              </a>
-              <a className="cs-need-btn" href="/employee-benefits">
-                <Lucide name="heart-pulse" size={20} />
-                <span>Employee Benefits</span>
-                <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
-              </a>
-              <a className="cs-need-btn" href="/bond-compliance-review">
-                <Lucide name="file-check-2" size={20} />
-                <span>Bond holder or lender asking for an insurance review?</span>
-                <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
-              </a>
+              {regular.map(it => (
+                <a className="cs-need-btn" href={it.href} key={it.title}>
+                  <Lucide name={it.icon} size={20} />
+                  <span>{it.title}</span>
+                  <Lucide name="arrow-right" size={16} className="cs-need-btn__arrow" />
+                </a>
+              ))}
               <a className="cs-need-btn" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer"
                 style={{background:'#FBBF24', borderColor:'#FBBF24', color:'#1F2937'}}>
-                <i data-lucide="star" style={{width:20, height:20, color:'#1F2937', flexShrink:0}} aria-hidden="true" />
-                <span>Both — I want a full coverage review</span>
+                <i data-lucide={gold.icon} style={{width:20, height:20, color:'#1F2937', flexShrink:0}} aria-hidden="true" />
+                <span>{gold.title}</span>
                 <i data-lucide="arrow-right" style={{width:16, height:16, color:'#1F2937', opacity:0.7, flexShrink:0}} aria-hidden="true" />
               </a>
             </div>
@@ -129,12 +131,12 @@ function Hero({ onPrimary, onSecondary }) {
           <div className="cs-hero__actions" style={{marginTop: 24}}>
             <button className="cs-btn cs-btn--secondary" onClick={() => window.open(CALENDAR_LINK, '_blank')}>
               <Lucide name="calendar" size={16} />
-              Book a 20-min Call
+              {H.bookCall}
             </button>
           </div>
           <div className="cs-hero__trust">
             <Lucide name="shield-check" size={16} />
-            <span>Complimentary benchmark review · No obligation</span>
+            <span>{H.trust}</span>
           </div>
         </div>
         <div className="cs-hero__art">
@@ -147,25 +149,20 @@ function Hero({ onPrimary, onSecondary }) {
 
 /* ---------- Stats Bar ---------- */
 function StatsBar() {
-  const stats = [
-    { num: '90+', label: 'Schools Helped' },
-    { num: '250+', label: 'Campuses' },
-    { num: '2011', label: 'Serving Since' },
-    { kind: 'usa', label: 'Nationwide' },
-  ];
+  const stats = homeSection('stats').items;
   return (
     <section className="cs-stats" aria-label="Company statistics">
       <div className="cs-stats__inner">
         {stats.map(s => (
-          <div className="cs-stat" key={s.label}>
+          <div className="cs-stat" key={s.kind === 'usa' ? s.title : s.body}>
             {s.kind === 'usa' ? (
               <div className="cs-stat__usa" aria-label="United States">
                 <img src="assets/usa-outline-transparent.png" alt="United States map" />
               </div>
             ) : (
-              <div className="cs-stat__num">{s.num}</div>
+              <div className="cs-stat__num">{s.title}</div>
             )}
-            <div className="cs-stat__lbl">{s.label}</div>
+            <div className="cs-stat__lbl">{s.kind === 'usa' ? s.title : s.body}</div>
           </div>
         ))}
       </div>
@@ -175,21 +172,16 @@ function StatsBar() {
 
 /* ---------- Solutions / Value Props ---------- */
 function Solutions() {
-  const items = [
-    { icon: 'shield-check', title: 'Property & Liability', body: 'Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits.' },
-    { icon: 'graduation-cap', title: 'Employee Benefits', body: 'We take enrollment, billing, and claims questions off your HR coordinator\'s plate. One-on-one support for every employee, a concierge that fights surprise bills, and funding structures that put pharmacy rebates back in your budget.' },
-    { icon: 'compass', title: 'Risk Guidance', body: 'Year-round advisory, contract review, claims advocacy, renewal benchmarking, and board level risk briefings. Not just a quote at renewal.' },
-    { icon: 'handshake', title: 'Partnership Model', body: 'Independent and carrier agnostic. We represent you, not the insurer who pays the biggest bonus. Responsiveness, Follow Through, Innovation and Expertise are core to how we operate.' },
-  ];
+  const SEC = homeSection('solutions');
   return (
     <section className="cs-section" id="solutions">
       <div className="cs-section__inner">
         <div className="cs-section__head">
-          <div className="cs-eyebrow">Solutions</div>
-          <h2>Insurance built for charter schools — not adapted to them.</h2>
+          <div className="cs-eyebrow">{SEC.eyebrow}</div>
+          <h2>{SEC.h2}</h2>
         </div>
         <div className="cs-grid cs-grid--4">
-          {items.map(it => (
+          {SEC.items.map(it => (
             <article className="cs-card" key={it.title}>
               <div className="cs-card__icon"><Lucide name={it.icon} size={22} /></div>
               <h4 className="cs-card__title">{it.title}</h4>
@@ -199,7 +191,7 @@ function Solutions() {
         </div>
         <div style={{textAlign:'center', marginTop:40}}>
           <a className="cs-btn cs-btn--primary" href="/contact" style={{textDecoration:'none'}}>
-            <Lucide name="shield-check" size={16} /> Get a Free Coverage Review
+            <Lucide name="shield-check" size={16} /> {SEC.button}
           </a>
         </div>
       </div>
@@ -209,6 +201,8 @@ function Solutions() {
 
 /* ---------- Featured Testimonial (standalone, appears before WhyUs) ---------- */
 function FeaturedTestimonial() {
+  const SEC = homeSection('featured-quote');
+  const Q = SEC.quotes[0];
   return (
     <section style={{background:'var(--cs-teal)', padding:'80px 32px'}}>
       <div style={{maxWidth:860, margin:'0 auto'}}>
@@ -216,7 +210,7 @@ function FeaturedTestimonial() {
         <div style={{display:'flex', justifyContent:'center', marginBottom:32}}>
           <div style={{display:'inline-flex', alignItems:'center', gap:8, background:'rgba(255,255,255,0.12)', border:'1px solid rgba(255,255,255,0.25)', borderRadius:999, padding:'7px 18px', fontSize:12, fontWeight:700, letterSpacing:'0.13em', textTransform:'uppercase', color:'var(--cs-gold)'}}>
             <Lucide name="check-circle" size={13} color="var(--cs-gold)" />
-            Saved nearly $100K annually · Same or better coverage
+            {SEC.badge}
           </div>
         </div>
 
@@ -229,20 +223,20 @@ function FeaturedTestimonial() {
 
         {/* Quote text */}
         <p style={{fontFamily:'var(--font-display)', fontWeight:400, fontStyle:'italic', fontSize:'clamp(1.35rem, 2.8vw, 1.75rem)', lineHeight:1.5, color:'#fff', textAlign:'center', margin:'0 0 40px', letterSpacing:'-0.01em'}}>
-          Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to.
+          {Q.quote}
         </p>
 
         {/* Attribution with headshot */}
         <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:20}}>
           <img
-            src="randal.jpeg"
-            alt="Randal C. Shaffer"
+            src={Q.image}
+            alt={Q.name}
             style={{width:72, height:72, borderRadius:'50%', objectFit:'cover', objectPosition:'center top', border:'3px solid var(--cs-gold)', flexShrink:0, boxShadow:'0 4px 16px rgba(0,0,0,0.25)'}}
           />
           <div>
-            <div style={{fontFamily:'var(--font-body)', fontWeight:700, fontSize:16, color:'#fff', marginBottom:3}}>Randal C. Shaffer</div>
-            <div style={{fontSize:13, color:'rgba(255,255,255,0.7)', lineHeight:1.4}}>CEO / Superintendent · Trinity Basin Preparatory</div>
-            <div style={{fontSize:12, color:'rgba(255,255,255,0.5)', marginTop:4, fontStyle:'italic'}}>February 2017</div>
+            <div style={{fontFamily:'var(--font-body)', fontWeight:700, fontSize:16, color:'#fff', marginBottom:3}}>{Q.name}</div>
+            <div style={{fontSize:13, color:'rgba(255,255,255,0.7)', lineHeight:1.4}}>{Q.role}</div>
+            <div style={{fontSize:12, color:'rgba(255,255,255,0.5)', marginTop:4, fontStyle:'italic'}}>{Q.date}</div>
           </div>
         </div>
       </div>
@@ -251,26 +245,9 @@ function FeaturedTestimonial() {
 }
 
 /* ---------- Why CharterSelect (split) ---------- */
-const TESTIMONIALS = [
-  {
-    outcome: 'Trusted partner · Recommended without hesitation',
-    quote: "Aaron is one of the hardest working partners I've had the good fortune to come across.",
-    name: "Stacey Lawrence",
-    role: "CEO & Founder",
-    school: "GrowthFit Partners LLC",
-    photo: "stacey.jpeg",
-  },
-  {
-    found: 'Gap found: Workers Comp missing entirely — school carrying exposure without knowing it',
-    outcome: 'Workers Comp added · No premium increase · Coverage gap closed',
-    quote: "He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.",
-    name: "HR Manager & Business Manager · September 2018",
-    role: "Newman International Academy",
-    school: "",
-  },
-];
-
 function WhyUs() {
+  const SEC = homeSection('why-us');
+  const TESTIMONIALS = SEC.quotes;
   const [idx, setIdx] = React.useState(0);
   const total = TESTIMONIALS.length;
   const t = TESTIMONIALS[idx];
@@ -301,12 +278,7 @@ function WhyUs() {
     touchStartX.current = null;
   };
 
-  const points = [
-    'Specialists who only serve charter schools — not one of 500 client types.',
-    'Independent and carrier-agnostic. We tell you when to stay put.',
-    'We name what your current broker hasn\'t flagged — umbrella gaps on educators legal liability, retroactive date errors, and D&O coverage that is leaving millions of coverage on the table.',
-    'A portion of every policy we write supports the communities your school serves.',
-  ];
+  const points = SEC.bullets;
 
   const btnStyle = {
     width: 44, height: 44, borderRadius: '50%', border: '2px solid var(--cs-teal)',
@@ -320,10 +292,10 @@ function WhyUs() {
     <section className="cs-section cs-section--cream" id="why">
       <div className="cs-section__inner cs-split">
         <div>
-          <div className="cs-eyebrow">Why CharterSelect</div>
-          <h2>Solutions built for your mission.</h2>
+          <div className="cs-eyebrow">{SEC.eyebrow}</div>
+          <h2>{SEC.h2}</h2>
           <p className="cs-lead">
-            Charter schools operate differently than districts and differently from one another. We bring the patience to listen and the depth to act.
+            {SEC.paras[0]}
           </p>
           <ul className="cs-checklist">
             {points.map(p => (
@@ -417,13 +389,9 @@ function getPeerStat(topId) {
 }
 
 function UploadCta() {
-  const ITEMS = [
-    { id: 0, text: 'Your umbrella policy isn\'t sitting over your Educators Legal Liability coverage — leaving you exposed and missing out on millions in potential coverage.' },
-    { id: 1, text: 'A clog in a second-floor bathroom causes a six-figure water damage claim — but your sublimit for this type of loss is only $25,000.' },
-    { id: 2, text: 'Your campus suffers a total loss and faces a year-long construction project to rebuild. You have no coverage to rent temporary school space in the meantime.' },
-    { id: 3, text: 'A fraudulent invoice is paid via ACH — there\'s no coverage and no way to recover the funds.' },
-    { id: 4, text: 'A student is seriously injured during a school-sponsored activity — the parents have no health insurance, and there\'s no coverage to help with medical bills.' },
-  ];
+  const SEC = homeSection('coverage-check');
+  const FORM = SEC.form;
+  const ITEMS = SEC.bullets.map((text, id) => ({ id, text }));
 
   const [items, setItems] = React.useState(ITEMS);
   const [dragging, setDragging] = React.useState(null);
@@ -600,15 +568,15 @@ function UploadCta() {
   return (
     <section className="cs-section cs-section--teal" id="contact">
       <div className="cs-section__inner" style={{maxWidth: 820}}>
-        <div className="cs-eyebrow cs-eyebrow--on-teal">Charter School Coverage Check</div>
-        <h2 className="cs-h2-on-teal">Rank these coverage areas by how much they concern you.</h2>
+        <div className="cs-eyebrow cs-eyebrow--on-teal">{SEC.eyebrow}</div>
+        <h2 className="cs-h2-on-teal">{SEC.h2}</h2>
         <p className="cs-lead-on-teal" style={{marginBottom: 32}}>
-          Tap and drag to reorder — most concerning at the top. We'll start your benchmark review there.
+          {SEC.paras[0]}
         </p>
 
         {/* ── Ranking rows ── */}
         <p className="cs-sr-only" id="rank-instructions">
-          Use arrow keys to reorder items. Drag and drop also supported with a mouse or touch.
+          {FORM.srInstructions}
         </p>
         <div
           className="cs-rank"
@@ -652,11 +620,11 @@ function UploadCta() {
             <div style={{display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8}}>
               <Lucide name="check-circle" size={20} color="var(--cs-gold)" style={{flexShrink: 0, marginTop: 2}} />
               <p style={{margin: 0, color: '#fff', fontWeight: 600, fontSize: 15, lineHeight: 1.5}}>
-                Your #1 concern: <span style={{color: 'var(--cs-gold)'}}>{items[0].text}</span>
+                {FORM.topConcernPrefix} <span style={{color: 'var(--cs-gold)'}}>{items[0].text}</span>
               </p>
             </div>
             <p style={{margin: '0 0 4px', color: 'rgba(255,255,255,0.75)', fontSize: 14, lineHeight: 1.6}}>
-              Enter your name and email to submit your ranking and see how you compare to other charter school leaders.
+              {FORM.prompt}
             </p>
             <form onSubmit={handleSubmit} style={{width: '100%'}}>
               {/* Honeypot: hidden from humans, bots fill it → server discards the submission */}
@@ -665,28 +633,28 @@ function UploadCta() {
                      style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0}} />
               <div className="cs-upload__fields">
                 <div className="cs-upload__field">
-                  <label className="cs-upload__label" htmlFor="cc-name">Your Name <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
-                  <input id="cc-name" className="cs-upload__input" type="text" placeholder="Jane Smith" value={contactName} onChange={e => setContactName(e.target.value)} required aria-required="true" />
+                  <label className="cs-upload__label" htmlFor="cc-name">{FORM.nameLabel} <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
+                  <input id="cc-name" className="cs-upload__input" type="text" placeholder={FORM.namePlaceholder} value={contactName} onChange={e => setContactName(e.target.value)} required aria-required="true" />
                 </div>
                 <div className="cs-upload__field">
-                  <label className="cs-upload__label" htmlFor="cc-school">School Name <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
-                  <input id="cc-school" className="cs-upload__input" type="text" placeholder="Lincoln Charter Academy" value={schoolName} onChange={e => setSchoolName(e.target.value)} required aria-required="true" />
+                  <label className="cs-upload__label" htmlFor="cc-school">{FORM.schoolLabel} <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
+                  <input id="cc-school" className="cs-upload__input" type="text" placeholder={FORM.schoolPlaceholder} value={schoolName} onChange={e => setSchoolName(e.target.value)} required aria-required="true" />
                 </div>
                 <div className="cs-upload__field">
-                  <label className="cs-upload__label" htmlFor="cc-email">Your Email <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
-                  <input id="cc-email" className="cs-upload__input" type="email" placeholder="jane@yourschool.org" value={contactEmail} onChange={e => setContactEmail(e.target.value)} required aria-required="true" />
+                  <label className="cs-upload__label" htmlFor="cc-email">{FORM.emailLabel} <span aria-hidden="true">*</span><span className="cs-sr-only">(required)</span></label>
+                  <input id="cc-email" className="cs-upload__input" type="email" placeholder={FORM.emailPlaceholder} value={contactEmail} onChange={e => setContactEmail(e.target.value)} required aria-required="true" />
                 </div>
               </div>
               {submitError && <div className="cs-upload__error" role="alert">{submitError}</div>}
               <button type="submit" className="cs-btn cs-btn--gold cs-upload__submit" disabled={!canSubmit}>
                 {submitting
-                  ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> Submitting…</>
-                  : <><Lucide name="bar-chart-2" size={16} /> Submit My Rankings</>
+                  ? <><span className="cs-upload__spinner"><Lucide name="loader" size={16} /></span> {FORM.submitting}</>
+                  : <><Lucide name="bar-chart-2" size={16} /> {FORM.submit}</>
                 }
               </button>
               <div className="cs-upload__lock" style={{justifyContent: 'center'}}>
                 <Lucide name="lock" size={13} />
-                <span>Your info stays private · No sales call required · No obligation</span>
+                <span>{FORM.privacy}</span>
               </div>
             </form>
           </div>
@@ -714,7 +682,7 @@ function UploadCta() {
                 style={{display: 'inline-flex', alignItems: 'center', gap: 8, textDecoration: 'none', flex: 1, justifyContent: 'center'}}
               >
                 <Lucide name="calendar" size={16} />
-                Book a 20-min Call
+                {FORM.bookCall}
               </a>
             </div>
           </div>
@@ -726,17 +694,18 @@ function UploadCta() {
 
 /* ---------- Community / Stronger Together ---------- */
 function Community() {
+  const SEC = homeSection('community');
   return (
     <section className="cs-section cs-section--cream" id="community">
       <div className="cs-section__inner cs-community">
         <div className="cs-community__copy">
-          <div className="cs-eyebrow">Stronger Together</div>
-          <h2>Strong schools build strong communities.</h2>
+          <div className="cs-eyebrow">{SEC.eyebrow}</div>
+          <h2>{SEC.h2}</h2>
           <p className="cs-lead">
-            A portion of CharterSelect revenue supports the nonprofits and community initiatives that make a lasting impact alongside the schools we serve.
+            {SEC.paras[0]}
           </p>
           <a className="cs-btn cs-btn--primary" href="/commitment" style={{textDecoration:'none', marginTop:8, alignSelf:'flex-start'}}>
-            Our Commitment <Lucide name="arrow-right" size={16} />
+            {SEC.button} <Lucide name="arrow-right" size={16} />
           </a>
         </div>
         <div className="cs-community__seal">

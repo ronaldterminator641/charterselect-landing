@@ -45,35 +45,28 @@
 </style>
 </head>
 <body>
-  <div id="root"><header><a href="/">CharterSelect</a> — Charter School Insurance Specialists</header><main><h1>Strong schools build strong communities.</h1><p>CharterSelect was founded on a simple idea: insurance done well puts more money back into classrooms and more support back into communities.</p><h2>Our Commitment to Charter Schools</h2><p>Every dollar we save a charter school on insurance is a dollar that can stay in the classroom — for teachers, students, and the operations that hold a campus together. That's not a marketing line. It's the reason we built this agency exclusively for charter schools and why we've stayed focused on nothing else since 2011.</p><nav><a href="/">Home</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/about">About</a> | <a href="/renewal-report-card">Renewal Report Card</a> | <a href="/bond-compliance-review">Bond Compliance Review</a> | <a href="/solutions">Solutions</a> | <a href="/contact">Get a Free Review</a></nav></main><footer><a href="/accessibility">Accessibility Statement</a></footer></div>
-  <script type="text/babel" src="components.jsx?v=12"></script>
+  <div id="root"><!--SHELL:commitment--><header><nav><a href="/">CharterSelect</a> | <a href="/property-liability">Property &amp; Liability</a> | <a href="/employee-benefits">Employee Benefits</a> | <a href="/why">Why CharterSelect</a> | <a href="/commitment">Our Commitment</a> | <a href="/about">About</a> | <a href="/insights">Insights</a> | <a href="/renewal-report-card">Renewal Report Card</a> | <a href="/bond-compliance-review">Bond Compliance Review</a> | <a href="/solutions">Solutions</a> | <a href="/contact">Get a Free Review</a></nav></header><main><h1>Strong schools build strong communities.</h1><p>CharterSelect was founded on a simple idea: insurance done well puts more money back into classrooms and more support back into communities.</p><h3>Strong schools.</h3><p>Every dollar saved on insurance is a dollar that can stay in the classroom — for teachers, students, and the operations that hold a campus together.</p><h3>Strong communities.</h3><p>A portion of CharterSelect revenue is directed to nonprofits and community initiatives that work alongside the schools we serve.</p><h3>Honest counsel.</h3><p>We tell schools when to switch and when to stay. The relationship matters more than any single renewal — and that's how we measure ourselves.</p><h2>A portion of every policy supports the work around the school.</h2><p>Charter schools rarely operate in isolation. The strongest campuses sit inside neighborhoods full of nonprofits, mentors, and family-support organizations doing the quieter work — the work that lets a child show up ready to learn.</p><p>CharterSelect commits a share of revenue each year to those organizations. We let school leaders nominate causes that matter in their communities, and we publish where the funds go.</p><p>It's a small thing in any single year. Over a decade of partnership, it adds up.</p><h2>What you can expect from us.</h2><ol><li><strong>Fellow Disrupters.</strong> We believe there's a better way to do things, and constantly evaluate and bring fresh strategies to the table.</li><li><strong>Independent advice.</strong> We benchmark across carriers and tell you when to stay put.</li><li><strong>Responsiveness.</strong> Not having to follow up with us allows you to focus on running the school.</li><li><strong>A named advisor.</strong> No need to remember a depth chart — you know who to call, text, or email and we'll take care of the rest.</li><li><strong>Year-round availability.</strong> Renewals are a moment, not the relationship.</li><li><strong>Mission alignment.</strong> A portion of revenue supports the communities you serve.</li></ol><h2>Let's start a conversation.</h2><p>Whether you're due for a renewal or just curious how your coverage compares, we'd love to hear from you. <a href="/contact">Book a Call</a></p></main><footer><a href="/accessibility">Accessibility Statement</a></footer><!--/SHELL--></div>
+  <script src="content/pages/commitment.js"></script>
+  <script type="text/babel" src="components.jsx?v=13"></script>
   <script type="text/babel" src="_page-shell.jsx"></script>
   <script type="text/babel">
-    const PILLARS = [
-      {
-        icon: 'sprout',
-        title: 'Strong schools.',
-        body: 'Every dollar saved on insurance is a dollar that can stay in the classroom — for teachers, students, and the operations that hold a campus together.',
-      },
-      {
-        icon: 'users-round',
-        title: 'Strong communities.',
-        body: 'A portion of CharterSelect revenue is directed to nonprofits and community initiatives that work alongside the schools we serve.',
-      },
-      {
-        icon: 'compass',
-        title: 'Honest counsel.',
-        body: 'We tell schools when to switch and when to stay. The relationship matters more than any single renewal — and that\'s how we measure ourselves.',
-      },
-    ];
+    // All visible text comes from content/pages/commitment.js (window.__PAGE_CONTENT) —
+    // the same object scripts/generate-shells.js renders the static SEO shell
+    // from. Never hardcode copy here; edit the content module instead.
+    const C = window.__PAGE_CONTENT;
+    const S = (id) => C.sections.find(s => s.id === id);
+
+    const PILLARS = S('pillars').items;
+    const GIVING = S('giving');
+    const PROMISE = S('promise');
 
     function CommitmentPage() {
       return (
         <PageShell
           screen="Our Commitment"
-          eyebrow="Stronger Together"
-          title="Strong schools build strong communities."
-          lead="CharterSelect was founded on a simple idea: insurance done well puts more money back into classrooms and more support back into communities.">
+          eyebrow={C.hero.eyebrow}
+          title={C.hero.title}
+          lead={C.hero.lead}>
           <section className="cs-section" style={{paddingTop: 56, paddingBottom: 64}}>
             <div className="cs-prose">
               <div className="cs-detail-grid cs-detail-grid--3">
@@ -94,14 +87,12 @@
             <div className="cs-prose">
               <div className="cs-giving-grid">
                 <div>
-                  <div className="cs-eyebrow">Where the giving goes</div>
-                  <h2 style={{marginTop: 8}}>A portion of every policy supports the work around the school.</h2>
-                  <p>Charter schools rarely operate in isolation. The strongest campuses sit inside neighborhoods full of nonprofits, mentors, and family-support organizations doing the quieter work — the work that lets a child show up ready to learn.</p>
-                  <p>CharterSelect commits a share of revenue each year to those organizations. We let school leaders nominate causes that matter in their communities, and we publish where the funds go.</p>
-                  <p>It's a small thing in any single year. Over a decade of partnership, it adds up.</p>
+                  <div className="cs-eyebrow">{GIVING.eyebrow}</div>
+                  <h2 style={{marginTop: 8}}>{GIVING.h2}</h2>
+                  {GIVING.paras.map(p => <p key={p.slice(0, 40)}>{p}</p>)}
                 </div>
                 <div className="cs-community__seal">
-                  <img src="assets/logo-badge.png" alt="CharterSelect badge" />
+                  <img src="assets/logo-badge.png" alt={GIVING.sealAlt} />
                 </div>
               </div>
             </div>
@@ -109,15 +100,12 @@
 
           <section className="cs-section" style={{paddingTop: 64, paddingBottom: 64}}>
             <div className="cs-prose">
-              <div className="cs-eyebrow">Our promise</div>
-              <h2 style={{marginTop: 8}}>What you can expect from us.</h2>
+              <div className="cs-eyebrow">{PROMISE.eyebrow}</div>
+              <h2 style={{marginTop: 8}}>{PROMISE.h2}</h2>
               <ul>
-                <li><strong>Fellow Disrupters.</strong> We believe there's a better way to do things, and constantly evaluate and bring fresh strategies to the table.</li>
-                <li><strong>Independent advice.</strong> We benchmark across carriers and tell you when to stay put.</li>
-                <li><strong>Responsiveness.</strong> Not having to follow up with us allows you to focus on running the school.</li>
-                <li><strong>A named advisor.</strong> No need to remember a depth chart — you know who to call, text, or email and we'll take care of the rest.</li>
-                <li><strong>Year-round availability.</strong> Renewals are a moment, not the relationship.</li>
-                <li><strong>Mission alignment.</strong> A portion of revenue supports the communities you serve.</li>
+                {PROMISE.steps.map(st => (
+                  <li key={st.title}><strong>{st.title}</strong> {st.body}</li>
+                ))}
               </ul>
             </div>
           </section>
@@ -125,17 +113,17 @@
           <section className="cs-cta-strip">
             <div className="cs-cta-strip__inner">
               <div>
-                <h2>Let's start a conversation.</h2>
-                <p>Whether you're due for a renewal or just curious how your coverage compares, we'd love to hear from you.</p>
+                <h2>{C.cta.h2}</h2>
+                <p>{C.cta.para}</p>
               </div>
               <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
                 <a className="cs-btn cs-btn--gold" href="https://calendar.app.google/JmcCzGBFQQdTYA1b6" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}>
                   <Lucide name="calendar" size={18} />
-                  Book a Call
+                  {C.cta.button}
                 </a>
                 <a className="cs-btn" href="mailto:aschwen@charterselect.com" style={{textDecoration:'none', background:'transparent', border:'1.5px solid rgba(255,255,255,0.4)', color:'#fff'}}>
                   <Lucide name="mail" size={18} />
-                  Send an Email
+                  {C.cta.button2}
                 </a>
               </div>
             </div>
