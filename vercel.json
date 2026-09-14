@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm install && node scripts/generate-insights.js && node scripts/generate-sitemap.js && node scripts/ping-sitemap.js",
+  "buildCommand": "npm install && node scripts/generate-insights.js && node scripts/generate-shells.js && node scripts/generate-sitemap.js && node scripts/ping-sitemap.js",
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
