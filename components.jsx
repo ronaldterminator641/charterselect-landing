@@ -750,8 +750,10 @@ function Footer() {
           </div>
           <div>
             <h5>Insights</h5>
+            <a href="/insights/charter-school-risk-governance">Governance &amp; Legal Shield</a>
+            <a href="/insights/charter-school-operations-coverage">Operational Continuity</a>
+            <a href="/insights/charter-school-liability-coverage">Daily Liability Blindspots</a>
             <a href="/insights/charter-school-employee-benefits">Benefits Revolution</a>
-            <a href="/insights/charter-school-employee-benefits/benefits-transparency-audit">Benefits Transparency Audit</a>
           </div>
           <div>
             <h5>Company</h5>
