@@ -9,10 +9,8 @@ cd "$SITE_DIR"
 echo "📦 Committing changes..."
 git add -A
 git diff --cached --quiet || git commit -m "Update site"
-echo "⬆️  Pushing to GitHub (backup)..."
+echo "🚀 Pushing to GitHub (Vercel deploys main automatically)..."
 git push origin main
-echo "🚀 Deploying to Netlify..."
-netlify deploy --prod --dir=.
 echo ""
 echo "✅ Done! Your site is live at charterselect.com"
 echo "Press any key to close..."

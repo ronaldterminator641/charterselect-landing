@@ -1,5 +1,5 @@
 'use strict';
-// Vercel API route — replaces netlify/functions/ping-sitemap.js
+// Vercel API route — pings search engines with the sitemap
 // GET /api/ping-sitemap  — also called by scripts/ping-sitemap.js at build time
 
 const SITEMAP_URL = 'https://www.charterselect.com/sitemap.xml';
