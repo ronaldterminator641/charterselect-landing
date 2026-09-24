@@ -5,7 +5,7 @@
 // so the raw-HTML text Google crawls can never drift from what visitors see.
 //
 // Run: node scripts/generate-shells.js
-// Runs in every build (netlify.toml / vercel.json) before generate-sitemap.js.
+// Runs in every build (vercel.json) before generate-sitemap.js.
 //
 // Each target page must contain the markers:
 //   <div id="root"><!--SHELL:<name>--> … <!--/SHELL--></div>

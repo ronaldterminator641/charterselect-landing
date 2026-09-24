@@ -70,6 +70,24 @@ function gitLastmod(file) {
   return null;
 }
 
+// Guard: a sitemap URL must be a live, indexable 200 — never a redirect source
+// or a noindex page. GSC flags either as "Page with redirect" / "Excluded by
+// noindex". Fail the build instead of shipping a contradictory sitemap.
+const redirectSources = new Set(
+  (JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8')).redirects || [])
+    .map(r => r.source.replace(/\/$/, '') || '/')
+);
+const conflicts = [];
+for (const f of files) {
+  if (redirectSources.has(slug(f))) conflicts.push(`${slug(f)} is a redirect source in vercel.json`);
+  const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  if (/<meta[^>]+name=["']robots["'][^>]*noindex/i.test(html)) conflicts.push(`${slug(f)} has a noindex meta tag`);
+}
+if (conflicts.length) {
+  console.error('sitemap.xml NOT written — conflicting URLs:\n  ' + conflicts.join('\n  '));
+  process.exit(1);
+}
+
 const entries = files.map(f => {
   const stat = fs.statSync(path.join(ROOT, f));
   const lastmod = gitLastmod(f) || stat.mtime.toISOString().slice(0, 10);

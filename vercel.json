@@ -23,7 +23,7 @@
     { "source": "/what-we-find.html",       "destination": "/property-liability",  "statusCode": 301 },
     { "source": "/what-we-find",            "destination": "/property-liability",  "statusCode": 301 },
     { "source": "/why.html",                "destination": "/why",                 "statusCode": 301 },
-    { "source": "/insights/charter-school-liability-coverage", "destination": "/property-liability", "permanent": false }
+    { "source": "/insights/charter-school-risk-governance/board-side-a-coverage", "destination": "/insights/charter-school-risk-governance/management-liability", "statusCode": 301 }
   ],
   "headers": [
     {
