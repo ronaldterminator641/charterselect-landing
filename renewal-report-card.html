@@ -1077,10 +1077,10 @@
       <a class="modal-btn modal-btn--teal" href="https://calendar.app.google/JmcCzGBFQQdTYA1b6" target="_blank" rel="noopener noreferrer">
         📅&nbsp; Book a Meeting
       </a>
-      <a class="modal-btn modal-btn--outline" id="emailDraftLink" href="mailto:aschwen@charterselect.com">
+      <a class="modal-btn modal-btn--outline" id="emailDraftLink" href="mailto:aschwen@charterselect.com" onclick="copyEmailDraft()">
         ✉️&nbsp; Send an Email
       </a>
-      <p style="font-size:.72rem;color:var(--fg-muted);line-height:1.5;margin-top:.25rem;font-weight:700;">Tip: attach your current policy documents before sending, and feel free to include your enrollment, number of staff, and upcoming renewal date.</p>
+      <p style="font-size:.72rem;color:var(--fg-muted);line-height:1.5;margin-top:.25rem;font-weight:700;">Tip: we've copied a suggested message to your clipboard — paste it into the email. Attach your current policy documents before sending, and feel free to include your enrollment, number of staff, and upcoming renewal date.</p>
     </div>
   </div>
 </div>
@@ -1163,14 +1163,17 @@
   }
 
   // ── EMAIL DRAFT ───────────────────────────────────────
+  let pendingEmailSubject = '';
+  let pendingEmailBody    = '';
+
   function updateEmailLink() {
     const school = gateData.school || 'our school';
     const name   = gateData.name   || '';
     const title  = gateData.title  || '';
 
-    const subject = 'Charter School Insurance Review Request – ' + school;
+    pendingEmailSubject = 'Charter School Insurance Review Request – ' + school;
 
-    const body = [
+    pendingEmailBody = [
       'Hi Aaron,',
       '',
       'I recently completed the CharterSelect Renewal Report Card for ' + school + ' and wanted to follow up directly.',
@@ -1184,12 +1187,19 @@
       (name  ? name  + '\n' : '') + (title ? title + '\n' : '') + school,
     ].join('\n');
 
+    // Keep the mailto href to just the address — a long encoded subject/body
+    // makes iOS show the raw URL in its "switch apps" confirmation dialog.
     const link = document.getElementById('emailDraftLink');
     if (link) {
-      link.href = 'mailto:aschwen@charterselect.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body='    + encodeURIComponent(body);
+      link.href = 'mailto:aschwen@charterselect.com';
     }
+  }
+
+  function copyEmailDraft() {
+    const text = 'Subject: ' + pendingEmailSubject + '\n\n' + pendingEmailBody;
+    try {
+      navigator.clipboard.writeText(text);
+    } catch (_) {}
   }
 
   // ── MODAL ─────────────────────────────────────────────
