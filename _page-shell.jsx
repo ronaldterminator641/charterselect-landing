@@ -5,10 +5,10 @@ function PageShell({ eyebrow, title, lead, children, screen }) {
   React.useEffect(() => { window.lucide && window.lucide.createIcons(); });
   return (
     <div data-screen-label={screen}>
-      <TopNav onCta={() => { window.location.href = 'index.html#contact'; }} />
+      <TopNav onCta={() => { window.location.href = '/#contact'; }} />
       <section className="cs-page-hero" id="main-content">
         <div className="cs-page-hero__inner">
-          <a className="cs-back" href="index.html"><Lucide name="arrow-left" size={14} /> Back to home</a>
+          <a className="cs-back" href="/"><Lucide name="arrow-left" size={14} /> Back to home</a>
           {eyebrow && <div className="cs-eyebrow">{eyebrow}</div>}
           <h1 className="cs-page-hero__title">{title}</h1>
           {lead && <p className="cs-lead">{lead}</p>}

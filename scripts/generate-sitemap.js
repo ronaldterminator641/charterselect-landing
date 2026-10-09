@@ -13,7 +13,7 @@ const OUTPUT = path.join(ROOT, 'sitemap.xml');
 const EXCLUDE = new Set([
   'charterselect-marketing-site-lastnight.html', // scratch file
   'contact-success.html',                        // thank-you page, no SEO value
-  'renewal-checklist.html',                      // replaced by renewal-report-card
+  'renewal-checklist.html',                      // 301-redirected to /renewal-report-card
   '404.html',                                    // noindex error page — must not be in sitemap
   'upload.html',                                 // noindex utility page — must not be in sitemap
   'what-we-find.html',                           // 301-redirected to /property-liability
@@ -82,6 +82,27 @@ for (const f of files) {
   if (redirectSources.has(slug(f))) conflicts.push(`${slug(f)} is a redirect source in vercel.json`);
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
   if (/<meta[^>]+name=["']robots["'][^>]*noindex/i.test(html)) conflicts.push(`${slug(f)} has a noindex meta tag`);
+  const canon = (html.match(/<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i) || [])[1];
+  if (canon !== DOMAIN + slug(f)) conflicts.push(`${slug(f)} canonical is ${canon || 'missing'}, expected ${DOMAIN + slug(f)}`);
+}
+
+// Guard: internal links must point at final URLs, not redirect sources or
+// legacy .html paths (each one is a 301/308 hop that GSC reports as
+// "Page with redirect"). Scans every page plus the shared JSX it renders.
+const LINK_SOURCES = [
+  ...fs.readdirSync(ROOT).filter(f => /\.(html|jsx)$/.test(f) && !EXCLUDE.has(f)),
+  ...walkHtml(path.join(ROOT, 'insights'), 'insights/'),
+];
+for (const f of LINK_SOURCES) {
+  const text = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  const re = /(?:href\s*=\s*|location\.href\s*=\s*)["']((?:https?:\/\/(?:www\.)?charterselect\.com)?[^"'#?:]*)/g;
+  let m;
+  while ((m = re.exec(text))) {
+    const target = m[1].replace(/^https?:\/\/(?:www\.)?charterselect\.com/, '') || '/';
+    if (/\.(css|js|jsx|png|jpe?g|svg|avif|webp|woff2?|ico|gif|pdf|xml|txt)$/i.test(target)) continue;
+    if (/\.html$/i.test(target)) conflicts.push(`${f} links to ${m[1]} (redirects — use the clean URL)`);
+    else if (redirectSources.has(target.replace(/\/$/, '') || '/')) conflicts.push(`${f} links to redirect source ${m[1]}`);
+  }
 }
 if (conflicts.length) {
   console.error('sitemap.xml NOT written — conflicting URLs:\n  ' + conflicts.join('\n  '));

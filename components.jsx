@@ -76,7 +76,7 @@ function TopNav({ onCta }) {
                 ref={i === 0 ? firstMenuLinkRef : null}
               >{l.label}</a>
             ))}
-            <a href="contact" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
+            <a href="/contact" className="cs-mobile-menu__cta" onClick={() => setOpen(false)}>Get a Free Review</a>
           </nav>
         )}
       </header>
