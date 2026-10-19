@@ -19,7 +19,7 @@
   return {
     htmlFile: 'index.html',
     hero: {
-      eyebrow: 'Charter School Property & Liability Insurance, & Charter School Health Insurance',
+      eyebrow: 'Charter School Property & Liability Insurance & Charter School Health Insurance',
       title: 'I help Charter Schools get Better Protection, while Paying Less',
       titleLines: ['I help Charter Schools', 'get Better Protection, while Paying Less'],
       lead: 'Any insurance you need — built for charter schools, not adapted to them. We protect what matters so you can focus on students, growth, and your mission.',
