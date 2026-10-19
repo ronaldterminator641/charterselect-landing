@@ -189,6 +189,11 @@ function Solutions() {
             </article>
           ))}
         </div>
+        {SEC.link && (
+          <p style={{textAlign:'center', marginTop:32, marginBottom:0}}>
+            {SEC.link.before}<a className="cs-link" href={SEC.link.href}>{SEC.link.text}</a>{SEC.link.after}
+          </p>
+        )}
         <div style={{textAlign:'center', marginTop:40}}>
           <a className="cs-btn cs-btn--primary" href="/contact" style={{textDecoration:'none'}}>
             <Lucide name="shield-check" size={16} /> {SEC.button}

@@ -50,6 +50,7 @@ function renderSection(s) {
   const out = [];
   if (s.h2) out.push(`<h2>${esc(s.h2)}</h2>`);
   for (const p of s.paras || []) out.push(`<p>${esc(p)}</p>`);
+  if (s.link) out.push(`<p>${esc(s.link.before || '')}<a href="${esc(s.link.href)}">${esc(s.link.text)}</a>${esc(s.link.after || '')}</p>`);
   if (s.bullets && s.bullets.length) {
     out.push('<ul>' + s.bullets.map(b => `<li>${esc(b)}</li>`).join('') + '</ul>');
   }

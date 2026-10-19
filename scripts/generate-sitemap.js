@@ -28,6 +28,7 @@ function slug(filename) {
 // Priority hints — tweak as needed
 const PRIORITY = {
   '/': '1.0',
+  '/charter-school-insurance': '0.9',
   '/contact': '0.9',
   '/property-liability': '0.8',
   '/employee-benefits': '0.8',

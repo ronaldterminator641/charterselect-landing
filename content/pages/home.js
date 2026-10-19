@@ -7,7 +7,7 @@
 // `image`, `num`, `titleLines`, `trust`, `button`, `label`, `form`, `badge`,
 // `photo`, `school`, `found`, `kind` are layout-only and ignored by it):
 //   hero:     { eyebrow?, title, lead? }         → <h1> + lead <p>
-//   sections: [{ id, eyebrow?, h2?, paras?[], bullets?[],
+//   sections: [{ id, eyebrow?, h2?, paras?[], bullets?[], link?{ before?, text, href, after? },
 //                items?[{ title, body?, bullets?[] }],
 //                quotes?[{ quote, name, role?, date?, outcome? }] }]
 //   cta:      { h2, para, button? }
@@ -19,9 +19,9 @@
   return {
     htmlFile: 'index.html',
     hero: {
-      eyebrow: 'Property & Liability Insurance',
-      title: 'Protection with purpose.',
-      titleLines: ['Protection', 'with purpose.'],
+      eyebrow: 'Charter School Property & Liability Insurance, & Charter School Health Insurance',
+      title: 'I help Charter Schools get Better Protection, while Paying Less',
+      titleLines: ['I help Charter Schools', 'get Better Protection, while Paying Less'],
       lead: 'Any insurance you need — built for charter schools, not adapted to them. We protect what matters so you can focus on students, growth, and your mission.',
       bookCall: 'Book a 20-min Call',
       trust: 'Complimentary benchmark review · No obligation',
@@ -52,6 +52,7 @@
         eyebrow: 'Solutions',
         h2: 'Insurance built for charter schools — not adapted to them.',
         button: 'Get a Free Coverage Review',
+        link: { before: 'New to this? Our complete guide to ', text: 'charter school insurance', href: '/charter-school-insurance', after: ' covers what to carry, who sets the requirements, and what drives cost.' },
         items: [
           { icon: 'shield-check', title: 'Property & Liability', body: 'Authorizer-compliant coverage built around leased or owned facilities, shared campuses, and educators legal liability. The errors we find most often are big, and could mean the end of your mission if that claim hits.' },
           { icon: 'graduation-cap', title: 'Employee Benefits', body: 'We take enrollment, billing, and claims questions off your HR coordinator\'s plate. One-on-one support for every employee, a concierge that fights surprise bills, and funding structures that put pharmacy rebates back in your budget.' },
