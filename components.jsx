@@ -20,6 +20,7 @@ function TopNav({ onCta }) {
   const links = [
     { href: '/property-liability', label: 'Property & Liability' },
     { href: '/employee-benefits', label: 'Employee Benefits' },
+    { href: '/new-charter-school-insurance', label: 'New Schools' },
     { href: '/why', label: 'Why CharterSelect' },
     { href: '/commitment', label: 'Our Commitment' },
     { href: '/about', label: 'About' },

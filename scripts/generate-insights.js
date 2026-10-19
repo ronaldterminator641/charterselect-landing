@@ -33,6 +33,7 @@ const LIVE_HUBS = HUBS.filter(h => articlesFor(h.slug).length > 0);
 const NAV_LINKS = [
   { href: '/property-liability', label: 'Property &amp; Liability' },
   { href: '/employee-benefits', label: 'Employee Benefits' },
+  { href: '/new-charter-school-insurance', label: 'New Schools' },
   { href: '/why', label: 'Why CharterSelect' },
   { href: '/commitment', label: 'Our Commitment' },
   { href: '/about', label: 'About' },

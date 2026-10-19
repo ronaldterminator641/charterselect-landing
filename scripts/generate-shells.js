@@ -25,6 +25,7 @@ const NAV = [
   ['/', 'CharterSelect'],
   ['/property-liability', 'Property &amp; Liability'],
   ['/employee-benefits', 'Employee Benefits'],
+  ['/new-charter-school-insurance', 'New Schools'],
   ['/why', 'Why CharterSelect'],
   ['/commitment', 'Our Commitment'],
   ['/about', 'About'],
