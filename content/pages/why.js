@@ -72,27 +72,27 @@
             date: 'February 2017',
           },
           {
-            outcome: 'Added Workers Comp · Saved money · No premium increase',
-            quote: 'He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.',
-            name: 'HR Manager & Business Manager · September 2018',
-            role: 'Newman International Academy',
-          },
-          {
-            quote: 'As the founder of Arcadia High School, I was juggling a lot at once — facilities, staffing, benefits, compliance, budgeting, board decisions, and all the unknowns that come with opening a new school. Aaron was consistently thoughtful, responsive, and proactive. He helped me understand what coverage we needed and when, talked through real facility scenarios, supported our D&O and workers\u2019 comp planning, and helped connect the dots between insurance, benefits, hiring, and long-term operations. What stood out most was that Aaron did not just \u201csell insurance.\u201d He acted like a true partner. He anticipated questions, explained complicated topics clearly, connected me with helpful people, and followed up to make sure I had what I needed.',
-            name: 'Mohamad Maarouf',
-            role: 'Superintendent & Systems Architect · Arcadia Schools',
-          },
-          {
             outcome: 'New school setup · Insurance + HR guidance from day one',
             quote: 'Aaron came in and supported us so much with our insurance, insurance selection, and guidance for these critical human resources elements. He also went above and beyond and completed work that I did not have the capacity to do.',
             name: 'Mia Coffing, M.Ed., BCBA',
             role: 'Executive Director · Prospect Academy',
           },
           {
+            outcome: 'Added Workers Comp · Saved money · No premium increase',
+            quote: 'He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.',
+            name: 'HR Manager & Business Manager · September 2018',
+            role: 'Newman International Academy',
+          },
+          {
             outcome: 'Trusted partner · Recommended without hesitation',
             quote: "Aaron is one of the hardest working partners I've had the good fortune to come across.",
             name: 'Stacey Lawrence',
             role: 'CEO & Founder · GrowthFit Partners LLC',
+          },
+          {
+            quote: 'As the founder of Arcadia High School, I was juggling a lot at once — facilities, staffing, benefits, compliance, budgeting, board decisions, and all the unknowns that come with opening a new school. Aaron was consistently thoughtful, responsive, and proactive. He helped me understand what coverage we needed and when, talked through real facility scenarios, supported our D&O and workers\u2019 comp planning, and helped connect the dots between insurance, benefits, hiring, and long-term operations. What stood out most was that Aaron did not just \u201csell insurance.\u201d He acted like a true partner. He anticipated questions, explained complicated topics clearly, connected me with helpful people, and followed up to make sure I had what I needed.',
+            name: 'Mohamad Maarouf',
+            role: 'Superintendent & Systems Architect · Arcadia Schools',
           },
         ],
       },
