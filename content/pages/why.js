@@ -65,6 +65,11 @@
         id: 'testimonials',
         quotes: [
           {
+            quote: 'Aaron was consistently thoughtful, responsive, and proactive. He helped me understand what coverage we needed and when, talked through real facility scenarios, supported our D&O and workers\u2019 comp planning, and helped connect the dots between insurance, benefits, hiring, and long-term operations. What stood out most was that Aaron did not just \u201csell insurance.\u201d He acted like a true partner. He anticipated questions, explained complicated topics clearly, connected me with helpful people, and followed up to make sure I had what I needed.',
+            name: 'Mohamad Maarouf',
+            role: 'Superintendent & Systems Architect · Arcadia Schools',
+          },
+          {
             outcome: 'Saved nearly $100K annually · Better coverage',
             quote: 'Aaron boldly claimed he could save us $100,000 annually in premiums with the same or better coverage — and he did just that. Aaron makes the process tolerable and, more importantly, does the work so your staff does not have to.',
             name: 'Randal C. Shaffer',
@@ -78,21 +83,16 @@
             role: 'Executive Director · Prospect Academy',
           },
           {
-            outcome: 'Added Workers Comp · Saved money · No premium increase',
-            quote: 'He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.',
-            name: 'HR Manager & Business Manager · September 2018',
-            role: 'Newman International Academy',
-          },
-          {
             outcome: 'Trusted partner · Recommended without hesitation',
             quote: "Aaron is one of the hardest working partners I've had the good fortune to come across.",
             name: 'Stacey Lawrence',
             role: 'CEO & Founder · GrowthFit Partners LLC',
           },
           {
-            quote: 'Aaron was consistently thoughtful, responsive, and proactive. He helped me understand what coverage we needed and when, talked through real facility scenarios, supported our D&O and workers\u2019 comp planning, and helped connect the dots between insurance, benefits, hiring, and long-term operations. What stood out most was that Aaron did not just \u201csell insurance.\u201d He acted like a true partner. He anticipated questions, explained complicated topics clearly, connected me with helpful people, and followed up to make sure I had what I needed.',
-            name: 'Mohamad Maarouf',
-            role: 'Superintendent & Systems Architect · Arcadia Schools',
+            outcome: 'Added Workers Comp · Saved money · No premium increase',
+            quote: 'He worked with us to add Workers Compensation without spending any more money than we were spending on our insurance package without it. His knowledge of the products and the needs of charter schools is deep.',
+            name: 'HR Manager & Business Manager · September 2018',
+            role: 'Newman International Academy',
           },
         ],
       },
