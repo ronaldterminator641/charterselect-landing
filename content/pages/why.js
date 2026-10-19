@@ -65,6 +65,7 @@
         id: 'testimonials',
         quotes: [
           {
+            outcome: 'Thoughtful, responsive, proactive · A true partner through a school launch',
             quote: 'Aaron was consistently thoughtful, responsive, and proactive. He helped me understand what coverage we needed and when, talked through real facility scenarios, supported our D&O and workers\u2019 comp planning, and helped connect the dots between insurance, benefits, hiring, and long-term operations. What stood out most was that Aaron did not just \u201csell insurance.\u201d He acted like a true partner. He anticipated questions, explained complicated topics clearly, connected me with helpful people, and followed up to make sure I had what I needed.',
             name: 'Mohamad Maarouf',
             role: 'Superintendent & Systems Architect · Arcadia Schools',
