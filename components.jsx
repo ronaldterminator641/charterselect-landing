@@ -18,7 +18,7 @@ function TopNav({ onCta }) {
   const [open, setOpen] = React.useState(false);
   const firstMenuLinkRef = React.useRef(null);
   const links = [
-    { href: '/property-liability', label: 'Property & Liability' },
+    { href: '/property-liability', label: 'Property Liability' },
     { href: '/employee-benefits', label: 'Employee Benefits' },
     { href: '/new-charter-school-insurance', label: 'New Schools' },
     { href: '/why', label: 'Why CharterSelect' },

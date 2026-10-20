@@ -23,7 +23,7 @@ const esc = (s) => String(s)
 
 const NAV = [
   ['/', 'CharterSelect'],
-  ['/property-liability', 'Property &amp; Liability'],
+  ['/property-liability', 'Property Liability'],
   ['/employee-benefits', 'Employee Benefits'],
   ['/new-charter-school-insurance', 'New Schools'],
   ['/why', 'Why CharterSelect'],
